@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://yce7ks31tlrg"]
+
+[ext_resource type="Script" path="res://save_files/triggers/save trigger/save_triggers/event_trigger/event_trigger.gd" id="1_8edup"]
+
+[node name="event_trigger" type="Node2D"]
+script = ExtResource("1_8edup")

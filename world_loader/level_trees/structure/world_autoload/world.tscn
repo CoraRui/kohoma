@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dquwnvcrwbu2f"]
+
+[ext_resource type="Script" path="res://world_loader/level_trees/structure/world_autoload/world.gd" id="1_r0ehf"]
+[ext_resource type="PackedScene" uid="uid://bl5ew0rgbt652" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_tree.tscn" id="2_7yy0j"]
+
+[node name="world" type="Node2D" node_paths=PackedStringArray("current_grid")]
+script = ExtResource("1_r0ehf")
+current_grid = NodePath("overworld_tree")
+
+[node name="overworld_tree" parent="." instance=ExtResource("2_7yy0j")]

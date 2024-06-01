@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dntx1g8xvc6l2"]
+
+[node name="19_19" type="Node2D"]
+
+[node name="tilemap" type="TileMap" parent="."]
+format = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = 41.0
+offset_right = 176.0
+offset_bottom = 158.0
+color = Color(0.027451, 0.105882, 0.447059, 1)

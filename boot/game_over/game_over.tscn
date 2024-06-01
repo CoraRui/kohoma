@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://djfoef06jnovk"]
+
+[ext_resource type="Script" path="res://boot/main_menu/file select/game_init.gd" id="1_ppfqp"]
+
+[node name="game_over" type="Node2D"]
+
+[node name="game over" type="Label" parent="."]
+offset_left = 44.0
+offset_top = 50.0
+offset_right = 126.0
+offset_bottom = 73.0
+text = "game over"
+
+[node name="continue" type="Label" parent="."]
+offset_left = 21.0
+offset_top = 111.0
+offset_right = 162.0
+offset_bottom = 134.0
+text = "enter to continue"
+
+[node name="game_init" type="Node2D" parent="." node_paths=PackedStringArray("del")]
+script = ExtResource("1_ppfqp")
+test_lp = Vector2i(10, 10)
+del = NodePath("..")

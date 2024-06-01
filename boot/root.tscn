@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgc8a5wdelpkf"]
+
+[ext_resource type="Script" path="res://boot/to_title/to_next.gd" id="1_1w5f5"]
+[ext_resource type="PackedScene" uid="uid://bh861ens8p1kx" path="res://boot/intro/intro.tscn" id="2_xlxtq"]
+[ext_resource type="Script" path="res://misc/notes.gd" id="3_dqf6g"]
+
+[node name="root" type="Node2D"]
+
+[node name="to_intro" type="Node2D" parent="." node_paths=PackedStringArray("del")]
+script = ExtResource("1_1w5f5")
+ins = ExtResource("2_xlxtq")
+del = NodePath("..")
+
+[node name="notes" type="Node2D" parent="."]
+script = ExtResource("3_dqf6g")
+notes = "the root node just contains to_title for now. eventually, there may be different boot events depending on save file, or calendar, etc."

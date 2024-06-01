@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpox3psx25wv7"]
+
+[ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="1_i8ubn"]
+[ext_resource type="TileSet" uid="uid://ba2m0q1510vtc" path="res://raw_assets/tiles/mono.tres" id="2_2vei6"]
+[ext_resource type="PackedScene" uid="uid://j2gcqncpoo46" path="res://world_loader/rooms/room trigger/exit_trigger.tscn" id="3_22n5r"]
+
+[node name="shop_1" type="Node2D"]
+
+[node name="load_info" parent="." instance=ExtResource("1_i8ubn")]
+
+[node name="0" parent="load_info/spawn_points" index="0"]
+position = Vector2(89, 147)
+
+[node name="below" type="TileMap" parent="."]
+tile_set = ExtResource("2_2vei6")
+format = 2
+layer_0/tile_data = PackedInt32Array(458752, 0, 2, 393216, 0, 2, 327680, 0, 2, 262144, 0, 2, 196608, 0, 2, 131072, 0, 2, 131073, 0, 2, 131074, 0, 2, 131075, 0, 2, 131076, 0, 2, 131077, 0, 2, 131078, 0, 2, 131079, 0, 2, 131080, 0, 2, 131081, 0, 2, 131082, 0, 2, 196618, 0, 2, 262154, 0, 2, 327690, 0, 2, 393226, 0, 2, 458762, 0, 2, 589824, 0, 2, 589825, 0, 2, 589826, 0, 2, 589827, 0, 2, 524288, 0, 2, 524298, 0, 2, 589833, 0, 2, 589834, 0, 2, 589832, 0, 2, 589831, 0, 2, 327684, 65536, 3, 327685, 65536, 3, 327686, 65536, 3, 262149, 65536, 1, 524289, 0, 3, 458753, 65536, 3, 393217, 65536, 3, 327681, 65536, 3, 262145, 65536, 3, 196609, 0, 2, 196610, 0, 2, 196611, 0, 2, 196612, 0, 2, 196613, 0, 2, 196614, 0, 2, 196615, 0, 2, 262151, 65536, 3, 327687, 0, 3, 262148, 65536, 3, 262147, 65536, 3, 327683, 65536, 3, 262152, 65536, 3, 262150, 65536, 3, 327682, 65536, 3, 262146, 0, 3, 393218, 65536, 3, 458754, 65536, 3, 524290, 65536, 3, 524291, 65536, 3, 524292, 65536, 3, 524293, 65536, 3, 524294, 65536, 3, 524295, 0, 3, 524296, 65536, 3, 524297, 65536, 3, 458761, 65536, 3, 393225, 0, 3, 327688, 65536, 3, 262153, 65536, 3, 327689, 65536, 3, 196617, 0, 2, 196616, 0, 2, 393220, 65536, 3, 458756, 0, 3, 393219, 65536, 1, 458757, 65536, 3, 458758, 65536, 3, 393222, 65536, 3, 458759, 65536, 3, 458760, 65536, 3, 393223, 65536, 1, 393221, 65536, 1, 393224, 65536, 3, 458755, 65536, 3, 589828, 65536, 3, 589829, 65536, 3, 589830, 65536, 3)
+
+[node name="above" type="TileMap" parent="."]
+tile_set = ExtResource("2_2vei6")
+format = 2
+layer_0/tile_data = PackedInt32Array(393221, 131072, 2, 262149, 131072, 2, 393219, 131072, 2, 393223, 131072, 2)
+
+[node name="exit_trigger" parent="." node_paths=PackedStringArray("room_ins") instance=ExtResource("3_22n5r")]
+room_ins = NodePath("..")
+
+[editable path="load_info"]

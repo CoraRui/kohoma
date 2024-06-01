@@ -1,0 +1,34 @@
+what to do?
+	
+	world enemy patterns
+	dungeon design/enemy patterns
+	enemy movement scripts
+	enemy spawning scripts
+	music and sound effects
+	items and interaction types
+	dungeon interaction
+	story writing
+	world secrets
+	inventory and item recieving
+	spriting and tileset art
+	general code revision
+	project file organization
+
+
+random things from zelda
+
+enemy pattern change in certain places on certain story/event triggers
+enemy behavior changes in response to different items/being attacked
+varying enemy parameters on spawn
+places of interest, shops, fairy fountains, etc.
+map "disconnects" paths that don't connect with the rest of the map for a long time
+spawn patterns connected to player position/item selection
+enemy spawns after initial level load
+attacks affecting inventory, file, things other than health
+change drops based on player info, like no hearts when full health
+enemy drop rate items, like heart up, or rupee up etc.
+
+#random thoughts
+
+reactions to "sound"
+break a pot and an enemy will move, step on creaky tile etc.

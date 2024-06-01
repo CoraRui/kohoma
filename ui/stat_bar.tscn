@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=3 uid="uid://cq4ypfsxg6eh0"]
+
+[ext_resource type="Script" path="res://ui/stat_bar.gd" id="1_iytto"]
+[ext_resource type="Texture2D" uid="uid://kxxugbydfir4" path="res://raw_assets/archivew/proto bar.png" id="2_8tjp7"]
+[ext_resource type="Script" path="res://ui/heart_bar.gd" id="3_5ek21"]
+[ext_resource type="Texture2D" uid="uid://d1r8ffgv4h21k" path="res://ui/heart 44.png" id="3_nb8mf"]
+[ext_resource type="Texture2D" uid="uid://1qewwngdl4cl" path="res://ui/heart 04.png" id="4_56eaf"]
+[ext_resource type="Texture2D" uid="uid://ixpoww1vqub1" path="res://ui/heart 14.png" id="5_47h2p"]
+[ext_resource type="Texture2D" uid="uid://cfp54gipeh23x" path="res://ui/heart 24.png" id="6_cpapu"]
+[ext_resource type="Texture2D" uid="uid://d20jaw16l6ou8" path="res://ui/heart 34.png" id="7_r678a"]
+[ext_resource type="Texture2D" uid="uid://ycfin6t4oh64" path="res://ui/heart 00.png" id="9_mq8by"]
+[ext_resource type="PackedScene" uid="uid://de7j7jxw7w5c6" path="res://ui/enemy_desc/flav_text.tscn" id="10_xmvkb"]
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="11_ggi63"]
+
+[sub_resource type="FontVariation" id="FontVariation_vfx5n"]
+base_font = ExtResource("11_ggi63")
+
+[node name="stat_bar" type="Node2D" node_paths=PackedStringArray("hp_bar", "flav", "key_label")]
+z_index = 5
+script = ExtResource("1_iytto")
+hp_bar = NodePath("heart_bar")
+flav = NodePath("flav_text")
+key_label = NodePath("key_label")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 176.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_top = 160.0
+offset_right = 176.0
+offset_bottom = 176.0
+color = Color(0, 0, 0, 1)
+
+[node name="test_sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(88, 24)
+texture = ExtResource("2_8tjp7")
+
+[node name="heart_bar" type="Node2D" parent="." node_paths=PackedStringArray("heart_arr")]
+position = Vector2(6, 7)
+script = ExtResource("3_5ek21")
+heart_arr = [NodePath("heart_0"), NodePath("heart_1"), NodePath("heart_2"), NodePath("heart_3"), NodePath("heart_4"), NodePath("heart_5"), NodePath("heart_6"), NodePath("heart_7"), NodePath("heart_8"), NodePath("heart_9"), NodePath("heart_10"), NodePath("heart_11")]
+heart_txt = Array[Texture2D]([ExtResource("4_56eaf"), ExtResource("5_47h2p"), ExtResource("6_cpapu"), ExtResource("7_r678a"), ExtResource("3_nb8mf"), ExtResource("9_mq8by")])
+
+[node name="heart_0" type="Sprite2D" parent="heart_bar"]
+position = Vector2(3.5, 3)
+texture = ExtResource("3_nb8mf")
+
+[node name="heart_1" type="Sprite2D" parent="heart_bar"]
+position = Vector2(11.5, 3)
+texture = ExtResource("3_nb8mf")
+
+[node name="heart_2" type="Sprite2D" parent="heart_bar"]
+position = Vector2(19.5, 3)
+texture = ExtResource("3_nb8mf")
+
+[node name="heart_3" type="Sprite2D" parent="heart_bar"]
+position = Vector2(27.5, 3)
+texture = ExtResource("3_nb8mf")
+
+[node name="heart_4" type="Sprite2D" parent="heart_bar"]
+position = Vector2(35.5, 3)
+texture = ExtResource("3_nb8mf")
+
+[node name="heart_5" type="Sprite2D" parent="heart_bar"]
+position = Vector2(43.5, 3)
+texture = ExtResource("3_nb8mf")
+
+[node name="heart_6" type="Sprite2D" parent="heart_bar"]
+position = Vector2(3.5, 10)
+texture = ExtResource("3_nb8mf")
+
+[node name="heart_7" type="Sprite2D" parent="heart_bar"]
+position = Vector2(11.5, 10)
+texture = ExtResource("3_nb8mf")
+
+[node name="heart_8" type="Sprite2D" parent="heart_bar"]
+position = Vector2(19.5, 10)
+texture = ExtResource("3_nb8mf")
+
+[node name="heart_9" type="Sprite2D" parent="heart_bar"]
+position = Vector2(27.5, 10)
+texture = ExtResource("3_nb8mf")
+
+[node name="heart_10" type="Sprite2D" parent="heart_bar"]
+position = Vector2(35.5, 10)
+texture = ExtResource("3_nb8mf")
+
+[node name="heart_11" type="Sprite2D" parent="heart_bar"]
+position = Vector2(43.5, 10)
+texture = ExtResource("3_nb8mf")
+
+[node name="flav_text" parent="." instance=ExtResource("10_xmvkb")]
+
+[node name="key_label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 40.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("FontVariation_vfx5n")
+theme_override_font_sizes/font_size = 5
+text = "keys x 0"

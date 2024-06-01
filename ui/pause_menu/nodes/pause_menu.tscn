@@ -1,0 +1,150 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbxw8vt6tqvtu"]
+
+[ext_resource type="Script" path="res://ui/pause_menu/nodes/pause_menu.gd" id="1_fxur1"]
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="2_jitha"]
+[ext_resource type="Script" path="res://ui/simple_select.gd" id="3_v6yii"]
+[ext_resource type="Script" path="res://ui/simple_select/nodes/group.gd" id="4_cf5te"]
+[ext_resource type="Script" path="res://ui/simple_select/nodes/option.gd" id="5_qrbqx"]
+[ext_resource type="Texture2D" uid="uid://d1r8ffgv4h21k" path="res://ui/heart 44.png" id="6_1ffrp"]
+
+[sub_resource type="FontVariation" id="FontVariation_pvnbp"]
+base_font = ExtResource("2_jitha")
+
+[node name="pause_menu" type="Node2D"]
+script = ExtResource("1_fxur1")
+
+[node name="background" type="ColorRect" parent="."]
+offset_top = 16.0
+offset_right = 176.0
+offset_bottom = 176.0
+color = Color(0, 0, 0, 1)
+
+[node name="simple_select" type="Node2D" parent="." node_paths=PackedStringArray("active_option", "active_group", "icon")]
+script = ExtResource("3_v6yii")
+active_option = NodePath("main/continue")
+active_group = NodePath("main")
+icon = NodePath("icon")
+
+[node name="main" type="Node2D" parent="simple_select" node_paths=PackedStringArray("options")]
+script = ExtResource("4_cf5te")
+options = [NodePath("continue"), NodePath("settings"), NodePath("quit")]
+
+[node name="continue" type="Node2D" parent="simple_select/main" node_paths=PackedStringArray("icon_point", "up_option", "down_option")]
+position = Vector2(15, 13)
+script = ExtResource("5_qrbqx")
+icon_point = NodePath("icon_point")
+up_option = NodePath("../quit")
+down_option = NodePath("../settings")
+
+[node name="option_text" type="Label" parent="simple_select/main/continue"]
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+theme_override_font_sizes/font_size = 5
+text = "continue"
+
+[node name="icon_point" type="Node2D" parent="simple_select/main/continue"]
+position = Vector2(-10, 0)
+
+[node name="settings" type="Node2D" parent="simple_select/main" node_paths=PackedStringArray("icon_point", "target_group", "up_option", "down_option")]
+position = Vector2(15, 22)
+script = ExtResource("5_qrbqx")
+icon_point = NodePath("icon_point")
+target_group = NodePath("../../settings")
+up_option = NodePath("../continue")
+down_option = NodePath("../quit")
+
+[node name="option_text" type="Label" parent="simple_select/main/settings"]
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+theme_override_font_sizes/font_size = 5
+text = "settings"
+
+[node name="icon_point" type="Node2D" parent="simple_select/main/settings"]
+position = Vector2(-10, 0)
+
+[node name="quit" type="Node2D" parent="simple_select/main" node_paths=PackedStringArray("icon_point", "up_option", "down_option")]
+position = Vector2(15, 31)
+script = ExtResource("5_qrbqx")
+icon_point = NodePath("icon_point")
+up_option = NodePath("../settings")
+down_option = NodePath("../continue")
+
+[node name="option_text" type="Label" parent="simple_select/main/quit"]
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+theme_override_font_sizes/font_size = 5
+text = "save & quit"
+
+[node name="icon_point" type="Node2D" parent="simple_select/main/quit"]
+position = Vector2(-10, 0)
+
+[node name="settings" type="Node2D" parent="simple_select" node_paths=PackedStringArray("options")]
+visible = false
+script = ExtResource("4_cf5te")
+options = [NodePath("volume"), NodePath("bumpscosity"), NodePath("return")]
+
+[node name="volume" type="Node2D" parent="simple_select/settings" node_paths=PackedStringArray("icon_point", "up_option", "down_option")]
+position = Vector2(74, 33)
+script = ExtResource("5_qrbqx")
+icon_point = NodePath("icon_point")
+up_option = NodePath("../return")
+down_option = NodePath("../bumpscosity")
+
+[node name="option_text" type="Label" parent="simple_select/settings/volume"]
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+theme_override_font_sizes/font_size = 5
+text = "volume"
+
+[node name="icon_point" type="Node2D" parent="simple_select/settings/volume"]
+position = Vector2(-10, 0)
+
+[node name="bumpscosity" type="Node2D" parent="simple_select/settings" node_paths=PackedStringArray("icon_point", "up_option", "down_option")]
+position = Vector2(74, 42)
+script = ExtResource("5_qrbqx")
+icon_point = NodePath("icon_point")
+up_option = NodePath("../volume")
+down_option = NodePath("../return")
+
+[node name="option_text" type="Label" parent="simple_select/settings/bumpscosity"]
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+theme_override_font_sizes/font_size = 5
+text = "bumpscosity"
+
+[node name="icon_point" type="Node2D" parent="simple_select/settings/bumpscosity"]
+position = Vector2(-10, 0)
+
+[node name="return" type="Node2D" parent="simple_select/settings" node_paths=PackedStringArray("icon_point", "target_group", "up_option", "down_option")]
+position = Vector2(83, 55)
+script = ExtResource("5_qrbqx")
+icon_point = NodePath("icon_point")
+target_group = NodePath("../../main")
+up_option = NodePath("../bumpscosity")
+down_option = NodePath("../volume")
+
+[node name="option_text" type="Label" parent="simple_select/settings/return"]
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+theme_override_font_sizes/font_size = 5
+text = "return
+"
+
+[node name="icon_point" type="Node2D" parent="simple_select/settings/return"]
+position = Vector2(-10, 0)
+
+[node name="icon" type="Node2D" parent="simple_select"]
+position = Vector2(5, 13)
+
+[node name="icon_sprt" type="Sprite2D" parent="simple_select/icon"]
+position = Vector2(3.5, 3)
+texture = ExtResource("6_1ffrp")
+
+[connection signal="activated" from="simple_select/main/continue" to="." method="_on_continue_activated"]
+[connection signal="activated" from="simple_select/main/quit" to="." method="_on_quit_activated"]

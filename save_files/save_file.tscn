@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpmm25pqbbddg"]
+
+[ext_resource type="Script" path="res://save_files/save_file.gd" id="1_yt4hk"]
+[ext_resource type="Script" path="res://save_files/resources/file_01.gd" id="2_yimsi"]
+
+[sub_resource type="Resource" id="Resource_dlhso"]
+script = ExtResource("2_yimsi")
+player_name = "cameron"
+character_name = "flea"
+hp = 12
+mhp = 12
+keys = 0
+gold = 0
+kills = 0
+event_dict = {
+"test_event": true
+}
+clean_file = true
+
+[node name="save_file" type="Node2D"]
+script = ExtResource("1_yt4hk")
+current_file = SubResource("Resource_dlhso")
+save_dir = Array[String](["user://save/file_01.tres", "user://save/file_02.tres", "user://save/file_03.tres"])

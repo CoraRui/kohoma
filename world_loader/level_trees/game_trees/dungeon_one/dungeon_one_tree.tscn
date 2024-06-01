@@ -1,0 +1,347 @@
+[gd_scene load_steps=63 format=3 uid="uid://bl022pvr26plc"]
+
+[ext_resource type="Script" path="res://world_loader/level_trees/structure/world_tree/world_tree/world_tree.gd" id="1_mkin2"]
+[ext_resource type="PackedScene" uid="uid://cqnfr4q3imt4s" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/rooms/basement.tscn" id="2_kl5aq"]
+[ext_resource type="Script" path="res://world_loader/level_trees/structure/world_tree/level_slot/level_slot.gd" id="2_n61xo"]
+[ext_resource type="PackedScene" uid="uid://d3lfbecjvx4bb" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/4/4_6.tscn" id="3_5h6j3"]
+[ext_resource type="PackedScene" uid="uid://7xeu6nxh28uy" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/3/3_5.tscn" id="3_5i8ma"]
+[ext_resource type="Script" path="res://world_loader/level_trees/structure/resources/level/level.gd" id="3_lbtia"]
+[ext_resource type="PackedScene" uid="uid://jysy4x162g4h" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/3/3_6.tscn" id="3_rbk1d"]
+[ext_resource type="PackedScene" uid="uid://b15k8uitnkul1" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/2/2_6.tscn" id="3_xquia"]
+[ext_resource type="PackedScene" uid="uid://bq57g0howx4ih" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/2/2_0.tscn" id="5_ayk8f"]
+[ext_resource type="PackedScene" uid="uid://di1d3w1t7ugyu" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/2/2_1.tscn" id="6_iuxhp"]
+[ext_resource type="PackedScene" uid="uid://di6cweixhc1v4" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/2/2_2.tscn" id="7_gevjr"]
+[ext_resource type="PackedScene" uid="uid://du85d2pcuvjdf" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/2/2_3.tscn" id="8_m7kdm"]
+[ext_resource type="PackedScene" uid="uid://ch7u1nks5js2s" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/2/2_4.tscn" id="9_kts1a"]
+[ext_resource type="PackedScene" uid="uid://dxh3ge8s8j0e4" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/2/2_5.tscn" id="10_0vjnh"]
+[ext_resource type="PackedScene" uid="uid://c2mmawn2eltfe" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/3/3_0.tscn" id="12_ct8t1"]
+[ext_resource type="PackedScene" uid="uid://waa8bjdf2r6s" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/3/3_1.tscn" id="13_fbnxc"]
+[ext_resource type="PackedScene" uid="uid://cnvp4e1wmluqi" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/3/3_2.tscn" id="14_4uhh2"]
+[ext_resource type="PackedScene" uid="uid://dl7mhij5uvp00" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/3/3_3.tscn" id="15_6q52k"]
+[ext_resource type="PackedScene" uid="uid://cocpgnrdpdlyl" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/3/3_4.tscn" id="16_6e4fi"]
+[ext_resource type="PackedScene" uid="uid://cwa63shddxjk6" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/4/4_0.tscn" id="19_kuem5"]
+[ext_resource type="PackedScene" uid="uid://3dbt8ocefqjj" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/4/4_1.tscn" id="20_3ybbe"]
+[ext_resource type="PackedScene" uid="uid://dpae30byh83fb" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/4/4_2.tscn" id="21_p7ijc"]
+[ext_resource type="PackedScene" uid="uid://ds5hcw648en1r" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/4/4_3.tscn" id="22_x3w4w"]
+[ext_resource type="PackedScene" uid="uid://csvlpp4n4jee0" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/4/4_4.tscn" id="23_hvrsc"]
+[ext_resource type="PackedScene" uid="uid://2vpwnh1swna3" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/4/4_5.tscn" id="24_dkfax"]
+[ext_resource type="PackedScene" uid="uid://wpb7g7oagpj6" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/5/5_0.tscn" id="26_1r83c"]
+[ext_resource type="PackedScene" uid="uid://d0o7kqekymv4l" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/5/5_1.tscn" id="27_mwo6b"]
+[ext_resource type="PackedScene" uid="uid://unwl6xoetai4" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/5/5_2.tscn" id="28_ks1jo"]
+[ext_resource type="PackedScene" uid="uid://b12soxh0ruem6" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/5/5_3.tscn" id="29_020qr"]
+[ext_resource type="PackedScene" uid="uid://dc2ny81gnvmvx" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/5/5_4.tscn" id="30_afyp6"]
+[ext_resource type="PackedScene" uid="uid://fsj4w6edw50r" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/5/5_5.tscn" id="31_sx6dp"]
+[ext_resource type="PackedScene" uid="uid://b22p0tsdmw0eq" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/5/5_6.tscn" id="32_cfe70"]
+
+[sub_resource type="Resource" id="Resource_uwqlv"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("2_kl5aq")
+
+[sub_resource type="Resource" id="Resource_f3k41"]
+script = ExtResource("3_lbtia")
+
+[sub_resource type="Resource" id="Resource_s5xii"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("5_ayk8f")
+
+[sub_resource type="Resource" id="Resource_mieuw"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("6_iuxhp")
+
+[sub_resource type="Resource" id="Resource_l88f2"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("7_gevjr")
+
+[sub_resource type="Resource" id="Resource_rba07"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("8_m7kdm")
+
+[sub_resource type="Resource" id="Resource_infy2"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("9_kts1a")
+
+[sub_resource type="Resource" id="Resource_w05im"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("10_0vjnh")
+
+[sub_resource type="Resource" id="Resource_gy0tw"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("3_xquia")
+
+[sub_resource type="Resource" id="Resource_e8qs1"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("12_ct8t1")
+
+[sub_resource type="Resource" id="Resource_jgjmb"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("13_fbnxc")
+
+[sub_resource type="Resource" id="Resource_13r6r"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("14_4uhh2")
+
+[sub_resource type="Resource" id="Resource_xqwbj"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("15_6q52k")
+
+[sub_resource type="Resource" id="Resource_pt7nh"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("16_6e4fi")
+
+[sub_resource type="Resource" id="Resource_xbwm8"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("3_5i8ma")
+
+[sub_resource type="Resource" id="Resource_e35te"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("3_rbk1d")
+
+[sub_resource type="Resource" id="Resource_kf8ny"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("19_kuem5")
+
+[sub_resource type="Resource" id="Resource_ocfro"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("20_3ybbe")
+
+[sub_resource type="Resource" id="Resource_sihk6"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("21_p7ijc")
+
+[sub_resource type="Resource" id="Resource_fwr2w"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("22_x3w4w")
+
+[sub_resource type="Resource" id="Resource_nuxbo"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("23_hvrsc")
+
+[sub_resource type="Resource" id="Resource_k4sh4"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("24_dkfax")
+
+[sub_resource type="Resource" id="Resource_06gom"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("3_5h6j3")
+
+[sub_resource type="Resource" id="Resource_isk5v"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("26_1r83c")
+
+[sub_resource type="Resource" id="Resource_i2tcq"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("27_mwo6b")
+
+[sub_resource type="Resource" id="Resource_oy0gq"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("28_ks1jo")
+
+[sub_resource type="Resource" id="Resource_assqr"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("29_020qr")
+
+[sub_resource type="Resource" id="Resource_spya2"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("30_afyp6")
+
+[sub_resource type="Resource" id="Resource_5lia7"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("31_sx6dp")
+
+[sub_resource type="Resource" id="Resource_0dsus"]
+script = ExtResource("3_lbtia")
+level_node = ExtResource("32_cfe70")
+
+[node name="dungon_one_tree" type="Node2D"]
+script = ExtResource("1_mkin2")
+fail_level = SubResource("Resource_uwqlv")
+
+[node name="0" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="0"]
+script = ExtResource("2_n61xo")
+
+[node name="1" type="Node2D" parent="0"]
+script = ExtResource("2_n61xo")
+
+[node name="2" type="Node2D" parent="0"]
+script = ExtResource("2_n61xo")
+
+[node name="3" type="Node2D" parent="0"]
+script = ExtResource("2_n61xo")
+
+[node name="4" type="Node2D" parent="0"]
+script = ExtResource("2_n61xo")
+
+[node name="5" type="Node2D" parent="0"]
+script = ExtResource("2_n61xo")
+
+[node name="6" type="Node2D" parent="0"]
+script = ExtResource("2_n61xo")
+
+[node name="1" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="1"]
+script = ExtResource("2_n61xo")
+
+[node name="1" type="Node2D" parent="1"]
+script = ExtResource("2_n61xo")
+
+[node name="2" type="Node2D" parent="1"]
+script = ExtResource("2_n61xo")
+
+[node name="3" type="Node2D" parent="1"]
+script = ExtResource("2_n61xo")
+
+[node name="4" type="Node2D" parent="1"]
+script = ExtResource("2_n61xo")
+
+[node name="5" type="Node2D" parent="1"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_f3k41")
+
+[node name="6" type="Node2D" parent="1"]
+script = ExtResource("2_n61xo")
+
+[node name="2" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="2"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_s5xii")
+
+[node name="1" type="Node2D" parent="2"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_mieuw")
+
+[node name="2" type="Node2D" parent="2"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_l88f2")
+
+[node name="3" type="Node2D" parent="2"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_rba07")
+
+[node name="4" type="Node2D" parent="2"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_infy2")
+
+[node name="5" type="Node2D" parent="2"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_w05im")
+
+[node name="6" type="Node2D" parent="2"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_gy0tw")
+
+[node name="3" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="3"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_e8qs1")
+
+[node name="1" type="Node2D" parent="3"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_jgjmb")
+
+[node name="2" type="Node2D" parent="3"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_13r6r")
+
+[node name="3" type="Node2D" parent="3"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_xqwbj")
+
+[node name="4" type="Node2D" parent="3"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_pt7nh")
+
+[node name="5" type="Node2D" parent="3"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_xbwm8")
+
+[node name="6" type="Node2D" parent="3"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_e35te")
+
+[node name="4" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="4"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_kf8ny")
+
+[node name="1" type="Node2D" parent="4"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_ocfro")
+
+[node name="2" type="Node2D" parent="4"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_sihk6")
+
+[node name="3" type="Node2D" parent="4"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_fwr2w")
+
+[node name="4" type="Node2D" parent="4"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_nuxbo")
+
+[node name="5" type="Node2D" parent="4"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_k4sh4")
+
+[node name="6" type="Node2D" parent="4"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_06gom")
+
+[node name="5" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="5"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_isk5v")
+
+[node name="1" type="Node2D" parent="5"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_i2tcq")
+
+[node name="2" type="Node2D" parent="5"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_oy0gq")
+
+[node name="3" type="Node2D" parent="5"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_assqr")
+
+[node name="4" type="Node2D" parent="5"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_spya2")
+
+[node name="5" type="Node2D" parent="5"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_5lia7")
+
+[node name="6" type="Node2D" parent="5"]
+script = ExtResource("2_n61xo")
+level_ref = SubResource("Resource_0dsus")
+
+[node name="6" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="6"]
+script = ExtResource("2_n61xo")
+
+[node name="1" type="Node2D" parent="6"]
+script = ExtResource("2_n61xo")
+
+[node name="2" type="Node2D" parent="6"]
+script = ExtResource("2_n61xo")
+
+[node name="3" type="Node2D" parent="6"]
+script = ExtResource("2_n61xo")
+
+[node name="4" type="Node2D" parent="6"]
+script = ExtResource("2_n61xo")
+
+[node name="5" type="Node2D" parent="6"]
+script = ExtResource("2_n61xo")
+
+[node name="6" type="Node2D" parent="6"]
+script = ExtResource("2_n61xo")

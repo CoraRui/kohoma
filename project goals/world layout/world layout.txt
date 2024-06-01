@@ -1,0 +1,9 @@
+screen size
+screen edges for world movement
+level packages
+	tilemap + colliders
+	monsters/npcs
+	save file triggers
+	music triggers?
+	doors
+	

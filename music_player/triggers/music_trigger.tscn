@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://jfxvdv88hlmx"]
+
+[ext_resource type="Script" path="res://music_player/triggers/music_trigger.gd" id="1_ilrgn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h874d"]
+
+[node name="music_trigger" type="Node2D" node_paths=PackedStringArray("track_timer", "track_coll")]
+script = ExtResource("1_ilrgn")
+track_timer = NodePath("track_timer")
+track_coll = NodePath("track_collider")
+
+[node name="track_timer" type="Timer" parent="."]
+
+[node name="track_collider" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="track_collider"]
+shape = SubResource("RectangleShape2D_h874d")
+
+[connection signal="timeout" from="track_timer" to="." method="_on_track_timer_timeout"]
+[connection signal="body_entered" from="track_collider" to="." method="_on_track_collider_body_entered"]

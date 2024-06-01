@@ -1,0 +1,56 @@
+to do:
+	clean up and recap code for overworld and dungeons
+	create overworld map and dungeon one map
+	more enemy types
+	more landscape types?
+	overall code cleanup
+	
+
+
+ok. so what am i thinking?
+
+so all of the basic stuff is laid out. i can move between levels, level trees.
+
+what should i add next?
+
+level design? start populating the world with things, right?
+
+box in the playable area
+	yepm soon. its just to make the game playable.
+	
+some kind of map?
+	thats not too important. i should eventually though.
+
+start level design of the main overworld and dungeon
+	i think this is it.
+
+i mean whats the core fun? just exploring the world, the dungeons, and fighting bosses, right?
+so thats the thing to work on.
+hrm. well i want to do some code cleanup first, to be more efficient and to remind myself how my own systems
+work lol.
+
+what considerations should I keep in mind when designing levels?
+
+	memorable land structure - patterns in the tilemaps that are distinct enough to recognize as "areas"
+	fun enemy patterns - fun and possibly randomized ish patterns
+	unique events - story events that take place in the world based on the current file
+	discovery - having things to discover in the world
+	
+direction and "open world"
+	
+	ok. so theres an issue with the concept of "open world", right?
+	the player can go anywhere. but you're only going to have "real content"
+	in one spot. the solution to that is to probably limit things in general.
+	hard limits a rock that requires the power glove, and soft limits like enemies that
+	are more difficult to beat without a specific item.
+	
+	how to remedy that?
+	
+	ulrira - a hint booth to remind the player the next main objective
+	path limiting - barring players from entering certain areas until a certain time.
+	world map - some sort of map to help the player explore
+	
+	
+	
+	
+	

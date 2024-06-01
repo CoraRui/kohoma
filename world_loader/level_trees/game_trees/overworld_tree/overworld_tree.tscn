@@ -1,0 +1,1278 @@
+[gd_scene load_steps=147 format=3 uid="uid://bl5ew0rgbt652"]
+
+[ext_resource type="Script" path="res://world_loader/level_trees/structure/world_tree/world_tree/world_tree.gd" id="1_2qr8y"]
+[ext_resource type="PackedScene" uid="uid://ccdidxiil10lf" path="res://world_loader/level_trees/structure/resources/level/fail_level.tscn" id="2_1j58j"]
+[ext_resource type="PackedScene" uid="uid://w0851fjb1a7e" path="res://world_loader/level_trees/structure/world_tree/level_slot/level_slot.tscn" id="2_x408h"]
+[ext_resource type="Script" path="res://world_loader/level_trees/structure/resources/level/level.gd" id="3_1y8ci"]
+[ext_resource type="PackedScene" uid="uid://byh7kxts7uc2m" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_9.tscn" id="5_bx3ur"]
+[ext_resource type="PackedScene" uid="uid://b1r7hs5dcfbak" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_7.tscn" id="5_cl2ad"]
+[ext_resource type="PackedScene" uid="uid://c422tv3mspky" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_3.tscn" id="5_djbow"]
+[ext_resource type="PackedScene" uid="uid://cnrw33cjavdq4" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_9.tscn" id="5_f28by"]
+[ext_resource type="PackedScene" uid="uid://gcxbscyach76" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_10/10_10.tscn" id="5_g4foh"]
+[ext_resource type="PackedScene" uid="uid://r7fslhb10dce" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_9.tscn" id="5_oyxsu"]
+[ext_resource type="PackedScene" uid="uid://b5i51f75hdw1" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_10.tscn" id="6_3a68d"]
+[ext_resource type="PackedScene" uid="uid://dhguq426i23f3" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_4.tscn" id="6_bl5g0"]
+[ext_resource type="PackedScene" uid="uid://dkba2yha31nmi" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_8.tscn" id="6_srg27"]
+[ext_resource type="PackedScene" uid="uid://dm700evk40gjd" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_10.tscn" id="6_vmstx"]
+[ext_resource type="PackedScene" uid="uid://c03thsyhjr3hi" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_11.tscn" id="7_528u1"]
+[ext_resource type="PackedScene" uid="uid://2nxbe60yi5jx" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_11.tscn" id="7_hsksq"]
+[ext_resource type="PackedScene" uid="uid://by4de0gdn5oto" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_5.tscn" id="7_ix7v8"]
+[ext_resource type="PackedScene" uid="uid://2evrjokpbjws" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_9.tscn" id="7_uparp"]
+[ext_resource type="PackedScene" uid="uid://kapt3rvmfsdq" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_6.tscn" id="8_qgeds"]
+[ext_resource type="PackedScene" uid="uid://dtv8663vghesu" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_6.tscn" id="8_wdyif"]
+[ext_resource type="PackedScene" uid="uid://kt5oiwj66nyi" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_12.tscn" id="8_wrc5u"]
+[ext_resource type="PackedScene" uid="uid://c33oqhng6vsgw" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_7.tscn" id="9_6ks17"]
+[ext_resource type="PackedScene" uid="uid://dq1aq1tfyyqff" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_7.tscn" id="9_48kki"]
+[ext_resource type="PackedScene" uid="uid://i86wf1jm86c6" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_13.tscn" id="9_j08c2"]
+[ext_resource type="PackedScene" uid="uid://bbtcxxlkjh6k1" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_11.tscn" id="10_7ly58"]
+[ext_resource type="PackedScene" uid="uid://ce1cummowjj7k" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_8.tscn" id="10_84lel"]
+[ext_resource type="PackedScene" uid="uid://djhe47bmgv58u" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_8.tscn" id="10_l1om5"]
+[ext_resource type="PackedScene" uid="uid://cesecc0ott3l5" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_14.tscn" id="10_xs7h1"]
+[ext_resource type="PackedScene" uid="uid://brspmvtfl8mmy" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_8.tscn" id="11_eo4ce"]
+[ext_resource type="PackedScene" uid="uid://bpvme3sqcmxlw" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_6.tscn" id="11_tc3jx"]
+[ext_resource type="PackedScene" uid="uid://bhxilbic8vp8b" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_7.tscn" id="12_wibfp"]
+[ext_resource type="PackedScene" uid="uid://dj74s6fq087h0" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_9.tscn" id="12_yu0r5"]
+[ext_resource type="PackedScene" uid="uid://7u6sahrlaquf" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_10.tscn" id="13_lqt4h"]
+[ext_resource type="PackedScene" uid="uid://cwx3cnarfcmn2" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_8.tscn" id="13_tbv00"]
+[ext_resource type="PackedScene" uid="uid://yx11vi6pc8f1" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_12.tscn" id="14_67be1"]
+[ext_resource type="PackedScene" uid="uid://bio3kcc83sdmm" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_11.tscn" id="14_avffv"]
+[ext_resource type="PackedScene" uid="uid://cuafp7i2bwnxm" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_9.tscn" id="14_ypem0"]
+[ext_resource type="PackedScene" uid="uid://wqi56hbchm5q" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_7.tscn" id="15_njri5"]
+[ext_resource type="PackedScene" uid="uid://dt8sef8wnk4h1" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_10.tscn" id="15_tq2w0"]
+[ext_resource type="PackedScene" uid="uid://c5rp7x1rvmr0o" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_11.tscn" id="16_tnisj"]
+[ext_resource type="PackedScene" uid="uid://dxcoeilkci57a" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_8.tscn" id="16_x801c"]
+[ext_resource type="PackedScene" uid="uid://bi6tfi0dho6lu" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_3.tscn" id="17_8d0un"]
+[ext_resource type="PackedScene" uid="uid://cx0aoo2scckto" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_12.tscn" id="17_ik7te"]
+[ext_resource type="PackedScene" uid="uid://cwjpoekdkwub2" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_13.tscn" id="18_21wfy"]
+[ext_resource type="PackedScene" uid="uid://bnnwmyqsgthd" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_4.tscn" id="18_fywq5"]
+[ext_resource type="PackedScene" uid="uid://enqsqugiv2l" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_5.tscn" id="19_cags0"]
+[ext_resource type="PackedScene" uid="uid://bredkaho84yxn" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_14.tscn" id="19_xdxma"]
+[ext_resource type="PackedScene" uid="uid://b1ckeikfmsiuu" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_3.tscn" id="20_m6u16"]
+[ext_resource type="PackedScene" uid="uid://bl708r1psecei" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_12.tscn" id="20_oxvwx"]
+[ext_resource type="PackedScene" uid="uid://dg8hd8egqsgh6" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_4.tscn" id="21_r3k5h"]
+[ext_resource type="PackedScene" uid="uid://dcsmhl1d4wvp8" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_5.tscn" id="22_hcr8y"]
+[ext_resource type="PackedScene" uid="uid://becwv2kw2d33h" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_6.tscn" id="23_sfa7j"]
+[ext_resource type="PackedScene" uid="uid://bs6oe2a2vcx8j" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_12.tscn" id="25_nemoe"]
+[ext_resource type="PackedScene" uid="uid://cqobhaweo3rkl" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_10.tscn" id="27_drcjo"]
+[ext_resource type="PackedScene" uid="uid://nmnnhoqjulmn" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_11.tscn" id="28_8uo4b"]
+[ext_resource type="PackedScene" uid="uid://d1k3a22tnciue" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_12.tscn" id="29_8osyh"]
+[ext_resource type="PackedScene" uid="uid://c33qvre5ce7yt" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_13.tscn" id="30_y3qno"]
+[ext_resource type="PackedScene" uid="uid://cxmidcpbxfm77" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_14.tscn" id="31_23ovm"]
+[ext_resource type="PackedScene" uid="uid://y77da38mpcsr" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_3.tscn" id="32_i4tmj"]
+[ext_resource type="PackedScene" uid="uid://ch8oy2bt8jwif" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_4.tscn" id="33_8bmf3"]
+[ext_resource type="PackedScene" uid="uid://cd0kboit33jn3" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_5.tscn" id="34_jdcyw"]
+[ext_resource type="PackedScene" uid="uid://nbi8xv4de776" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_13.tscn" id="42_fpmkg"]
+[ext_resource type="PackedScene" uid="uid://cq65fvxi7v4ru" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_14.tscn" id="43_veebf"]
+[ext_resource type="PackedScene" uid="uid://cfwjhbygw765t" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_3.tscn" id="44_ikq2e"]
+[ext_resource type="PackedScene" uid="uid://b7sjbitad0yp4" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_4.tscn" id="45_80x2g"]
+[ext_resource type="PackedScene" uid="uid://dut520ctfimjr" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_5.tscn" id="46_jh1cf"]
+[ext_resource type="PackedScene" uid="uid://nnad7rowlqdm" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_6.tscn" id="47_4krxr"]
+[ext_resource type="PackedScene" uid="uid://cx71emnk455ga" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_13.tscn" id="54_0y3yr"]
+[ext_resource type="PackedScene" uid="uid://b6nfmyj35rpcj" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_14.tscn" id="55_04gvj"]
+[ext_resource type="PackedScene" uid="uid://ctifhkkdoju6a" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_3.tscn" id="56_u5a2p"]
+[ext_resource type="PackedScene" uid="uid://bbl77weoxp5e5" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_4.tscn" id="57_c4hds"]
+[ext_resource type="PackedScene" uid="uid://c5kghoapd3n6g" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_5.tscn" id="58_qgb12"]
+[ext_resource type="PackedScene" uid="uid://bu7cbeyixej2j" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_6.tscn" id="59_vkehf"]
+[ext_resource type="PackedScene" uid="uid://c10m5g8swejfm" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_7.tscn" id="60_ca78p"]
+
+[sub_resource type="Resource" id="Resource_6wtyw"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("2_1j58j")
+
+[sub_resource type="Resource" id="Resource_5ux3c"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("5_djbow")
+
+[sub_resource type="Resource" id="Resource_r8b6k"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("6_bl5g0")
+
+[sub_resource type="Resource" id="Resource_xsxpq"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("7_ix7v8")
+
+[sub_resource type="Resource" id="Resource_3e2js"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("8_qgeds")
+
+[sub_resource type="Resource" id="Resource_s00x3"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("9_48kki")
+
+[sub_resource type="Resource" id="Resource_vyntd"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("10_l1om5")
+
+[sub_resource type="Resource" id="Resource_mu2ll"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("5_f28by")
+
+[sub_resource type="Resource" id="Resource_7anpu"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("6_vmstx")
+
+[sub_resource type="Resource" id="Resource_686dc"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("7_hsksq")
+
+[sub_resource type="Resource" id="Resource_ayf0y"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("8_wrc5u")
+
+[sub_resource type="Resource" id="Resource_k8imf"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("9_j08c2")
+
+[sub_resource type="Resource" id="Resource_ddoxm"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("10_xs7h1")
+
+[sub_resource type="Resource" id="Resource_2mdcc"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("17_8d0un")
+
+[sub_resource type="Resource" id="Resource_h5u27"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("18_fywq5")
+
+[sub_resource type="Resource" id="Resource_r0n2i"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("19_cags0")
+
+[sub_resource type="Resource" id="Resource_hs0uh"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("11_tc3jx")
+
+[sub_resource type="Resource" id="Resource_54xbj"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("12_wibfp")
+
+[sub_resource type="Resource" id="Resource_0s44l"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("13_tbv00")
+
+[sub_resource type="Resource" id="Resource_tsgnl"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("14_ypem0")
+
+[sub_resource type="Resource" id="Resource_1nl76"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("15_tq2w0")
+
+[sub_resource type="Resource" id="Resource_0mx1s"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("16_tnisj")
+
+[sub_resource type="Resource" id="Resource_corh6"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("17_ik7te")
+
+[sub_resource type="Resource" id="Resource_5wjs4"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("18_21wfy")
+
+[sub_resource type="Resource" id="Resource_qo05q"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("19_xdxma")
+
+[sub_resource type="Resource" id="Resource_et3x1"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("20_m6u16")
+
+[sub_resource type="Resource" id="Resource_7x7rs"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("21_r3k5h")
+
+[sub_resource type="Resource" id="Resource_yolhw"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("22_hcr8y")
+
+[sub_resource type="Resource" id="Resource_0sn3a"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("23_sfa7j")
+
+[sub_resource type="Resource" id="Resource_qpilv"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("5_cl2ad")
+
+[sub_resource type="Resource" id="Resource_8hrjm"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("6_srg27")
+
+[sub_resource type="Resource" id="Resource_vfro5"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("7_uparp")
+
+[sub_resource type="Resource" id="Resource_hjw6p"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("27_drcjo")
+
+[sub_resource type="Resource" id="Resource_dkt0i"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("28_8uo4b")
+
+[sub_resource type="Resource" id="Resource_0kq6i"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("29_8osyh")
+
+[sub_resource type="Resource" id="Resource_5kng6"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("30_y3qno")
+
+[sub_resource type="Resource" id="Resource_3fgx2"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("31_23ovm")
+
+[sub_resource type="Resource" id="Resource_n8t18"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("32_i4tmj")
+
+[sub_resource type="Resource" id="Resource_clihp"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("33_8bmf3")
+
+[sub_resource type="Resource" id="Resource_qc558"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("34_jdcyw")
+
+[sub_resource type="Resource" id="Resource_r86ge"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("8_wdyif")
+
+[sub_resource type="Resource" id="Resource_titxl"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("9_6ks17")
+
+[sub_resource type="Resource" id="Resource_jvlyt"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("10_84lel")
+
+[sub_resource type="Resource" id="Resource_n8y2m"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("5_bx3ur")
+
+[sub_resource type="Resource" id="Resource_c6wec"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("6_3a68d")
+
+[sub_resource type="Resource" id="Resource_631eh"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("7_528u1")
+
+[sub_resource type="Resource" id="Resource_6ry06"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("14_67be1")
+
+[sub_resource type="Resource" id="Resource_3ui82"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("42_fpmkg")
+
+[sub_resource type="Resource" id="Resource_jqmtl"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("43_veebf")
+
+[sub_resource type="Resource" id="Resource_sltkb"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("44_ikq2e")
+
+[sub_resource type="Resource" id="Resource_82uk7"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("45_80x2g")
+
+[sub_resource type="Resource" id="Resource_7uo0l"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("46_jh1cf")
+
+[sub_resource type="Resource" id="Resource_fmy0n"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("47_4krxr")
+
+[sub_resource type="Resource" id="Resource_pw1g1"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("15_njri5")
+
+[sub_resource type="Resource" id="Resource_dpgbr"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("16_x801c")
+
+[sub_resource type="Resource" id="Resource_5ur6j"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("5_oyxsu")
+
+[sub_resource type="Resource" id="Resource_3thwk"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("5_g4foh")
+
+[sub_resource type="Resource" id="Resource_2kcog"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("10_7ly58")
+
+[sub_resource type="Resource" id="Resource_2jw2a"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("20_oxvwx")
+
+[sub_resource type="Resource" id="Resource_7smjw"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("54_0y3yr")
+
+[sub_resource type="Resource" id="Resource_ak6nk"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("55_04gvj")
+
+[sub_resource type="Resource" id="Resource_8r1rw"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("56_u5a2p")
+
+[sub_resource type="Resource" id="Resource_v865s"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("57_c4hds")
+
+[sub_resource type="Resource" id="Resource_xlb65"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("58_qgb12")
+
+[sub_resource type="Resource" id="Resource_71lco"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("59_vkehf")
+
+[sub_resource type="Resource" id="Resource_ahqbe"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("60_ca78p")
+
+[sub_resource type="Resource" id="Resource_ibmnk"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("11_eo4ce")
+
+[sub_resource type="Resource" id="Resource_lerq0"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("12_yu0r5")
+
+[sub_resource type="Resource" id="Resource_4ilda"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("13_lqt4h")
+
+[sub_resource type="Resource" id="Resource_7c4fi"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("14_avffv")
+
+[sub_resource type="Resource" id="Resource_tf8r4"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("25_nemoe")
+
+[sub_resource type="Resource" id="Resource_1jask"]
+script = ExtResource("3_1y8ci")
+
+[node name="overworld_tree" type="Node2D"]
+script = ExtResource("1_2qr8y")
+fail_level = SubResource("Resource_6wtyw")
+
+[node name="0" type="Node2D" parent="."]
+
+[node name="0" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="0" instance=ExtResource("2_x408h")]
+
+[node name="1" type="Node2D" parent="."]
+
+[node name="0" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="1" instance=ExtResource("2_x408h")]
+
+[node name="2" type="Node2D" parent="."]
+
+[node name="0" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="2" instance=ExtResource("2_x408h")]
+
+[node name="3" type="Node2D" parent="."]
+
+[node name="0" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="3" instance=ExtResource("2_x408h")]
+
+[node name="4" type="Node2D" parent="."]
+
+[node name="0" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="4" instance=ExtResource("2_x408h")]
+
+[node name="5" type="Node2D" parent="."]
+
+[node name="0" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="5" instance=ExtResource("2_x408h")]
+
+[node name="6" type="Node2D" parent="."]
+
+[node name="0" parent="6" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="6" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="6" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="6" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_5ux3c")
+
+[node name="4" parent="6" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_r8b6k")
+
+[node name="5" parent="6" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_xsxpq")
+
+[node name="6" parent="6" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_3e2js")
+
+[node name="7" parent="6" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_s00x3")
+
+[node name="8" parent="6" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_vyntd")
+
+[node name="9" parent="6" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_mu2ll")
+
+[node name="10" parent="6" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_7anpu")
+
+[node name="11" parent="6" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_686dc")
+
+[node name="12" parent="6" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_ayf0y")
+
+[node name="13" parent="6" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_k8imf")
+
+[node name="14" parent="6" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_ddoxm")
+
+[node name="15" parent="6" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="6" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="6" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="6" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="6" instance=ExtResource("2_x408h")]
+
+[node name="7" type="Node2D" parent="."]
+
+[node name="0" parent="7" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="7" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="7" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="7" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_2mdcc")
+
+[node name="4" parent="7" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_h5u27")
+
+[node name="5" parent="7" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_r0n2i")
+
+[node name="6" parent="7" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_hs0uh")
+
+[node name="7" parent="7" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_54xbj")
+
+[node name="8" parent="7" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_0s44l")
+
+[node name="9" parent="7" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_tsgnl")
+
+[node name="10" parent="7" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_1nl76")
+
+[node name="11" parent="7" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_0mx1s")
+
+[node name="12" parent="7" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_corh6")
+
+[node name="13" parent="7" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_5wjs4")
+
+[node name="14" parent="7" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_qo05q")
+
+[node name="15" parent="7" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="7" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="7" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="7" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="7" instance=ExtResource("2_x408h")]
+
+[node name="8" type="Node2D" parent="."]
+
+[node name="0" parent="8" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="8" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="8" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_et3x1")
+
+[node name="4" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_7x7rs")
+
+[node name="5" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_yolhw")
+
+[node name="6" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_0sn3a")
+
+[node name="7" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_qpilv")
+
+[node name="8" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_8hrjm")
+
+[node name="9" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_vfro5")
+
+[node name="10" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_hjw6p")
+
+[node name="11" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_dkt0i")
+
+[node name="12" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_0kq6i")
+
+[node name="13" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_5kng6")
+
+[node name="14" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_3fgx2")
+
+[node name="15" parent="8" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="8" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="8" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="8" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="8" instance=ExtResource("2_x408h")]
+
+[node name="9" type="Node2D" parent="."]
+
+[node name="0" parent="9" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="9" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="9" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_n8t18")
+
+[node name="4" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_clihp")
+
+[node name="5" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_qc558")
+
+[node name="6" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_r86ge")
+
+[node name="7" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_titxl")
+
+[node name="8" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_jvlyt")
+
+[node name="9" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_n8y2m")
+
+[node name="10" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_c6wec")
+
+[node name="11" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_631eh")
+
+[node name="12" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_6ry06")
+
+[node name="13" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_3ui82")
+
+[node name="14" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_jqmtl")
+
+[node name="15" parent="9" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="9" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="9" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="9" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="9" instance=ExtResource("2_x408h")]
+
+[node name="10" type="Node2D" parent="."]
+
+[node name="0" parent="10" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="10" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="10" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="10" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_sltkb")
+
+[node name="4" parent="10" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_82uk7")
+
+[node name="5" parent="10" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_7uo0l")
+
+[node name="6" parent="10" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_fmy0n")
+
+[node name="7" parent="10" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_pw1g1")
+
+[node name="8" parent="10" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_dpgbr")
+
+[node name="9" parent="10" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_5ur6j")
+
+[node name="10" parent="10" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_3thwk")
+
+[node name="11" parent="10" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_2kcog")
+
+[node name="12" parent="10" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_2jw2a")
+
+[node name="13" parent="10" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_7smjw")
+
+[node name="14" parent="10" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_ak6nk")
+
+[node name="15" parent="10" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="10" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="10" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="10" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="10" instance=ExtResource("2_x408h")]
+
+[node name="11" type="Node2D" parent="."]
+
+[node name="0" parent="11" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="11" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="11" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="11" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_8r1rw")
+
+[node name="4" parent="11" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_v865s")
+
+[node name="5" parent="11" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_xlb65")
+
+[node name="6" parent="11" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_71lco")
+
+[node name="7" parent="11" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_ahqbe")
+
+[node name="8" parent="11" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_ibmnk")
+
+[node name="9" parent="11" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_lerq0")
+
+[node name="10" parent="11" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_4ilda")
+
+[node name="11" parent="11" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_7c4fi")
+
+[node name="12" parent="11" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_tf8r4")
+
+[node name="13" parent="11" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_1jask")
+
+[node name="14" parent="11" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="11" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="11" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="11" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="11" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="11" instance=ExtResource("2_x408h")]
+
+[node name="12" type="Node2D" parent="."]
+
+[node name="0" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="12" instance=ExtResource("2_x408h")]
+
+[node name="13" type="Node2D" parent="."]
+
+[node name="0" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="13" instance=ExtResource("2_x408h")]
+
+[node name="14" type="Node2D" parent="."]
+
+[node name="0" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="14" instance=ExtResource("2_x408h")]
+
+[node name="15" type="Node2D" parent="."]
+
+[node name="0" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="15" instance=ExtResource("2_x408h")]
+
+[node name="16" type="Node2D" parent="."]
+
+[node name="0" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="16" instance=ExtResource("2_x408h")]
+
+[node name="17" type="Node2D" parent="."]
+
+[node name="0" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="17" instance=ExtResource("2_x408h")]
+
+[node name="18" type="Node2D" parent="."]
+
+[node name="0" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="18" instance=ExtResource("2_x408h")]
+
+[node name="19" type="Node2D" parent="."]
+
+[node name="0" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="1" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="2" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="3" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="4" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="5" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="6" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="7" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="8" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="9" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="10" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="11" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="12" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="13" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="14" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="15" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="16" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="17" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="18" parent="19" instance=ExtResource("2_x408h")]
+
+[node name="19" parent="19" instance=ExtResource("2_x408h")]

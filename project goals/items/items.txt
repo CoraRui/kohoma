@@ -1,0 +1,11 @@
+ghost cloak - become immaterial but immobile
+diggin claws - tunnel through "burrows"
+fish fins - swim
+teleport - warp to a spot a certain distance away, throgh (most) walls and over gaps
+light - merge into light and follow its path.
+wind - deku leaf-sh, drift on air currents, and glide over short distances, probably a certain amount of tiles
+remote
+portals - create two connected portals to shoot stuff through.
+maybe the player cant move through them though.
+they'd probably be immobile stuff you can set on the floor. just a you can teleport to any spot you have already been kind of thing.
+remote - probably a remote bomb

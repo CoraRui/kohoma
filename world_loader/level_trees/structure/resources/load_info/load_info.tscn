@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dud8ba8wmp68m"]
+
+[ext_resource type="Script" path="res://world_loader/level_trees/structure/resources/load_info/load_info.gd" id="1_1noaq"]
+
+[node name="load_info" type="Node2D" node_paths=PackedStringArray("player_spawn")]
+script = ExtResource("1_1noaq")
+player_spawn = [NodePath("spawn_points/0"), NodePath("spawn_points/1"), NodePath("spawn_points/2"), NodePath("spawn_points/3")]
+
+[node name="spawn_points" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="spawn_points"]
+
+[node name="1" type="Node2D" parent="spawn_points"]
+
+[node name="2" type="Node2D" parent="spawn_points"]
+
+[node name="3" type="Node2D" parent="spawn_points"]

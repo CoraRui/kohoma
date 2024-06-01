@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dt5qdrh0rsw4g"]
+
+[node name="0_0" type="Node2D"]
+
+[node name="tilemap" type="TileMap" parent="."]
+format = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 256.0
+offset_bottom = 176.0
+color = Color(0.027451, 0.105882, 0.447059, 1)
+
+[node name="label" type="Label" parent="."]
+offset_left = 113.0
+offset_top = 73.0
+offset_right = 153.0
+offset_bottom = 96.0
+text = "0_0"

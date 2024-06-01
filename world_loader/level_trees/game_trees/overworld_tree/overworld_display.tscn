@@ -1,0 +1,1150 @@
+[gd_scene load_steps=76 format=3 uid="uid://bmnac21j46l7q"]
+
+[ext_resource type="PackedScene" uid="uid://dkba2yha31nmi" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_8.tscn" id="1_2puen"]
+[ext_resource type="PackedScene" uid="uid://b1ckeikfmsiuu" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_3.tscn" id="1_a4grs"]
+[ext_resource type="PackedScene" uid="uid://c422tv3mspky" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_3.tscn" id="1_dgb82"]
+[ext_resource type="PackedScene" uid="uid://bpvme3sqcmxlw" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_6.tscn" id="1_jmldi"]
+[ext_resource type="PackedScene" uid="uid://cnrw33cjavdq4" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_9.tscn" id="1_k0ljc"]
+[ext_resource type="PackedScene" uid="uid://b1r7hs5dcfbak" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_7.tscn" id="1_nuevw"]
+[ext_resource type="PackedScene" uid="uid://r7fslhb10dce" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_9.tscn" id="1_qa3iw"]
+[ext_resource type="PackedScene" uid="uid://byh7kxts7uc2m" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_9.tscn" id="1_rlbor"]
+[ext_resource type="PackedScene" uid="uid://ce1cummowjj7k" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_8.tscn" id="1_xtje5"]
+[ext_resource type="PackedScene" uid="uid://dhguq426i23f3" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_4.tscn" id="2_3aeoy"]
+[ext_resource type="PackedScene" uid="uid://b5i51f75hdw1" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_10.tscn" id="2_bd1sq"]
+[ext_resource type="PackedScene" uid="uid://bhxilbic8vp8b" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_7.tscn" id="2_em33g"]
+[ext_resource type="PackedScene" uid="uid://dm700evk40gjd" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_10.tscn" id="2_gehx5"]
+[ext_resource type="PackedScene" uid="uid://2evrjokpbjws" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_9.tscn" id="2_m4ffm"]
+[ext_resource type="PackedScene" uid="uid://dg8hd8egqsgh6" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_4.tscn" id="2_n3l5b"]
+[ext_resource type="PackedScene" uid="uid://gcxbscyach76" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_10/10_10.tscn" id="2_ysdok"]
+[ext_resource type="PackedScene" uid="uid://dcsmhl1d4wvp8" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_5.tscn" id="3_2v0t6"]
+[ext_resource type="PackedScene" uid="uid://c03thsyhjr3hi" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_11.tscn" id="3_d77yf"]
+[ext_resource type="PackedScene" uid="uid://2nxbe60yi5jx" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_11.tscn" id="3_dfe87"]
+[ext_resource type="PackedScene" uid="uid://by4de0gdn5oto" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_5.tscn" id="3_lnycx"]
+[ext_resource type="PackedScene" uid="uid://cwx3cnarfcmn2" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_8.tscn" id="3_xxv7p"]
+[ext_resource type="PackedScene" uid="uid://dxcoeilkci57a" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_8.tscn" id="4_0pqyj"]
+[ext_resource type="PackedScene" uid="uid://cuafp7i2bwnxm" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_9.tscn" id="4_887ao"]
+[ext_resource type="PackedScene" uid="uid://becwv2kw2d33h" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_6.tscn" id="4_cl0l7"]
+[ext_resource type="PackedScene" uid="uid://y77da38mpcsr" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_3.tscn" id="4_iwcsc"]
+[ext_resource type="PackedScene" uid="uid://dtv8663vghesu" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_6.tscn" id="4_kxcif"]
+[ext_resource type="PackedScene" uid="uid://kt5oiwj66nyi" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_12.tscn" id="4_qwcif"]
+[ext_resource type="PackedScene" uid="uid://wqi56hbchm5q" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_7.tscn" id="4_sdn4w"]
+[ext_resource type="PackedScene" uid="uid://kapt3rvmfsdq" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_6.tscn" id="4_waaf6"]
+[ext_resource type="PackedScene" uid="uid://c33oqhng6vsgw" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_7.tscn" id="5_hn6yu"]
+[ext_resource type="PackedScene" uid="uid://dt8sef8wnk4h1" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_10.tscn" id="5_jal6u"]
+[ext_resource type="PackedScene" uid="uid://i86wf1jm86c6" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_13.tscn" id="5_kiimo"]
+[ext_resource type="PackedScene" uid="uid://ch8oy2bt8jwif" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_4.tscn" id="5_ku3wx"]
+[ext_resource type="PackedScene" uid="uid://yx11vi6pc8f1" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_12.tscn" id="5_n6qim"]
+[ext_resource type="PackedScene" uid="uid://dq1aq1tfyyqff" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_7.tscn" id="5_pi7n7"]
+[ext_resource type="PackedScene" uid="uid://bbtcxxlkjh6k1" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_11.tscn" id="5_siovw"]
+[ext_resource type="PackedScene" uid="uid://bio3kcc83sdmm" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_11.tscn" id="6_0fe7x"]
+[ext_resource type="PackedScene" uid="uid://cd0kboit33jn3" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_5.tscn" id="6_1jrhm"]
+[ext_resource type="PackedScene" uid="uid://7u6sahrlaquf" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_10.tscn" id="6_3f3r6"]
+[ext_resource type="PackedScene" uid="uid://dj74s6fq087h0" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_9.tscn" id="6_8hclg"]
+[ext_resource type="PackedScene" uid="uid://djhe47bmgv58u" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_8.tscn" id="6_d3pou"]
+[ext_resource type="PackedScene" uid="uid://c5rp7x1rvmr0o" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_11.tscn" id="6_d10n1"]
+[ext_resource type="PackedScene" uid="uid://cesecc0ott3l5" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/6/6_14.tscn" id="6_qoqqj"]
+[ext_resource type="PackedScene" uid="uid://brspmvtfl8mmy" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_8.tscn" id="6_wg2co"]
+[ext_resource type="PackedScene" uid="uid://cx0aoo2scckto" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_12.tscn" id="7_14b2v"]
+[ext_resource type="PackedScene" uid="uid://bi6tfi0dho6lu" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_3.tscn" id="7_u12l4"]
+[ext_resource type="PackedScene" uid="uid://bnnwmyqsgthd" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_4.tscn" id="8_omk2i"]
+[ext_resource type="PackedScene" uid="uid://cqobhaweo3rkl" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_10.tscn" id="8_xc32p"]
+[ext_resource type="PackedScene" uid="uid://enqsqugiv2l" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_5.tscn" id="9_q3tcd"]
+[ext_resource type="PackedScene" uid="uid://nmnnhoqjulmn" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_11.tscn" id="9_qyb4l"]
+[ext_resource type="PackedScene" uid="uid://d1k3a22tnciue" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_12.tscn" id="10_t44b3"]
+[ext_resource type="PackedScene" uid="uid://bl708r1psecei" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_12.tscn" id="11_b6lob"]
+[ext_resource type="PackedScene" uid="uid://cwjpoekdkwub2" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_13.tscn" id="14_28q8l"]
+[ext_resource type="PackedScene" uid="uid://bredkaho84yxn" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/7/7_14.tscn" id="15_tj2fp"]
+[ext_resource type="PackedScene" uid="uid://bs6oe2a2vcx8j" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_12.tscn" id="16_7rty1"]
+[ext_resource type="PackedScene" uid="uid://cfwjhbygw765t" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_3.tscn" id="18_l7r4u"]
+[ext_resource type="PackedScene" uid="uid://b7sjbitad0yp4" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_4.tscn" id="19_ia7sn"]
+[ext_resource type="PackedScene" uid="uid://dut520ctfimjr" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_5.tscn" id="20_qy0fn"]
+[ext_resource type="PackedScene" uid="uid://nnad7rowlqdm" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_6.tscn" id="21_m56wq"]
+[ext_resource type="PackedScene" uid="uid://dntx1g8xvc6l2" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/19/19_19.tscn" id="25_cvtv8"]
+[ext_resource type="PackedScene" uid="uid://der3gfxhtgsun" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_2.tscn" id="25_srpc8"]
+[ext_resource type="PackedScene" uid="uid://c33qvre5ce7yt" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_13.tscn" id="26_e8o6w"]
+[ext_resource type="PackedScene" uid="uid://cxmidcpbxfm77" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_14.tscn" id="27_f1nvi"]
+[ext_resource type="PackedScene" uid="uid://ctifhkkdoju6a" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_3.tscn" id="28_8bafu"]
+[ext_resource type="PackedScene" uid="uid://bbl77weoxp5e5" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_4.tscn" id="29_xjudv"]
+[ext_resource type="PackedScene" uid="uid://c5kghoapd3n6g" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_5.tscn" id="30_qhvis"]
+[ext_resource type="PackedScene" uid="uid://bu7cbeyixej2j" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_6.tscn" id="31_le5au"]
+[ext_resource type="PackedScene" uid="uid://c10m5g8swejfm" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_7.tscn" id="32_udbjn"]
+[ext_resource type="PackedScene" uid="uid://nbi8xv4de776" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_13.tscn" id="38_f5p6u"]
+[ext_resource type="PackedScene" uid="uid://cq65fvxi7v4ru" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_14.tscn" id="39_6d7ik"]
+[ext_resource type="PackedScene" uid="uid://p765fihpqqmt" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_2.tscn" id="39_hv1rx"]
+[ext_resource type="PackedScene" uid="uid://cx71emnk455ga" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_13.tscn" id="50_0uofe"]
+[ext_resource type="PackedScene" uid="uid://b6nfmyj35rpcj" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_14.tscn" id="51_b0o6j"]
+[ext_resource type="PackedScene" uid="uid://dtb63gn6g6bm8" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_13.tscn" id="71_w4l3t"]
+[ext_resource type="PackedScene" uid="uid://j0pmd0mb2vgp" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_14.tscn" id="72_kq4hr"]
+
+[node name="overworld_display" type="Node2D"]
+
+[node name="0" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="0"]
+
+[node name="1" type="Node2D" parent="0"]
+
+[node name="2" type="Node2D" parent="0"]
+
+[node name="3" type="Node2D" parent="0"]
+
+[node name="4" type="Node2D" parent="0"]
+
+[node name="5" type="Node2D" parent="0"]
+
+[node name="6" type="Node2D" parent="0"]
+
+[node name="7" type="Node2D" parent="0"]
+
+[node name="8" type="Node2D" parent="0"]
+
+[node name="9" type="Node2D" parent="0"]
+
+[node name="10" type="Node2D" parent="0"]
+
+[node name="11" type="Node2D" parent="0"]
+
+[node name="12" type="Node2D" parent="0"]
+
+[node name="13" type="Node2D" parent="0"]
+
+[node name="14" type="Node2D" parent="0"]
+
+[node name="15" type="Node2D" parent="0"]
+
+[node name="16" type="Node2D" parent="0"]
+
+[node name="17" type="Node2D" parent="0"]
+
+[node name="18" type="Node2D" parent="0"]
+
+[node name="19" type="Node2D" parent="0"]
+
+[node name="1" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="1"]
+
+[node name="1" type="Node2D" parent="1"]
+
+[node name="2" type="Node2D" parent="1"]
+
+[node name="3" type="Node2D" parent="1"]
+
+[node name="4" type="Node2D" parent="1"]
+
+[node name="5" type="Node2D" parent="1"]
+
+[node name="6" type="Node2D" parent="1"]
+
+[node name="7" type="Node2D" parent="1"]
+
+[node name="8" type="Node2D" parent="1"]
+
+[node name="9" type="Node2D" parent="1"]
+
+[node name="10" type="Node2D" parent="1"]
+
+[node name="11" type="Node2D" parent="1"]
+
+[node name="12" type="Node2D" parent="1"]
+
+[node name="13" type="Node2D" parent="1"]
+
+[node name="14" type="Node2D" parent="1"]
+
+[node name="15" type="Node2D" parent="1"]
+
+[node name="16" type="Node2D" parent="1"]
+
+[node name="17" type="Node2D" parent="1"]
+
+[node name="18" type="Node2D" parent="1"]
+
+[node name="19" type="Node2D" parent="1"]
+
+[node name="2" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="2"]
+
+[node name="1" type="Node2D" parent="2"]
+
+[node name="2" type="Node2D" parent="2"]
+
+[node name="3" type="Node2D" parent="2"]
+
+[node name="4" type="Node2D" parent="2"]
+
+[node name="5" type="Node2D" parent="2"]
+
+[node name="6" type="Node2D" parent="2"]
+
+[node name="7" type="Node2D" parent="2"]
+
+[node name="8" type="Node2D" parent="2"]
+
+[node name="9" type="Node2D" parent="2"]
+
+[node name="10" type="Node2D" parent="2"]
+
+[node name="11" type="Node2D" parent="2"]
+
+[node name="12" type="Node2D" parent="2"]
+
+[node name="13" type="Node2D" parent="2"]
+
+[node name="14" type="Node2D" parent="2"]
+
+[node name="15" type="Node2D" parent="2"]
+
+[node name="16" type="Node2D" parent="2"]
+
+[node name="17" type="Node2D" parent="2"]
+
+[node name="18" type="Node2D" parent="2"]
+
+[node name="19" type="Node2D" parent="2"]
+
+[node name="3" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="3"]
+
+[node name="1" type="Node2D" parent="3"]
+
+[node name="2" type="Node2D" parent="3"]
+
+[node name="3" type="Node2D" parent="3"]
+
+[node name="4" type="Node2D" parent="3"]
+
+[node name="5" type="Node2D" parent="3"]
+
+[node name="6" type="Node2D" parent="3"]
+
+[node name="7" type="Node2D" parent="3"]
+
+[node name="8" type="Node2D" parent="3"]
+
+[node name="9" type="Node2D" parent="3"]
+
+[node name="10" type="Node2D" parent="3"]
+
+[node name="11" type="Node2D" parent="3"]
+
+[node name="12" type="Node2D" parent="3"]
+
+[node name="13" type="Node2D" parent="3"]
+
+[node name="14" type="Node2D" parent="3"]
+
+[node name="15" type="Node2D" parent="3"]
+
+[node name="16" type="Node2D" parent="3"]
+
+[node name="17" type="Node2D" parent="3"]
+
+[node name="18" type="Node2D" parent="3"]
+
+[node name="19" type="Node2D" parent="3"]
+
+[node name="4" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="4"]
+
+[node name="1" type="Node2D" parent="4"]
+
+[node name="2" type="Node2D" parent="4"]
+
+[node name="3" type="Node2D" parent="4"]
+
+[node name="4" type="Node2D" parent="4"]
+
+[node name="5" type="Node2D" parent="4"]
+
+[node name="6" type="Node2D" parent="4"]
+
+[node name="7" type="Node2D" parent="4"]
+
+[node name="8" type="Node2D" parent="4"]
+
+[node name="9" type="Node2D" parent="4"]
+
+[node name="10" type="Node2D" parent="4"]
+
+[node name="11" type="Node2D" parent="4"]
+
+[node name="12" type="Node2D" parent="4"]
+
+[node name="13" type="Node2D" parent="4"]
+
+[node name="14" type="Node2D" parent="4"]
+
+[node name="15" type="Node2D" parent="4"]
+
+[node name="16" type="Node2D" parent="4"]
+
+[node name="17" type="Node2D" parent="4"]
+
+[node name="18" type="Node2D" parent="4"]
+
+[node name="19" type="Node2D" parent="4"]
+
+[node name="5" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="5"]
+
+[node name="1" type="Node2D" parent="5"]
+
+[node name="2" type="Node2D" parent="5"]
+
+[node name="3" type="Node2D" parent="5"]
+
+[node name="4" type="Node2D" parent="5"]
+
+[node name="5" type="Node2D" parent="5"]
+
+[node name="6" type="Node2D" parent="5"]
+
+[node name="7" type="Node2D" parent="5"]
+
+[node name="8" type="Node2D" parent="5"]
+
+[node name="9" type="Node2D" parent="5"]
+
+[node name="10" type="Node2D" parent="5"]
+
+[node name="11" type="Node2D" parent="5"]
+
+[node name="12" type="Node2D" parent="5"]
+
+[node name="13" type="Node2D" parent="5"]
+
+[node name="14" type="Node2D" parent="5"]
+
+[node name="15" type="Node2D" parent="5"]
+
+[node name="16" type="Node2D" parent="5"]
+
+[node name="17" type="Node2D" parent="5"]
+
+[node name="18" type="Node2D" parent="5"]
+
+[node name="19" type="Node2D" parent="5"]
+
+[node name="6" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="6"]
+
+[node name="1" type="Node2D" parent="6"]
+
+[node name="2" type="Node2D" parent="6"]
+
+[node name="3" type="Node2D" parent="6"]
+
+[node name="6_3" parent="6/3" instance=ExtResource("1_dgb82")]
+position = Vector2(1056, 336)
+
+[node name="4" type="Node2D" parent="6"]
+
+[node name="6_4" parent="6/4" instance=ExtResource("2_3aeoy")]
+position = Vector2(1056, 448)
+
+[node name="5" type="Node2D" parent="6"]
+
+[node name="6_5" parent="6/5" instance=ExtResource("3_lnycx")]
+position = Vector2(1056, 560)
+
+[node name="6" type="Node2D" parent="6"]
+
+[node name="6_6" parent="6/6" instance=ExtResource("4_waaf6")]
+position = Vector2(1056, 672)
+
+[node name="7" type="Node2D" parent="6"]
+
+[node name="6_7" parent="6/7" instance=ExtResource("5_pi7n7")]
+position = Vector2(1056, 784)
+
+[node name="8" type="Node2D" parent="6"]
+
+[node name="6_8" parent="6/8" instance=ExtResource("6_d3pou")]
+position = Vector2(1056, 896)
+
+[node name="9" type="Node2D" parent="6"]
+
+[node name="6_9" parent="6/9" instance=ExtResource("1_k0ljc")]
+position = Vector2(1057, 1008)
+
+[node name="10" type="Node2D" parent="6"]
+
+[node name="6_10" parent="6/10" instance=ExtResource("2_gehx5")]
+position = Vector2(1056, 1120)
+
+[node name="11" type="Node2D" parent="6"]
+
+[node name="6_11" parent="6/11" instance=ExtResource("3_dfe87")]
+position = Vector2(1056, 1232)
+
+[node name="12" type="Node2D" parent="6"]
+
+[node name="6_12" parent="6/12" instance=ExtResource("4_qwcif")]
+position = Vector2(1056, 1344)
+
+[node name="13" type="Node2D" parent="6"]
+
+[node name="6_13" parent="6/13" instance=ExtResource("5_kiimo")]
+position = Vector2(1056, 1456)
+
+[node name="14" type="Node2D" parent="6"]
+
+[node name="6_14" parent="6/14" instance=ExtResource("6_qoqqj")]
+position = Vector2(1056, 1568)
+
+[node name="15" type="Node2D" parent="6"]
+
+[node name="16" type="Node2D" parent="6"]
+
+[node name="17" type="Node2D" parent="6"]
+
+[node name="18" type="Node2D" parent="6"]
+
+[node name="19" type="Node2D" parent="6"]
+
+[node name="7" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="7"]
+
+[node name="1" type="Node2D" parent="7"]
+
+[node name="2" type="Node2D" parent="7"]
+
+[node name="3" type="Node2D" parent="7"]
+
+[node name="7_3" parent="7/3" instance=ExtResource("7_u12l4")]
+position = Vector2(1232, 336)
+
+[node name="4" type="Node2D" parent="7"]
+
+[node name="7_4" parent="7/4" instance=ExtResource("8_omk2i")]
+position = Vector2(1232, 448)
+
+[node name="5" type="Node2D" parent="7"]
+
+[node name="7_5" parent="7/5" instance=ExtResource("9_q3tcd")]
+position = Vector2(1232, 560)
+
+[node name="6" type="Node2D" parent="7"]
+
+[node name="7_6" parent="7/6" instance=ExtResource("1_jmldi")]
+position = Vector2(1232, 672)
+
+[node name="7" type="Node2D" parent="7"]
+
+[node name="7_7" parent="7/7" instance=ExtResource("2_em33g")]
+position = Vector2(1232, 784)
+
+[node name="8" type="Node2D" parent="7"]
+
+[node name="7_8" parent="7/8" instance=ExtResource("3_xxv7p")]
+position = Vector2(1232, 896)
+
+[node name="9" type="Node2D" parent="7"]
+
+[node name="7_9" parent="7/9" instance=ExtResource("4_887ao")]
+position = Vector2(1232, 1008)
+
+[node name="10" type="Node2D" parent="7"]
+
+[node name="7_10" parent="7/10" instance=ExtResource("5_jal6u")]
+position = Vector2(1232, 1120)
+
+[node name="11" type="Node2D" parent="7"]
+
+[node name="7_11" parent="7/11" instance=ExtResource("6_d10n1")]
+position = Vector2(1232, 1232)
+
+[node name="12" type="Node2D" parent="7"]
+
+[node name="7_12" parent="7/12" instance=ExtResource("7_14b2v")]
+position = Vector2(1232, 1344)
+
+[node name="13" type="Node2D" parent="7"]
+
+[node name="7_13" parent="7/13" instance=ExtResource("14_28q8l")]
+position = Vector2(1232, 1456)
+
+[node name="14" type="Node2D" parent="7"]
+
+[node name="7_14" parent="7/14" instance=ExtResource("15_tj2fp")]
+position = Vector2(1232, 1568)
+
+[node name="15" type="Node2D" parent="7"]
+
+[node name="16" type="Node2D" parent="7"]
+
+[node name="17" type="Node2D" parent="7"]
+
+[node name="18" type="Node2D" parent="7"]
+
+[node name="19" type="Node2D" parent="7"]
+
+[node name="8" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="8"]
+
+[node name="1" type="Node2D" parent="8"]
+
+[node name="2" type="Node2D" parent="8"]
+
+[node name="8_2" parent="8/2" instance=ExtResource("25_srpc8")]
+position = Vector2(1408, 224)
+
+[node name="3" type="Node2D" parent="8"]
+
+[node name="8_3" parent="8/3" instance=ExtResource("1_a4grs")]
+position = Vector2(1408, 336)
+
+[node name="4" type="Node2D" parent="8"]
+
+[node name="8_4" parent="8/4" instance=ExtResource("2_n3l5b")]
+position = Vector2(1408, 448)
+
+[node name="5" type="Node2D" parent="8"]
+
+[node name="8_5" parent="8/5" instance=ExtResource("3_2v0t6")]
+position = Vector2(1408, 560)
+
+[node name="6" type="Node2D" parent="8"]
+
+[node name="8_6" parent="8/6" instance=ExtResource("4_cl0l7")]
+position = Vector2(1408, 672)
+
+[node name="7" type="Node2D" parent="8"]
+
+[node name="8_7" parent="8/7" instance=ExtResource("1_nuevw")]
+position = Vector2(1408, 784)
+
+[node name="8" type="Node2D" parent="8"]
+
+[node name="8_8" parent="8/8" instance=ExtResource("1_2puen")]
+position = Vector2(1408, 896)
+
+[node name="9" type="Node2D" parent="8"]
+
+[node name="8_9" parent="8/9" instance=ExtResource("2_m4ffm")]
+position = Vector2(1408, 1008)
+
+[node name="10" type="Node2D" parent="8"]
+
+[node name="8_10" parent="8/10" instance=ExtResource("8_xc32p")]
+position = Vector2(1408, 1120)
+
+[node name="11" type="Node2D" parent="8"]
+
+[node name="8_11" parent="8/11" instance=ExtResource("9_qyb4l")]
+position = Vector2(1408, 1232)
+
+[node name="8_12" parent="8/11" instance=ExtResource("9_qyb4l")]
+position = Vector2(1408, 1232)
+
+[node name="12" type="Node2D" parent="8"]
+
+[node name="8_12" parent="8/12" instance=ExtResource("10_t44b3")]
+position = Vector2(1408, 1344)
+
+[node name="13" type="Node2D" parent="8"]
+
+[node name="8_13" parent="8/13" instance=ExtResource("26_e8o6w")]
+position = Vector2(1408, 1456)
+
+[node name="14" type="Node2D" parent="8"]
+
+[node name="8_14" parent="8/14" instance=ExtResource("27_f1nvi")]
+position = Vector2(1408, 1568)
+
+[node name="15" type="Node2D" parent="8"]
+
+[node name="16" type="Node2D" parent="8"]
+
+[node name="17" type="Node2D" parent="8"]
+
+[node name="18" type="Node2D" parent="8"]
+
+[node name="19" type="Node2D" parent="8"]
+
+[node name="9_10" parent="8" instance=ExtResource("2_bd1sq")]
+position = Vector2(1584, 1120)
+
+[node name="9" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="9"]
+
+[node name="1" type="Node2D" parent="9"]
+
+[node name="2" type="Node2D" parent="9"]
+
+[node name="9_2" parent="9/2" instance=ExtResource("39_hv1rx")]
+position = Vector2(1584, 224)
+
+[node name="3" type="Node2D" parent="9"]
+
+[node name="9_3" parent="9/3" instance=ExtResource("4_iwcsc")]
+position = Vector2(1584, 336)
+
+[node name="4" type="Node2D" parent="9"]
+
+[node name="9_4" parent="9/4" instance=ExtResource("5_ku3wx")]
+position = Vector2(1584, 448)
+
+[node name="5" type="Node2D" parent="9"]
+
+[node name="9_5" parent="9/5" instance=ExtResource("6_1jrhm")]
+position = Vector2(1584, 560)
+
+[node name="6" type="Node2D" parent="9"]
+
+[node name="9_6" parent="9/6" instance=ExtResource("4_kxcif")]
+position = Vector2(1584, 672)
+
+[node name="7" type="Node2D" parent="9"]
+
+[node name="9_7" parent="9/7" instance=ExtResource("5_hn6yu")]
+position = Vector2(1584, 784)
+
+[node name="8" type="Node2D" parent="9"]
+
+[node name="9_8" parent="9/8" instance=ExtResource("1_xtje5")]
+position = Vector2(1584, 896)
+
+[node name="9" type="Node2D" parent="9"]
+
+[node name="9_9" parent="9/9" instance=ExtResource("1_rlbor")]
+position = Vector2(1584, 1008)
+
+[node name="10" type="Node2D" parent="9"]
+
+[node name="9_10" parent="9/10" instance=ExtResource("2_bd1sq")]
+position = Vector2(1584, 1120)
+
+[node name="11" type="Node2D" parent="9"]
+
+[node name="9_11" parent="9/11" instance=ExtResource("3_d77yf")]
+position = Vector2(1584, 1232)
+
+[node name="12" type="Node2D" parent="9"]
+
+[node name="9_12" parent="9/12" instance=ExtResource("5_n6qim")]
+position = Vector2(1584, 1344)
+
+[node name="13" type="Node2D" parent="9"]
+
+[node name="9_13" parent="9/13" instance=ExtResource("38_f5p6u")]
+position = Vector2(1584, 1456)
+
+[node name="14" type="Node2D" parent="9"]
+
+[node name="9_14" parent="9/14" instance=ExtResource("39_6d7ik")]
+position = Vector2(1584, 1568)
+
+[node name="15" type="Node2D" parent="9"]
+
+[node name="16" type="Node2D" parent="9"]
+
+[node name="17" type="Node2D" parent="9"]
+
+[node name="18" type="Node2D" parent="9"]
+
+[node name="19" type="Node2D" parent="9"]
+
+[node name="10" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="10"]
+
+[node name="1" type="Node2D" parent="10"]
+
+[node name="2" type="Node2D" parent="10"]
+
+[node name="3" type="Node2D" parent="10"]
+
+[node name="10_3" parent="10/3" instance=ExtResource("18_l7r4u")]
+position = Vector2(1760, 336)
+
+[node name="4" type="Node2D" parent="10"]
+
+[node name="10_4" parent="10/4" instance=ExtResource("19_ia7sn")]
+position = Vector2(1760, 448)
+
+[node name="5" type="Node2D" parent="10"]
+
+[node name="10_5" parent="10/5" instance=ExtResource("20_qy0fn")]
+position = Vector2(1760, 560)
+
+[node name="6" type="Node2D" parent="10"]
+
+[node name="10_6" parent="10/6" instance=ExtResource("21_m56wq")]
+position = Vector2(1760, 672)
+
+[node name="7" type="Node2D" parent="10"]
+
+[node name="10_7" parent="10/7" instance=ExtResource("4_sdn4w")]
+position = Vector2(1760, 784)
+
+[node name="8" type="Node2D" parent="10"]
+
+[node name="10_8" parent="10/8" instance=ExtResource("4_0pqyj")]
+position = Vector2(1760, 896)
+
+[node name="9" type="Node2D" parent="10"]
+
+[node name="10_9" parent="10/9" instance=ExtResource("1_qa3iw")]
+position = Vector2(1760, 1008)
+
+[node name="10" type="Node2D" parent="10"]
+
+[node name="10_10" parent="10/10" instance=ExtResource("2_ysdok")]
+position = Vector2(1760, 1120)
+
+[node name="11" type="Node2D" parent="10"]
+
+[node name="10_11" parent="10/11" instance=ExtResource("5_siovw")]
+position = Vector2(1760, 1232)
+
+[node name="12" type="Node2D" parent="10"]
+
+[node name="10_12" parent="10/12" instance=ExtResource("11_b6lob")]
+position = Vector2(1760, 1344)
+
+[node name="13" type="Node2D" parent="10"]
+
+[node name="10_13" parent="10/13" instance=ExtResource("50_0uofe")]
+position = Vector2(1760, 1456)
+
+[node name="14" type="Node2D" parent="10"]
+
+[node name="10_14" parent="10/14" instance=ExtResource("51_b0o6j")]
+position = Vector2(1760, 1568)
+
+[node name="15" type="Node2D" parent="10"]
+
+[node name="16" type="Node2D" parent="10"]
+
+[node name="17" type="Node2D" parent="10"]
+
+[node name="18" type="Node2D" parent="10"]
+
+[node name="19" type="Node2D" parent="10"]
+
+[node name="11" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="11"]
+
+[node name="1" type="Node2D" parent="11"]
+
+[node name="2" type="Node2D" parent="11"]
+
+[node name="3" type="Node2D" parent="11"]
+
+[node name="11_3" parent="11/3" instance=ExtResource("28_8bafu")]
+position = Vector2(1936, 336)
+
+[node name="4" type="Node2D" parent="11"]
+
+[node name="11_4" parent="11/4" instance=ExtResource("29_xjudv")]
+position = Vector2(1936, 448)
+
+[node name="5" type="Node2D" parent="11"]
+
+[node name="11_5" parent="11/5" instance=ExtResource("30_qhvis")]
+position = Vector2(1936, 560)
+
+[node name="6" type="Node2D" parent="11"]
+
+[node name="11_6" parent="11/6" instance=ExtResource("31_le5au")]
+position = Vector2(1936, 672)
+
+[node name="7" type="Node2D" parent="11"]
+
+[node name="11_7" parent="11/7" instance=ExtResource("32_udbjn")]
+position = Vector2(1936, 784)
+
+[node name="8" type="Node2D" parent="11"]
+
+[node name="11_8" parent="11/8" instance=ExtResource("6_wg2co")]
+position = Vector2(1936, 896)
+
+[node name="9" type="Node2D" parent="11"]
+
+[node name="11_9" parent="11/9" instance=ExtResource("6_8hclg")]
+position = Vector2(1936, 1008)
+
+[node name="10" type="Node2D" parent="11"]
+
+[node name="11_10" parent="11/10" instance=ExtResource("6_3f3r6")]
+position = Vector2(1936, 1120)
+
+[node name="11" type="Node2D" parent="11"]
+
+[node name="11_11" parent="11/11" instance=ExtResource("6_0fe7x")]
+position = Vector2(1936, 1232)
+
+[node name="12" type="Node2D" parent="11"]
+
+[node name="11_12" parent="11/12" instance=ExtResource("16_7rty1")]
+position = Vector2(1936, 1344)
+
+[node name="13" type="Node2D" parent="11"]
+
+[node name="11_13" parent="11/13" instance=ExtResource("71_w4l3t")]
+position = Vector2(1936, 1456)
+
+[node name="14" type="Node2D" parent="11"]
+
+[node name="11_14" parent="11/14" instance=ExtResource("72_kq4hr")]
+position = Vector2(1936, 1568)
+
+[node name="15" type="Node2D" parent="11"]
+
+[node name="16" type="Node2D" parent="11"]
+
+[node name="17" type="Node2D" parent="11"]
+
+[node name="18" type="Node2D" parent="11"]
+
+[node name="19" type="Node2D" parent="11"]
+
+[node name="12" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="12"]
+
+[node name="1" type="Node2D" parent="12"]
+
+[node name="2" type="Node2D" parent="12"]
+
+[node name="3" type="Node2D" parent="12"]
+
+[node name="4" type="Node2D" parent="12"]
+
+[node name="5" type="Node2D" parent="12"]
+
+[node name="6" type="Node2D" parent="12"]
+
+[node name="7" type="Node2D" parent="12"]
+
+[node name="8" type="Node2D" parent="12"]
+
+[node name="9" type="Node2D" parent="12"]
+
+[node name="10" type="Node2D" parent="12"]
+
+[node name="11" type="Node2D" parent="12"]
+
+[node name="12" type="Node2D" parent="12"]
+
+[node name="13" type="Node2D" parent="12"]
+
+[node name="14" type="Node2D" parent="12"]
+
+[node name="15" type="Node2D" parent="12"]
+
+[node name="16" type="Node2D" parent="12"]
+
+[node name="17" type="Node2D" parent="12"]
+
+[node name="18" type="Node2D" parent="12"]
+
+[node name="19" type="Node2D" parent="12"]
+
+[node name="13" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="13"]
+
+[node name="1" type="Node2D" parent="13"]
+
+[node name="2" type="Node2D" parent="13"]
+
+[node name="3" type="Node2D" parent="13"]
+
+[node name="4" type="Node2D" parent="13"]
+
+[node name="5" type="Node2D" parent="13"]
+
+[node name="6" type="Node2D" parent="13"]
+
+[node name="7" type="Node2D" parent="13"]
+
+[node name="8" type="Node2D" parent="13"]
+
+[node name="9" type="Node2D" parent="13"]
+
+[node name="10" type="Node2D" parent="13"]
+
+[node name="11" type="Node2D" parent="13"]
+
+[node name="12" type="Node2D" parent="13"]
+
+[node name="13" type="Node2D" parent="13"]
+
+[node name="14" type="Node2D" parent="13"]
+
+[node name="15" type="Node2D" parent="13"]
+
+[node name="16" type="Node2D" parent="13"]
+
+[node name="17" type="Node2D" parent="13"]
+
+[node name="18" type="Node2D" parent="13"]
+
+[node name="19" type="Node2D" parent="13"]
+
+[node name="14" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="14"]
+
+[node name="1" type="Node2D" parent="14"]
+
+[node name="2" type="Node2D" parent="14"]
+
+[node name="3" type="Node2D" parent="14"]
+
+[node name="4" type="Node2D" parent="14"]
+
+[node name="5" type="Node2D" parent="14"]
+
+[node name="6" type="Node2D" parent="14"]
+
+[node name="7" type="Node2D" parent="14"]
+
+[node name="8" type="Node2D" parent="14"]
+
+[node name="9" type="Node2D" parent="14"]
+
+[node name="10" type="Node2D" parent="14"]
+
+[node name="11" type="Node2D" parent="14"]
+
+[node name="12" type="Node2D" parent="14"]
+
+[node name="13" type="Node2D" parent="14"]
+
+[node name="14" type="Node2D" parent="14"]
+
+[node name="15" type="Node2D" parent="14"]
+
+[node name="16" type="Node2D" parent="14"]
+
+[node name="17" type="Node2D" parent="14"]
+
+[node name="18" type="Node2D" parent="14"]
+
+[node name="19" type="Node2D" parent="14"]
+
+[node name="15" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="15"]
+
+[node name="1" type="Node2D" parent="15"]
+
+[node name="2" type="Node2D" parent="15"]
+
+[node name="3" type="Node2D" parent="15"]
+
+[node name="4" type="Node2D" parent="15"]
+
+[node name="5" type="Node2D" parent="15"]
+
+[node name="6" type="Node2D" parent="15"]
+
+[node name="7" type="Node2D" parent="15"]
+
+[node name="8" type="Node2D" parent="15"]
+
+[node name="9" type="Node2D" parent="15"]
+
+[node name="10" type="Node2D" parent="15"]
+
+[node name="11" type="Node2D" parent="15"]
+
+[node name="12" type="Node2D" parent="15"]
+
+[node name="13" type="Node2D" parent="15"]
+
+[node name="14" type="Node2D" parent="15"]
+
+[node name="15" type="Node2D" parent="15"]
+
+[node name="16" type="Node2D" parent="15"]
+
+[node name="17" type="Node2D" parent="15"]
+
+[node name="18" type="Node2D" parent="15"]
+
+[node name="19" type="Node2D" parent="15"]
+
+[node name="16" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="16"]
+
+[node name="1" type="Node2D" parent="16"]
+
+[node name="2" type="Node2D" parent="16"]
+
+[node name="3" type="Node2D" parent="16"]
+
+[node name="4" type="Node2D" parent="16"]
+
+[node name="5" type="Node2D" parent="16"]
+
+[node name="6" type="Node2D" parent="16"]
+
+[node name="7" type="Node2D" parent="16"]
+
+[node name="8" type="Node2D" parent="16"]
+
+[node name="9" type="Node2D" parent="16"]
+
+[node name="10" type="Node2D" parent="16"]
+
+[node name="11" type="Node2D" parent="16"]
+
+[node name="12" type="Node2D" parent="16"]
+
+[node name="13" type="Node2D" parent="16"]
+
+[node name="14" type="Node2D" parent="16"]
+
+[node name="15" type="Node2D" parent="16"]
+
+[node name="16" type="Node2D" parent="16"]
+
+[node name="17" type="Node2D" parent="16"]
+
+[node name="18" type="Node2D" parent="16"]
+
+[node name="19" type="Node2D" parent="16"]
+
+[node name="17" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="17"]
+
+[node name="1" type="Node2D" parent="17"]
+
+[node name="2" type="Node2D" parent="17"]
+
+[node name="3" type="Node2D" parent="17"]
+
+[node name="4" type="Node2D" parent="17"]
+
+[node name="5" type="Node2D" parent="17"]
+
+[node name="6" type="Node2D" parent="17"]
+
+[node name="7" type="Node2D" parent="17"]
+
+[node name="8" type="Node2D" parent="17"]
+
+[node name="9" type="Node2D" parent="17"]
+
+[node name="10" type="Node2D" parent="17"]
+
+[node name="11" type="Node2D" parent="17"]
+
+[node name="12" type="Node2D" parent="17"]
+
+[node name="13" type="Node2D" parent="17"]
+
+[node name="14" type="Node2D" parent="17"]
+
+[node name="15" type="Node2D" parent="17"]
+
+[node name="16" type="Node2D" parent="17"]
+
+[node name="17" type="Node2D" parent="17"]
+
+[node name="18" type="Node2D" parent="17"]
+
+[node name="19" type="Node2D" parent="17"]
+
+[node name="18" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="18"]
+
+[node name="1" type="Node2D" parent="18"]
+
+[node name="2" type="Node2D" parent="18"]
+
+[node name="3" type="Node2D" parent="18"]
+
+[node name="4" type="Node2D" parent="18"]
+
+[node name="5" type="Node2D" parent="18"]
+
+[node name="6" type="Node2D" parent="18"]
+
+[node name="7" type="Node2D" parent="18"]
+
+[node name="8" type="Node2D" parent="18"]
+
+[node name="9" type="Node2D" parent="18"]
+
+[node name="10" type="Node2D" parent="18"]
+
+[node name="11" type="Node2D" parent="18"]
+
+[node name="12" type="Node2D" parent="18"]
+
+[node name="13" type="Node2D" parent="18"]
+
+[node name="14" type="Node2D" parent="18"]
+
+[node name="15" type="Node2D" parent="18"]
+
+[node name="16" type="Node2D" parent="18"]
+
+[node name="17" type="Node2D" parent="18"]
+
+[node name="18" type="Node2D" parent="18"]
+
+[node name="19" type="Node2D" parent="18"]
+
+[node name="19" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="19"]
+
+[node name="1" type="Node2D" parent="19"]
+
+[node name="2" type="Node2D" parent="19"]
+
+[node name="3" type="Node2D" parent="19"]
+
+[node name="4" type="Node2D" parent="19"]
+
+[node name="5" type="Node2D" parent="19"]
+
+[node name="6" type="Node2D" parent="19"]
+
+[node name="7" type="Node2D" parent="19"]
+
+[node name="8" type="Node2D" parent="19"]
+
+[node name="9" type="Node2D" parent="19"]
+
+[node name="10" type="Node2D" parent="19"]
+
+[node name="11" type="Node2D" parent="19"]
+
+[node name="12" type="Node2D" parent="19"]
+
+[node name="13" type="Node2D" parent="19"]
+
+[node name="14" type="Node2D" parent="19"]
+
+[node name="15" type="Node2D" parent="19"]
+
+[node name="16" type="Node2D" parent="19"]
+
+[node name="17" type="Node2D" parent="19"]
+
+[node name="18" type="Node2D" parent="19"]
+
+[node name="19" type="Node2D" parent="19"]
+
+[node name="19_19" parent="19/19" instance=ExtResource("25_cvtv8")]
+position = Vector2(3344, 2128)

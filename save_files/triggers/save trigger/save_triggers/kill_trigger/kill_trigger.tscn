@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvaob6gosma0q"]
+
+[ext_resource type="Script" path="res://save_files/triggers/save trigger/save_triggers/kill_trigger/kill_trigger.gd" id="1_oe6jn"]
+
+[node name="kill_trigger" type="Node2D"]
+script = ExtResource("1_oe6jn")

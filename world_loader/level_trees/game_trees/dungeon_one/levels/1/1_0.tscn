@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://skoa8c3gpll1"]
+
+[ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://raw_assets/tiles/green_dungeon.tres" id="1_sm8pn"]
+[ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="2_odryv"]
+[ext_resource type="PackedScene" uid="uid://mdwtmm3pvout" path="res://world_loader/level_trees/structure/world_autoload/switch_trigger.tscn" id="3_c7jhb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5kmb"]
+size = Vector2(46, 4)
+
+[node name="1_0" type="Node2D"]
+
+[node name="green_dungeon" type="TileMap" parent="."]
+tile_set = ExtResource("1_sm8pn")
+format = 2
+layer_0/tile_data = PackedInt32Array(524290, 1, 1, 458754, 65537, 1, 393218, 1, 1, 327682, 1, 1, 262146, 131073, 0, 196616, 1, 0, 262152, 131073, 0, 327688, 1, 1, 393224, 1, 1, 458760, 65537, 1, 524296, 1, 1, 262147, 1, 1, 327683, 1, 1, 393219, 1, 1, 458755, 1, 1, 524291, 1, 1, 196612, 1, 0, 262148, 1, 1, 327684, 1, 1, 393220, 1, 1, 458756, 1, 1, 524292, 1, 1, 196613, 1, 0, 262149, 1, 1, 327685, 1, 1, 393221, 1, 1, 458757, 1, 1, 524293, 1, 1, 196614, 1, 0, 262150, 1, 1, 327686, 1, 1, 393222, 1, 1, 458758, 1, 1, 524294, 1, 1, 196615, 1, 0, 262151, 1, 1, 327687, 1, 1, 393223, 1, 1, 458759, 1, 1, 524295, 1, 1, 262145, 1, 1, 327681, 1, 1, 393217, 1, 1, 458753, 1, 1, 524289, 65537, 1, 524297, 65537, 1, 458761, 1, 1, 393225, 1, 1, 327689, 1, 1, 262153, 1, 1, 196617, 1, 0, 262144, 1, 1610612736, 327680, 1, 1610612736, 393216, 1, 1610612736, 458752, 1, 1610612736, 524288, 1, 1610612736, 524298, 1, 1879048192, 458762, 1, 1879048192, 393226, 1, 1879048192, 327690, 1, 1879048192, 262154, 1, 1879048192, 196618, 65537, 268435456, 589824, 65537, 1610612736, 589825, 1, 536870912, 589826, 1, 536870912, 589827, 1, 536870912, 589828, 1, 1, 589829, 1, 1, 589830, 1, 1, 589831, 1, 536870912, 589832, 1, 536870912, 589833, 1, 536870912, 589834, 65537, 805306368, 196608, 65537, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0)
+
+[node name="load_info" parent="." instance=ExtResource("2_odryv")]
+
+[node name="0" parent="load_info/spawn_points" index="0"]
+position = Vector2(88, 138)
+
+[node name="switch_trigger" parent="." instance=ExtResource("3_c7jhb")]
+position = Vector2(88, 154)
+new_tree = "res://world_loader/level_trees/game_trees/overworld_tree/overworld_tree.tscn"
+init_pos = Vector2(9, 10)
+psi = 0
+
+[node name="switch_area" type="Area2D" parent="switch_trigger"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="switch_shape" type="CollisionShape2D" parent="switch_trigger/switch_area"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_s5kmb")
+
+[connection signal="area_entered" from="switch_trigger/switch_area" to="switch_trigger" method="_on_switch_area_area_entered"]
+
+[editable path="load_info"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccdidxiil10lf"]
+
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="1_slg5i"]
+
+[sub_resource type="FontVariation" id="FontVariation_bk07h"]
+base_font = ExtResource("1_slg5i")
+
+[node name="fail_level" type="Node2D"]
+
+[node name="whoops" type="Label" parent="."]
+offset_top = 65.0
+offset_right = 176.0
+offset_bottom = 114.0
+theme_override_fonts/font = SubResource("FontVariation_bk07h")
+theme_override_font_sizes/font_size = 10
+text = "whoops. :("
+horizontal_alignment = 1
+vertical_alignment = 1

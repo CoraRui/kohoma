@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://bymqb0demnt7k"]
+
+[ext_resource type="Script" path="res://world_loader/interactables/dungeons/interactables/push_blocks/push_block.gd" id="1_f35ve"]
+[ext_resource type="Texture2D" uid="uid://cx0ig68a6q4yn" path="res://raw_assets/sprites/interactables/green_block.png" id="2_lterv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fjlg"]
+size = Vector2(16, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3jo8"]
+size = Vector2(16, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3ids"]
+size = Vector2(6, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ux6iw"]
+size = Vector2(10, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7vvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lterv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kep6"]
+size = Vector2(16, 16)
+
+[node name="push_block" type="Node2D" node_paths=PackedStringArray("push_timer")]
+script = ExtResource("1_f35ve")
+push_dir = 3
+push_timer = NodePath("push_timer")
+
+[node name="up_area" type="Area2D" parent="."]
+visible = false
+position = Vector2(7, 0)
+collision_layer = 0
+collision_mask = 16
+
+[node name="up_shape" type="CollisionShape2D" parent="up_area"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_1fjlg")
+
+[node name="down_area" type="Area2D" parent="."]
+visible = false
+position = Vector2(9, 16)
+collision_layer = 0
+collision_mask = 16
+
+[node name="down_shape" type="CollisionShape2D" parent="down_area"]
+position = Vector2(-1, -2.5)
+shape = SubResource("RectangleShape2D_o3jo8")
+
+[node name="left_area" type="Area2D" parent="."]
+visible = false
+position = Vector2(0, 7)
+collision_layer = 0
+collision_mask = 16
+
+[node name="left_shape" type="CollisionShape2D" parent="left_area"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_n3ids")
+
+[node name="right_area" type="Area2D" parent="."]
+visible = false
+position = Vector2(16, 8)
+collision_layer = 0
+collision_mask = 16
+
+[node name="right_shape" type="CollisionShape2D" parent="right_area"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_ux6iw")
+
+[node name="push_block_anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_y7vvg")
+
+[node name="push_timer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="static_body" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 0
+
+[node name="wall_shape" type="CollisionShape2D" parent="static_body"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_5kep6")
+
+[connection signal="area_entered" from="up_area" to="." method="_on_up_area_area_entered"]
+[connection signal="area_exited" from="up_area" to="." method="_on_up_area_area_exited"]
+[connection signal="area_entered" from="down_area" to="." method="_on_down_area_area_entered"]
+[connection signal="area_exited" from="down_area" to="." method="_on_down_area_area_exited"]
+[connection signal="area_entered" from="left_area" to="." method="_on_left_area_area_entered"]
+[connection signal="area_exited" from="left_area" to="." method="_on_left_area_area_exited"]
+[connection signal="area_entered" from="right_area" to="." method="_on_right_area_area_entered"]
+[connection signal="area_exited" from="right_area" to="." method="_on_right_area_area_exited"]
+[connection signal="timeout" from="push_timer" to="." method="_on_push_timer_timeout"]

@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch8oy2bt8jwif"]
+
+[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_t0yat"]
+[ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://world_loader/enemies/enemy_spawner/random/enemy_spawner.tscn" id="2_pku4g"]
+[ext_resource type="PackedScene" uid="uid://tnmauhs4oxc6" path="res://world_loader/enemies/octo/octo.tscn" id="3_y042v"]
+[ext_resource type="Script" path="res://world_loader/enemies/enemy_spawner/resources/enemy_slot.gd" id="4_oho1k"]
+
+[sub_resource type="Resource" id="Resource_bc18k"]
+script = ExtResource("4_oho1k")
+spawn_chance = 25
+enemy_ref = ExtResource("3_y042v")
+
+[node name="9_4" type="Node2D"]
+
+[node name="ground" type="TileMap" parent="."]
+tile_set = ExtResource("1_t0yat")
+format = 2
+layer_0/tile_data = PackedInt32Array(196608, 1, 1, 262144, 1, 1, 327680, 131073, 1, 393216, 131073, 1, 458752, 131073, 1, 524288, 1, 1, 589824, 1, 1, 196609, 1, 1, 262145, 1, 1, 327681, 1, 1, 393217, 1, 1, 458753, 1, 1, 524289, 1, 1, 196610, 1, 1, 262146, 131073, 1, 327682, 131073, 2, 393218, 131073, 1, 458754, 65537, 805306374, 524290, 1, 1610612742, 196611, 1, 1, 262147, 131073, 1, 327683, 131073, 1, 393219, 131073, 1, 458755, 1, 6, 524291, 131073, 1, 589827, 1, 1, 196612, 1, 1, 262148, 131073, 1, 327684, 131073, 1, 393220, 131073, 2, 458756, 1, 6, 524292, 131073, 1, 589828, 1, 1, 196613, 1, 1, 262149, 131073, 1, 327685, 65537, 1879048198, 393221, 1, 1610612742, 458757, 65537, 6, 524293, 131073, 1, 589829, 1, 1, 196614, 1, 1, 262150, 131073, 7, 327686, 1, 6, 393222, 131073, 7, 458758, 131073, 7, 524294, 131073, 7, 589830, 1, 1, 196615, 131073, 6, 262151, 131073, 0, 327687, 65537, 7, 393223, 131073, 0, 458759, 131073, 0, 524295, 131073, 0, 589831, 1, 1, 196616, 1, 1, 262152, 131073, 268435463, 327688, 1, 6, 393224, 131073, 268435463, 458760, 262145, 1342177286, 524296, 131073, 0, 589832, 1, 1, 196617, 1, 1, 262153, 131073, 1, 327689, 131073, 1, 393225, 131073, 1, 458761, 131073, 1342177287, 524297, 131073, 0, 589833, 131073, 6, 196618, 1, 1, 393226, 1, 1, 458762, 1, 1, 524298, 1, 1, 589834, 1, 1, 589825, 131073, 1, 589826, 1, 1610612742, 262154, 131073, 1, 327690, 131073, 1)
+
+[node name="trees" type="TileMap" parent="."]
+tile_set = ExtResource("1_t0yat")
+format = 2
+layer_0/tile_data = PackedInt32Array(262147, 131073, 3, 327683, 131073, 4, 393222, 131073, 3, 458758, 131073, 4, 327688, 131073, 3, 393224, 131073, 4)
+
+[node name="chest" type="ColorRect" parent="."]
+offset_left = 3.0
+offset_top = 81.0
+offset_right = 15.0
+offset_bottom = 92.0
+
+[node name="enemy_spawner" parent="." instance=ExtResource("2_pku4g")]
+enemy_arr = Array[ExtResource("4_oho1k")]([SubResource("Resource_bc18k")])
+
+[node name="0" parent="enemy_spawner/spawn_points" index="0"]
+position = Vector2(70, 134)
+
+[node name="1" parent="enemy_spawner/spawn_points" index="1"]
+position = Vector2(104, 135)
+
+[node name="2" parent="enemy_spawner/spawn_points" index="2"]
+position = Vector2(151, 135)
+
+[node name="3" parent="enemy_spawner/spawn_points" index="3"]
+position = Vector2(88, 89)
+
+[node name="4" parent="enemy_spawner/spawn_points" index="4"]
+position = Vector2(124, 88)
+
+[node name="5" parent="enemy_spawner/spawn_points" index="5"]
+position = Vector2(70, 70)
+
+[node name="6" parent="enemy_spawner/spawn_points" index="6"]
+position = Vector2(42, 106)
+
+[editable path="enemy_spawner"]

@@ -1,0 +1,132 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpbmw8nj8er77"]
+
+[ext_resource type="Script" path="res://ui/simple_select.gd" id="1_nu4hw"]
+[ext_resource type="Script" path="res://ui/simple_select/nodes/group.gd" id="2_45qck"]
+[ext_resource type="Script" path="res://ui/simple_select/nodes/option.gd" id="3_tn3cn"]
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="4_tycxi"]
+
+[sub_resource type="FontVariation" id="FontVariation_pvnbp"]
+base_font = ExtResource("4_tycxi")
+
+[node name="simple_select" type="Node2D" node_paths=PackedStringArray("active_option", "active_group", "icon")]
+script = ExtResource("1_nu4hw")
+active_option = NodePath("group1/option1")
+active_group = NodePath("group1")
+icon = NodePath("icon")
+
+[node name="group1" type="Node2D" parent="." node_paths=PackedStringArray("options")]
+script = ExtResource("2_45qck")
+options = [NodePath("option1"), NodePath("option2"), NodePath("option3")]
+
+[node name="option1" type="Node2D" parent="group1" node_paths=PackedStringArray("icon_point", "target_group", "up_option", "down_option")]
+position = Vector2(32, 16)
+script = ExtResource("3_tn3cn")
+icon_point = NodePath("icon_point")
+target_group = NodePath("../../group2")
+up_option = NodePath("../option3")
+down_option = NodePath("../option2")
+
+[node name="option_text" type="Label" parent="group1/option1"]
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+theme_override_font_sizes/font_size = 5
+text = "option 1
+"
+
+[node name="icon_point" type="Node2D" parent="group1/option1"]
+position = Vector2(-4, 2)
+
+[node name="option2" type="Node2D" parent="group1" node_paths=PackedStringArray("icon_point", "up_option", "down_option")]
+position = Vector2(32, 25)
+script = ExtResource("3_tn3cn")
+icon_point = NodePath("icon_point")
+up_option = NodePath("../option1")
+down_option = NodePath("../option3")
+
+[node name="option_text" type="Label" parent="group1/option2"]
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+theme_override_font_sizes/font_size = 5
+text = "option 2"
+
+[node name="icon_point" type="Node2D" parent="group1/option2"]
+position = Vector2(-4, 2)
+
+[node name="option3" type="Node2D" parent="group1" node_paths=PackedStringArray("icon_point", "up_option", "down_option")]
+position = Vector2(32, 34)
+script = ExtResource("3_tn3cn")
+icon_point = NodePath("icon_point")
+up_option = NodePath("../option2")
+down_option = NodePath("../option1")
+
+[node name="option_text" type="Label" parent="group1/option3"]
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+theme_override_font_sizes/font_size = 5
+text = "option 3
+"
+
+[node name="icon_point" type="Node2D" parent="group1/option3"]
+position = Vector2(-4, 2)
+
+[node name="group2" type="Node2D" parent="." node_paths=PackedStringArray("options")]
+script = ExtResource("2_45qck")
+options = [NodePath("option1"), NodePath("option2"), NodePath("option3")]
+
+[node name="option1" type="Node2D" parent="group2" node_paths=PackedStringArray("icon_point")]
+position = Vector2(71, 16)
+script = ExtResource("3_tn3cn")
+icon_point = NodePath("icon_point")
+
+[node name="option_text" type="Label" parent="group2/option1"]
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+theme_override_font_sizes/font_size = 5
+text = "option 1
+"
+
+[node name="icon_point" type="Node2D" parent="group2/option1"]
+position = Vector2(-4, 2)
+
+[node name="option2" type="Node2D" parent="group2" node_paths=PackedStringArray("icon_point")]
+position = Vector2(71, 25)
+script = ExtResource("3_tn3cn")
+icon_point = NodePath("icon_point")
+
+[node name="option_text" type="Label" parent="group2/option2"]
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+theme_override_font_sizes/font_size = 5
+text = "option 2"
+
+[node name="icon_point" type="Node2D" parent="group2/option2"]
+position = Vector2(-4, 2)
+
+[node name="option3" type="Node2D" parent="group2" node_paths=PackedStringArray("icon_point", "target_group")]
+position = Vector2(71, 34)
+script = ExtResource("3_tn3cn")
+icon_point = NodePath("icon_point")
+target_group = NodePath("../../group1")
+
+[node name="option_text" type="Label" parent="group2/option3"]
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+theme_override_font_sizes/font_size = 5
+text = "option 3
+"
+
+[node name="icon_point" type="Node2D" parent="group2/option3"]
+position = Vector2(-4, 2)
+
+[node name="icon" type="Node2D" parent="."]
+
+[node name="icon_rect" type="ColorRect" parent="icon"]
+offset_right = 2.0
+offset_bottom = 2.0
+color = Color(0.623529, 0.00392157, 0, 1)

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="dialogue" load_steps=2 format=3 uid="uid://cpge5gvi5xxh6"]
+
+[ext_resource type="Script" path="res://ui/dialogue_loader/resources/dialogue.gd" id="1_rht0p"]
+
+[resource]
+script = ExtResource("1_rht0p")
+line = Array[String]([])

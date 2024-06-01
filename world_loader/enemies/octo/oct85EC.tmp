@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://tnmauhs4oxc6"]
+
+[ext_resource type="Texture2D" uid="uid://bi2rykms2mkxf" path="res://raw_assets/octo.png" id="1_0hjc0"]
+[ext_resource type="Script" path="res://world_loader/enemies/enemy_health.gd" id="2_kkp7y"]
+[ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://world_loader/enemies/spike.tscn" id="3_6r727"]
+[ext_resource type="Script" path="res://world_loader/enemies/octo/octo_movement.gd" id="4_u40ge"]
+[ext_resource type="Script" path="res://world_loader/enemies/octo/shoot.gd" id="5_dxph6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg3l8"]
+size = Vector2(14, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_17rsw"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0hjc0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30gsp"]
+size = Vector2(14, 3)
+
+[node name="octo" type="Node2D"]
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="octo_hitbox" type="CollisionShape2D" parent="hitbox"]
+visible = false
+shape = SubResource("RectangleShape2D_yg3l8")
+
+[node name="octo_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_17rsw")
+animation = &"walk"
+
+[node name="health" type="Node2D" parent="." node_paths=PackedStringArray("die_node")]
+script = ExtResource("2_kkp7y")
+die_node = NodePath("..")
+
+[node name="spike" parent="." instance=ExtResource("3_6r727")]
+
+[node name="movement" type="Node2D" parent="." node_paths=PackedStringArray("enemy_node", "wall_area", "area_pos")]
+script = ExtResource("4_u40ge")
+enemy_node = NodePath("..")
+vel = 1
+wall_area = NodePath("../wall_area")
+area_pos = [NodePath("../wall_points/0"), NodePath("../wall_points/1"), NodePath("../wall_points/2"), NodePath("../wall_points/3")]
+
+[node name="shoot" type="Node2D" parent="."]
+script = ExtResource("5_dxph6")
+
+[node name="wall_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 42
+
+[node name="wall_shape" type="CollisionShape2D" parent="wall_area"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_30gsp")
+
+[node name="wall_points" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="wall_points"]
+position = Vector2(0, -8)
+
+[node name="1" type="Node2D" parent="wall_points"]
+position = Vector2(0, 8)
+
+[node name="2" type="Node2D" parent="wall_points"]
+position = Vector2(-8, 0)
+
+[node name="3" type="Node2D" parent="wall_points"]
+position = Vector2(8, 0)

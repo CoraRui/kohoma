@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://cd0kboit33jn3"]
+
+[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_y6wjg"]
+[ext_resource type="PackedScene" uid="uid://mdwtmm3pvout" path="res://world_loader/level_trees/structure/world_autoload/switch_trigger.tscn" id="2_f0i5s"]
+[ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="3_v52fr"]
+[ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://world_loader/enemies/enemy_spawner/random/enemy_spawner.tscn" id="4_j021t"]
+[ext_resource type="PackedScene" uid="uid://tnmauhs4oxc6" path="res://world_loader/enemies/octo/octo.tscn" id="5_gf061"]
+[ext_resource type="Script" path="res://world_loader/enemies/enemy_spawner/resources/enemy_slot.gd" id="6_amn8a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6cty"]
+size = Vector2(16, 5)
+
+[sub_resource type="Resource" id="Resource_653rl"]
+script = ExtResource("6_amn8a")
+spawn_chance = 25
+enemy_ref = ExtResource("5_gf061")
+
+[node name="9_5" type="Node2D"]
+
+[node name="ground" type="TileMap" parent="."]
+tile_set = ExtResource("1_y6wjg")
+format = 2
+layer_0/tile_data = PackedInt32Array(589824, 1, 1, 589825, 1, 1, 589826, 131073, 6, 196611, 1, 1, 262147, 131073, 1, 327683, 131073, 1, 393219, 131073, 1, 458755, 131073, 1342177287, 524291, 131073, 0, 589827, 1, 1, 196612, 1, 1, 262148, 131073, 1, 327684, 131073, 1, 393220, 131073, 1, 458756, 131073, 1342177287, 524292, 131073, 0, 589828, 1, 1, 196613, 1, 1, 262149, 131073, 1, 327685, 131073, 1, 393221, 131073, 1, 458757, 131073, 1342177287, 524293, 131073, 0, 589829, 1, 1, 196614, 1, 1, 262150, 131073, 1, 327686, 131073, 1, 393222, 131073, 1, 458758, 131073, 1342177287, 524294, 131073, 0, 589830, 1, 1, 196615, 1, 1, 262151, 131073, 1, 327687, 131073, 1, 393223, 131073, 1, 458759, 262145, 6, 524295, 131073, 0, 589831, 1, 1, 196616, 1, 1, 262152, 131073, 0, 327688, 131073, 0, 393224, 131073, 0, 458760, 131073, 0, 524296, 131073, 0, 589832, 131073, 6, 196617, 131073, 6, 262153, 131073, 0, 327689, 262145, 805306374, 393225, 131073, 268435463, 458761, 262145, 268435462, 524297, 131073, 0, 589833, 1, 1, 196618, 1, 1, 262154, 1, 1, 327690, 1, 1, 393226, 1, 1, 458762, 1, 1, 524298, 1, 1, 589834, 1, 1, 196608, 1, 1, 262144, 1, 1, 327680, 1, 1, 393216, 1, 1, 458752, 1, 1, 196609, 131073, 1, 196610, 1, 1342177286, 262145, 131073, 1, 327681, 131073, 1, 393217, 131073, 1, 458753, 262145, 1342177287, 524289, 131073, 7, 262146, 1, 1342177286, 327682, 1, 1342177286, 393218, 1, 1342177286, 458754, 131073, 1342177287, 524290, 131073, 0, 524288, 1, 1)
+
+[node name="dungeon" type="TileMap" parent="."]
+tile_set = ExtResource("1_y6wjg")
+format = 2
+layer_0/tile_data = PackedInt32Array(262147, 1, 0, 327683, 1, 0, 393219, 1, 0, 262148, 1, 0, 327684, 1, 0, 393220, 1, 0, 262149, 1, 0, 327685, 1, 0, 393221, 1, 2, 262150, 1, 0, 327686, 1, 0, 393222, 1, 0, 262151, 1, 0, 327687, 1, 0, 393223, 1, 0)
+
+[node name="switch_trigger" parent="." instance=ExtResource("2_f0i5s")]
+position = Vector2(88, 95)
+new_tree = "res://world_loader/level_trees/game_trees/dungeon_one/dungeon_one_tree.tscn"
+init_pos = Vector2(3, 6)
+psi = 0
+
+[node name="switch_area" type="Area2D" parent="switch_trigger"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="switch_shape" type="CollisionShape2D" parent="switch_trigger/switch_area"]
+shape = SubResource("RectangleShape2D_t6cty")
+
+[node name="load_info" parent="." instance=ExtResource("3_v52fr")]
+
+[node name="0" parent="load_info/spawn_points" index="0"]
+position = Vector2(88, 120)
+
+[node name="enemy_spawner" parent="." instance=ExtResource("4_j021t")]
+enemy_arr = Array[ExtResource("6_amn8a")]([SubResource("Resource_653rl")])
+
+[node name="0" parent="enemy_spawner/spawn_points" index="0"]
+position = Vector2(147, 76)
+
+[node name="1" parent="enemy_spawner/spawn_points" index="1"]
+position = Vector2(146, 102)
+
+[node name="2" parent="enemy_spawner/spawn_points" index="2"]
+position = Vector2(143, 122)
+
+[node name="3" parent="enemy_spawner/spawn_points" index="3"]
+position = Vector2(119, 132)
+
+[node name="4" parent="enemy_spawner/spawn_points" index="4"]
+position = Vector2(54, 128)
+
+[node name="5" parent="enemy_spawner/spawn_points" index="5"]
+position = Vector2(33, 128)
+
+[node name="6" parent="enemy_spawner/spawn_points" index="6"]
+position = Vector2(32, 95)
+
+[connection signal="area_entered" from="switch_trigger/switch_area" to="switch_trigger" method="_on_switch_area_area_entered"]
+
+[editable path="load_info"]
+[editable path="enemy_spawner"]

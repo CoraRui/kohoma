@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://j2gcqncpoo46"]
+
+[ext_resource type="Script" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_10/exit_trigger.gd" id="1_ojwn0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd3gs"]
+size = Vector2(53, 9)
+
+[node name="exit_trigger" type="Node2D"]
+position = Vector2(87, 162)
+script = ExtResource("1_ojwn0")
+
+[node name="exit_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="exit_box" type="CollisionShape2D" parent="exit_area"]
+shape = SubResource("RectangleShape2D_qd3gs")
+
+[connection signal="area_entered" from="exit_area" to="." method="_on_exit_area_area_entered"]

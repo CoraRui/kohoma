@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://gcxbscyach76"]
+
+[ext_resource type="PackedScene" uid="uid://d2ij06gtg0fi7" path="res://world_loader/rooms/room trigger/room_trigger.tscn" id="3_agxol"]
+[ext_resource type="PackedScene" uid="uid://by63mnphjximn" path="res://ui/enemy_desc/flav_trigger.tscn" id="4_coebc"]
+[ext_resource type="PackedScene" uid="uid://cpox3psx25wv7" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_10/shop_1.tscn" id="4_yvwce"]
+[ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="5_la3k3"]
+[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="7_2kqbw"]
+[ext_resource type="PackedScene" uid="uid://dbqeje3tlgd53" path="res://save_files/triggers/save trigger/save_point/save_point.tscn" id="7_wy4xe"]
+[ext_resource type="PackedScene" uid="uid://yefqslur5d85" path="res://world_loader/enemies/whale/whale.tscn" id="9_geeab"]
+[ext_resource type="PackedScene" uid="uid://cb5fhnkvxrkae" path="res://ui/dialogue_loader/dialogue_trigger.tscn" id="9_k82vi"]
+[ext_resource type="Script" path="res://ui/dialogue_loader/resources/dialogue.gd" id="10_d6eta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmvk3"]
+size = Vector2(13, 13)
+
+[sub_resource type="Resource" id="Resource_v25b2"]
+script = ExtResource("10_d6eta")
+lines = Array[String](["hello", "bye"])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3vui"]
+
+[node name="10_10" type="Node2D"]
+
+[node name="room_trigger" parent="." instance=ExtResource("3_agxol")]
+position = Vector2(24, 46)
+room_ref = ExtResource("4_yvwce")
+
+[node name="load_info" parent="." instance=ExtResource("5_la3k3")]
+
+[node name="0" parent="load_info/spawn_points" index="0"]
+position = Vector2(23, 74)
+
+[node name="flav_trigger" parent="." instance=ExtResource("4_coebc")]
+position = Vector2(52, 67)
+
+[node name="player_area" type="Area2D" parent="flav_trigger"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="flav_shape" type="CollisionShape2D" parent="flav_trigger/player_area"]
+position = Vector2(6.5, 6.5)
+shape = SubResource("RectangleShape2D_xmvk3")
+
+[node name="save_point" parent="." instance=ExtResource("7_wy4xe")]
+position = Vector2(69, 67)
+
+[node name="ground" type="TileMap" parent="."]
+z_index = -5
+tile_set = ExtResource("7_2kqbw")
+format = 2
+layer_0/tile_data = PackedInt32Array(196608, 1, 1, 196610, 1, 1, 196611, 1, 1, 196612, 1, 1, 196613, 1, 1, 196614, 131073, 1, 262150, 131073, 1, 327686, 131073, 1, 393222, 131073, 1, 458758, 131073, 1, 524294, 131073, 1, 589830, 131073, 1, 196615, 131073, 1, 262151, 131073, 1, 327687, 131073, 1, 393223, 131073, 1, 458759, 131073, 1, 524295, 131073, 1, 589831, 131073, 1, 196616, 131073, 7, 262152, 131073, 7, 327688, 131073, 7, 393224, 131073, 7, 458760, 131073, 7, 524296, 131073, 7, 589832, 131073, 7, 262144, 131073, 1, 327680, 131073, 1, 393216, 131073, 1, 458752, 131073, 1, 524288, 131073, 1, 262145, 131073, 1, 327681, 131073, 1, 393217, 131073, 1, 458753, 131073, 1, 524289, 131073, 1, 262146, 131073, 1, 327682, 131073, 1, 393218, 131073, 1, 458754, 131073, 1, 262147, 131073, 1, 327683, 131073, 1, 393219, 131073, 1, 458755, 131073, 1, 524291, 131073, 1, 262148, 131073, 1, 327684, 131073, 1, 393220, 131073, 1, 458756, 131073, 1, 524292, 131073, 1, 262149, 131073, 1, 327685, 131073, 1, 393221, 131073, 1, 458757, 131073, 1, 524293, 131073, 1, 589826, 131073, 1, 589827, 131073, 1, 589828, 131073, 1, 589829, 131073, 1, 196617, 131073, 0, 262153, 131073, 0, 327689, 131073, 0, 393225, 131073, 0, 458761, 131073, 0, 524297, 131073, 0, 589833, 131073, 0, 196618, 131073, 0, 262154, 131073, 0, 327690, 131073, 0, 393226, 131073, 0, 458762, 131073, 0, 524298, 131073, 0, 589834, 131073, 0, 589824, 1, 1, 589825, 1, 1, 196609, 1, 2, 524290, 131073, 1)
+
+[node name="dialogue_trigger" parent="." instance=ExtResource("9_k82vi")]
+position = Vector2(41, 75)
+dia = SubResource("Resource_v25b2")
+
+[node name="d_area" type="Area2D" parent="dialogue_trigger"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="d_shape" type="CollisionShape2D" parent="dialogue_trigger/d_area"]
+shape = SubResource("RectangleShape2D_q3vui")
+
+[node name="whale" parent="." instance=ExtResource("9_geeab")]
+position = Vector2(143, 89)
+
+[node name="whale" parent="whale" index="0"]
+position = Vector2(15, 13)
+
+[node name="top" parent="whale" index="1"]
+visible = false
+
+[node name="shape" parent="whale/top" index="0"]
+position = Vector2(20, -19)
+
+[node name="bottom" parent="whale" index="2"]
+visible = false
+
+[node name="shape" parent="whale/bottom" index="0"]
+position = Vector2(16, 50)
+
+[node name="left" parent="whale" index="3"]
+visible = false
+
+[node name="shape" parent="whale/left" index="0"]
+position = Vector2(24, 14)
+
+[node name="right" parent="whale" index="4"]
+visible = false
+
+[node name="shape" parent="whale/right" index="0"]
+position = Vector2(8, 16.5)
+
+[connection signal="area_entered" from="flav_trigger/player_area" to="flav_trigger" method="_on_player_area_area_entered"]
+[connection signal="area_entered" from="dialogue_trigger/d_area" to="dialogue_trigger" method="_on_d_area_area_entered"]
+
+[editable path="load_info"]
+[editable path="whale"]

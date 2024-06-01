@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="file_01" load_steps=2 format=3 uid="uid://c3u4qitmr63cy"]
+
+[ext_resource type="Script" path="res://save_files/resources/file_01.gd" id="1_2wr0a"]
+
+[resource]
+script = ExtResource("1_2wr0a")
+money = 0
+player_name = "player"
+character_name = "flea"
+hp = 12
+mhp = 12

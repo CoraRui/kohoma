@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhh0i8vm2o6m7"]
+
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="1_ntk1p"]
+[ext_resource type="Script" path="res://boot/to_title/to_next.gd" id="1_wubry"]
+[ext_resource type="PackedScene" uid="uid://begvbnexwd83c" path="res://boot/main_menu/file select/file_select.tscn" id="2_qfhta"]
+[ext_resource type="PackedScene" uid="uid://jfxvdv88hlmx" path="res://music_player/triggers/music_trigger.tscn" id="4_nxfol"]
+
+[sub_resource type="FontVariation" id="FontVariation_aesjb"]
+base_font = ExtResource("1_ntk1p")
+
+[node name="title_screen" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 176.0
+offset_bottom = 176.0
+color = Color(0.0117647, 0, 0.368627, 1)
+
+[node name="title" type="Label" parent="."]
+offset_left = 39.0
+offset_top = 50.0
+offset_right = 133.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0, 0.6, 0.0509804, 1)
+theme_override_colors/font_shadow_color = Color(0.152941, 0.152941, 0.152941, 1)
+theme_override_fonts/font = SubResource("FontVariation_aesjb")
+theme_override_font_sizes/font_size = 10
+text = "MOON LIGHT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="to start" type="Label" parent="."]
+offset_left = 39.0
+offset_top = 82.0
+offset_right = 136.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0.317647, 0.223529, 0.164706, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_aesjb")
+theme_override_font_sizes/font_size = 10
+text = "press start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="to_file_select" type="Node2D" parent="." node_paths=PackedStringArray("del")]
+script = ExtResource("1_wubry")
+ins = ExtResource("2_qfhta")
+del = NodePath("..")
+useready = false
+
+[node name="music_trigger" parent="." instance=ExtResource("4_nxfol")]
+track_name = "title_screen"

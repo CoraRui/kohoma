@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://7xeu6nxh28uy"]
+
+[ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://raw_assets/tiles/green_dungeon.tres" id="1_4lmsg"]
+[ext_resource type="PackedScene" uid="uid://dbye2741q7ep1" path="res://world_loader/enemies/knight/knight.tscn" id="3_hv0id"]
+[ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://world_loader/enemies/turtle/turtle.tscn" id="4_23n1t"]
+
+[node name="3_5" type="Node2D"]
+
+[node name="green_dungeon" type="TileMap" parent="."]
+tile_set = ExtResource("1_4lmsg")
+format = 2
+layer_0/tile_data = PackedInt32Array(524290, 1, 1, 458754, 1, 1, 393218, 1, 1, 327682, 1, 1, 262146, 131073, 0, 196616, 1, 0, 262152, 131073, 268435456, 327688, 1, 1, 393224, 1, 1, 458760, 1, 1, 524296, 1, 1, 262147, 1, 1, 327683, 1, 1, 393219, 1, 1, 458755, 1, 1, 524291, 1, 1, 196612, 1, 0, 262148, 1, 1, 327684, 1, 1, 393220, 65537, 1, 458756, 1, 1, 524292, 1, 1, 196613, 1, 1, 262149, 1, 1, 327685, 65537, 1, 393221, 65537, 1, 458757, 65537, 1, 524293, 1, 1, 196614, 1, 0, 262150, 1, 1, 327686, 1, 1, 393222, 65537, 1, 458758, 1, 1, 524294, 1, 1, 196615, 1, 0, 262151, 1, 1, 327687, 1, 1, 393223, 1, 1, 458759, 1, 1, 524295, 1, 1, 262145, 1, 1, 327681, 1, 1, 393217, 1, 1, 458753, 1, 1, 524289, 1, 1, 524297, 1, 1, 458761, 1, 1, 393225, 1, 1, 327689, 1, 1, 262153, 1, 1, 196617, 1, 0, 262144, 1, 1610612736, 327680, 1, 1610612736, 458752, 1, 1610612736, 524288, 1, 1610612736, 524298, 1, 1879048192, 458762, 1, 1879048192, 393226, 1, 1879048192, 327690, 1, 1879048192, 262154, 1, 1879048192, 196618, 65537, 268435456, 589824, 65537, 1610612736, 589825, 1, 536870912, 589826, 1, 536870912, 589827, 1, 536870912, 589828, 1, 536870912, 589829, 1, 1, 589830, 1, 536870912, 589831, 1, 536870912, 589832, 1, 536870912, 589833, 1, 536870912, 589834, 65537, 805306368, 196608, 65537, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 393216, 1, 1)
+
+[node name="knight" parent="." node_paths=PackedStringArray("coll_areas") instance=ExtResource("3_hv0id")]
+position = Vector2(16, 64)
+coll_areas = [null, null, null, null]
+
+[node name="knight2" parent="." node_paths=PackedStringArray("coll_areas") instance=ExtResource("3_hv0id")]
+position = Vector2(144, 64)
+coll_areas = [null, null, null, null]
+
+[node name="turtle" parent="." instance=ExtResource("4_23n1t")]
+position = Vector2(50, 93)
+
+[node name="turtle2" parent="." instance=ExtResource("4_23n1t")]
+position = Vector2(123, 95)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfqegvfvllvwu"]
+
+[ext_resource type="Script" path="res://ui/pause_menu/autoloads/pause_loader.gd" id="1_y8dei"]
+
+[node name="pause_loader" type="Node2D"]
+script = ExtResource("1_y8dei")
+inventory_menu_ref = "res://ui/inventory_menu/inventory_menu.tscn"

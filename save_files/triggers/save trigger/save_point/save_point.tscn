@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbqeje3tlgd53"]
+
+[ext_resource type="Script" path="res://save_files/triggers/save trigger/save_point/save_point.gd" id="1_olgxb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4i5s"]
+size = Vector2(16, 17)
+
+[node name="save_point" type="Node2D" node_paths=PackedStringArray("save_area")]
+script = ExtResource("1_olgxb")
+save_area = NodePath("save_area")
+
+[node name="save_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="save_shape" type="CollisionShape2D" parent="save_area"]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_o4i5s")
+
+[node name="color_rect" type="ColorRect" parent="."]
+offset_right = 16.0
+offset_bottom = 17.0
+
+[connection signal="area_entered" from="save_area" to="." method="_on_save_area_area_entered"]
+[connection signal="area_exited" from="save_area" to="." method="_on_save_area_area_exited"]

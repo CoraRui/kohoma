@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://bh861ens8p1kx"]
+
+[ext_resource type="Script" path="res://boot/intro/intro.gd" id="1_5i7y0"]
+[ext_resource type="Script" path="res://boot/to_title/to_next.gd" id="2_4keyd"]
+[ext_resource type="PackedScene" uid="uid://bhh0i8vm2o6m7" path="res://boot/main_menu/title_screen.tscn" id="3_53b1d"]
+[ext_resource type="PackedScene" uid="uid://jfxvdv88hlmx" path="res://music_player/triggers/music_trigger.tscn" id="4_u8nlj"]
+[ext_resource type="PackedScene" uid="uid://bhqaw3q6qu30m" path="res://ui/dialogue_loader/dialogue_box.tscn" id="4_yfyia"]
+[ext_resource type="Texture2D" uid="uid://ve6x2obpvcmd" path="res://raw_assets/sprites/Sprite-0002.png" id="5_owkm2"]
+[ext_resource type="Texture2D" uid="uid://buuf1t3bvxrcy" path="res://raw_assets/sprites/sword.png" id="6_yim8y"]
+[ext_resource type="Texture2D" uid="uid://bpuoa4hsfvj0t" path="res://raw_assets/sprites/simple_key.png" id="7_tqku6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4efeq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_owkm2")
+}],
+"loop": true,
+"name": &"one",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_yim8y")
+}],
+"loop": true,
+"name": &"two",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tqku6")
+}],
+"loop": true,
+"name": &"zero",
+"speed": 5.0
+}]
+
+[node name="intro" type="Node2D" node_paths=PackedStringArray("txt_del", "img_del", "mural_anim", "d_box")]
+script = ExtResource("1_5i7y0")
+txt_del_arr = Array[float]([14.0, 6.0, 7.0, 7.0, 7.0, 7.0, 7.0, 0.0, 0.0])
+txt_arr = Array[String](["", "there is a legend in the land of whatever", "that a great evil existed long ago
+", "which will come back at somepoint", "and a hero will fight it", "", "", "", ""])
+img_del_arr = Array[float]([14.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 0.0, 0.0])
+img_arr = Array[String](["zero", "one", "two", "three", "four", "five", "six", "", ""])
+txt_del = NodePath("txt_del")
+img_del = NodePath("img_del")
+mural_anim = NodePath("anim_mural")
+d_box = NodePath("dialogue_box")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 11.0
+offset_top = 9.0
+offset_right = 166.0
+offset_bottom = 99.0
+color = Color(0.0784314, 0, 0.372549, 1)
+
+[node name="to_next" type="Node2D" parent="." node_paths=PackedStringArray("del")]
+script = ExtResource("2_4keyd")
+ins = ExtResource("3_53b1d")
+del = NodePath("..")
+useready = false
+
+[node name="music_trigger" parent="." instance=ExtResource("4_u8nlj")]
+track_name = "legend_intro"
+
+[node name="anim_mural" type="AnimatedSprite2D" parent="."]
+position = Vector2(11, 9)
+sprite_frames = SubResource("SpriteFrames_4efeq")
+animation = &"two"
+centered = false
+
+[node name="dialogue_box" parent="." instance=ExtResource("4_yfyia")]
+
+[node name="border" parent="dialogue_box" index="0"]
+visible = false
+
+[node name="fill" parent="dialogue_box" index="1"]
+visible = false
+
+[node name="n_label" parent="dialogue_box" index="2"]
+visible = false
+
+[node name="m_label" parent="dialogue_box" index="3"]
+offset_left = 9.0
+offset_top = 106.0
+offset_right = 172.0
+offset_bottom = 142.0
+text = "there is a legend in the land of 
+kohoma"
+horizontal_alignment = 1
+
+[node name="img_del" type="Timer" parent="."]
+
+[node name="txt_del" type="Timer" parent="."]
+
+[connection signal="timeout" from="img_del" to="." method="_on_img_del_timeout"]
+[connection signal="timeout" from="txt_del" to="." method="_on_txt_del_timeout"]
+
+[editable path="dialogue_box"]

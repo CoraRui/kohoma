@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://mdwtmm3pvout"]
+
+[ext_resource type="Script" path="res://world_loader/level_trees/structure/world_autoload/switch_trigger.gd" id="1_f8pqm"]
+
+[node name="switch_trigger" type="Node2D"]
+script = ExtResource("1_f8pqm")
+init_pos = null
+psi = null

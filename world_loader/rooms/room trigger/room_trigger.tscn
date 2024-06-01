@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ij06gtg0fi7"]
+
+[ext_resource type="Script" path="res://world_loader/rooms/room trigger/room_trigger.gd" id="1_7ks23"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sa03o"]
+size = Vector2(16, 16)
+
+[node name="room_trigger" type="Node2D"]
+script = ExtResource("1_7ks23")
+
+[node name="rt_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="rt_shape" type="CollisionShape2D" parent="rt_area"]
+shape = SubResource("RectangleShape2D_sa03o")
+
+[connection signal="area_entered" from="rt_area" to="." method="_on_rt_area_area_entered"]

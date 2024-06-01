@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://nmnnhoqjulmn"]
+
+[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_0u3dl"]
+[ext_resource type="PackedScene" uid="uid://d2ij06gtg0fi7" path="res://world_loader/rooms/room trigger/room_trigger.tscn" id="2_n70v1"]
+[ext_resource type="PackedScene" uid="uid://brpxjjuw0ul07" path="res://world_loader/rooms/home/home.tscn" id="3_ytljt"]
+[ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="4_url0w"]
+[ext_resource type="PackedScene" uid="uid://ckgcuoqhywtrw" path="res://world_loader/enemies/snf/snfffff.tscn" id="6_ty5ac"]
+[ext_resource type="PackedScene" uid="uid://c6phkn4x5h0kc" path="res://world_loader/enemies/chikkin/chikkin.tscn" id="6_wikl0"]
+
+[node name="8_11" type="Node2D"]
+
+[node name="ground" type="TileMap" parent="."]
+tile_set = ExtResource("1_0u3dl")
+format = 2
+layer_0/tile_data = PackedInt32Array(196608, 1, 1, 262144, 131073, 7, 327680, 262145, 7, 393216, 131073, 1, 458752, 131073, 2, 524288, 131073, 1, 589824, 131073, 1, 196609, 1, 1, 262145, 131073, 0, 327681, 131073, 1610612743, 393217, 1, 805306375, 458753, 65537, 268435457, 524289, 1, 1342177287, 589825, 131073, 2, 196610, 1, 1, 262146, 131073, 0, 327682, 131073, 1610612743, 458754, 65537, 0, 524290, 65537, 1342177281, 589826, 131073, 1, 196611, 1, 1, 262147, 131073, 805306375, 327683, 262145, 268435463, 393219, 65537, 1610612737, 458755, 65537, 0, 524291, 65537, 1342177281, 589827, 131073, 1, 196612, 1, 1, 262148, 131073, 1, 327684, 131073, 1, 393220, 1, 1610612743, 458756, 65537, 2, 524292, 65537, 1342177281, 589828, 131073, 1, 196613, 1, 1, 262149, 131073, 1, 327685, 131073, 1, 393221, 131073, 1, 458757, 65537, 1610612737, 524293, 65537, 1342177281, 589829, 131073, 1, 196614, 1, 1, 262150, 131073, 1, 327686, 131073, 1, 393222, 131073, 1, 458758, 65537, 1610612737, 524294, 65537, 805306370, 589830, 1, 1342177287, 196615, 1, 1, 262151, 131073, 1, 327687, 131073, 1, 393223, 131073, 1, 458759, 1, 1610612743, 524295, 65537, 2, 589831, 65537, 1342177281, 196616, 1, 1, 262152, 131073, 1, 327688, 131073, 1, 393224, 131073, 1, 458760, 131073, 1, 524296, 65537, 1610612737, 589832, 65537, 1342177281, 196617, 1, 1, 262153, 131073, 1, 327689, 131073, 1, 393225, 131073, 1, 458761, 131073, 1, 524297, 65537, 1610612737, 589833, 65537, 1342177281, 196618, 1, 1, 262154, 131073, 1, 327690, 131073, 2, 393226, 131073, 1, 458762, 131073, 2, 524298, 65537, 1610612737, 589834, 65537, 1342177281, 393218, 65537, 1610612737)
+
+[node name="house" type="TileMap" parent="."]
+tile_set = ExtResource("1_0u3dl")
+format = 2
+layer_0/tile_data = PackedInt32Array(262150, 327681, 1, 327686, 327681, 2, 262151, 327681, 268435457, 327687, 327681, 268435458, 262152, 262145, 268435457, 327688, 262145, 268435458, 327685, 262145, 2, 262149, 262145, 1)
+
+[node name="door" type="TileMap" parent="."]
+tile_set = ExtResource("1_0u3dl")
+format = 2
+layer_0/tile_data = PackedInt32Array(327686, 262145, 0)
+
+[node name="room_trigger" parent="." instance=ExtResource("2_n70v1")]
+visible = false
+position = Vector2(104, 76)
+room_ref = ExtResource("3_ytljt")
+room_track = "nothing"
+
+[node name="load_info" parent="." instance=ExtResource("4_url0w")]
+
+[node name="0" parent="load_info/spawn_points" index="0"]
+position = Vector2(121, 102)
+
+[node name="snfffff" parent="." instance=ExtResource("6_ty5ac")]
+position = Vector2(100, 121)
+
+[node name="chikkin" parent="." instance=ExtResource("6_wikl0")]
+position = Vector2(42, 116)
+
+[node name="chikkin2" parent="." instance=ExtResource("6_wikl0")]
+position = Vector2(81, 103)
+
+[editable path="load_info"]

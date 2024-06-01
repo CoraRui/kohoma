@@ -1,0 +1,15 @@
+so enemy movement.
+what feels right? what am i going for with this one?
+of those "main game" features, which do I want to use in this experimental project?
+what themes will be preserved?
+i think, at least for this little demo bit, I'm going to go with classic dungeon crawler.
+
+get stronger, purify the evil, restore peace. classic.
+
+so the monsters will be evil creatures. but also kind of cute.
+i think the monsters, though created by ganon, might have a heart of gold.
+but in the end, ganon has control. so you have to fight them anyways. but
+i want there to be that little tug of like: "oh man, I wish we could just be buddies."
+
+
+

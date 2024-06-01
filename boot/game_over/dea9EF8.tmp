@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu6xw73x7rrx"]
+
+[ext_resource type="Script" path="res://death_trigger.gd" id="1_3n4dh"]
+[ext_resource type="PackedScene" uid="uid://djfoef06jnovk" path="res://boot/game_over/game_over.tscn" id="2_xso4m"]
+
+[node name="death_trigger" type="Node2D"]
+script = ExtResource("1_3n4dh")
+game_over_ref = ExtResource("2_xso4m")
