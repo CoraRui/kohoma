@@ -9,10 +9,11 @@ extends Node2D
 #for turtle, I want to go with 16 pixel tile movement relative to the 
 #ready function should lock position in to nearest 16x16 point.
 
-#TODO: add collision responses
+#TODO: add wall /other collision responses
 #TODO: add health and hurt movement responses
 #TODO: take into account player movement
 #TODO: add invincibility while shelled
+#TODO: flip animation left/right
 
 
 #ok, I'm thinking this could be something like it goes "in its shell" when the player approaches.

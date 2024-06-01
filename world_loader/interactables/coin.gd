@@ -1,10 +1,7 @@
 extends Node2D
 
 
-#this script controls the coin.
-#eventually it should add to the save file.
-#eventually possibly being right now.
-#but... im not sure. anyways ill try.
+#TODO: update sound effect
 
 #autoloads
 @onready var save_fi : save_file = get_node("/root/save_file_auto")

@@ -1,6 +1,13 @@
 extends Node2D
 class_name stat_bar
 
+
+#TODO: key icon
+#TODO: flavor text dialogue box
+#TODO: flavor text empty state
+#TODO: add map?
+
+
 @export var hp_bar : heart_bar
 
 @export var flav : flav_text

@@ -2,6 +2,10 @@ extends Node2D
 
 #this script just contains a reference to a packed scene which it will instantiate when its function is called.
 
+#TODO: random 
+#TODO: use player information to decide what kind of object is dropped/effect drop rates etc. most obviously, no hearts when full health,
+#TODO: maybe more rupees when high health, raise fairy rates and heart rates when low. etc etc.
+
 
 @export var drop_thing : PackedScene
 

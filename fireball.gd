@@ -1,6 +1,9 @@
 extends Node2D
 
 
+#TODO: add damage
+#TODO: deflection??? later
+
 #this should direct the fire towards the player.
 #I'll probably just have it be 8 directional. or maybe 16?
 

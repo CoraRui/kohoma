@@ -1,9 +1,11 @@
 extends Node2D
 
 #TODO: fine tune sword timing
-#TODO: player animations simultaneously
+#TODO: player "swinging" animation simultaneously
 #TODO: better sfx
 #TODO: minor, but possibly add reactions to minor things, like drifting away from heavy objects?
+#TODO: should the sword swing be an arc? or just the normal nes zelda stick?
+
 
 var pdir : int 
 

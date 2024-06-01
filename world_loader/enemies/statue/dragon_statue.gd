@@ -2,6 +2,8 @@ extends Node2D
 
 #ok this should be pretty easy. just have the statue shoot a fireball towards(ish) the player every couple seconds or so
 
+#TODO: update sprite. eventually remap all enemy tiles to a single sheet possibly, or at least have a single sheet for an enemy to make it easier to change.
+
 
 @export_group("shooting")
 @export var fire_ref : PackedScene
