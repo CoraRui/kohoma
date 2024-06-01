@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name to_next
 
 #temporary thing that literally just instantiates the attached node and eliminates the old one.
 

@@ -36,8 +36,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="intro" type="Node2D" node_paths=PackedStringArray("txt_del", "img_del", "mural_anim", "d_box")]
+[node name="intro" type="Node2D" node_paths=PackedStringArray("txt_del", "img_del", "next_scene", "mural_anim", "d_box")]
 script = ExtResource("1_5i7y0")
+show_size = 1
 txt_del_arr = Array[float]([14.0, 6.0, 7.0, 7.0, 7.0, 7.0, 7.0, 0.0, 0.0])
 txt_arr = Array[String](["", "there is a legend in the land of whatever", "that a great evil existed long ago
 ", "which will come back at somepoint", "and a hero will fight it", "", "", "", ""])
@@ -45,6 +46,7 @@ img_del_arr = Array[float]([14.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 0.0, 0.0])
 img_arr = Array[String](["zero", "one", "two", "three", "four", "five", "six", "", ""])
 txt_del = NodePath("txt_del")
 img_del = NodePath("img_del")
+next_scene = NodePath("to_next")
 mural_anim = NodePath("anim_mural")
 d_box = NodePath("dialogue_box")
 
