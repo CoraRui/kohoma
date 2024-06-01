@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://yuq3h7sfuerx"]
+[gd_scene load_steps=10 format=3 uid="uid://yuq3h7sfuerx"]
 
 [ext_resource type="Texture2D" uid="uid://bnmc7x5v1brvq" path="res://raw_assets/enemies/turtle/turtle2.png" id="1_l52f8"]
 [ext_resource type="Script" path="res://world_loader/enemies/turtle/turtle.gd" id="1_wnjy3"]
 [ext_resource type="Texture2D" uid="uid://dg8o8k4gfoskc" path="res://raw_assets/enemies/turtle/turtle3.png" id="2_i47ow"]
 [ext_resource type="Texture2D" uid="uid://b17m42rd7osqy" path="res://raw_assets/enemies/turtle/blueturtle1png.png" id="3_v0ldp"]
 [ext_resource type="Texture2D" uid="uid://bggoj6bthnqtc" path="res://raw_assets/enemies/turtle/blueturtle2.png" id="4_m7ju4"]
-[ext_resource type="Script" path="res://world_loader/enemies/turtle/init_signal.gd" id="6_au0b2"]
+[ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://world_loader/enemies/enemy_health.tscn" id="6_qt7pu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hr1kc"]
 animations = [{
@@ -32,8 +32,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_4eo1n"]
+script/source = "extends Node2D
+class_name init_signal
+
+#im creating this node specifically to delay certain things. 
+#its weird. I just need to have something that replaces the ready function, so that it happens at a different time.
+#cause it seems like. wait. does the ready function happen on instantiate or add_child?
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6fd7"]
+size = Vector2(13, 9)
+
 [node name="turtle" type="Node2D"]
-z_index = 14
 script = ExtResource("1_wnjy3")
 walk_vel_arr = Array[int]([1, 0, 0, 0])
 snap_tol = 1
@@ -44,4 +55,17 @@ animation = &"new_animation"
 autoplay = "new_animation"
 
 [node name="init_signal" type="Node2D" parent="."]
-script = ExtResource("6_au0b2")
+script = SubResource("GDScript_4eo1n")
+
+[node name="health and damage" type="Node2D" parent="."]
+
+[node name="enemy_health" parent="health and damage" node_paths=PackedStringArray("die_node") instance=ExtResource("6_qt7pu")]
+die_node = NodePath("../..")
+
+[node name="health_area" type="Area2D" parent="health and damage"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="health_shape" type="CollisionShape2D" parent="health and damage/health_area"]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_x6fd7")

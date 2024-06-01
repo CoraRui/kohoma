@@ -11,7 +11,7 @@ extends Node2D
 
 #TODO: add collision responses
 #TODO: add health and hurt movement responses
-#TODO: add random movement scheme for walking
+#TODO: take into account player movement
 #TODO: add invincibility while shelled
 
 

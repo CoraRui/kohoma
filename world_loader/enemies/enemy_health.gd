@@ -8,10 +8,15 @@ signal death
 
 @export var mhp : int = 10
 
+#node to be deleted on enemu death
 @export var die_node : Node2D
 
 @export var i_frames : int = 17
 
+#initially used as a timer to delay the end of the hurt in other things.
+#i think this was replaced by the hurt signal. if I want to have reactions to damage
+#in other stuff, I should probably just use the signal.
+#TODO: remove the hurt timer and replace with hurt signal for all enemies.
 @export var hurt_timer : Timer
 
 #current i_frame counter
@@ -44,7 +49,8 @@ func damage(d : int):
 	inv = true
 	if hp == 0:
 		die()
-	hurt_timer.start()
+	if hurt_timer:
+		hurt_timer.start()
 	hurt.emit()
 	sfx_pi.play_sound("e_hurt")
 
