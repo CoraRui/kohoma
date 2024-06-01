@@ -31,3 +31,6 @@ func switch():
 		get_tree().get_root().add_child.call_deferred(new_node)
 	if del:
 		del.queue_free()
+
+func _on_show_timer_timeout():
+	switch()

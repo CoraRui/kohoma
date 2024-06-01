@@ -1,14 +1,11 @@
 extends Node2D
 
 
-#handles the intro stuff.
-#I'm thinking basic basic. like just put the image up, maybe some movement,
-#and darkening between switches. but for now:
-#timing for certain changes
-
+#this script handles timing of the changing of the text for the intro
+#arrays of floats represent the length between each switch
+#the length of the entire scene is in the scene timer under the to_next node
 
 @export_group("timing")
-@export var show_size : int = 8
 @export var txt_del_arr : Array[float]
 @export_multiline var txt_arr : Array[String]
 var txt_index : int = 0
@@ -35,10 +32,6 @@ func _ready():
 	img_index += 1
 
 func _on_img_del_timeout():
-	if img_index > show_size:
-		print("shows over")
-		next_scene.switch()
-		return
 	#should update the image and restart the timer with the next time amount
 	img_del.wait_time = img_del_arr[img_index]
 	img_del.start()
@@ -46,12 +39,10 @@ func _on_img_del_timeout():
 	img_index += 1
 	
 func _on_txt_del_timeout():
-		#should update the image and restart the timer with the next time amount
-	if txt_index > show_size:
-		print("shows over")
-		next_scene.switch()
-		return
+	#should update the image and restart the timer with the next time amount
 	txt_del.wait_time = txt_del_arr[txt_index]
 	txt_del.start()
 	d_box.display_text(txt_arr[txt_index])
 	txt_index += 1 
+
+
