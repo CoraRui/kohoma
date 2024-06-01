@@ -53,8 +53,9 @@ func spawn_enemies():
 			print("couldn't find enemy ref in index", i2, "of", name)
 			return
 		var new_enemy = enemy_arr[i2].enemy_ref.instantiate()
+		new_enemy.position = spawn_pos[randi_range(0, spawn_pos.size()-1)].position
 		world_loader.current_level.add_child(new_enemy)
-		new_enemy.global_position = spawn_pos[randi_range(0, spawn_pos.size()-1)].global_position
+
 		i += 1
 		queue_free()
 		

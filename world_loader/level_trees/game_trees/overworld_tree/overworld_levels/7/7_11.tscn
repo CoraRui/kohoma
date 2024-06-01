@@ -43,6 +43,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="enemy_spawner" parent="." instance=ExtResource("3_jhji4")]
 enemy_arr = Array[ExtResource("5_uyr1g")]([SubResource("Resource_bt1yi")])
+enemy_cnt = 1
 
 [node name="0" parent="enemy_spawner/spawn_points" index="0"]
 position = Vector2(40, 76)

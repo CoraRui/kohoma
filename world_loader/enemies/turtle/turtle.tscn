@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://yuq3h7sfuerx"]
+[gd_scene load_steps=8 format=3 uid="uid://yuq3h7sfuerx"]
 
 [ext_resource type="Texture2D" uid="uid://bnmc7x5v1brvq" path="res://raw_assets/enemies/turtle/turtle2.png" id="1_l52f8"]
 [ext_resource type="Script" path="res://world_loader/enemies/turtle/turtle.gd" id="1_wnjy3"]
 [ext_resource type="Texture2D" uid="uid://dg8o8k4gfoskc" path="res://raw_assets/enemies/turtle/turtle3.png" id="2_i47ow"]
 [ext_resource type="Texture2D" uid="uid://b17m42rd7osqy" path="res://raw_assets/enemies/turtle/blueturtle1png.png" id="3_v0ldp"]
 [ext_resource type="Texture2D" uid="uid://bggoj6bthnqtc" path="res://raw_assets/enemies/turtle/blueturtle2.png" id="4_m7ju4"]
+[ext_resource type="Script" path="res://world_loader/enemies/turtle/init_signal.gd" id="6_au0b2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hr1kc"]
 animations = [{
@@ -32,10 +33,15 @@ animations = [{
 }]
 
 [node name="turtle" type="Node2D"]
+z_index = 14
 script = ExtResource("1_wnjy3")
 walk_vel_arr = Array[int]([1, 0, 0, 0])
+snap_tol = 1
 
 [node name="turtle_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hr1kc")
 animation = &"new_animation"
 autoplay = "new_animation"
+
+[node name="init_signal" type="Node2D" parent="."]
+script = ExtResource("6_au0b2")
