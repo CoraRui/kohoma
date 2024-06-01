@@ -15,7 +15,11 @@ extends Node2D
 #these states refer to the octos current state. different patterns of movement exist for each state, which cause the enemy to behave completely differently in each state.
 enum MovementState {MOVING, HURT, KO, STUN}
 
+enum MDir {UP = 0, DOWN = 1, LEFT = 2, RIGHT = 3}
+
 var octo_state : MovementState = MovementState.MOVING
+
+var octo_dir : MDir = MDir.DOWN
 
 @export var enemy_node : Node2D
 
@@ -26,6 +30,10 @@ var octo_state : MovementState = MovementState.MOVING
 @export_group("timers")
 @export var move_timer : Timer
 @export var stun_timer : Timer
+@export_group("","")
+
+@export_group("animation")
+@export var octo_anim : AnimatedSprite2D
 @export_group("","")
 
 #multiplier for knockback speed
@@ -57,19 +65,19 @@ func next_move():
 	var r : int = randi_range(0, tot)
 	r -= up
 	if r < 0:
-		mvec = Vector2(0,-1)
+		set_direction(MDir.UP)
 		r += 1000
 	r -= down
 	if r < 0:
-		mvec = Vector2(0,1)
+		set_direction(MDir.DOWN)
 		r+= 1000
 	r -= left
 	if r < 0:
-		mvec = Vector2(-1,0)
+		set_direction(MDir.LEFT)
 		r += 1000
 	r -= right
 	if r < 0:
-		mvec = Vector2(1,0)
+		set_direction(MDir.RIGHT)
 		r += 1000
 		
 	move_timer.start()
@@ -85,65 +93,101 @@ func move():
 		#TODO: possibly add some sort of stunned movement pattern? but they can just be still for now.
 		pass
 
+func set_direction(ndir : MDir):
+	#account for hurt direction?
+	if ndir == MDir.UP:
+		mvec = Vector2(0,-1)
+		octo_anim.rotation = deg_to_rad(180)
+		octo_dir = MDir.UP
+	elif ndir == MDir.DOWN:
+		mvec = Vector2(0,1)
+		octo_anim.rotation = deg_to_rad(0)
+		octo_dir = MDir.DOWN
+	elif ndir == MDir.LEFT:
+		mvec = Vector2(-1,0)
+		octo_anim.rotation = deg_to_rad(90)
+		octo_dir = MDir.LEFT
+	elif ndir == MDir.RIGHT:
+		mvec = Vector2(1,0)
+		octo_anim.rotation = deg_to_rad(270)
+		octo_dir = MDir.RIGHT
+
+func flip_direction():
+	#should make the octo go the opposite of whatever direction its going.
+	if octo_state == MovementState.MOVING:
+		if octo_dir == MDir.LEFT:
+			set_direction(MDir.RIGHT)
+		else:
+			set_direction(MDir.LEFT)
+
+		if octo_dir == MDir.UP:
+			set_direction(MDir.DOWN)
+			print("flipped to down")
+		else:
+			set_direction(MDir.UP)
+			print("flipped to up")
+			
 #add idle direction/pointing direction??
 func _on_move_timer_timeout():
 	next_move()
 
 func _on_top_area_entered(_area):
-	if MovementState.MOVING:
-		mvec.y *= -1
-	if MovementState.HURT:
+	if octo_state == MovementState.MOVING:
+		set_direction(MDir.DOWN)
+	if octo_state == MovementState.HURT:
 		hvec.y = 0
 		enemy_node.position.y += 2
 
 func _on_bottom_area_entered(_area):
 	if octo_state == MovementState.MOVING:
-		mvec.y *= -1
+		set_direction(MDir.UP)
 	if octo_state == MovementState.HURT:
 		hvec.y = 0
 		enemy_node.position.y += -2
 
 func _on_left_area_entered(_area):
 	if octo_state == MovementState.MOVING:
-		mvec.x *= 1
+		set_direction(MDir.RIGHT)
 	if octo_state == MovementState.HURT:
 		hvec.x = 0
 		enemy_node.position.x += 2
 
 func _on_right_area_entered(_area):
 	if octo_state == MovementState.MOVING:
-		mvec.x *= -1
+		set_direction(MDir.LEFT)
 	if octo_state == MovementState.HURT:
 		hvec.x = 0
 		enemy_node.position.x += -2
 
 func _on_top_body_entered(_body):
 	if octo_state == MovementState.MOVING:
-		mvec.y *= -1
+		set_direction(MDir.DOWN)
 	if octo_state == MovementState.HURT:
 		hvec.y = 0
 		enemy_node.position.y += 2
 	
 func _on_bottom_body_entered(_body):
 	if octo_state == MovementState.MOVING:
-		mvec.y *= -1
+		set_direction(MDir.UP)
 	if octo_state == MovementState.HURT:
 		hvec.y = 0
 		enemy_node.position.y += -2
 
 func _on_left_body_entered(_body):
 	if octo_state == MovementState.MOVING:
-		mvec.x *= -1
+		set_direction(MDir.RIGHT)
 	if octo_state == MovementState.HURT:
 		hvec.x = 0
 		enemy_node.position.x += 2
+	print("left")
 
 func _on_right_body_entered(_body):
 	if octo_state == MovementState.MOVING:
-		mvec.x *= -1
+		set_direction(MDir.LEFT)
 	if octo_state == MovementState.HURT:
 		hvec.x = 0
 		enemy_node.position.x += -2
+	print("right")
 
 func _on_health_hurt():
 	print("hurt fired")

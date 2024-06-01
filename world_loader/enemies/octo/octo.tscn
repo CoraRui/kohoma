@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://tnmauhs4oxc6"]
+[gd_scene load_steps=14 format=3 uid="uid://tnmauhs4oxc6"]
 
-[ext_resource type="Texture2D" uid="uid://bi2rykms2mkxf" path="res://raw_assets/enemies/octo.png" id="1_0hjc0"]
+[ext_resource type="Texture2D" uid="uid://ba6cv20yqio3m" path="res://raw_assets/enemies/octo/octo_0.png" id="1_lr7bp"]
+[ext_resource type="Texture2D" uid="uid://cdo1rfxn7x47c" path="res://raw_assets/enemies/octo/octo_1.png" id="2_15ksy"]
 [ext_resource type="Script" path="res://world_loader/enemies/enemy_health.gd" id="2_kkp7y"]
 [ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://world_loader/enemies/spike.tscn" id="3_6r727"]
 [ext_resource type="PackedScene" uid="uid://kfo6qktvvv65" path="res://world_loader/enemies/drops/heart.tscn" id="3_ps614"]
@@ -16,11 +17,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0hjc0")
+"texture": ExtResource("1_lr7bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_15ksy")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yg3l8"]
@@ -43,8 +47,11 @@ size = Vector2(4, 7)
 [node name="octo_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_17rsw")
 animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.528681
 
 [node name="health and damage" type="Node2D" parent="."]
+visible = false
 
 [node name="simple_drop" parent="health and damage" node_paths=PackedStringArray("pos_target") instance=ExtResource("6_h151m")]
 drop_thing = ExtResource("3_ps614")
@@ -69,14 +76,16 @@ wait_time = 0.45
 one_shot = true
 
 [node name="move" type="Node2D" parent="."]
+visible = false
 
-[node name="movement" type="Node2D" parent="move" node_paths=PackedStringArray("enemy_node", "wall_areas", "move_timer", "stun_timer")]
+[node name="movement" type="Node2D" parent="move" node_paths=PackedStringArray("enemy_node", "wall_areas", "move_timer", "stun_timer", "octo_anim")]
 script = ExtResource("4_u40ge")
 enemy_node = NodePath("../..")
 vel = 1
 wall_areas = [null, null, null, null]
 move_timer = NodePath("../move_timer")
 stun_timer = NodePath("../stun_timer")
+octo_anim = NodePath("../../octo_anim")
 kbvel = 2
 
 [node name="move_timer" type="Timer" parent="move"]
@@ -84,7 +93,6 @@ kbvel = 2
 [node name="wall_areas" type="Node2D" parent="move"]
 
 [node name="top" type="Area2D" parent="move/wall_areas"]
-visible = false
 position = Vector2(0, -5)
 collision_layer = 0
 collision_mask = 34
@@ -94,7 +102,6 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_hawlc")
 
 [node name="bottom" type="Area2D" parent="move/wall_areas"]
-visible = false
 position = Vector2(0, 5)
 collision_layer = 0
 collision_mask = 34
@@ -104,7 +111,6 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_o6bv4")
 
 [node name="left" type="Area2D" parent="move/wall_areas"]
-visible = false
 position = Vector2(-6, 0)
 collision_layer = 0
 collision_mask = 34
@@ -114,7 +120,6 @@ position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_7a6ea")
 
 [node name="right" type="Area2D" parent="move/wall_areas"]
-visible = false
 position = Vector2(6, 0)
 collision_layer = 0
 collision_mask = 34
