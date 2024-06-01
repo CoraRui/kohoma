@@ -7,6 +7,8 @@ var direction : dir_auto.Bearing = dir_auto.Bearing.DOWN
 
 @export var items_node : items
 
+@export var movement_script : player_movement
+
 
 
 #so item use. how do I enable and disable certain items based on what is equipped?

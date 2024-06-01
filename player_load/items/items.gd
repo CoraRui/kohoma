@@ -7,11 +7,12 @@ class_name items
 #it interacts with the inventory menu to change what is equipped.
 #the inventory menu can access this through the player instance
 
+#TODO: i havent touched this in a while, but. do it more. its pretty important
 #TODO: bombs, power bracelet?(I think picking up stuff and pushing stuff will be default)
 #TODO: if I make bombs, i might have to add another tile type with a custom save flag 
 
 
-enum ItemState {BOOMERANG, BOW}
+enum ItemState {BOOMERANG, BOW, ROD}
 
 #I'll attach these manually at first, eventually I can add them through code?
 signal item_x
@@ -22,6 +23,9 @@ signal item_y
 
 #item refs
 @export var boom_launch : boomerang_launcher
+@export var rod_node : fishing_rod
+
+@onready var player_script : player = get_parent()
 
 
 func _input(event):
@@ -32,10 +36,14 @@ func _input(event):
 
 func check_item(i : ItemState):
 	#checks the itemstate against all possible values and performs the necessary functions to use that item.
-	if i == ItemState.BOOMERANG:
-		#throw boomerang
-		boom_launch.throw_boomerang()
-	if i == ItemState.BOW:
-		print("bow")
+	match i:
+		ItemState.BOOMERANG:
+			#throw boomerang
+			boom_launch.throw_boomerang()
+		ItemState.BOW:
+			print("bow")
+		ItemState.ROD:
+			#the rod should activate pretty much a whole new control scheme, so its going to be a pain... but i think its ok.
+			rod_node.activate_rod()
 
 

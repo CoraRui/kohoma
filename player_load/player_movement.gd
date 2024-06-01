@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name player_movement
 
 #this script moves the player.
 #should be four directional movement.

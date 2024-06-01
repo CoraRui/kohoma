@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bm6r33rcfa1j6"]
+[gd_scene load_steps=22 format=3 uid="uid://bm6r33rcfa1j6"]
 
 [ext_resource type="Script" path="res://player_load/player_movement.gd" id="1_eisff"]
 [ext_resource type="Script" path="res://player_load/player.gd" id="1_tearn"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://buuf1t3bvxrcy" path="res://raw_assets/sprites/sword.png" id="4_show4"]
 [ext_resource type="PackedScene" uid="uid://blfgs8vhomjk8" path="res://player_load/items/boomerang_launch.tscn" id="7_vj8eh"]
 [ext_resource type="Script" path="res://player_load/items/items.gd" id="8_ks4q4"]
+[ext_resource type="PackedScene" uid="uid://ylblj4sykkqg" path="res://player_load/items/fishing_rod.tscn" id="9_wus56"]
 [ext_resource type="Script" path="res://player_load/player_anim.gd" id="10_1w8a4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdxc5"]
@@ -182,6 +183,8 @@ script = ExtResource("8_ks4q4")
 boom_launch = NodePath("boomerang_launch")
 
 [node name="boomerang_launch" parent="items" instance=ExtResource("7_vj8eh")]
+
+[node name="fishing_rod" parent="items" instance=ExtResource("9_wus56")]
 
 [node name="player_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x8b2j")
