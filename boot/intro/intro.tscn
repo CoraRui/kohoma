@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh861ens8p1kx"]
+[gd_scene load_steps=12 format=3 uid="uid://bh861ens8p1kx"]
 
 [ext_resource type="Script" path="res://boot/intro/intro.gd" id="1_5i7y0"]
 [ext_resource type="Script" path="res://boot/to_title/to_next.gd" id="2_4keyd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ve6x2obpvcmd" path="res://raw_assets/sprites/Sprite-0002.png" id="5_owkm2"]
 [ext_resource type="Texture2D" uid="uid://buuf1t3bvxrcy" path="res://raw_assets/sprites/sword.png" id="6_yim8y"]
 [ext_resource type="Texture2D" uid="uid://bpuoa4hsfvj0t" path="res://raw_assets/sprites/simple_key.png" id="7_tqku6"]
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="9_axrma"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4efeq"]
 animations = [{
@@ -35,6 +36,9 @@ animations = [{
 "name": &"zero",
 "speed": 5.0
 }]
+
+[sub_resource type="FontVariation" id="FontVariation_5dvev"]
+base_font = ExtResource("9_axrma")
 
 [node name="intro" type="Node2D" node_paths=PackedStringArray("txt_del", "img_del", "next_scene", "mural_anim", "d_box")]
 script = ExtResource("1_5i7y0")
@@ -101,6 +105,15 @@ useready = false
 wait_time = 65.0
 one_shot = true
 autostart = true
+
+[node name="temp skip" type="Label" parent="."]
+offset_left = 127.0
+offset_top = 165.0
+offset_right = 167.0
+offset_bottom = 172.0
+theme_override_fonts/font = SubResource("FontVariation_5dvev")
+theme_override_font_sizes/font_size = 5
+text = "enter skip"
 
 [connection signal="timeout" from="anim_mural/img_del" to="." method="_on_img_del_timeout"]
 [connection signal="timeout" from="dialogue_box/txt_del" to="." method="_on_txt_del_timeout"]
