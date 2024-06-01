@@ -33,6 +33,7 @@ animations = [{
 
 [node name="turtle" type="Node2D"]
 script = ExtResource("1_wnjy3")
+walk_vel_arr = Array[int]([1, 0, 0, 0])
 
 [node name="turtle_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hr1kc")

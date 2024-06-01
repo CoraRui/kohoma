@@ -32,3 +32,15 @@ enemy drop rate items, like heart up, or rupee up etc.
 
 reactions to "sound"
 break a pot and an enemy will move, step on creaky tile etc.
+
+
+I kind of want to figure out what parts of the enemy movement are reproducible, that way I can reuse what is, and only write unique code for what isn't.
+
+
+
+
+
+
+
+
+

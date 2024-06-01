@@ -1,6 +1,5 @@
 extends Node2D
 
-#TODO: anti jacking off protocol
 #TODO: delay death until knockback impact
 #TODO: actually make them fucking launch boulders
 #TODO: proper movement, wall collisions, directional
@@ -11,6 +10,9 @@ extends Node2D
 #TODO: adjust knockback its wayyyy to heavy also other movement stuff
 #TODO: animations: movement by direction, attacking, hurt, etc.
 #TODO: sfx: hit, shoot, KO
+
+#ok. so the most basic idea of the script is that theres an mvec that is used to change the position of the octo once per frame.
+#I'm probably going to use a similar principle for other movement scripts. But point is, that's not too much to reproduce.
 
 #these states refer to the octos current state. different patterns of movement exist for each state, which cause the enemy to behave completely differently in each state.
 enum MovementState {MOVING, HURT, KO, STUN}

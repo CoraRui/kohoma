@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_gy4qi"]
 [ext_resource type="PackedScene" uid="uid://mdwtmm3pvout" path="res://world_loader/level_trees/structure/world_autoload/switch_trigger.tscn" id="2_6ynjy"]
 [ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://world_loader/enemies/enemy_spawner/random/enemy_spawner.tscn" id="3_jhji4"]
-[ext_resource type="PackedScene" uid="uid://tnmauhs4oxc6" path="res://world_loader/enemies/octo/octo.tscn" id="3_vne2m"]
+[ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://world_loader/enemies/turtle/turtle.tscn" id="4_cximu"]
 [ext_resource type="Script" path="res://world_loader/enemies/enemy_spawner/resources/enemy_slot.gd" id="5_uyr1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fyrpt"]
@@ -12,7 +12,7 @@ size = Vector2(10, 10)
 [sub_resource type="Resource" id="Resource_bt1yi"]
 script = ExtResource("5_uyr1g")
 spawn_chance = 25
-enemy_ref = ExtResource("3_vne2m")
+enemy_ref = ExtResource("4_cximu")
 
 [node name="7_11" type="Node2D"]
 
