@@ -1,0 +1,2 @@
+i think the original intent for this was a temporary place to keep assets until I just put them with the object they are for.
+so ill sort this by purpose, but ideally the goal should be to move them out of here.

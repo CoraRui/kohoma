@@ -1,0 +1,3 @@
+I kind of am considering moving this to obstacles, cause. it kind of is?
+I guess the main distinction would be whether its defeatable, or whether its a kind of creature or whether
+it can move. etc. anyways its fine here for now.

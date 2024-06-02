@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dut520ctfimjr"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_en3mr"]
-[ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://world_loader/enemies/enemy_spawner/random/enemy_spawner.tscn" id="2_62w2o"]
-[ext_resource type="PackedScene" uid="uid://tnmauhs4oxc6" path="res://world_loader/enemies/octo/octo.tscn" id="3_vqdj2"]
-[ext_resource type="Script" path="res://world_loader/enemies/enemy_spawner/resources/enemy_slot.gd" id="4_uwdpa"]
+[ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://world_loader/enemies/loaders and triggers/enemy_spawner/random/enemy_spawner.tscn" id="2_62w2o"]
+[ext_resource type="PackedScene" uid="uid://tnmauhs4oxc6" path="res://world_loader/enemies/enemy_types/octo/octo.tscn" id="3_vqdj2"]
+[ext_resource type="Script" path="res://world_loader/enemies/loaders and triggers/enemy_spawner/resources/enemy_slot.gd" id="4_uwdpa"]
 
 [sub_resource type="Resource" id="Resource_17ef2"]
 script = ExtResource("4_uwdpa")

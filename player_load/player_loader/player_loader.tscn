@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6vq1fod8qlgl"]
+
+[ext_resource type="Script" path="res://player_load/player_loader/player_loader.gd" id="1_2lpur"]
+[ext_resource type="PackedScene" uid="uid://bm6r33rcfa1j6" path="res://player_load/player_node/player.tscn" id="2_yajxa"]
+
+[node name="player_loader" type="Node2D"]
+z_index = 10
+script = ExtResource("1_2lpur")
+player_ref = ExtResource("2_yajxa")

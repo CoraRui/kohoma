@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://blfgs8vhomjk8"]
+
+[ext_resource type="Script" path="res://player_load/items/boomerang/boomerang_launch.gd" id="1_i4dbo"]
+[ext_resource type="PackedScene" uid="uid://dax51qj8537fu" path="res://player_load/items/boomerang/boomerang.tscn" id="2_6m4gl"]
+
+[node name="boomerang_launch" type="Node2D"]
+script = ExtResource("1_i4dbo")
+boomerang_ref = ExtResource("2_6m4gl")

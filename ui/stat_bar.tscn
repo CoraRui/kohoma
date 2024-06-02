@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://de7j7jxw7w5c6" path="res://ui/enemy_desc/flav_text.tscn" id="10_xmvkb"]
 [ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="11_ggi63"]
 [ext_resource type="Texture2D" uid="uid://ducan1lse00wf" path="res://raw_assets/items/boomerang.png" id="12_uccnx"]
-[ext_resource type="Texture2D" uid="uid://df0t05pjfvkwd" path="res://raw_assets/sprites/player/tools/fishing rod/fishing rod.png" id="13_c250d"]
+[ext_resource type="Texture2D" uid="uid://df0t05pjfvkwd" path="res://player_load/player_node/assets/tools/fishing rod/fishing rod.png" id="13_c250d"]
 
 [sub_resource type="FontVariation" id="FontVariation_vfx5n"]
 base_font = ExtResource("11_ggi63")

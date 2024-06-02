@@ -1,0 +1,196 @@
+[gd_scene load_steps=22 format=3 uid="uid://bm6r33rcfa1j6"]
+
+[ext_resource type="Script" path="res://player_load/player_node/player_movement.gd" id="1_eisff"]
+[ext_resource type="Script" path="res://player_load/player_node/player.gd" id="1_tearn"]
+[ext_resource type="PackedScene" uid="uid://de7vva81jj68i" path="res://player_load/player_node/player_health.tscn" id="2_iokp0"]
+[ext_resource type="Script" path="res://misc/notes.gd" id="2_uvbfg"]
+[ext_resource type="Texture2D" uid="uid://cslq7bpo81ao0" path="res://player_load/player_node/assets/hat_kid.png" id="3_qmuxx"]
+[ext_resource type="Script" path="res://player_load/player_node/sword.gd" id="4_rbmau"]
+[ext_resource type="Texture2D" uid="uid://buuf1t3bvxrcy" path="res://raw_assets/sprites/sword.png" id="4_show4"]
+[ext_resource type="PackedScene" uid="uid://blfgs8vhomjk8" path="res://player_load/items/boomerang/boomerang_launch.tscn" id="7_vj8eh"]
+[ext_resource type="Script" path="res://player_load/items/items.gd" id="8_ks4q4"]
+[ext_resource type="PackedScene" uid="uid://ylblj4sykkqg" path="res://player_load/items/fishing rod/fishing_rod.tscn" id="9_wus56"]
+[ext_resource type="Script" path="res://player_load/player_node/player_anim.gd" id="10_1w8a4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdxc5"]
+size = Vector2(10, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h231d"]
+size = Vector2(4, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yp4v"]
+size = Vector2(4, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12nd1"]
+size = Vector2(2, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afak3"]
+size = Vector2(2, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq415"]
+size = Vector2(17, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8amp"]
+size = Vector2(18, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da7sj"]
+size = Vector2(17, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be1wq"]
+size = Vector2(17, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x8b2j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qmuxx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="player" type="Node2D" node_paths=PackedStringArray("items_node")]
+z_index = 15
+script = ExtResource("1_tearn")
+items_node = NodePath("items")
+
+[node name="movement" type="Node2D" parent="." node_paths=PackedStringArray("pos", "hit_area", "up_col", "down_col", "left_col", "right_col")]
+script = ExtResource("1_eisff")
+pos = NodePath("..")
+vel = Array[int]([1, 1])
+hit_area = NodePath("../hit_area")
+up_col = NodePath("../wall_collision/up")
+down_col = NodePath("../wall_collision/down")
+left_col = NodePath("../wall_collision/left")
+right_col = NodePath("../wall_collision/right")
+
+[node name="hit_area" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 132
+
+[node name="hit_box" type="CollisionShape2D" parent="hit_area"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_cdxc5")
+
+[node name="notes" type="Node2D" parent="hit_area"]
+script = ExtResource("2_uvbfg")
+
+[node name="wall_collision" type="Node2D" parent="."]
+visible = false
+
+[node name="up" type="Area2D" parent="wall_collision"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="up_box" type="CollisionShape2D" parent="wall_collision/up"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_h231d")
+
+[node name="down" type="Area2D" parent="wall_collision"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="down_box" type="CollisionShape2D" parent="wall_collision/down"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_0yp4v")
+
+[node name="left" type="Area2D" parent="wall_collision"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="left_box" type="CollisionShape2D" parent="wall_collision/left"]
+position = Vector2(-3, 4.5)
+shape = SubResource("RectangleShape2D_12nd1")
+
+[node name="right" type="Area2D" parent="wall_collision"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="right_box" type="CollisionShape2D" parent="wall_collision/right"]
+position = Vector2(3, 4.5)
+shape = SubResource("RectangleShape2D_afak3")
+
+[node name="player_health" parent="." node_paths=PackedStringArray("hitbox") instance=ExtResource("2_iokp0")]
+position = Vector2(62.75, 66.25)
+hitbox = NodePath("../hit_area")
+
+[node name="sword" type="Node2D" parent="." node_paths=PackedStringArray("sword_areas")]
+script = ExtResource("4_rbmau")
+sword_areas = [NodePath("sword_up/us_area"), NodePath("sword_down/ds_area"), NodePath("sword_left/ls_area"), NodePath("sword_right/rs_area")]
+
+[node name="sword_left" type="Sprite2D" parent="sword"]
+visible = false
+position = Vector2(-11, 1)
+texture = ExtResource("4_show4")
+
+[node name="ls_area" type="Area2D" parent="sword/sword_left"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="ls_shape" type="CollisionShape2D" parent="sword/sword_left/ls_area"]
+visible = false
+position = Vector2(2.5, 0)
+shape = SubResource("RectangleShape2D_yq415")
+
+[node name="sword_up" type="Sprite2D" parent="sword"]
+visible = false
+position = Vector2(0, -11)
+rotation = 1.5708
+texture = ExtResource("4_show4")
+
+[node name="us_area" type="Area2D" parent="sword/sword_up"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="us_shape" type="CollisionShape2D" parent="sword/sword_up/us_area"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_d8amp")
+
+[node name="sword_down" type="Sprite2D" parent="sword"]
+visible = false
+position = Vector2(0, 12)
+rotation = -1.5708
+texture = ExtResource("4_show4")
+
+[node name="ds_area" type="Area2D" parent="sword/sword_down"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="ds_shape" type="CollisionShape2D" parent="sword/sword_down/ds_area"]
+position = Vector2(2.5, -2.27374e-13)
+shape = SubResource("RectangleShape2D_da7sj")
+
+[node name="sword_right" type="Sprite2D" parent="sword"]
+visible = false
+position = Vector2(11, 1)
+rotation = 3.14159
+texture = ExtResource("4_show4")
+
+[node name="rs_area" type="Area2D" parent="sword/sword_right"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="rs_shape" type="CollisionShape2D" parent="sword/sword_right/rs_area"]
+position = Vector2(2.5, 0)
+shape = SubResource("RectangleShape2D_be1wq")
+
+[node name="items" type="Node2D" parent="." node_paths=PackedStringArray("boom_launch", "rod_node")]
+script = ExtResource("8_ks4q4")
+boom_launch = NodePath("boomerang_launch")
+rod_node = NodePath("fishing_rod")
+
+[node name="boomerang_launch" parent="items" instance=ExtResource("7_vj8eh")]
+
+[node name="fishing_rod" parent="items" instance=ExtResource("9_wus56")]
+
+[node name="player_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x8b2j")
+script = ExtResource("10_1w8a4")
+
+[connection signal="area_entered" from="hit_area" to="player_health" method="_on_hit_area_area_entered"]
+[connection signal="ended_swing" from="sword" to="movement" method="_on_sword_ended_swing"]
+[connection signal="started_swing" from="sword" to="movement" method="_on_sword_started_swing"]

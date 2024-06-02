@@ -2,9 +2,9 @@
 
 [ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://raw_assets/tiles/green_dungeon.tres" id="1_rxah5"]
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="2_dl2rw"]
-[ext_resource type="PackedScene" uid="uid://b56wn1dctrh8x" path="res://world_loader/enemies/rabbit/rabbit.tscn" id="3_ulet2"]
+[ext_resource type="PackedScene" uid="uid://b56wn1dctrh8x" path="res://world_loader/enemies/enemy_types/rabbit/rabbit.tscn" id="3_ulet2"]
 [ext_resource type="PackedScene" uid="uid://bbeu5b1kpw1lv" path="res://world_loader/interactables/key.tscn" id="4_n1sx0"]
-[ext_resource type="PackedScene" uid="uid://bymqb0demnt7k" path="res://world_loader/interactables/dungeons/interactables/push_blocks/push_block.tscn" id="5_moq3m"]
+[ext_resource type="PackedScene" uid="uid://bymqb0demnt7k" path="res://world_loader/interactables/dungeons/push_blocks/push_block.tscn" id="5_moq3m"]
 [ext_resource type="PackedScene" uid="uid://dlmrxk1ghikip" path="res://world_loader/interactables/simple_drop.tscn" id="6_2v02r"]
 [ext_resource type="PackedScene" uid="uid://cog5ygf7ssly" path="res://world_loader/interactables/coin.tscn" id="7_wexic"]
 

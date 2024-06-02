@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="enemy_set" load_steps=2 format=3 uid="uid://blir71as3kl4w"]
+
+[ext_resource type="Script" path="res://world_loader/enemies/loaders and triggers/enemy_spawner/resources/enemy_set.gd" id="1_n22fb"]
+
+[resource]
+script = ExtResource("1_n22fb")
+spawn_index = 0

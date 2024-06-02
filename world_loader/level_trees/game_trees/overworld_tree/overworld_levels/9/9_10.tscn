@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://mdwtmm3pvout" path="res://world_loader/level_trees/structure/world_autoload/switch_trigger.tscn" id="4_i4sb3"]
 [ext_resource type="Script" path="res://misc/notes.gd" id="5_3r4ej"]
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="5_rsrip"]
-[ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://world_loader/enemies/enemy_spawner/random/enemy_spawner.tscn" id="6_sw5g8"]
-[ext_resource type="PackedScene" uid="uid://tnmauhs4oxc6" path="res://world_loader/enemies/octo/octo.tscn" id="7_084wj"]
-[ext_resource type="Script" path="res://world_loader/enemies/enemy_spawner/resources/enemy_slot.gd" id="8_5o7os"]
+[ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://world_loader/enemies/loaders and triggers/enemy_spawner/random/enemy_spawner.tscn" id="6_sw5g8"]
+[ext_resource type="PackedScene" uid="uid://tnmauhs4oxc6" path="res://world_loader/enemies/enemy_types/octo/octo.tscn" id="7_084wj"]
+[ext_resource type="Script" path="res://world_loader/enemies/loaders and triggers/enemy_spawner/resources/enemy_slot.gd" id="8_5o7os"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nyvbk"]
 size = Vector2(16, 5)

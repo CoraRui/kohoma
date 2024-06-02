@@ -2,8 +2,8 @@
 
 [ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://raw_assets/tiles/green_dungeon.tres" id="1_0376s"]
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="2_0juut"]
-[ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://world_loader/enemies/turtle/turtle.tscn" id="3_nwty7"]
-[ext_resource type="PackedScene" uid="uid://da0tetbese7hm" path="res://world_loader/enemies/statue/dragon_statue.tscn" id="4_burpj"]
+[ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://world_loader/enemies/enemy_types/turtle/turtle.tscn" id="3_nwty7"]
+[ext_resource type="PackedScene" uid="uid://da0tetbese7hm" path="res://world_loader/enemies/enemy_types/statue/dragon_statue.tscn" id="4_burpj"]
 
 [node name="4_6" type="Node2D"]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cnvp4e1wmluqi"]
 
 [ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://raw_assets/tiles/green_dungeon.tres" id="1_fsf8r"]
-[ext_resource type="PackedScene" uid="uid://brwpyfkn2v02v" path="res://world_loader/interactables/dungeons/interactables/chest/chest.tscn" id="2_5hmav"]
-[ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://world_loader/enemies/turtle/turtle.tscn" id="3_egbtb"]
+[ext_resource type="PackedScene" uid="uid://brwpyfkn2v02v" path="res://world_loader/interactables/dungeons/chest/chest.tscn" id="2_5hmav"]
+[ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://world_loader/enemies/enemy_types/turtle/turtle.tscn" id="3_egbtb"]
 
 [node name="3_2" type="Node2D"]
 

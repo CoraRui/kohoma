@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://y77da38mpcsr"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_i2aa3"]
-[ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://world_loader/enemies/enemy_spawner/random/enemy_spawner.tscn" id="2_0x3kh"]
+[ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://world_loader/enemies/loaders and triggers/enemy_spawner/random/enemy_spawner.tscn" id="2_0x3kh"]
 
 [node name="9_3" type="Node2D"]
 

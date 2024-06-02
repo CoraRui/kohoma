@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfb18mm6sjiah"]
+
+[ext_resource type="Texture2D" uid="uid://dduccxh4h6xkj" path="res://player_load/player_node/assets/tools/fishing rod/bobber.png" id="1_w6h4n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k1uor"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w6h4n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bobber" type="Node2D"]
+
+[node name="bobber_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k1uor")

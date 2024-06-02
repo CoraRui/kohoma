@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://7u6sahrlaquf"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_ayd8n"]
-[ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://world_loader/enemies/enemy_spawner/random/enemy_spawner.tscn" id="3_cugjs"]
-[ext_resource type="PackedScene" uid="uid://tnmauhs4oxc6" path="res://world_loader/enemies/octo/octo.tscn" id="4_mp1pj"]
-[ext_resource type="PackedScene" uid="uid://yefqslur5d85" path="res://world_loader/enemies/whale/whale.tscn" id="5_2ifn2"]
-[ext_resource type="Script" path="res://world_loader/enemies/enemy_spawner/resources/enemy_slot.gd" id="5_bmqsf"]
+[ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://world_loader/enemies/loaders and triggers/enemy_spawner/random/enemy_spawner.tscn" id="3_cugjs"]
+[ext_resource type="PackedScene" uid="uid://tnmauhs4oxc6" path="res://world_loader/enemies/enemy_types/octo/octo.tscn" id="4_mp1pj"]
+[ext_resource type="PackedScene" uid="uid://yefqslur5d85" path="res://world_loader/enemies/enemy_types/whale/whale.tscn" id="5_2ifn2"]
+[ext_resource type="Script" path="res://world_loader/enemies/loaders and triggers/enemy_spawner/resources/enemy_slot.gd" id="5_bmqsf"]
 
 [sub_resource type="Resource" id="Resource_5ulc6"]
 script = ExtResource("5_bmqsf")
