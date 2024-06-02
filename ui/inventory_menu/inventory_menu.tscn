@@ -25,7 +25,7 @@ script = ExtResource("1_we0mr")
 offset_top = 48.0
 offset_right = 176.0
 offset_bottom = 176.0
-color = Color(0.0509804, 0, 1, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="simple_select" type="Node2D" parent="." node_paths=PackedStringArray("active_option", "active_group", "icon")]
 script = ExtResource("1_ws83t")
@@ -91,7 +91,7 @@ offset_right = 33.0
 offset_bottom = 7.0
 theme_override_fonts/font = SubResource("FontVariation_pvnbp")
 theme_override_font_sizes/font_size = 5
-text = "fish rod X"
+text = "fish rod"
 
 [node name="icon_point" type="Node2D" parent="simple_select/items/fishing rod"]
 position = Vector2(-4, 2)
@@ -197,3 +197,4 @@ color = Color(0.623529, 0.00392157, 0, 1)
 
 [connection signal="activated" from="simple_select/items/boomerang" to="simple_select/items/item_switch" method="_on_boomerang_activated"]
 [connection signal="activated" from="simple_select/items/bow" to="simple_select/items/item_switch" method="_on_bow_activated"]
+[connection signal="activated" from="simple_select/items/fishing rod" to="simple_select/items/item_switch" method="_on_fishing_rod_activated"]

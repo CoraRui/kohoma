@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cq4ypfsxg6eh0"]
+[gd_scene load_steps=17 format=3 uid="uid://cq4ypfsxg6eh0"]
 
 [ext_resource type="Script" path="res://ui/stat_bar.gd" id="1_iytto"]
 [ext_resource type="Texture2D" uid="uid://kxxugbydfir4" path="res://raw_assets/archivew/proto bar.png" id="2_8tjp7"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://de7j7jxw7w5c6" path="res://ui/enemy_desc/flav_text.tscn" id="10_xmvkb"]
 [ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="11_ggi63"]
 [ext_resource type="Texture2D" uid="uid://ducan1lse00wf" path="res://raw_assets/items/boomerang.png" id="12_uccnx"]
+[ext_resource type="Texture2D" uid="uid://df0t05pjfvkwd" path="res://raw_assets/sprites/player/tools/fishing rod/fishing rod.png" id="13_c250d"]
 
 [sub_resource type="FontVariation" id="FontVariation_vfx5n"]
 base_font = ExtResource("11_ggi63")
@@ -29,6 +30,14 @@ animations = [{
 "frames": [],
 "loop": true,
 "name": &"BOW",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_c250d")
+}],
+"loop": true,
+"name": &"FISH_ROD",
 "speed": 5.0
 }, {
 "frames": [],
@@ -50,6 +59,14 @@ animations = [{
 "frames": [],
 "loop": true,
 "name": &"BOW",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_c250d")
+}],
+"loop": true,
+"name": &"FISH_ROD",
 "speed": 5.0
 }, {
 "frames": [],

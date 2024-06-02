@@ -21,3 +21,8 @@ func _on_bow_activated():
 	player_li.player_ins.items_node.x_item = items.ItemState.BOW
 	save_fi.current_file.x_item = items.ItemState.BOW
 	stat_bi.update_slot(items.ItemState.BOW, true)
+
+func _on_fishing_rod_activated():
+	player_li.player_ins.items_node.x_item = items.ItemState.FISH_ROD
+	save_fi.current_file.x_item = items.ItemState.FISH_ROD
+	stat_bi.update_slot(items.ItemState.FISH_ROD, true)

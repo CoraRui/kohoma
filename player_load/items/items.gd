@@ -13,7 +13,7 @@ class_name items
 #TODO: update to save file when an item is switched
 
 
-enum ItemState {BOOMERANG, BOW, ROD, NONE}
+enum ItemState {BOOMERANG, BOW, FISH_ROD, NONE}
 
 #I'll attach these manually at first, eventually I can add them through code?
 signal item_x
@@ -47,7 +47,7 @@ func check_item(i : ItemState):
 			boom_launch.throw_boomerang()
 		ItemState.BOW:
 			print("bow")
-		ItemState.ROD:
+		ItemState.FISH_ROD:
 			#the rod should activate pretty much a whole new control scheme, so its going to be a pain... but i think its ok.
 			rod_node.activate_rod()
 

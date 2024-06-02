@@ -53,6 +53,8 @@ func update_slot(i : items.ItemState, is_x : bool):
 			anim.play("BOW")
 		items.ItemState.BOOMERANG:
 			anim.play("BOOMERANG")
+		items.ItemState.FISH_ROD:
+			anim.play("FISH_ROD")
 		items.ItemState.NONE:
 			anim.play("NONE")
 	

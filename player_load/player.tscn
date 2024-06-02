@@ -178,9 +178,10 @@ collision_mask = 4
 position = Vector2(2.5, 0)
 shape = SubResource("RectangleShape2D_be1wq")
 
-[node name="items" type="Node2D" parent="." node_paths=PackedStringArray("boom_launch")]
+[node name="items" type="Node2D" parent="." node_paths=PackedStringArray("boom_launch", "rod_node")]
 script = ExtResource("8_ks4q4")
 boom_launch = NodePath("boomerang_launch")
+rod_node = NodePath("fishing_rod")
 
 [node name="boomerang_launch" parent="items" instance=ExtResource("7_vj8eh")]
 
