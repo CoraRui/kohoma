@@ -6,8 +6,3 @@ This game is called kohoma. Its a Zelda nes clone that I'm using as a creative s
 	practice recreating old mechanics in that project
 	understand game development a little better as a whole
 	
-	
-	new line to add
-	
-	
-

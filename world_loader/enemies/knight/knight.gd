@@ -2,6 +2,8 @@ extends Node2D
 
 #TODO: settable initial direction for the knight, for alert. I think I can just set the alvec for now though anyways.
 #TODO: adjust iframes
+#TODO: make them not walk into walls
+
 
 #the knight only starts to move once the player enters a four directional tile adjacent to it.
 #after that, it moves slowly in 4 directions
