@@ -1,2 +1,0 @@
-ok the original idea was I'd keep aseprite files here. but I think I should just keep them with their relevant files.
-the only issue being that they don't pop up in the godot file manager

@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbxw8vt6tqvtu"]
 
 [ext_resource type="Script" path="res://ui/pause_menu/nodes/pause_menu.gd" id="1_fxur1"]
-[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="2_jitha"]
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="2_jitha"]
 [ext_resource type="Script" path="res://ui/simple_select.gd" id="3_v6yii"]
 [ext_resource type="Script" path="res://ui/simple_select/nodes/group.gd" id="4_cf5te"]
 [ext_resource type="Script" path="res://ui/simple_select/nodes/option.gd" id="5_qrbqx"]
-[ext_resource type="Texture2D" uid="uid://d1r8ffgv4h21k" path="res://ui/heart 44.png" id="6_1ffrp"]
+[ext_resource type="Texture2D" uid="uid://d1r8ffgv4h21k" path="res://ui/stat_bar/heart_bar/heart 44.png" id="6_1ffrp"]
 
 [sub_resource type="FontVariation" id="FontVariation_pvnbp"]
 base_font = ExtResource("2_jitha")

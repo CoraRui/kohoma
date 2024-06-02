@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://by63mnphjximn"]
 
-[ext_resource type="Script" path="res://ui/flav_trigger.gd" id="1_rof7m"]
+[ext_resource type="Script" path="res://ui/stat_bar/flav_text/flav_trigger.gd" id="1_rof7m"]
 
 [node name="flav_trigger" type="Node2D"]
 script = ExtResource("1_rof7m")

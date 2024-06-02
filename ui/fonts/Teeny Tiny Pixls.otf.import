@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://df0ks0cymrjb7"
-path="res://.godot/imported/Teeny Tiny Pixls.otf-a85dc79fda22186b1c9674a090e7a5ac.fontdata"
+path="res://.godot/imported/Teeny Tiny Pixls.otf-e03378d11a64df0eaec4c28c192d9ea4.fontdata"
 
 [deps]
 
-source_file="res://raw_assets/fonts/Teeny Tiny Pixls.otf"
-dest_files=["res://.godot/imported/Teeny Tiny Pixls.otf-a85dc79fda22186b1c9674a090e7a5ac.fontdata"]
+source_file="res://ui/fonts/Teeny Tiny Pixls.otf"
+dest_files=["res://.godot/imported/Teeny Tiny Pixls.otf-e03378d11a64df0eaec4c28c192d9ea4.fontdata"]
 
 [params]
 

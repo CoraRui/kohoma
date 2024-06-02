@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mx1dpxmvts8i"
-path="res://.godot/imported/perm_tilesheet.aseprite-7dd3afabe1889766fd77fa146544fd7f.ctex"
+uid="uid://ixpoww1vqub1"
+path="res://.godot/imported/heart 14.png-a0da1fdbb2e968d7f97d424c07a10b7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raw_assets/backups/perm_tilesheet.aseprite"
-dest_files=["res://.godot/imported/perm_tilesheet.aseprite-7dd3afabe1889766fd77fa146544fd7f.ctex"]
+source_file="res://ui/stat_bar/heart_bar/heart 14.png"
+dest_files=["res://.godot/imported/heart 14.png-a0da1fdbb2e968d7f97d424c07a10b7b.ctex"]
 
 [params]
 

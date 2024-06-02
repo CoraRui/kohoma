@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bhqaw3q6qu30m"]
 
 [ext_resource type="Script" path="res://ui/dialogue_loader/dialogue_box.gd" id="1_l2eds"]
-[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="2_mu4h8"]
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="2_mu4h8"]
 
 [sub_resource type="FontVariation" id="FontVariation_socjx"]
 base_font = ExtResource("2_mu4h8")

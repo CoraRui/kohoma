@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bscpq4eds8ej8"
-path="res://.godot/imported/perm_tilesheet.png-3d2677943cb4b842f15f54660a24836f.ctex"
+uid="uid://mx1dpxmvts8i"
+path="res://.godot/imported/perm_tilesheet.aseprite-49146fb8e67ca8db6edcfa5b648253de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raw_assets/backups/perm_tilesheet.png"
-dest_files=["res://.godot/imported/perm_tilesheet.png-3d2677943cb4b842f15f54660a24836f.ctex"]
+source_file="res://world_loader/tile_pallettes/perm_tilesheet.aseprite"
+dest_files=["res://.godot/imported/perm_tilesheet.aseprite-49146fb8e67ca8db6edcfa5b648253de.ctex"]
 
 [params]
 

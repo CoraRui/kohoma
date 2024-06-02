@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://gcxbscyach76"]
 
 [ext_resource type="PackedScene" uid="uid://d2ij06gtg0fi7" path="res://world_loader/rooms/room trigger/room_trigger.tscn" id="3_agxol"]
-[ext_resource type="PackedScene" uid="uid://by63mnphjximn" path="res://ui/enemy_desc/flav_trigger.tscn" id="4_coebc"]
+[ext_resource type="PackedScene" uid="uid://by63mnphjximn" path="res://ui/stat_bar/flav_text/flav_trigger.tscn" id="4_coebc"]
 [ext_resource type="PackedScene" uid="uid://cpox3psx25wv7" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_10/shop_1.tscn" id="4_yvwce"]
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="5_la3k3"]
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="7_2kqbw"]

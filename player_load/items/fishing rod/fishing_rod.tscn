@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ylblj4sykkqg"]
+[gd_scene load_steps=3 format=3 uid="uid://ylblj4sykkqg"]
 
 [ext_resource type="Script" path="res://player_load/items/fishing rod/fishing_rod.gd" id="1_j7qgm"]
+[ext_resource type="PackedScene" uid="uid://dfb18mm6sjiah" path="res://player_load/items/fishing rod/bobber.tscn" id="2_dt0mt"]
 
 [node name="fishing_rod" type="Node2D"]
 script = ExtResource("1_j7qgm")
+bobber_ins = ExtResource("2_dt0mt")

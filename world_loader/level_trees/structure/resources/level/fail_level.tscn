@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccdidxiil10lf"]
 
-[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="1_slg5i"]
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="1_slg5i"]
 
 [sub_resource type="FontVariation" id="FontVariation_bk07h"]
 base_font = ExtResource("1_slg5i")

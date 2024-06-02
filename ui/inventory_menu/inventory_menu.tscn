@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://ui/simple_select.gd" id="1_ws83t"]
 [ext_resource type="Script" path="res://ui/simple_select/nodes/group.gd" id="2_1q00y"]
 [ext_resource type="Script" path="res://ui/simple_select/nodes/option.gd" id="3_n0vl0"]
-[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="4_n33cr"]
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="4_n33cr"]
 [ext_resource type="Script" path="res://ui/inventory_menu/item_switch.gd" id="5_6qpky"]
 
 [sub_resource type="FontVariation" id="FontVariation_pvnbp"]

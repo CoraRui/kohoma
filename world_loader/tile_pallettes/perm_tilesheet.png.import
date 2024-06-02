@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfp54gipeh23x"
-path="res://.godot/imported/heart 24.png-9a0344819da4c9b5b9f22d4f58a2fa07.ctex"
+uid="uid://bscpq4eds8ej8"
+path="res://.godot/imported/perm_tilesheet.png-27d904d49587aa06af1ae43e0b416558.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/heart 24.png"
-dest_files=["res://.godot/imported/heart 24.png-9a0344819da4c9b5b9f22d4f58a2fa07.ctex"]
+source_file="res://world_loader/tile_pallettes/perm_tilesheet.png"
+dest_files=["res://.godot/imported/perm_tilesheet.png-27d904d49587aa06af1ae43e0b416558.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://ui/simple_select.gd" id="1_nu4hw"]
 [ext_resource type="Script" path="res://ui/simple_select/nodes/group.gd" id="2_45qck"]
 [ext_resource type="Script" path="res://ui/simple_select/nodes/option.gd" id="3_tn3cn"]
-[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="4_tycxi"]
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="4_tycxi"]
 
 [sub_resource type="FontVariation" id="FontVariation_pvnbp"]
 base_font = ExtResource("4_tycxi")

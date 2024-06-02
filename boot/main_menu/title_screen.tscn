@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhh0i8vm2o6m7"]
 
-[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="1_ntk1p"]
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="1_ntk1p"]
 [ext_resource type="Script" path="res://boot/main_menu/title_screen.gd" id="1_vxut2"]
 [ext_resource type="Script" path="res://boot/to_title/to_next.gd" id="1_wubry"]
 [ext_resource type="PackedScene" uid="uid://begvbnexwd83c" path="res://boot/main_menu/file select/file_select.tscn" id="2_qfhta"]
