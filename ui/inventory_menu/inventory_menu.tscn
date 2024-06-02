@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://s5kt61gph4oq"]
+[gd_scene load_steps=10 format=3 uid="uid://s5kt61gph4oq"]
 
 [ext_resource type="Script" path="res://ui/inventory_menu/inventory_menu.gd" id="1_we0mr"]
 [ext_resource type="Script" path="res://ui/simple_select.gd" id="1_ws83t"]
@@ -8,6 +8,12 @@
 [ext_resource type="Script" path="res://ui/inventory_menu/item_switch.gd" id="5_6qpky"]
 
 [sub_resource type="FontVariation" id="FontVariation_pvnbp"]
+base_font = ExtResource("4_n33cr")
+
+[sub_resource type="FontVariation" id="FontVariation_pvovm"]
+base_font = ExtResource("4_n33cr")
+
+[sub_resource type="FontVariation" id="FontVariation_a3oxr"]
 base_font = ExtResource("4_n33cr")
 
 [node name="inventory_menu" type="Node2D"]
@@ -29,19 +35,18 @@ icon = NodePath("icon")
 
 [node name="items" type="Node2D" parent="simple_select" node_paths=PackedStringArray("options")]
 script = ExtResource("2_1q00y")
-options = [NodePath("boomerang"), NodePath("bow"), NodePath("item_three")]
+options = [NodePath("boomerang"), NodePath("bow"), NodePath("fishing rod"), NodePath("option 4"), NodePath("option 5"), NodePath("option 6"), NodePath("option 7"), NodePath("option 8")]
 
 [node name="item_switch" type="Node2D" parent="simple_select/items"]
 position = Vector2(0, 43)
 script = ExtResource("5_6qpky")
 
-[node name="boomerang" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "target_group", "up_option", "down_option")]
+[node name="boomerang" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "down_option", "right_option")]
 position = Vector2(14, 56)
 script = ExtResource("3_n0vl0")
 icon_point = NodePath("icon_point")
-target_group = NodePath("../../group2")
-up_option = NodePath("../item_three")
 down_option = NodePath("../bow")
+right_option = NodePath("../option 5")
 
 [node name="option_text" type="Label" parent="simple_select/items/boomerang"]
 offset_right = 36.0
@@ -55,92 +60,133 @@ text = "boomerang
 [node name="icon_point" type="Node2D" parent="simple_select/items/boomerang"]
 position = Vector2(-4, 2)
 
-[node name="bow" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "up_option", "down_option")]
+[node name="bow" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "up_option", "down_option", "right_option")]
 position = Vector2(14, 65)
 script = ExtResource("3_n0vl0")
 icon_point = NodePath("icon_point")
 up_option = NodePath("../boomerang")
-down_option = NodePath("../item_three")
+down_option = NodePath("../fishing rod")
+right_option = NodePath("../option 6")
 
 [node name="option_text" type="Label" parent="simple_select/items/bow"]
 offset_right = 33.0
 offset_bottom = 7.0
 theme_override_fonts/font = SubResource("FontVariation_pvnbp")
 theme_override_font_sizes/font_size = 5
-text = "bow"
+text = "bow X"
 
 [node name="icon_point" type="Node2D" parent="simple_select/items/bow"]
 position = Vector2(-4, 2)
 
-[node name="item_three" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "up_option", "down_option")]
+[node name="fishing rod" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "up_option", "down_option", "right_option")]
 position = Vector2(14, 74)
 script = ExtResource("3_n0vl0")
 icon_point = NodePath("icon_point")
 up_option = NodePath("../bow")
-down_option = NodePath("../boomerang")
+down_option = NodePath("../option 4")
+right_option = NodePath("../option 7")
 
-[node name="option_text" type="Label" parent="simple_select/items/item_three"]
+[node name="option_text" type="Label" parent="simple_select/items/fishing rod"]
 offset_right = 33.0
 offset_bottom = 7.0
 theme_override_fonts/font = SubResource("FontVariation_pvnbp")
 theme_override_font_sizes/font_size = 5
-text = "option 3
-"
+text = "fish rod X"
 
-[node name="icon_point" type="Node2D" parent="simple_select/items/item_three"]
+[node name="icon_point" type="Node2D" parent="simple_select/items/fishing rod"]
 position = Vector2(-4, 2)
 
-[node name="group2" type="Node2D" parent="simple_select" node_paths=PackedStringArray("options")]
-script = ExtResource("2_1q00y")
-options = [NodePath("option1"), NodePath("option2"), NodePath("option3")]
-
-[node name="option1" type="Node2D" parent="simple_select/group2" node_paths=PackedStringArray("icon_point")]
-position = Vector2(71, 59)
+[node name="option 4" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "up_option", "right_option")]
+position = Vector2(10, 85)
 script = ExtResource("3_n0vl0")
-icon_point = NodePath("icon_point")
+icon_point = NodePath("option_point")
+up_option = NodePath("../fishing rod")
+right_option = NodePath("../option 8")
 
-[node name="option_text" type="Label" parent="simple_select/group2/option1"]
-offset_right = 33.0
-offset_bottom = 7.0
-theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+[node name="option_text" type="Label" parent="simple_select/items/option 4"]
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 44.0
+offset_bottom = 3.0
+theme_override_fonts/font = SubResource("FontVariation_pvovm")
 theme_override_font_sizes/font_size = 5
-text = "option 1
-"
+text = "option 4"
 
-[node name="icon_point" type="Node2D" parent="simple_select/group2/option1"]
-position = Vector2(-4, 2)
+[node name="option_point" type="Node2D" parent="simple_select/items/option 4"]
 
-[node name="option2" type="Node2D" parent="simple_select/group2" node_paths=PackedStringArray("icon_point")]
-position = Vector2(71, 68)
+[node name="option 5" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "down_option", "left_option")]
+position = Vector2(60, 59)
 script = ExtResource("3_n0vl0")
-icon_point = NodePath("icon_point")
+icon_point = NodePath("option_point")
+down_option = NodePath("../option 6")
+left_option = NodePath("../boomerang")
 
-[node name="option_text" type="Label" parent="simple_select/group2/option2"]
-offset_right = 33.0
-offset_bottom = 7.0
-theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+[node name="option_text" type="Label" parent="simple_select/items/option 5"]
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 44.0
+offset_bottom = 20.0
+theme_override_fonts/font = SubResource("FontVariation_a3oxr")
 theme_override_font_sizes/font_size = 5
-text = "option 2"
+text = "option 5"
 
-[node name="icon_point" type="Node2D" parent="simple_select/group2/option2"]
-position = Vector2(-4, 2)
+[node name="option_point" type="Node2D" parent="simple_select/items/option 5"]
 
-[node name="option3" type="Node2D" parent="simple_select/group2" node_paths=PackedStringArray("icon_point", "target_group")]
-position = Vector2(71, 77)
+[node name="option 6" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "up_option", "down_option", "left_option")]
+position = Vector2(60, 68)
 script = ExtResource("3_n0vl0")
-icon_point = NodePath("icon_point")
-target_group = NodePath("../../items")
+icon_point = NodePath("option_point")
+up_option = NodePath("../option 5")
+down_option = NodePath("../option 7")
+left_option = NodePath("../bow")
 
-[node name="option_text" type="Label" parent="simple_select/group2/option3"]
-offset_right = 33.0
-offset_bottom = 7.0
-theme_override_fonts/font = SubResource("FontVariation_pvnbp")
+[node name="option_text" type="Label" parent="simple_select/items/option 6"]
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 44.0
+offset_bottom = 20.0
+theme_override_fonts/font = SubResource("FontVariation_a3oxr")
 theme_override_font_sizes/font_size = 5
-text = "option 3
-"
+text = "option 6"
 
-[node name="icon_point" type="Node2D" parent="simple_select/group2/option3"]
-position = Vector2(-4, 2)
+[node name="option_point" type="Node2D" parent="simple_select/items/option 6"]
+
+[node name="option 7" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "up_option", "down_option", "left_option")]
+position = Vector2(60, 77)
+script = ExtResource("3_n0vl0")
+icon_point = NodePath("option_point")
+up_option = NodePath("../option 6")
+down_option = NodePath("../option 8")
+left_option = NodePath("../fishing rod")
+
+[node name="option_text" type="Label" parent="simple_select/items/option 7"]
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 44.0
+offset_bottom = 20.0
+theme_override_fonts/font = SubResource("FontVariation_a3oxr")
+theme_override_font_sizes/font_size = 5
+text = "option 7"
+
+[node name="option_point" type="Node2D" parent="simple_select/items/option 7"]
+
+[node name="option 8" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "up_option", "left_option")]
+position = Vector2(60, 85)
+script = ExtResource("3_n0vl0")
+icon_point = NodePath("option_point")
+up_option = NodePath("../option 7")
+left_option = NodePath("../option 4")
+
+[node name="option_text" type="Label" parent="simple_select/items/option 8"]
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 45.0
+offset_bottom = 20.0
+theme_override_fonts/font = SubResource("FontVariation_a3oxr")
+theme_override_font_sizes/font_size = 5
+text = "option 8"
+
+[node name="option_point" type="Node2D" parent="simple_select/items/option 8"]
 
 [node name="icon" type="Node2D" parent="simple_select"]
 
