@@ -14,6 +14,10 @@ class_name stat_bar
 
 @export var key_label : Label
 
+@export var x_item_anim : AnimatedSprite2D
+
+@export var y_item_anim : AnimatedSprite2D
+
 @onready var save_fi : save_file = get_node("/root/save_file_auto")
 
 func _ready():
@@ -37,3 +41,23 @@ func death_reset():
 
 func reset_position():
 	global_position = Vector2(0,0)
+
+func update_slot(i : items.ItemState, is_x : bool):
+	var anim : AnimatedSprite2D
+	if is_x:
+		anim = x_item_anim
+	else:
+		anim = y_item_anim
+	match i:
+		items.ItemState.BOW:
+			anim.play("BOW")
+		items.ItemState.BOOMERANG:
+			anim.play("BOOMERANG")
+		items.ItemState.NONE:
+			anim.play("NONE")
+	
+	
+	
+	
+	
+	

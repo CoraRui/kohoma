@@ -10,22 +10,27 @@ class_name items
 #TODO: i havent touched this in a while, but. do it more. its pretty important
 #TODO: bombs, power bracelet?(I think picking up stuff and pushing stuff will be default)
 #TODO: if I make bombs, i might have to add another tile type with a custom save flag 
+#TODO: update to save file when an item is switched
 
 
-enum ItemState {BOOMERANG, BOW, ROD}
+enum ItemState {BOOMERANG, BOW, ROD, NONE}
 
 #I'll attach these manually at first, eventually I can add them through code?
 signal item_x
 signal item_y
 
-@export var x_item : ItemState = ItemState.BOOMERANG
-@export var y_item : ItemState = ItemState.BOW
+@export var x_item : ItemState = ItemState.NONE
+@export var y_item : ItemState = ItemState.NONE
 
 #item refs
 @export var boom_launch : boomerang_launcher
 @export var rod_node : fishing_rod
 
 @onready var player_script : player = get_parent()
+
+#autoloads
+@onready var save_fi : save_file = get_node("/root/save_file_auto")
+
 
 
 func _input(event):

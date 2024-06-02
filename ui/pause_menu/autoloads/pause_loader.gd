@@ -55,11 +55,9 @@ func open_inventory_menu():
 	world_i.set_process(false)
 	player_li.set_process(false)
 	level_bi.set_process(false)
-	stat_bi.set_process(false)
 	world_i.set_visible(false)
 	player_li.set_visible(false)
 	level_bi.set_visible(false)
-	stat_bi.set_visible(false)
 	inventory_mi = load(inventory_menu_ref).instantiate()
 	get_tree().get_root().add_child(inventory_mi)
 	inventory_mi.global_position = camera_li.main_camera.global_position
@@ -68,11 +66,9 @@ func close_inventory_menu():
 	world_i.set_process(true)
 	player_li.set_process(true)
 	level_bi.set_process(true)
-	stat_bi.set_process(true)
 	world_i.set_visible(true)
 	player_li.set_visible(true)
 	level_bi.set_visible(true)
-	stat_bi.set_visible(true)
 	inventory_mi.queue_free()
 
 func close_pause_menu():

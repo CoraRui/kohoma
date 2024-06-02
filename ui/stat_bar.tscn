@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cq4ypfsxg6eh0"]
+[gd_scene load_steps=16 format=3 uid="uid://cq4ypfsxg6eh0"]
 
 [ext_resource type="Script" path="res://ui/stat_bar.gd" id="1_iytto"]
 [ext_resource type="Texture2D" uid="uid://kxxugbydfir4" path="res://raw_assets/archivew/proto bar.png" id="2_8tjp7"]
@@ -11,23 +11,68 @@
 [ext_resource type="Texture2D" uid="uid://ycfin6t4oh64" path="res://ui/heart 00.png" id="9_mq8by"]
 [ext_resource type="PackedScene" uid="uid://de7j7jxw7w5c6" path="res://ui/enemy_desc/flav_text.tscn" id="10_xmvkb"]
 [ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://raw_assets/fonts/Teeny Tiny Pixls.otf" id="11_ggi63"]
+[ext_resource type="Texture2D" uid="uid://ducan1lse00wf" path="res://raw_assets/items/boomerang.png" id="12_uccnx"]
 
 [sub_resource type="FontVariation" id="FontVariation_vfx5n"]
 base_font = ExtResource("11_ggi63")
 
-[node name="stat_bar" type="Node2D" node_paths=PackedStringArray("hp_bar", "flav", "key_label")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_36l3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_uccnx")
+}],
+"loop": true,
+"name": &"BOOMERANG",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"BOW",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"NONE",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mv41o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_uccnx")
+}],
+"loop": true,
+"name": &"BOOMERANG",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"BOW",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"NONE",
+"speed": 1.0
+}]
+
+[node name="stat_bar" type="Node2D" node_paths=PackedStringArray("hp_bar", "flav", "key_label", "x_item_anim", "y_item_anim")]
 z_index = 5
 script = ExtResource("1_iytto")
 hp_bar = NodePath("heart_bar")
 flav = NodePath("flav_text")
 key_label = NodePath("key_label")
+x_item_anim = NodePath("x_item")
+y_item_anim = NodePath("y_item")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="background" type="ColorRect" parent="."]
 offset_right = 176.0
 offset_bottom = 48.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="bottom bar" type="ColorRect" parent="."]
 offset_top = 160.0
 offset_right = 176.0
 offset_bottom = 176.0
@@ -93,6 +138,7 @@ position = Vector2(43.5, 10)
 texture = ExtResource("3_nb8mf")
 
 [node name="flav_text" parent="." instance=ExtResource("10_xmvkb")]
+position = Vector2(34, -2)
 
 [node name="key_label" type="Label" parent="."]
 offset_left = 8.0
@@ -102,3 +148,29 @@ offset_bottom = 30.0
 theme_override_fonts/font = SubResource("FontVariation_vfx5n")
 theme_override_font_sizes/font_size = 5
 text = "keys x 0"
+
+[node name="xitem" type="ColorRect" parent="."]
+offset_left = 65.0
+offset_top = 7.0
+offset_right = 83.0
+offset_bottom = 31.0
+color = Color(0.0447414, 3.85046e-07, 0.313199, 1)
+
+[node name="yitem" type="ColorRect" parent="."]
+offset_left = 88.0
+offset_top = 7.0
+offset_right = 106.0
+offset_bottom = 31.0
+color = Color(0.254902, 0, 0.0235294, 1)
+
+[node name="x_item" type="AnimatedSprite2D" parent="."]
+position = Vector2(67, 9)
+sprite_frames = SubResource("SpriteFrames_36l3d")
+animation = &"NONE"
+centered = false
+
+[node name="y_item" type="AnimatedSprite2D" parent="."]
+position = Vector2(90, 9)
+sprite_frames = SubResource("SpriteFrames_mv41o")
+animation = &"NONE"
+centered = false

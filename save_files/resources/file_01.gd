@@ -22,6 +22,10 @@ class_name file_01
 
 @export var gold : int = 0
 
+@export var x_item : items.ItemState = items.ItemState.NONE
+
+@export var y_item : items.ItemState = items.ItemState.NONE
+
 #general records
 
 @export var kills : int = 0
