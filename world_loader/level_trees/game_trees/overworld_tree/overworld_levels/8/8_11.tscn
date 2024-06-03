@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://nmnnhoqjulmn"]
 
-[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_0u3dl"]
+[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_0u3dl"]
 [ext_resource type="PackedScene" uid="uid://d2ij06gtg0fi7" path="res://world_loader/rooms/room trigger/room_trigger.tscn" id="2_n70v1"]
 [ext_resource type="PackedScene" uid="uid://brpxjjuw0ul07" path="res://world_loader/rooms/home/home.tscn" id="3_ytljt"]
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="4_url0w"]

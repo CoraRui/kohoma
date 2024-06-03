@@ -1,2 +1,3 @@
-i think the original intent for this was a temporary place to keep assets until I just put them with the object they are for.
-so ill sort this by purpose, but ideally the goal should be to move them out of here.
+ok. so this is pretty much just the initial saving place for assets from external editors. then I can move them to where they should be.
+within the project files. although don't wait too long to do that cause its annoying/more work to deal with later since I have to 
+figure out where to put it.

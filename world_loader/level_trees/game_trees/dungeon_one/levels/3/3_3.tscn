@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dl7mhij5uvp00"]
 
-[ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://raw_assets/tiles/green_dungeon.tres" id="1_o4n7a"]
+[ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://world_loader/tile_pallettes/green_dungeon.tres" id="1_o4n7a"]
 
 [node name="3_3" type="Node2D"]
 

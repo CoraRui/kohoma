@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://djfoef06jnovk"]
 
-[ext_resource type="Script" path="res://boot/main_menu/file select/game_init.gd" id="1_ppfqp"]
+[ext_resource type="Script" path="res://boot/scripts/game_init.gd" id="1_ppfqp"]
 
 [node name="game_over" type="Node2D"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://di1d3w1t7ugyu"]
 
-[ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://raw_assets/tiles/green_dungeon.tres" id="1_yv82k"]
+[ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://world_loader/tile_pallettes/green_dungeon.tres" id="1_yv82k"]
 [ext_resource type="PackedScene" uid="uid://bymqb0demnt7k" path="res://world_loader/interactables/mechanisms/push_blocks/push_block.tscn" id="2_towhi"]
 [ext_resource type="PackedScene" uid="uid://brwpyfkn2v02v" path="res://world_loader/interactables/mechanisms/chest/chest.tscn" id="3_2r5ru"]
 

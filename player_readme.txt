@@ -2,14 +2,10 @@ Kohoma is an legend of zelda like exploration game.
 
 
 Controls
-
 		Keyboard
 			key
 		
 		Controller
-
-			snes button layout
-			d pad is the intended method of play, but left joystick works too.
 
 			purpose for right joystick and triggers?
 
@@ -20,7 +16,7 @@ Controls
 
 			overworld
 
-			dpad - move character
+			directions - move character(left joystick works, but arrows are the intended experience)
 
 			start - save/quit menu
 			(temporary? just hold to save and quit)

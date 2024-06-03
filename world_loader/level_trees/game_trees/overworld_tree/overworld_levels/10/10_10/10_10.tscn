@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://by63mnphjximn" path="res://ui/stat_bar/flav_text/flav_trigger.tscn" id="4_coebc"]
 [ext_resource type="PackedScene" uid="uid://cpox3psx25wv7" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_10/shop_1.tscn" id="4_yvwce"]
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="5_la3k3"]
-[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="7_2kqbw"]
+[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="7_2kqbw"]
 [ext_resource type="PackedScene" uid="uid://dbqeje3tlgd53" path="res://save_files/triggers/save trigger/save_point/save_point.tscn" id="7_wy4xe"]
 [ext_resource type="PackedScene" uid="uid://yefqslur5d85" path="res://world_loader/enemies/enemy_types/whale/whale.tscn" id="9_geeab"]
 [ext_resource type="PackedScene" uid="uid://cb5fhnkvxrkae" path="res://ui/dialogue_loader/dialogue_trigger.tscn" id="9_k82vi"]

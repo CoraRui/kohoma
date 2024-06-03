@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlmrxk1ghikip"]
+
+[ext_resource type="Script" path="res://world_loader/interactables/drops/simple_drop/simple_drop.gd" id="1_i0sco"]
+
+[node name="simple_drop" type="Node2D"]
+script = ExtResource("1_i0sco")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://waa8bjdf2r6s"]
 
-[ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://raw_assets/tiles/green_dungeon.tres" id="1_dhewh"]
+[ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://world_loader/tile_pallettes/green_dungeon.tres" id="1_dhewh"]
 [ext_resource type="PackedScene" uid="uid://srelmtycm4ct" path="res://world_loader/interactables/mechanisms/doors/key_door.tscn" id="2_cc36g"]
-[ext_resource type="Texture2D" uid="uid://cyqspw61nog4p" path="res://raw_assets/tiles/big_door.png" id="3_idhg6"]
+[ext_resource type="Texture2D" uid="uid://cyqspw61nog4p" path="res://world_loader/tile_pallettes/big_door.png" id="3_idhg6"]
 
 [node name="3_1" type="Node2D"]
 

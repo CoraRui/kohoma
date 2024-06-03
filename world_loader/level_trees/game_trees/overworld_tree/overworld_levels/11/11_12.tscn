@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bs6oe2a2vcx8j"]
 
-[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_tsjm4"]
+[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_tsjm4"]
 [ext_resource type="PackedScene" uid="uid://yefqslur5d85" path="res://world_loader/enemies/enemy_types/whale/whale.tscn" id="2_u8qwb"]
 
 [node name="11_12" type="Node2D"]

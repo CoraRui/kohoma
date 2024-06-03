@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c03thsyhjr3hi"]
 
-[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_86h0m"]
+[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_86h0m"]
 [ext_resource type="PackedScene" uid="uid://jfxvdv88hlmx" path="res://music_player/triggers/music_trigger.tscn" id="2_msfli"]
 
 [node name="9_11" type="Node2D"]

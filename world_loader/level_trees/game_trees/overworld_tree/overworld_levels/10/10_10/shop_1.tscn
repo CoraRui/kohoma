@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpox3psx25wv7"]
 
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="1_i8ubn"]
-[ext_resource type="TileSet" uid="uid://ba2m0q1510vtc" path="res://raw_assets/tiles/mono.tres" id="2_2vei6"]
+[ext_resource type="TileSet" uid="uid://ba2m0q1510vtc" path="res://world_loader/tile_pallettes/mono.tres" id="2_2vei6"]
 [ext_resource type="PackedScene" uid="uid://j2gcqncpoo46" path="res://world_loader/rooms/room trigger/exit_trigger.tscn" id="3_22n5r"]
 
 [node name="shop_1" type="Node2D"]

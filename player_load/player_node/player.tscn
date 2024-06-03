@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://misc/notes.gd" id="2_uvbfg"]
 [ext_resource type="Texture2D" uid="uid://cslq7bpo81ao0" path="res://player_load/player_node/assets/hat_kid.png" id="3_qmuxx"]
 [ext_resource type="Script" path="res://player_load/player_node/sword.gd" id="4_rbmau"]
-[ext_resource type="Texture2D" uid="uid://buuf1t3bvxrcy" path="res://raw_assets/sprites/sword.png" id="4_show4"]
+[ext_resource type="Texture2D" uid="uid://buuf1t3bvxrcy" path="res://player_load/items/sword.png" id="4_show4"]
 [ext_resource type="PackedScene" uid="uid://blfgs8vhomjk8" path="res://player_load/items/boomerang/boomerang_launch.tscn" id="7_vj8eh"]
 [ext_resource type="Script" path="res://player_load/items/items.gd" id="8_ks4q4"]
 [ext_resource type="PackedScene" uid="uid://ylblj4sykkqg" path="res://player_load/items/fishing rod/fishing_rod.tscn" id="9_wus56"]

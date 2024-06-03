@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://kfo6qktvvv65"]
 
 [ext_resource type="Script" path="res://world_loader/interactables/drops/heart/heart.gd" id="1_raj4h"]
-[ext_resource type="Texture2D" uid="uid://cjrfmhp1jjim6" path="res://raw_assets/sprites/pickups/heart_pickup_red.png" id="2_d4n2w"]
-[ext_resource type="Texture2D" uid="uid://cssysaid7odtl" path="res://raw_assets/sprites/pickups/heart_pickup_blue.png" id="3_yji6t"]
+[ext_resource type="Texture2D" uid="uid://cjrfmhp1jjim6" path="res://world_loader/interactables/drops/heart/heart_pickup_red.png" id="2_d4n2w"]
+[ext_resource type="Texture2D" uid="uid://cssysaid7odtl" path="res://world_loader/interactables/drops/heart/heart_pickup_blue.png" id="3_yji6t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_36pvm"]
 animations = [{

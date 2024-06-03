@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfhbijrk1pbbx"]
+
+[ext_resource type="Script" path="res://boot/file_select/file_slot.gd" id="1_3f0m5"]
+[ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="2_e21kw"]
+
+[sub_resource type="FontVariation" id="FontVariation_pd0xr"]
+base_font = ExtResource("2_e21kw")
+
+[sub_resource type="FontVariation" id="FontVariation_ab5rs"]
+base_font = ExtResource("2_e21kw")
+
+[node name="file_slot" type="Node2D" node_paths=PackedStringArray("name_label", "money_label")]
+script = ExtResource("1_3f0m5")
+file_index = -1
+name_label = NodePath("name_label")
+money_label = NodePath("money")
+
+[node name="name_label" type="Label" parent="."]
+offset_top = 2.0
+offset_right = 80.0
+offset_bottom = 16.0
+theme_override_fonts/font = SubResource("FontVariation_pd0xr")
+theme_override_font_sizes/font_size = 10
+text = "empty_file"
+
+[node name="money" type="Label" parent="."]
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 33.0
+theme_override_fonts/font = SubResource("FontVariation_ab5rs")
+theme_override_font_sizes/font_size = 10
+text = "000"

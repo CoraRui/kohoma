@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://bh861ens8p1kx"]
 
 [ext_resource type="Script" path="res://boot/intro/intro.gd" id="1_5i7y0"]
-[ext_resource type="Script" path="res://boot/to_title/to_next.gd" id="2_4keyd"]
-[ext_resource type="PackedScene" uid="uid://bhh0i8vm2o6m7" path="res://boot/main_menu/title_screen.tscn" id="3_53b1d"]
+[ext_resource type="Script" path="res://boot/scripts/to_next.gd" id="2_4keyd"]
+[ext_resource type="PackedScene" uid="uid://bhh0i8vm2o6m7" path="res://boot/title_screen/title_screen.tscn" id="3_53b1d"]
 [ext_resource type="PackedScene" uid="uid://jfxvdv88hlmx" path="res://music_player/triggers/music_trigger.tscn" id="4_u8nlj"]
 [ext_resource type="PackedScene" uid="uid://bhqaw3q6qu30m" path="res://ui/dialogue_loader/dialogue_box.tscn" id="4_yfyia"]
-[ext_resource type="Texture2D" uid="uid://ve6x2obpvcmd" path="res://raw_assets/sprites/pickups/Sprite-0002.png" id="5_owkm2"]
-[ext_resource type="Texture2D" uid="uid://buuf1t3bvxrcy" path="res://raw_assets/sprites/sword.png" id="6_yim8y"]
-[ext_resource type="Texture2D" uid="uid://bpuoa4hsfvj0t" path="res://raw_assets/sprites/pickups/simple_key.png" id="7_tqku6"]
+[ext_resource type="Texture2D" uid="uid://ve6x2obpvcmd" path="res://world_loader/interactables/drops/coin/Sprite-0002.png" id="5_owkm2"]
+[ext_resource type="Texture2D" uid="uid://buuf1t3bvxrcy" path="res://player_load/items/sword.png" id="6_yim8y"]
+[ext_resource type="Texture2D" uid="uid://bpuoa4hsfvj0t" path="res://world_loader/interactables/drops/key/simple_key.png" id="7_tqku6"]
 [ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="9_axrma"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4efeq"]

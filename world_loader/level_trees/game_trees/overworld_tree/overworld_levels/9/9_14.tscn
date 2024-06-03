@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cq65fvxi7v4ru"]
 
-[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_apv1v"]
-[ext_resource type="TileSet" uid="uid://ba2m0q1510vtc" path="res://raw_assets/tiles/mono.tres" id="2_2umlo"]
+[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_apv1v"]
+[ext_resource type="TileSet" uid="uid://ba2m0q1510vtc" path="res://world_loader/tile_pallettes/mono.tres" id="2_2umlo"]
 
 [node name="9_14" type="Node2D"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c33qvre5ce7yt"]
 
-[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_nnujp"]
+[ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_nnujp"]
 
 [node name="8_13" type="Node2D"]
 

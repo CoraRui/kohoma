@@ -2,6 +2,7 @@ extends Node2D
 class_name pause_loader
 
 #TODO: pause menu should load in at current camera position
+#TODO: disable overworld input
 
 #this autoload waits for a button press and loads the main menu
 @export_file var pause_menu_ref : String = "res://ui/pause_menu/nodes/pause_menu.tscn"

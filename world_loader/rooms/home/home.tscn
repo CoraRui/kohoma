@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://brpxjjuw0ul07"]
 
-[ext_resource type="Texture2D" uid="uid://b0wi8kix7nhgf" path="res://raw_assets/tiles/house_interior.png" id="1_u3h4b"]
+[ext_resource type="Texture2D" uid="uid://b0wi8kix7nhgf" path="res://world_loader/tile_pallettes/house_interior.png" id="1_u3h4b"]
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="2_olahv"]
 [ext_resource type="PackedScene" uid="uid://j2gcqncpoo46" path="res://world_loader/rooms/room trigger/exit_trigger.tscn" id="3_a5g0s"]
-[ext_resource type="PackedScene" uid="uid://cog5ygf7ssly" path="res://world_loader/interactables/drops/coin.tscn" id="4_30mfa"]
+[ext_resource type="PackedScene" uid="uid://cog5ygf7ssly" path="res://world_loader/interactables/drops/coin/coin.tscn" id="4_30mfa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myn06"]
 texture = ExtResource("1_u3h4b")
