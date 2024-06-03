@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dax51qj8537fu"]
 
 [ext_resource type="Script" path="res://player_load/items/boomerang/boomerang.gd" id="1_xihq8"]
-[ext_resource type="Texture2D" uid="uid://ducan1lse00wf" path="res://raw_assets/items/boomerang.png" id="2_mvkfg"]
+[ext_resource type="Texture2D" uid="uid://ducan1lse00wf" path="res://player_load/items/boomerang/boomerang.png" id="2_mvkfg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pbkru"]
 animations = [{

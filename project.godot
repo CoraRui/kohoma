@@ -14,7 +14,7 @@ config/name="kohoma"
 config/version="1.0a"
 run/main_scene="res://boot/root.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://raw_assets/archivew/icon.svg"
+config/icon="res://raw_assets/archive/icon.svg"
 
 [aseprite_importers]
 

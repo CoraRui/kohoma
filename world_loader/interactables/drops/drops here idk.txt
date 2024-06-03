@@ -1,0 +1,2 @@
+i feel like drops mostly makes sense to be in enemies, but there are instances when theyre not used with them.
+like pots, grass, probably other things. if not their own folder, id say maybe in a separate folder in world loader.

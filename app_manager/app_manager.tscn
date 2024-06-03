@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://app_manager/quit.gd" id="1_pg4mw"]
 [ext_resource type="Script" path="res://app_manager/resize.gd" id="2_nsopt"]
-[ext_resource type="Texture2D" uid="uid://wjhbrpqa3y1f" path="res://raw_assets/archivew/gass.png" id="3_xwcty"]
+[ext_resource type="Texture2D" uid="uid://wjhbrpqa3y1f" path="res://raw_assets/archive/gass.png" id="3_xwcty"]
 
 [node name="app_manager" type="Node2D"]
 

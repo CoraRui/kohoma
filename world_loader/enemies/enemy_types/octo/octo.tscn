@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cdo1rfxn7x47c" path="res://world_loader/enemies/enemy_types/octo/assets/octo_1.png" id="2_15ksy"]
 [ext_resource type="Script" path="res://world_loader/enemies/modules/enemy_health/enemy_health.gd" id="2_kkp7y"]
 [ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://world_loader/enemies/modules/spike/spike.tscn" id="3_6r727"]
-[ext_resource type="PackedScene" uid="uid://kfo6qktvvv65" path="res://world_loader/enemies/drops/heart/heart.tscn" id="3_ps614"]
+[ext_resource type="PackedScene" uid="uid://kfo6qktvvv65" path="res://world_loader/interactables/drops/heart/heart.tscn" id="3_ps614"]
 [ext_resource type="Script" path="res://world_loader/enemies/enemy_types/octo/octo_movement.gd" id="4_u40ge"]
-[ext_resource type="PackedScene" uid="uid://dlmrxk1ghikip" path="res://world_loader/interactables/simple_drop.tscn" id="6_h151m"]
+[ext_resource type="PackedScene" uid="uid://dlmrxk1ghikip" path="res://world_loader/interactables/drops/simple_drop.tscn" id="6_h151m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_17rsw"]
 animations = [{

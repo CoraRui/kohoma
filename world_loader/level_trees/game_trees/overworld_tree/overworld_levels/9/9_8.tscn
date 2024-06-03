@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://world_loader/enemies/loaders and triggers/enemy_spawner/random/enemy_spawner.tscn" id="2_qwre4"]
 [ext_resource type="PackedScene" uid="uid://tnmauhs4oxc6" path="res://world_loader/enemies/enemy_types/octo/octo.tscn" id="3_ho4j5"]
 [ext_resource type="Script" path="res://world_loader/enemies/loaders and triggers/enemy_spawner/resources/enemy_slot.gd" id="4_7tg3j"]
-[ext_resource type="PackedScene" uid="uid://brwpyfkn2v02v" path="res://world_loader/interactables/dungeons/chest/chest.tscn" id="5_dipnf"]
+[ext_resource type="PackedScene" uid="uid://brwpyfkn2v02v" path="res://world_loader/interactables/mechanisms/chest/chest.tscn" id="5_dipnf"]
 
 [sub_resource type="Resource" id="Resource_df8bk"]
 script = ExtResource("4_7tg3j")

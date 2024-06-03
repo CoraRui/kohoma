@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ds5hcw648en1r"]
 
 [ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://raw_assets/tiles/green_dungeon.tres" id="1_oci0x"]
-[ext_resource type="PackedScene" uid="uid://bbeu5b1kpw1lv" path="res://world_loader/interactables/key.tscn" id="2_5d8s1"]
+[ext_resource type="PackedScene" uid="uid://bbeu5b1kpw1lv" path="res://world_loader/interactables/drops/key.tscn" id="2_5d8s1"]
 
 [node name="4_3" type="Node2D"]
 

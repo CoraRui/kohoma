@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://qqiuchrf8abg"]
 
 [ext_resource type="Script" path="res://sfx_player/autoload/sfx_player.gd" id="1_p0478"]
-[ext_resource type="AudioStream" uid="uid://dmmsx7lfl14lh" path="res://raw_assets/sfx/sword.ogg" id="2_qqke6"]
-[ext_resource type="AudioStream" uid="uid://ddp00xh6rs2u3" path="res://raw_assets/sfx/player/p_hurt.ogg" id="3_tmfrv"]
-[ext_resource type="AudioStream" uid="uid://brolcdbq8dq65" path="res://raw_assets/sfx/enemy/e_hurt.ogg" id="4_rrwqp"]
-[ext_resource type="AudioStream" uid="uid://ck4hraneboryw" path="res://raw_assets/sfx/items/def_pickup.ogg" id="5_1se5d"]
-[ext_resource type="AudioStream" uid="uid://nhdt7srfhvbl" path="res://raw_assets/sfx/enemy/hit_boing.ogg" id="6_2s7bo"]
-[ext_resource type="AudioStream" uid="uid://bsb5ch847j10m" path="res://raw_assets/sfx/level/click.ogg" id="7_r5lxd"]
-[ext_resource type="AudioStream" uid="uid://duuw5mc0yo2l4" path="res://raw_assets/sfx/items/proto_jingle.ogg" id="8_wkin1"]
+[ext_resource type="AudioStream" uid="uid://dmmsx7lfl14lh" path="res://sfx_player/sfx/sword.ogg" id="2_qqke6"]
+[ext_resource type="AudioStream" uid="uid://ddp00xh6rs2u3" path="res://sfx_player/sfx/player/p_hurt.ogg" id="3_tmfrv"]
+[ext_resource type="AudioStream" uid="uid://brolcdbq8dq65" path="res://sfx_player/sfx/enemy/e_hurt.ogg" id="4_rrwqp"]
+[ext_resource type="AudioStream" uid="uid://ck4hraneboryw" path="res://sfx_player/sfx/items/def_pickup.ogg" id="5_1se5d"]
+[ext_resource type="AudioStream" uid="uid://nhdt7srfhvbl" path="res://sfx_player/sfx/enemy/hit_boing.ogg" id="6_2s7bo"]
+[ext_resource type="AudioStream" uid="uid://bsb5ch847j10m" path="res://sfx_player/sfx/level/click.ogg" id="7_r5lxd"]
+[ext_resource type="AudioStream" uid="uid://duuw5mc0yo2l4" path="res://sfx_player/sfx/items/proto_jingle.ogg" id="8_wkin1"]
 
 [node name="sfx_player" type="Node2D" node_paths=PackedStringArray("sfx_streams")]
 script = ExtResource("1_p0478")

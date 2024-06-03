@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://j0pmd0mb2vgp"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://raw_assets/tiles/overworld.tres" id="1_42e62"]
-[ext_resource type="PackedScene" uid="uid://brwpyfkn2v02v" path="res://world_loader/interactables/dungeons/chest/chest.tscn" id="2_o22qp"]
+[ext_resource type="PackedScene" uid="uid://brwpyfkn2v02v" path="res://world_loader/interactables/mechanisms/chest/chest.tscn" id="2_o22qp"]
 
 [node name="11_14" type="Node2D"]
 
