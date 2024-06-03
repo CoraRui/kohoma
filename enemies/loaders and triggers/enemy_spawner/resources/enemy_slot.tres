@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="enemy_slot" load_steps=2 format=3 uid="uid://dyxvhuxavu7ln"]
+
+[ext_resource type="Script" path="res://enemies/loaders and triggers/enemy_spawner/resources/enemy_slot.gd" id="1_fumyi"]
+
+[resource]
+script = ExtResource("1_fumyi")
+spawn_chance = 25

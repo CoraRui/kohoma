@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cocpgnrdpdlyl"]
 
 [ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://world_loader/tile_pallettes/green_dungeon.tres" id="1_8f6wb"]
-[ext_resource type="PackedScene" uid="uid://dbye2741q7ep1" path="res://world_loader/enemies/enemy_types/knight/knight.tscn" id="2_w1w2u"]
+[ext_resource type="PackedScene" uid="uid://dbye2741q7ep1" path="res://enemies/enemy_types/knight/knight.tscn" id="2_w1w2u"]
 
 [node name="3_4" type="Node2D"]
 

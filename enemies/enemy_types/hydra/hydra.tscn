@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcjwup5shbrmn"]
+
+[ext_resource type="Texture2D" uid="uid://rxhvpycdl5xm" path="res://enemies/enemy_types/hydra/assets/hydra.png" id="1_62vlo"]
+[ext_resource type="Script" path="res://enemies/enemy_types/hydra/hydra.gd" id="1_570q6"]
+
+[node name="hydra" type="Node2D"]
+script = ExtResource("1_570q6")
+
+[node name="hydra_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_62vlo")

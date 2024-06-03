@@ -1,0 +1,2 @@
+I'm imagining an enemy type thats mostly meant to be controlled by the player. when they are defeated, they turn into a 
+doll, and the player can control them with the mind rod

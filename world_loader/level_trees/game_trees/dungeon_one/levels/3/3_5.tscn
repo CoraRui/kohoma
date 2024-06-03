@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://7xeu6nxh28uy"]
 
 [ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://world_loader/tile_pallettes/green_dungeon.tres" id="1_4lmsg"]
-[ext_resource type="PackedScene" uid="uid://dbye2741q7ep1" path="res://world_loader/enemies/enemy_types/knight/knight.tscn" id="3_hv0id"]
-[ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://world_loader/enemies/enemy_types/turtle/turtle.tscn" id="4_23n1t"]
+[ext_resource type="PackedScene" uid="uid://dbye2741q7ep1" path="res://enemies/enemy_types/knight/knight.tscn" id="3_hv0id"]
+[ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://enemies/enemy_types/turtle/turtle.tscn" id="4_23n1t"]
 
 [node name="3_5" type="Node2D"]
 

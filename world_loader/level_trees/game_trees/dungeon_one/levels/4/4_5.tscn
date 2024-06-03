@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://world_loader/tile_pallettes/green_dungeon.tres" id="1_pdx1c"]
 [ext_resource type="PackedScene" uid="uid://bymqb0demnt7k" path="res://world_loader/interactables/mechanisms/push_blocks/push_block.tscn" id="2_0x03f"]
-[ext_resource type="Texture2D" uid="uid://db658kk63x25g" path="res://world_loader/enemies/enemy_types/statue/assets/dino statue2.png" id="3_8mxry"]
+[ext_resource type="Texture2D" uid="uid://db658kk63x25g" path="res://enemies/enemy_types/statue/assets/dino statue2.png" id="3_8mxry"]
 
 [node name="4_5" type="Node2D"]
 

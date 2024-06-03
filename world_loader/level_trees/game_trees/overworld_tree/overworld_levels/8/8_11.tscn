@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://d2ij06gtg0fi7" path="res://world_loader/rooms/room trigger/room_trigger.tscn" id="2_n70v1"]
 [ext_resource type="PackedScene" uid="uid://brpxjjuw0ul07" path="res://world_loader/rooms/home/home.tscn" id="3_ytljt"]
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="4_url0w"]
-[ext_resource type="PackedScene" uid="uid://ckgcuoqhywtrw" path="res://world_loader/enemies/enemy_types/snf/snfffff.tscn" id="6_ty5ac"]
-[ext_resource type="PackedScene" uid="uid://c6phkn4x5h0kc" path="res://world_loader/enemies/enemy_types/chikkin/chikkin.tscn" id="6_wikl0"]
+[ext_resource type="PackedScene" uid="uid://ckgcuoqhywtrw" path="res://enemies/enemy_types/snf/snfffff.tscn" id="6_ty5ac"]
+[ext_resource type="PackedScene" uid="uid://c6phkn4x5h0kc" path="res://enemies/enemy_types/chikkin/chikkin.tscn" id="6_wikl0"]
 
 [node name="8_11" type="Node2D"]
 

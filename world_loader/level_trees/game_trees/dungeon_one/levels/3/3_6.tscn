@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="2_cxpc3"]
 [ext_resource type="PackedScene" uid="uid://mdwtmm3pvout" path="res://world_loader/level_trees/structure/world_autoload/switch_trigger.tscn" id="3_47j8x"]
 [ext_resource type="PackedScene" uid="uid://yce7ks31tlrg" path="res://save_files/triggers/save trigger/save_triggers/event_trigger/event_trigger.tscn" id="4_q1w8k"]
-[ext_resource type="PackedScene" uid="uid://dbye2741q7ep1" path="res://world_loader/enemies/enemy_types/knight/knight.tscn" id="5_4axy5"]
+[ext_resource type="PackedScene" uid="uid://dbye2741q7ep1" path="res://enemies/enemy_types/knight/knight.tscn" id="5_4axy5"]
 [ext_resource type="PackedScene" uid="uid://jfxvdv88hlmx" path="res://music_player/triggers/music_trigger.tscn" id="6_46td2"]
 [ext_resource type="PackedScene" uid="uid://srelmtycm4ct" path="res://world_loader/interactables/mechanisms/doors/key_door.tscn" id="7_2sc5s"]
 

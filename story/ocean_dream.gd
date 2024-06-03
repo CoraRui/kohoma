@@ -1,5 +1,9 @@
 extends Node2D
 
+#I think I was just testing around with how to draw stuff through script?
+#anyways I'll probably remove this later
+
+
 @export var bg_color : Color
 
 @export var color_a : Color

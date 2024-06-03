@@ -8,8 +8,16 @@ var direction : dir_auto.Bearing = dir_auto.Bearing.DOWN
 @export var items_node : items
 
 @export var movement_script : player_movement
+@export var sword_script : sword
 
+func set_movement(f : bool):
+	if f:
+		movement_script.unfreeze()
+	else:
+		movement_script.freeze()
 
+func set_sword_active(s : bool):
+	sword_script.set_sword_active(s)
 
 #so item use. how do I enable and disable certain items based on what is equipped?
 #have "launcher" nodes in the player and simply enable and disable them by having an input script in the player overall script which chooses which to use.

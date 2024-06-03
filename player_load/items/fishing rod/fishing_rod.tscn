@@ -3,6 +3,10 @@
 [ext_resource type="Script" path="res://player_load/items/fishing rod/fishing_rod.gd" id="1_j7qgm"]
 [ext_resource type="PackedScene" uid="uid://dfb18mm6sjiah" path="res://player_load/items/fishing rod/bobber.tscn" id="2_dt0mt"]
 
-[node name="fishing_rod" type="Node2D"]
+[node name="fishing_rod" type="Node2D" node_paths=PackedStringArray("bobber_point")]
 script = ExtResource("1_j7qgm")
-bobber_ins = ExtResource("2_dt0mt")
+bobber_ref = ExtResource("2_dt0mt")
+bobber_point = NodePath("bobber_point")
+
+[node name="bobber_point" type="Node2D" parent="."]
+z_index = 10

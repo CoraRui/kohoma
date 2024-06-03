@@ -4,6 +4,7 @@ class_name fishing_rod
 #TODO: create actual actoin of the rod
 #TODO: activation/deactivation of other things, like pausing player movement and the other item
 #TODO: icon in the item select menu. or just text for now i suppose...
+#TODO: disable rod toggle while bobber is out
 
 #this script handles everything about the fishing rod.
 
@@ -31,11 +32,16 @@ var action_state : ActionState = ActionState.REELED
 #for now, just hold the button, then 
 #value between 1-90 representing how charged the rod is.(cause 90 frames is a second and a half)
 var charge_meter : float = 0
+var bobber_ins : bobber
+
 
 @export var cpf : float = 1
-@export var bobber_ins : PackedScene
+@export var bobber_ref : PackedScene
+#where the bobber will start
+@export var bobber_point : Node2D
 
-
+#autoloads
+@onready var player_li : player_loader = get_node("/root/player_loader_auto")
 
 func _physics_process(_delta):
 	if ActionState.CHARGE:
@@ -50,17 +56,23 @@ func _input(event):
 			if event.is_action_pressed("attack"):
 				#start charging
 				action_state = ActionState.CHARGE
+				print("charge started")
 		
 		#charge means that the rod is lifted, and the player is about to cast
 		if action_state == ActionState.CHARGE:
 			if event.is_action_released("attack"):
+				print("cast")
+				action_state = ActionState.THROW
 				cast()
 		
 		#throw means that the rod has just been cast, and the bobber is flying through the air.
 		#I think that the next state change will be triggered by the bobber.
 		#it'll probably be connected to this script on instantiation.
 		if action_state == ActionState.THROW:
-			pass
+			# I might remove the reel_in option. im not sure yet
+			if Input.is_action_just_pressed("confirm"):
+				print("cancel")
+				reel_in()
 		
 		#rest means that the bobber is on the ground
 		if action_state == ActionState.REST:
@@ -72,15 +84,27 @@ func _input(event):
 			pass
 
 
-func activate_rod():
-	#this should activate the rods functions and disable certain player movement actions, and probably the inventory menu
-	print("rod activated! ... not really")
+func toggle_rod():
+	#switches the active state on so player input can be read
+	if active_state == ActiveState.ACTIVE:
+		active_state = ActiveState.INACTIVE
+		player_li.player_ins.set_movement(true)
+		player_li.player_ins.set_sword_active(true)
+		
+	else:
+		active_state = ActiveState.ACTIVE
+		player_li.player_ins.set_movement(false)
+		player_li.player_ins.set_sword_active(false)
+
 
 func cast():
 	#should essentially just instantiate the bobber. the bobber script will probably take care of whatever else it has to do?
 	#this function happens once the charge phase is over.
 	charge_meter = 0
-	pass
+	bobber_ins = bobber_ref.instantiate()
+	add_child(bobber_ins)
+	bobber_ins.position = bobber_point.position
+
 
 func release():
 	#releases any caught thing and returns to reeled state.
@@ -90,5 +114,10 @@ func pull():
 	pass
 
 func reel_in():
-	#attempts to reel in the bobber, has different effects depending on if its caught on something, at rest, if its near the player enough to return, etc.
-	pass
+	#remove the bobber, return to reeled state
+	bobber_ins.queue_free()
+	action_state = ActionState.REELED
+	
+	
+	
+	

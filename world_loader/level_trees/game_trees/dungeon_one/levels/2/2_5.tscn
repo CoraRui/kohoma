@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxh3ge8s8j0e4"]
 
 [ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://world_loader/tile_pallettes/green_dungeon.tres" id="1_um0uh"]
-[ext_resource type="PackedScene" uid="uid://da0tetbese7hm" path="res://world_loader/enemies/enemy_types/statue/dragon_statue.tscn" id="2_c5hpa"]
+[ext_resource type="PackedScene" uid="uid://da0tetbese7hm" path="res://enemies/enemy_types/statue/dragon_statue.tscn" id="2_c5hpa"]
 
 [node name="2_5" type="Node2D"]
 

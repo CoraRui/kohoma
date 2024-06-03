@@ -49,6 +49,6 @@ func check_item(i : ItemState):
 			print("bow")
 		ItemState.FISH_ROD:
 			#the rod should activate pretty much a whole new control scheme, so its going to be a pain... but i think its ok.
-			rod_node.activate_rod()
+			rod_node.toggle_rod()
 
 

@@ -9,3 +9,6 @@ portals - create two connected portals to shoot stuff through.
 maybe the player cant move through them though.
 they'd probably be immobile stuff you can set on the floor. just a you can teleport to any spot you have already been kind of thing.
 remote - probably a remote bomb
+
+mind rod - mind control. thinking that there'll be certain enemies and things that you can "control" by hitting them with a psychic
+rod or something. like the song of control from windwaker.
