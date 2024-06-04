@@ -19,6 +19,7 @@ size = Vector2(2, 121)
 [node name="whale" parent="." instance=ExtResource("1_cnblt")]
 
 [node name="top" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -20)
 collision_layer = 64
 collision_mask = 0
@@ -27,6 +28,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_t24wt")
 
 [node name="bottom" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, 20)
 collision_layer = 64
 collision_mask = 0
@@ -35,6 +37,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_b5ji7")
 
 [node name="left" type="Area2D" parent="."]
+visible = false
 position = Vector2(-24, 0)
 collision_layer = 64
 collision_mask = 0
@@ -43,6 +46,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_n0vws")
 
 [node name="right" type="Area2D" parent="."]
+visible = false
 position = Vector2(24, 0)
 collision_layer = 64
 collision_mask = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bm6r33rcfa1j6"]
+[gd_scene load_steps=23 format=3 uid="uid://bm6r33rcfa1j6"]
 
 [ext_resource type="Script" path="res://player_load/player_node/player_movement.gd" id="1_eisff"]
 [ext_resource type="Script" path="res://player_load/player_node/player.gd" id="1_tearn"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://player_load/items/items.gd" id="8_ks4q4"]
 [ext_resource type="PackedScene" uid="uid://ylblj4sykkqg" path="res://player_load/items/fishing rod/fishing_rod.tscn" id="9_wus56"]
 [ext_resource type="Script" path="res://player_load/player_node/player_anim.gd" id="10_1w8a4"]
+[ext_resource type="PackedScene" uid="uid://c0k4nawcq1y6y" path="res://player_load/items/shape_shifter/shape_shifter.tscn" id="12_c2wva"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdxc5"]
 size = Vector2(10, 6)
@@ -192,6 +193,11 @@ rod_node = NodePath("fishing_rod")
 [node name="player_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x8b2j")
 script = ExtResource("10_1w8a4")
+
+[node name="shape_shifter" parent="." node_paths=PackedStringArray("player_anim", "player_move", "player_items") instance=ExtResource("12_c2wva")]
+player_anim = NodePath("../player_anim")
+player_move = NodePath("../movement")
+player_items = NodePath("../items")
 
 [connection signal="area_entered" from="hit_area" to="player_health" method="_on_hit_area_area_entered"]
 [connection signal="ended_swing" from="sword" to="movement" method="_on_sword_ended_swing"]

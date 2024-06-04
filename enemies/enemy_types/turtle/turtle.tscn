@@ -58,6 +58,7 @@ autoplay = "new_animation"
 script = SubResource("GDScript_4eo1n")
 
 [node name="health and damage" type="Node2D" parent="."]
+visible = false
 
 [node name="enemy_health" parent="health and damage" node_paths=PackedStringArray("die_node") instance=ExtResource("6_qt7pu")]
 die_node = NodePath("../..")

@@ -30,3 +30,4 @@ text = "10_10"
 
 [node name="music_trigger" parent="." instance=ExtResource("2_msfli")]
 track_name = "peaceful_kohoma"
+use_ready = false

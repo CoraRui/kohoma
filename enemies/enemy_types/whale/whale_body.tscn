@@ -39,6 +39,7 @@ autoplay = "default"
 frame_progress = 0.761077
 
 [node name="top" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -4)
 collision_layer = 0
 collision_mask = 64
@@ -48,6 +49,7 @@ position = Vector2(-0.5, 3)
 shape = SubResource("RectangleShape2D_2c27t")
 
 [node name="bottom" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, 6)
 collision_layer = 0
 collision_mask = 64
@@ -57,6 +59,7 @@ position = Vector2(-0.25, 0)
 shape = SubResource("RectangleShape2D_k5jb2")
 
 [node name="left" type="Area2D" parent="."]
+visible = false
 position = Vector2(-8, 0)
 collision_layer = 0
 collision_mask = 64
@@ -66,6 +69,7 @@ position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_b5hm2")
 
 [node name="right" type="Area2D" parent="."]
+visible = false
 position = Vector2(7, 0)
 collision_layer = 0
 collision_mask = 64

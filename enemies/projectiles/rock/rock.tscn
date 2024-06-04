@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://m5ytyhajmjh4"]
+
+[ext_resource type="Script" path="res://enemies/projectiles/simple_bullet/simple_bullet.gd" id="1_1cgx6"]
+
+[node name="rock" type="Node2D"]
+script = ExtResource("1_1cgx6")
+vec_arr = Array[Vector2]([Vector2(0, 0)])
+
+[node name="exp_timer" type="Timer" parent="."]
+wait_time = 1.284
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="exp_timer" to="." method="_on_exp_timer_timeout"]

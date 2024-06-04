@@ -1,0 +1,49 @@
+[gd_scene load_steps=12 format=3 uid="uid://c24i0ulny18up"]
+
+[ext_resource type="PackedScene" uid="uid://c6phkn4x5h0kc" path="res://enemies/enemy_types/chikkin/chikkin.tscn" id="1_1vk0a"]
+[ext_resource type="PackedScene" uid="uid://dbye2741q7ep1" path="res://enemies/enemy_types/knight/knight.tscn" id="2_l00ae"]
+[ext_resource type="PackedScene" uid="uid://tnmauhs4oxc6" path="res://enemies/enemy_types/octo/octo.tscn" id="3_7woo4"]
+[ext_resource type="PackedScene" uid="uid://c1s6og2txn3kv" path="res://enemies/enemy_types/pig/pig.tscn" id="4_5hh2b"]
+[ext_resource type="PackedScene" uid="uid://b56wn1dctrh8x" path="res://enemies/enemy_types/rabbit/rabbit.tscn" id="5_mvw2c"]
+[ext_resource type="PackedScene" uid="uid://cjs0uwpcaidc8" path="res://enemies/enemy_types/seal/seal.tscn" id="6_8hsva"]
+[ext_resource type="PackedScene" uid="uid://ckgcuoqhywtrw" path="res://enemies/enemy_types/snf/snfffff.tscn" id="7_cwjjk"]
+[ext_resource type="PackedScene" uid="uid://da0tetbese7hm" path="res://enemies/enemy_types/statue/dragon_statue.tscn" id="8_igsss"]
+[ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://enemies/enemy_types/turtle/turtle.tscn" id="9_2pkga"]
+[ext_resource type="PackedScene" uid="uid://yefqslur5d85" path="res://enemies/enemy_types/whale/whale.tscn" id="10_7k7eh"]
+[ext_resource type="PackedScene" uid="uid://dbuyvgfct2ypx" path="res://enemies/enemy_types/winch/winch.tscn" id="11_nyncw"]
+
+[node name="enemy_gallery" type="Node2D"]
+
+[node name="chikkin" parent="." instance=ExtResource("1_1vk0a")]
+position = Vector2(11, 10)
+
+[node name="knight" parent="." node_paths=PackedStringArray("coll_areas") instance=ExtResource("2_l00ae")]
+position = Vector2(21, 1)
+coll_areas = [null, null, null, null]
+
+[node name="octo" parent="." instance=ExtResource("3_7woo4")]
+position = Vector2(52, 11)
+
+[node name="pig" parent="." instance=ExtResource("4_5hh2b")]
+position = Vector2(67, 5)
+
+[node name="rabbit" parent="." instance=ExtResource("5_mvw2c")]
+position = Vector2(11, 30)
+
+[node name="seal" parent="." instance=ExtResource("6_8hsva")]
+position = Vector2(25, 23)
+
+[node name="snfffff" parent="." instance=ExtResource("7_cwjjk")]
+position = Vector2(52, 28)
+
+[node name="dragon_statue" parent="." instance=ExtResource("8_igsss")]
+position = Vector2(93, 10)
+
+[node name="turtle" parent="." instance=ExtResource("9_2pkga")]
+position = Vector2(71, 30)
+
+[node name="whale" parent="." instance=ExtResource("10_7k7eh")]
+position = Vector2(94, 30)
+
+[node name="winch" parent="." instance=ExtResource("11_nyncw")]
+position = Vector2(116, 28)

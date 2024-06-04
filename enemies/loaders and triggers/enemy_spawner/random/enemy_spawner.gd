@@ -3,6 +3,7 @@ extends Node2D
 #TODO: this isn't super necessary but maybe add some sort of delay to enemies spawning. like the little clouds in legend of zelda.
 #TODO: work on the random generation of the enemies spawn location
 #TODO: make sure that queueing the spawner free after spawning stuff is actually ok, although im sure its fine.
+#TODO: spawn the enemies far enough from the player so they dont spawn on them, or just use the clouds to give the player time to move away.
 
 @export_group("rng")
 @export var enemy_arr : Array[enemy_slot]

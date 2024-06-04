@@ -18,3 +18,7 @@ func update_flav_text():
 
 func _on_player_area_area_entered(_area):
 	update_flav_text()
+
+#
+func _on_health_hurt():
+	update_flav_text()

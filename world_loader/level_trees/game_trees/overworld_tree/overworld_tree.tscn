@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://bl5ew0rgbt652"]
+[gd_scene load_steps=151 format=3 uid="uid://bl5ew0rgbt652"]
 
 [ext_resource type="Script" path="res://world_loader/level_trees/structure/world_tree/world_tree/world_tree.gd" id="1_2qr8y"]
 [ext_resource type="PackedScene" uid="uid://ccdidxiil10lf" path="res://world_loader/level_trees/structure/resources/level/fail_level.tscn" id="2_1j58j"]
@@ -56,12 +56,14 @@
 [ext_resource type="PackedScene" uid="uid://cqobhaweo3rkl" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_10.tscn" id="27_drcjo"]
 [ext_resource type="PackedScene" uid="uid://nmnnhoqjulmn" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_11.tscn" id="28_8uo4b"]
 [ext_resource type="PackedScene" uid="uid://d1k3a22tnciue" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_12.tscn" id="29_8osyh"]
+[ext_resource type="PackedScene" uid="uid://der3gfxhtgsun" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_2.tscn" id="29_irhga"]
 [ext_resource type="PackedScene" uid="uid://c33qvre5ce7yt" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_13.tscn" id="30_y3qno"]
 [ext_resource type="PackedScene" uid="uid://cxmidcpbxfm77" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_14.tscn" id="31_23ovm"]
 [ext_resource type="PackedScene" uid="uid://y77da38mpcsr" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_3.tscn" id="32_i4tmj"]
 [ext_resource type="PackedScene" uid="uid://ch8oy2bt8jwif" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_4.tscn" id="33_8bmf3"]
 [ext_resource type="PackedScene" uid="uid://cd0kboit33jn3" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_5.tscn" id="34_jdcyw"]
 [ext_resource type="PackedScene" uid="uid://nbi8xv4de776" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_13.tscn" id="42_fpmkg"]
+[ext_resource type="PackedScene" uid="uid://p765fihpqqmt" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_2.tscn" id="42_ym1kt"]
 [ext_resource type="PackedScene" uid="uid://cq65fvxi7v4ru" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_14.tscn" id="43_veebf"]
 [ext_resource type="PackedScene" uid="uid://cfwjhbygw765t" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_3.tscn" id="44_ikq2e"]
 [ext_resource type="PackedScene" uid="uid://b7sjbitad0yp4" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_4.tscn" id="45_80x2g"]
@@ -175,6 +177,10 @@ level_node = ExtResource("18_21wfy")
 script = ExtResource("3_1y8ci")
 level_node = ExtResource("19_xdxma")
 
+[sub_resource type="Resource" id="Resource_orwvi"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("29_irhga")
+
 [sub_resource type="Resource" id="Resource_et3x1"]
 script = ExtResource("3_1y8ci")
 level_node = ExtResource("20_m6u16")
@@ -222,6 +228,10 @@ level_node = ExtResource("30_y3qno")
 [sub_resource type="Resource" id="Resource_3fgx2"]
 script = ExtResource("3_1y8ci")
 level_node = ExtResource("31_23ovm")
+
+[sub_resource type="Resource" id="Resource_sydvt"]
+script = ExtResource("3_1y8ci")
+level_node = ExtResource("42_ym1kt")
 
 [sub_resource type="Resource" id="Resource_n8t18"]
 script = ExtResource("3_1y8ci")
@@ -733,6 +743,7 @@ level_ref = SubResource("Resource_qo05q")
 [node name="1" parent="8" instance=ExtResource("2_x408h")]
 
 [node name="2" parent="8" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_orwvi")
 
 [node name="3" parent="8" instance=ExtResource("2_x408h")]
 level_ref = SubResource("Resource_et3x1")
@@ -787,6 +798,7 @@ level_ref = SubResource("Resource_3fgx2")
 [node name="1" parent="9" instance=ExtResource("2_x408h")]
 
 [node name="2" parent="9" instance=ExtResource("2_x408h")]
+level_ref = SubResource("Resource_sydvt")
 
 [node name="3" parent="9" instance=ExtResource("2_x408h")]
 level_ref = SubResource("Resource_n8t18")

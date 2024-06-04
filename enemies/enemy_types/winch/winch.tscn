@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbuyvgfct2ypx"]
+[gd_scene load_steps=5 format=3 uid="uid://dbuyvgfct2ypx"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/winch/winch.gd" id="1_2sn33"]
+[ext_resource type="Texture2D" uid="uid://cxmxfs21q81n0" path="res://enemies/enemy_types/winch/assets/winch1.png" id="2_4nyn7"]
+[ext_resource type="Texture2D" uid="uid://r5uaoab1d30a" path="res://enemies/enemy_types/winch/assets/winch2.png" id="3_07q6x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nyx8b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4nyn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_07q6x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="winch" type="Node2D"]
 script = ExtResource("1_2sn33")
+
+[node name="winch_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nyx8b")
