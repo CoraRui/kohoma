@@ -1,19 +1,26 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbye2741q7ep1"]
+[gd_scene load_steps=17 format=3 uid="uid://dbye2741q7ep1"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/knight/knight.gd" id="1_c7ep4"]
-[ext_resource type="Texture2D" uid="uid://mwn0o3k4ofli" path="res://enemies/enemy_types/knight/assets/knight1.png" id="1_tf1ku"]
-[ext_resource type="Texture2D" uid="uid://trufdp07qaym" path="res://enemies/enemy_types/knight/assets/knight2.png" id="2_af0nc"]
+[ext_resource type="Texture2D" uid="uid://c4biptn6olafd" path="res://enemies/enemy_types/knight/assets/knight_sheet.png" id="2_bkbge"]
 [ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="4_uwmnw"]
 [ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="5_5s6rx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfeqj"]
+atlas = ExtResource("2_bkbge")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ns6k"]
+atlas = ExtResource("2_bkbge")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_paqkx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_tf1ku")
+"texture": SubResource("AtlasTexture_gfeqj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_af0nc")
+"texture": SubResource("AtlasTexture_3ns6k")
 }],
 "loop": true,
 "name": &"default",
@@ -59,7 +66,7 @@ awake_timer = NodePath("awake_timer")
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_paqkx")
 autoplay = "default"
-frame_progress = 0.0458157
+frame_progress = 0.227177
 
 [node name="wake_areas" type="Node2D" parent="."]
 visible = false

@@ -130,5 +130,4 @@ func _on_down_area_body_entered(_body):
 		mvec = Vector2(-1,-1)
 		
 func _on_up_area_body_entered(_body):
-	print("down")
 	mvec = Vector2(0,1)

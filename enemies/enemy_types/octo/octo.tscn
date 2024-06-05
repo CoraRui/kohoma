@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://tnmauhs4oxc6"]
+[gd_scene load_steps=14 format=3 uid="uid://tnmauhs4oxc6"]
 
 [ext_resource type="Texture2D" uid="uid://ba6cv20yqio3m" path="res://enemies/enemy_types/octo/assets/octo_0.png" id="1_lr7bp"]
 [ext_resource type="Texture2D" uid="uid://cdo1rfxn7x47c" path="res://enemies/enemy_types/octo/assets/octo_1.png" id="2_15ksy"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://kfo6qktvvv65" path="res://world_loader/interactables/drops/heart/heart.tscn" id="3_ps614"]
 [ext_resource type="Script" path="res://enemies/enemy_types/octo/octo_movement.gd" id="4_u40ge"]
 [ext_resource type="PackedScene" uid="uid://dlmrxk1ghikip" path="res://world_loader/interactables/drops/simple_drop/simple_drop.tscn" id="6_h151m"]
-[ext_resource type="PackedScene" uid="uid://by63mnphjximn" path="res://ui/stat_bar/flav_text/flav_trigger.tscn" id="8_w5s2g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_17rsw"]
 animations = [{
@@ -133,12 +132,8 @@ shape = SubResource("RectangleShape2D_ycfkd")
 wait_time = 3.0
 one_shot = true
 
-[node name="flav_trigger" parent="." instance=ExtResource("8_w5s2g")]
-flav_main = "ouch!"
-
 [connection signal="death" from="health and damage/health" to="health and damage/simple_drop" method="_on_health_death"]
 [connection signal="hurt" from="health and damage/health" to="move/movement" method="_on_health_hurt"]
-[connection signal="hurt" from="health and damage/health" to="flav_trigger" method="_on_health_hurt"]
 [connection signal="area_entered" from="health and damage/hitbox" to="move/movement" method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="health and damage/hurt_timer" to="move/movement" method="_on_hurt_timer_timeout"]
 [connection signal="timeout" from="move/move_timer" to="move/movement" method="_on_move_timer_timeout"]
