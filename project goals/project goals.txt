@@ -28,7 +28,7 @@ attacks affecting inventory, file, things other than health
 change drops based on player info, like no hearts when full health
 enemy drop rate items, like heart up, or rupee up etc.
 
-#random thoughts
+random thoughts
 
 reactions to "sound"
 break a pot and an enemy will move, step on creaky tile etc.

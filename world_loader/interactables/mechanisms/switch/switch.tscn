@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://domav4268i3gf"]
+
+[ext_resource type="Script" path="res://world_loader/interactables/mechanisms/switch/switch.gd" id="1_h045k"]
+[ext_resource type="PackedScene" uid="uid://ddk1mtyqkjqx1" path="res://enemies/modules/hook_module/hook_module.tscn" id="2_bwmfn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8e6u"]
+
+[node name="switch" type="Node2D" node_paths=PackedStringArray("pull_timer")]
+script = ExtResource("1_h045k")
+pull_timer = NodePath("pull_timer")
+
+[node name="hook_module" parent="." instance=ExtResource("2_bwmfn")]
+
+[node name="switch_area" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 0
+
+[node name="switch_shape" type="CollisionShape2D" parent="switch_area"]
+shape = SubResource("RectangleShape2D_i8e6u")
+
+[node name="pull_timer" type="Timer" parent="."]
+
+[connection signal="pull" from="hook_module" to="." method="_on_hook_module_pull"]
+[connection signal="relax" from="hook_module" to="." method="_on_hook_module_relax"]
+[connection signal="timeout" from="pull_timer" to="." method="_on_pull_timer_timeout"]

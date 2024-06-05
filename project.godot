@@ -147,6 +147,7 @@ select={
 2d_physics/layer_7="water_border"
 2d_physics/layer_8="pickup"
 2d_physics/layer_9="boomerang"
+2d_physics/layer_10="mechanism"
 
 [rendering]
 

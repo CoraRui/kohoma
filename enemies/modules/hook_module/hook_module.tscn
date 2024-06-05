@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddk1mtyqkjqx1"]
+
+[ext_resource type="Script" path="res://enemies/modules/hook_module/hook_module.gd" id="1_lpb5r"]
+
+[node name="hook_module" type="Node2D" node_paths=PackedStringArray("hook_point")]
+script = ExtResource("1_lpb5r")
+hook_point = NodePath("hook_point")
+
+[node name="hook_point" type="Node2D" parent="."]
