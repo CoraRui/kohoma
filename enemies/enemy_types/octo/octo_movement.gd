@@ -10,6 +10,7 @@ extends Node2D
 #TODO: adjust knockback its wayyyy to heavy also other movement stuff
 #TODO: animations: movement by direction, attacking, hurt, etc.
 #TODO: sfx: hit, shoot, KO
+#TODO: fix boingboingboing
 
 #ok. so the most basic idea of the script is that theres an mvec that is used to change the position of the octo once per frame.
 #I'm probably going to use a similar principle for other movement scripts. But point is, that's not too much to reproduce.
@@ -36,6 +37,13 @@ var octo_dir : MDir = MDir.DOWN
 
 @export_group("animation")
 @export var octo_anim : AnimatedSprite2D
+@export_group("","")
+
+@export_group("collision areas")
+@export var top_area : Area2D
+@export var bototm_area : Area2D
+@export var left_area : Area2D
+@export var right_area : Area2D
 @export_group("","")
 
 #multiplier for knockback speed
@@ -167,7 +175,7 @@ func _on_top_body_entered(_body):
 	if octo_state == MovementState.HURT:
 		hvec.y = 0
 		enemy_node.position.y += 2
-	
+
 func _on_bottom_body_entered(_body):
 	if octo_state == MovementState.MOVING:
 		set_direction(MDir.UP)
