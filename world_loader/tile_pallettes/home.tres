@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cvpb2rxyo3j21"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dwf23hdlckjoj"]
 
 [ext_resource type="Texture2D" uid="uid://b0wi8kix7nhgf" path="res://world_loader/tile_pallettes/house_interior.png" id="1_jos2n"]
 

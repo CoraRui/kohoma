@@ -54,13 +54,17 @@ size = Vector2(2, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdt8"]
 size = Vector2(15, 9)
 
-[node name="knight" type="Node2D" node_paths=PackedStringArray("knight_anim", "coll_areas", "alert_timer", "awake_timer")]
+[node name="knight" type="Node2D" node_paths=PackedStringArray("knight_anim", "up_area", "down_area", "left_area", "right_area", "awake_timer", "alert_timer", "pause_timer")]
 script = ExtResource("1_c7ep4")
-awvec = Array[Vector2]([Vector2(0, 0), Vector2(0, 1), Vector2(0, 0)])
 knight_anim = NodePath("knight_anim")
-coll_areas = [null, null, null, null]
-alert_timer = NodePath("alert_timer")
+up_area = NodePath("wall_areas/up_area")
+down_area = NodePath("wall_areas/down_area")
+left_area = NodePath("wall_areas/left_area")
+right_area = NodePath("wall_areas/right_area")
 awake_timer = NodePath("awake_timer")
+alert_timer = NodePath("alert_timer")
+awvec = Array[Vector2]([Vector2(0, 0), Vector2(0, 1), Vector2(0, 0)])
+pause_timer = NodePath("pause_timer")
 
 [node name="knight_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, 8)
@@ -177,6 +181,9 @@ collision_mask = 0
 position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_mxdt8")
 
+[node name="pause_timer" type="Timer" parent="."]
+wait_time = 1.5
+
 [connection signal="area_entered" from="wake_areas/up_wake" to="." method="_on_up_wake_area_entered"]
 [connection signal="area_entered" from="wake_areas/down_wake" to="." method="_on_down_wake_area_entered"]
 [connection signal="area_entered" from="wake_areas/left_wake" to="." method="_on_left_wake_area_entered"]
@@ -193,5 +200,6 @@ shape = SubResource("RectangleShape2D_mxdt8")
 [connection signal="timeout" from="awake_timer" to="." method="_on_awake_timer_timeout"]
 [connection signal="hurt" from="enemy_health" to="." method="_on_enemy_health_hurt"]
 [connection signal="timeout" from="enemy_health/hurt_timer" to="." method="_on_hurt_timer_timeout"]
+[connection signal="timeout" from="pause_timer" to="." method="_on_pause_timer_timeout"]
 
 [editable path="spike"]

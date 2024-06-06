@@ -49,6 +49,7 @@ script = ExtResource("1_ms26n")
 movement = NodePath("move/movement")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
