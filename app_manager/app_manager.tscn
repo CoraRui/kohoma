@@ -1,28 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5cabq7e0b8r2"]
+[gd_scene load_steps=2 format=3 uid="uid://b5cabq7e0b8r2"]
 
-[ext_resource type="Script" path="res://app_manager/quit.gd" id="1_pg4mw"]
 [ext_resource type="Script" path="res://app_manager/resize.gd" id="2_nsopt"]
 
 [node name="app_manager" type="Node2D"]
 
-[node name="quit" type="Node2D" parent="." node_paths=PackedStringArray("quit_timer", "quit_text")]
-process_mode = 4
-visible = false
-script = ExtResource("1_pg4mw")
-quit_timer = NodePath("quit_timer")
-quit_text = NodePath("quit_text")
-
-[node name="quit_timer" type="Timer" parent="quit"]
-wait_time = 1.6
-
-[node name="quit_text" type="Label" parent="quit"]
-visible = false
-z_index = 6
-offset_right = 40.0
-offset_bottom = 23.0
-text = "quitting..."
-
 [node name="resize" type="Node2D" parent="."]
 script = ExtResource("2_nsopt")
-
-[connection signal="timeout" from="quit/quit_timer" to="quit" method="_on_quit_timer_timeout"]

@@ -11,7 +11,7 @@ extends Node2D
 #asleep means theyre not doing anything, awake means purusing the player
 #alerted is a temporary state between asleep and awake, wander is a state of moving that isn't locked 
 #onto the player, reeling means that the player just struck them/knock back.
-enum WakeState {ASLEEP, ALERTED, WANDER, AWAKE, REELING}
+enum KnightState {ASLEEP, ALERTED, WANDER, AWAKE, REELING}
 
 #movement vectors for different wake states
 @export var alvec : Array[Vector2] = [Vector2(0,0), Vector2(0,1)]
@@ -21,7 +21,7 @@ var wvec : Vector2 = Vector2(0,0)
 var awindex : int = 0
 var rvec : Vector2 = Vector2(0,0)
 
-@export var wake_state : WakeState = WakeState.ASLEEP
+@export var wake_state : KnightState = KnightState.ASLEEP
 
 @export_group("anim_info")
 @export var knight_anim : AnimatedSprite2D
@@ -34,20 +34,22 @@ var rvec : Vector2 = Vector2(0,0)
 @export_group("","")
 
 @export_group("movement")
-@export var alert_timer : Timer
 @export var awake_timer : Timer
 @export_group("","")
 
+@export_group("alert_state")
+@export var alert_timer : Timer
+@export_group("","")
 
 func _ready():
 	pass
 	
 func _process(_delta):
-	if wake_state == WakeState.AWAKE:
+	if wake_state == KnightState.AWAKE:
 		pursue()
-	if wake_state == WakeState.ALERTED:
+	if wake_state == KnightState.ALERTED:
 		alert()
-	if wake_state == WakeState.REELING:
+	if wake_state == KnightState.REELING:
 		reel()
 	
 func pursue():
@@ -79,28 +81,28 @@ func alert():
 		alindex = 0
 	
 func _on_up_wake_area_entered(_area):
-	if wake_state == WakeState.ASLEEP:
-		wake_state = WakeState.ALERTED
+	if wake_state == KnightState.ASLEEP:
+		wake_state = KnightState.ALERTED
 		alert_timer.start()
 
 func _on_down_wake_area_entered(_area):
-	if wake_state == WakeState.ASLEEP:
-		wake_state = WakeState.ALERTED
+	if wake_state == KnightState.ASLEEP:
+		wake_state = KnightState.ALERTED
 		alert_timer.start()
 
 func _on_left_wake_area_entered(_area):
-	if wake_state == WakeState.ASLEEP:
-		wake_state = WakeState.ALERTED
+	if wake_state == KnightState.ASLEEP:
+		wake_state = KnightState.ALERTED
 		alert_timer.start()
 
 func _on_right_wake_area_entered(_area):
-	if wake_state == WakeState.ASLEEP:
-		wake_state = WakeState.ALERTED
+	if wake_state == KnightState.ASLEEP:
+		wake_state = KnightState.ALERTED
 		alert_timer.start()
 
 func _on_alert_timer_timeout():
 	#alert cycle finished, start awake state
-	wake_state = WakeState.AWAKE
+	wake_state = KnightState.AWAKE
 	awake_timer.start()
 
 func _on_awake_timer_timeout():
@@ -108,41 +110,41 @@ func _on_awake_timer_timeout():
 	change_pursuit()
 
 func _on_up_area_area_entered(area):
-	if wake_state == WakeState.AWAKE:
+	if wake_state == KnightState.AWAKE:
 		awvec[1].y *= -1
 
 func _on_up_area_body_entered(body):
-	if wake_state == WakeState.AWAKE:
+	if wake_state == KnightState.AWAKE:
 		awvec[1].y *= -1
 
 func _on_down_area_area_entered(area):
-	if wake_state == WakeState.AWAKE:
+	if wake_state == KnightState.AWAKE:
 		awvec[1].y *= -1
 
 func _on_down_area_body_entered(body):
-	if wake_state == WakeState.AWAKE:
+	if wake_state == KnightState.AWAKE:
 		awvec[1].y *= -1
 
 func _on_left_area_area_entered(area):
-	if wake_state == WakeState.AWAKE:
+	if wake_state == KnightState.AWAKE:
 		awvec[1].x *= -1
 
 func _on_left_area_body_entered(body):
-	if wake_state == WakeState.AWAKE:
+	if wake_state == KnightState.AWAKE:
 		awvec[1].x *= -1
 
 func _on_right_area_area_entered(area):
-	if wake_state == WakeState.AWAKE:
+	if wake_state == KnightState.AWAKE:
 		awvec[1].x *= -1
 
 func _on_right_area_body_entered(body):
-	if wake_state == WakeState.AWAKE:
+	if wake_state == KnightState.AWAKE:
 		awvec[1].x *= -1
 
 func _on_hurt_timer_timeout():
 	#timer signifying the amount of time the knight should spend in the reeling state
-	wake_state = WakeState.AWAKE
+	wake_state = KnightState.AWAKE
 
 func _on_enemy_health_hurt():
 	#activates when the enemy is hurt. 0
-	wake_state = WakeState.REELING
+	wake_state = KnightState.REELING
