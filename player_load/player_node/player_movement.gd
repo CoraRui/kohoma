@@ -7,7 +7,7 @@ class_name player_movement
 @onready var player_parent : player = get_parent()
 
 
-var direction : dir_auto.Bearing = dir_auto.Bearing.DOWN :
+var direction : DirClass.Dir = DirClass.Dir.DOWN :
 	set(value):
 		direction = value
 		player_parent.direction = value
@@ -44,12 +44,12 @@ func directional_input():
 	var y : int = int(Input.get_axis("up", "down"))
 	if y == 0:
 		mvec.x += vel[vel_index] * x
-		if x == 1: direction = dir_auto.Bearing.RIGHT
-		elif x == -1: direction = dir_auto.Bearing.LEFT
+		if x == 1: direction = DirClass.Dir.RIGHT
+		elif x == -1: direction = DirClass.Dir.LEFT
 	else:
 		mvec.y += vel[vel_index] * y
-		if y == 1: direction = dir_auto.Bearing.DOWN
-		elif y == -1: direction = dir_auto.Bearing.UP
+		if y == 1: direction = DirClass.Dir.DOWN
+		elif y == -1: direction = DirClass.Dir.UP
 		
 		
 	vel_index += 1

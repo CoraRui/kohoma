@@ -1,12 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://tnmauhs4oxc6"]
+[gd_scene load_steps=16 format=3 uid="uid://tnmauhs4oxc6"]
 
 [ext_resource type="Texture2D" uid="uid://ba6cv20yqio3m" path="res://enemies/enemy_types/octo/assets/octo_0.png" id="1_lr7bp"]
+[ext_resource type="Script" path="res://enemies/enemy_types/octo/octo.gd" id="1_ms26n"]
 [ext_resource type="Texture2D" uid="uid://cdo1rfxn7x47c" path="res://enemies/enemy_types/octo/assets/octo_1.png" id="2_15ksy"]
 [ext_resource type="Script" path="res://enemies/modules/enemy_health/enemy_health.gd" id="2_kkp7y"]
 [ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="3_6r727"]
 [ext_resource type="PackedScene" uid="uid://kfo6qktvvv65" path="res://world_loader/interactables/drops/heart/heart.tscn" id="3_ps614"]
 [ext_resource type="Script" path="res://enemies/enemy_types/octo/octo_movement.gd" id="4_u40ge"]
 [ext_resource type="PackedScene" uid="uid://dlmrxk1ghikip" path="res://world_loader/interactables/drops/simple_drop/simple_drop.tscn" id="6_h151m"]
+[ext_resource type="PackedScene" uid="uid://gj5r6lcm7gm7" path="res://enemies/enemy_types/octo/boulder/rock_launcher.tscn" id="9_atg68"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_17rsw"]
 animations = [{
@@ -42,7 +44,15 @@ size = Vector2(4, 7)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycfkd"]
 size = Vector2(4, 7)
 
-[node name="octo" type="Node2D"]
+[node name="octo" type="Node2D" node_paths=PackedStringArray("movement")]
+script = ExtResource("1_ms26n")
+movement = NodePath("move/movement")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="octo_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_17rsw")
@@ -76,9 +86,8 @@ wait_time = 0.45
 one_shot = true
 
 [node name="move" type="Node2D" parent="."]
-visible = false
 
-[node name="movement" type="Node2D" parent="move" node_paths=PackedStringArray("enemy_node", "wall_areas", "move_timer", "stun_timer", "octo_anim")]
+[node name="movement" type="Node2D" parent="move" node_paths=PackedStringArray("enemy_node", "wall_areas", "move_timer", "stun_timer", "octo_anim", "top_area", "bottom_area", "left_area", "right_area", "bump_timer")]
 script = ExtResource("4_u40ge")
 enemy_node = NodePath("../..")
 vel = 1
@@ -86,6 +95,11 @@ wall_areas = [null, null, null, null]
 move_timer = NodePath("../move_timer")
 stun_timer = NodePath("../stun_timer")
 octo_anim = NodePath("../../octo_anim")
+top_area = NodePath("../wall_areas/top")
+bottom_area = NodePath("../wall_areas/bottom")
+left_area = NodePath("../wall_areas/left")
+right_area = NodePath("../wall_areas/right")
+bump_timer = NodePath("../wall_areas/bump_timer")
 kbvel = 2
 
 [node name="move_timer" type="Timer" parent="move"]
@@ -98,11 +112,11 @@ collision_layer = 0
 collision_mask = 34
 
 [node name="top_shape" type="CollisionShape2D" parent="move/wall_areas/top"]
-position = Vector2(0, -1)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_hawlc")
 
 [node name="bottom" type="Area2D" parent="move/wall_areas"]
-position = Vector2(0, 5)
+position = Vector2(0, 8)
 collision_layer = 0
 collision_mask = 34
 
@@ -128,9 +142,16 @@ collision_mask = 34
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_ycfkd")
 
+[node name="bump_timer" type="Timer" parent="move/wall_areas"]
+
 [node name="stun_timer" type="Timer" parent="move"]
 wait_time = 3.0
 one_shot = true
+
+[node name="attacks" type="Node2D" parent="."]
+
+[node name="rock_launcher" parent="attacks" node_paths=PackedStringArray("enemy_ref") instance=ExtResource("9_atg68")]
+enemy_ref = NodePath("../..")
 
 [connection signal="death" from="health and damage/health" to="health and damage/simple_drop" method="_on_health_death"]
 [connection signal="hurt" from="health and damage/health" to="move/movement" method="_on_health_hurt"]

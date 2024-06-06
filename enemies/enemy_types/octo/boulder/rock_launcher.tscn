@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://gj5r6lcm7gm7"]
+
+[ext_resource type="Script" path="res://enemies/enemy_types/octo/boulder/rock_launcher.gd" id="1_lr6on"]
+[ext_resource type="PackedScene" uid="uid://m5ytyhajmjh4" path="res://enemies/projectiles/rock/rock.tscn" id="2_plntd"]
+
+[node name="rock_launcher" type="Node2D" node_paths=PackedStringArray("delay_timer")]
+script = ExtResource("1_lr6on")
+delay_timer = NodePath("delay_timer")
+rock_ref = ExtResource("2_plntd")
+
+[node name="delay_timer" type="Timer" parent="."]
+wait_time = 2.967
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="delay_timer" to="." method="_on_delay_timer_timeout"]

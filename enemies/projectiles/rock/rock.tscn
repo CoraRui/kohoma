@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" path="res://enemies/projectiles/simple_bullet/simple_bullet.gd" id="1_1cgx6"]
 
-[node name="rock" type="Node2D"]
+[node name="rock" type="Node2D" node_paths=PackedStringArray("exp_timer")]
 script = ExtResource("1_1cgx6")
 vec_arr = Array[Vector2]([Vector2(0, 0)])
+exp_timer = NodePath("exp_timer")
 
 [node name="exp_timer" type="Timer" parent="."]
 wait_time = 1.284

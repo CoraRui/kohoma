@@ -1,4 +1,5 @@
 extends Node2D
+class_name simple_bullet
 
 #should just travel according to the vector array as soon as its instantiated.
 #at least for now. i think itd be helpful to do phases where it travels at different speeds.

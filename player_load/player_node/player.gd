@@ -3,7 +3,7 @@ class_name player
 
 #collects information for other scripts to reference to avoid having to access children.
 
-var direction : dir_auto.Bearing = dir_auto.Bearing.DOWN
+var direction : DirClass.Dir = DirClass.Dir.DOWN
 
 @export var items_node : items
 
