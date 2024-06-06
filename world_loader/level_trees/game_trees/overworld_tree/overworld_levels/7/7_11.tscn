@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5rp7x1rvmr0o"]
+[gd_scene load_steps=9 format=3 uid="uid://c5rp7x1rvmr0o"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_gy4qi"]
 [ext_resource type="PackedScene" uid="uid://mdwtmm3pvout" path="res://world_loader/level_trees/structure/world_autoload/switch_trigger.tscn" id="2_6ynjy"]
 [ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://enemies/loaders and triggers/enemy_spawner/random/enemy_spawner.tscn" id="3_jhji4"]
 [ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://enemies/enemy_types/turtle/turtle.tscn" id="4_cximu"]
 [ext_resource type="Script" path="res://enemies/loaders and triggers/enemy_spawner/resources/enemy_slot.gd" id="5_uyr1g"]
+[ext_resource type="PackedScene" uid="uid://dbye2741q7ep1" path="res://enemies/enemy_types/knight/knight.tscn" id="6_1cqss"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fyrpt"]
 size = Vector2(10, 10)
@@ -65,6 +66,9 @@ position = Vector2(76, 108)
 
 [node name="6" parent="enemy_spawner/spawn_points" index="6"]
 position = Vector2(120, 95)
+
+[node name="knight" parent="." instance=ExtResource("6_1cqss")]
+position = Vector2(80, 84)
 
 [connection signal="area_entered" from="switch_trigger/switch_area" to="switch_trigger" method="_on_switch_area_area_entered"]
 

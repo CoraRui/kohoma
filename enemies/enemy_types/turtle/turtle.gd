@@ -50,9 +50,6 @@ func _ready():
 	#sets initial position to multiple of 16 on tilemap
 	global_position = Vector2(global_position.x - int(global_position.x) % 16, global_position.y - int(global_position.y) % 16)
 	target_point = global_position
-	print("ready positions")
-	print(global_position)
-	print(target_point)
 	check_for_rand()
 
 func _physics_process(_delta):
@@ -70,32 +67,22 @@ func rand_dir():
 	r -= up
 	if r < 0:
 		walk_dir = WalkDir.UP
-		print("going up")
 		r += 1000
 	r -= down
 	if r < 0:
 		walk_dir = WalkDir.DOWN
-		print("going down")
 		r += 1000
 	r-= left
 	if r < 0:
 		walk_dir = WalkDir.LEFT
-		print("going left")
 		r += 1000
 	r -= right
 	if r < 0:
 		walk_dir = WalkDir.RIGHT
-		print("going right")
 		r += 1000
 		
 func check_for_rand():
 	#checks if the turtle has reached the target point. if so, it randomizes direction and generates a  new target point
-	
-	print("points in check for rand", name)
-	print("global", global_position)
-	print("target", target_point)
-
-	
 	if global_position.distance_to(target_point) < snap_tol:
 		global_position = target_point
 		rand_dir()

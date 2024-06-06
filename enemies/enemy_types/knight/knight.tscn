@@ -62,8 +62,8 @@ down_area = NodePath("wall_areas/down_area")
 left_area = NodePath("wall_areas/left_area")
 right_area = NodePath("wall_areas/right_area")
 awake_timer = NodePath("awake_timer")
+player_prob_mod = 30
 alert_timer = NodePath("alert_timer")
-awvec = Array[Vector2]([Vector2(0, 0), Vector2(0, 1), Vector2(0, 0)])
 pause_timer = NodePath("pause_timer")
 
 [node name="knight_anim" type="AnimatedSprite2D" parent="."]
@@ -182,7 +182,7 @@ position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_mxdt8")
 
 [node name="pause_timer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 0.397
 
 [connection signal="area_entered" from="wake_areas/up_wake" to="." method="_on_up_wake_area_entered"]
 [connection signal="area_entered" from="wake_areas/down_wake" to="." method="_on_down_wake_area_entered"]

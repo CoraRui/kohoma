@@ -53,13 +53,11 @@ offset_right = 95.0
 offset_bottom = 111.0
 color = Color(0, 0.223529, 0.772549, 1)
 
-[node name="knight" parent="." node_paths=PackedStringArray("coll_areas") instance=ExtResource("5_4axy5")]
+[node name="knight" parent="." instance=ExtResource("5_4axy5")]
 position = Vector2(15, 64)
-coll_areas = [null, null, null, null]
 
-[node name="knight2" parent="." node_paths=PackedStringArray("coll_areas") instance=ExtResource("5_4axy5")]
+[node name="knight2" parent="." instance=ExtResource("5_4axy5")]
 position = Vector2(143, 64)
-coll_areas = [null, null, null, null]
 
 [node name="music_trigger" parent="." instance=ExtResource("6_46td2")]
 track_name = "dungeon_one"

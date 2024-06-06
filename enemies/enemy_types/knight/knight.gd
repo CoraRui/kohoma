@@ -31,17 +31,18 @@ enum KnightState {ASLEEP, ALERTED, WANDER, AWAKE, REELING, PAUSE}
 @export var knight_state : KnightState = KnightState.ASLEEP
 @export var knight_dir : DirClass.Dir = DirClass.Dir.DOWN
 @export var awake_timer : Timer
+@export var player_prob_mod : int = 10
 @export_group("","")
 
 @export_group("alert_state")
 @export var alert_timer : Timer
-@export var alvec : Array[Vector2] = [Vector2(0,0), Vector2(0,1)]
+@export var alvec : Array[Vector2] = [Vector2(0,0), Vector2(0,0)]
 var alindex : int = 0
 @export_group("","")
 
 @export_group("awake_state")
 var wvec : Vector2 = Vector2(0,0)
-@export var awvec : Array[Vector2] = [Vector2(0,0), Vector2(0,1)]
+@export var awvec : Array[Vector2] = [Vector2(0,0), Vector2(0,0), Vector2(0,0)]
 var awindex : int = 0
 @export_group("","")
 
@@ -54,6 +55,9 @@ var rvec : Vector2 = Vector2(0,0)
 @export_group("","")
 
 #endregion
+
+#autoloads
+@onready var player_li : player_loader = get_node("/root/player_loader_auto")
 
 func _ready():
 	pass
@@ -71,6 +75,9 @@ func _process(_delta):
 
 func change_direction(d : DirClass.Dir):
 	#should change the knight to go in the specified direction no matter what movement state
+	
+	knight_dir = d
+	
 	match knight_dir:
 		DirClass.Dir.UP:
 			awvec[0] = Vector2(0,-1)
@@ -95,34 +102,58 @@ func pursue():
 		awindex = 0
 
 func change_pursuit():
-	#just random 4 directions for now
+	print("tried to change irection")
+	#this script should calculate the possibility for changes in certain directions.
+	#two phases: prob calc, then roll
+
+	#initialize base probability
+	var up : int = 25
+	var down : int = 25
+	var left : int = 25 
+	var right : int = 25
 	
-	var rand_array : Array[DirClass.Dir] 
+	#factor in player location. more likely to go in the players direction
+	var to_player : Vector2 = global_position.direction_to(player_li.player_ins.global_position)
+	
+	up -= to_player.y * player_prob_mod
+	down += to_player.y * player_prob_mod
+	left -= to_player.x * player_prob_mod
+	right += to_player.x * player_prob_mod
 	
 	#check if the knight is blocked on each side
+	if up_area.has_overlapping_areas() || up_area.has_overlapping_bodies(): 
+		up = 0
+	if down_area.has_overlapping_areas() || down_area.has_overlapping_bodies(): 
+		down = 0
+	if left_area.has_overlapping_areas() || left_area.has_overlapping_bodies(): 
+		left = 0
+	if right_area.has_overlapping_areas() || right_area.has_overlapping_bodies(): 
+		right = 0
+
+	#total all probabilities
+	var total : int = up+down+left+right
 	
-	if not(up_area.has_overlapping_areas() || up_area.has_overlapping_bodies()): 
-		rand_array.append(DirClass.Dir.UP)
-		
-	if not(down_area.has_overlapping_areas() || down_area.has_overlapping_bodies()): 
-		rand_array.append(DirClass.Dir.DOWN)
+	var rand : int = randi_range(0,total)
 	
-	if not(left_area.has_overlapping_areas() || left_area.has_overlapping_bodies()): 
-		rand_array.append(DirClass.Dir.LEFT)
+	print("total/rand", total, rand)
 	
-	if not(right_area.has_overlapping_areas() || right_area.has_overlapping_bodies()): 
-		rand_array.append(DirClass.Dir.RIGHT)
-	
-	
-	match randi_range(0,rand_array.size()):
-		0:
-			change_direction(rand_array[0])
-		1:
-			change_direction(rand_array[1])
-		2:
-			change_direction(rand_array[2])
-		3:
-			change_direction(rand_array[3])
+	total -= up
+	if total < rand:
+		change_direction(DirClass.Dir.UP)
+		return
+	total -= down
+	if total < rand:
+		change_direction(DirClass.Dir.DOWN)
+		return
+	total -= left
+	if total < rand:
+		change_direction(DirClass.Dir.LEFT)
+		return
+	total -= right
+	if total < rand:
+		change_direction(DirClass.Dir.RIGHT)
+		return
+	print("didnt move?")
 
 #KnightState.REEL
 func reel():
