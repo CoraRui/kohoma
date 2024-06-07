@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_epfqf"]
 script = ExtResource("4_0auxh")
-lines = Array[String](["hey."])
+lines = Array[String](["hey. this is a font."])
 
 [sub_resource type="Resource" id="Resource_x442r"]
 script = ExtResource("3_1aomd")

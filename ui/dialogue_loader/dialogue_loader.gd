@@ -22,6 +22,7 @@ var dia_active : bool = false
 
 #autoloads
 @onready var sfx_pi : sfx_player = get_node("/root/sfx_player_auto")
+@onready var world_li : world = get_node("/root/world_auto")
 
 func _input(event):
 	if not dia_active:
@@ -34,6 +35,7 @@ func start_dialogue(d : dialogue):
 	current_dialogue = d
 	dia_ins = dia_box.instantiate()
 	add_child(dia_ins)
+	dia_ins.global_position = world_li.current_level.global_position
 	progress_dialogue()
 
 func progress_dialogue():

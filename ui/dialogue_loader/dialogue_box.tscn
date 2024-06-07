@@ -1,46 +1,66 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhqaw3q6qu30m"]
+[gd_scene load_steps=6 format=3 uid="uid://bhqaw3q6qu30m"]
 
 [ext_resource type="Script" path="res://ui/dialogue_loader/dialogue_box.gd" id="1_l2eds"]
 [ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="2_mu4h8"]
+[ext_resource type="FontFile" uid="uid://b54ftq4vakq8n" path="res://ui/fonts/Riveter.ttf" id="3_c0jax"]
 
 [sub_resource type="FontVariation" id="FontVariation_socjx"]
 base_font = ExtResource("2_mu4h8")
 
 [sub_resource type="FontVariation" id="FontVariation_0864s"]
-base_font = ExtResource("2_mu4h8")
+base_font = ExtResource("3_c0jax")
+spacing_glyph = -1
+spacing_space = -5
 
 [node name="dialogue_box" type="Node2D" node_paths=PackedStringArray("m_label", "n_label")]
+z_index = 15
 script = ExtResource("1_l2eds")
 m_label = NodePath("m_label")
 n_label = NodePath("n_label")
 
 [node name="border" type="ColorRect" parent="."]
-offset_top = 128.0
-offset_right = 176.0
-offset_bottom = 176.0
+visible = false
+offset_left = 9.0
+offset_top = 120.0
+offset_right = 169.0
+offset_bottom = 156.0
 
 [node name="fill" type="ColorRect" parent="."]
-offset_left = 1.0
-offset_top = 129.0
-offset_right = 175.0
-offset_bottom = 175.0
+offset_left = 10.0
+offset_top = 121.0
+offset_right = 168.0
+offset_bottom = 155.0
 color = Color(0, 0, 0, 1)
 
 [node name="n_label" type="Label" parent="."]
-offset_left = 10.0
-offset_top = 115.0
-offset_right = 57.0
-offset_bottom = 127.0
+visible = false
+offset_left = 15.0
+offset_top = 113.0
+offset_right = 31.0
+offset_bottom = 119.0
 theme_override_fonts/font = SubResource("FontVariation_socjx")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 5
 text = "name"
 
 [node name="m_label" type="Label" parent="."]
-offset_left = 6.0
-offset_top = 134.0
-offset_right = 169.0
-offset_bottom = 170.0
+offset_left = 18.0
+offset_top = 126.0
+offset_right = 163.0
+offset_bottom = 153.0
 theme_override_fonts/font = SubResource("FontVariation_0864s")
-theme_override_font_sizes/font_size = 5
-text = "main text its pretty 
-small though"
+theme_override_font_sizes/font_size = 8
+text = "This is the main text."
+autowrap_mode = 2
+
+[node name="dsprite" type="ColorRect" parent="."]
+visible = false
+offset_left = 15.0
+offset_top = 126.0
+offset_right = 39.0
+offset_bottom = 149.0
+
+[node name="advance_icon" type="ColorRect" parent="."]
+offset_left = 159.0
+offset_top = 147.0
+offset_right = 163.0
+offset_bottom = 151.0
