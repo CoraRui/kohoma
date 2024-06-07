@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt8l3i0w1uphp"]
+
+[ext_resource type="Script" path="res://cinematic_handler/cinematic_handler.gd" id="1_x6ab6"]
+[ext_resource type="PackedScene" uid="uid://doliaqvxojxu7" path="res://cinematic_handler/nodes/actor.tscn" id="2_gtgcx"]
+[ext_resource type="Script" path="res://cinematic_handler/resources/cin_comm.gd" id="2_i7g2w"]
+
+[sub_resource type="Resource" id="Resource_8l0mg"]
+script = ExtResource("2_i7g2w")
+move_actor = false
+move_name = "default"
+block_vec = Vector2(0, 0)
+animate_actor = false
+anim_name = "default"
+open_dbox = false
+close_dbox = false
+display_text = false
+display_name = false
+dispay_danim = false
+danim_char = "default"
+danim_name = "default"
+advance_immediately = true
+advance_timer = false
+advance_delay = 3.0
+advance_input = false
+advance_dbox = false
+
+[node name="cinematic_handler" type="Node2D" node_paths=PackedStringArray("actors", "comm_timer")]
+script = ExtResource("1_x6ab6")
+comm_arr = Array[ExtResource("2_i7g2w")]([SubResource("Resource_8l0mg")])
+actors = [NodePath("lief")]
+comm_timer = NodePath("comm_timer")
+
+[node name="lief" parent="." instance=ExtResource("2_gtgcx")]
+
+[node name="comm_timer" type="Timer" parent="."]
+one_shot = true

@@ -1,10 +1,8 @@
 extends Node2D
 class_name dialogue_loader
 
-#this autoload contains functions for displaying dialogue
-
-#should the dialogue box be instantiated every time?
-#I'd say so. wasteful otherwise.
+#this autoload is loads in and out the dialogue box and handles the input for progressing the dialogue.
+#are probably a variety of things that will use it.
 
 #try to get packed scene to work eventually
 @export var dia_box = preload("res://ui/dialogue_loader/dialogue_box.tscn")
