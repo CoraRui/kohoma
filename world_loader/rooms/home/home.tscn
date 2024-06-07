@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://brpxjjuw0ul07"]
 
-[ext_resource type="TileSet" uid="uid://cvpb2rxyo3j21" path="res://world_loader/tile_pallettes/home.tres" id="1_8cj7k"]
+[ext_resource type="TileSet" uid="uid://dwf23hdlckjoj" path="res://world_loader/tile_pallettes/home.tres" id="1_8cj7k"]
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="2_olahv"]
 [ext_resource type="PackedScene" uid="uid://j2gcqncpoo46" path="res://world_loader/rooms/room trigger/exit_trigger.tscn" id="3_a5g0s"]
 [ext_resource type="PackedScene" uid="uid://cog5ygf7ssly" path="res://world_loader/interactables/drops/coin/coin.tscn" id="4_30mfa"]

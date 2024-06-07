@@ -15,15 +15,13 @@ class_name octo_movement
 #TODO: do I want the octo to be able to turn without stopping? might be kind of annoying/too random.
 #TODO: also consider using a more basic movement pattern. I feel like its getting too complex.
 #TODO: have a few different presets of movement for use in specific area types?
+#TODO: wiggle at more randomized intervals
 
 #ok. so the most basic idea of the script is that theres an mvec that is used to change the position of the octo once per frame.
 #I'm probably going to use a similar principle for other movement scripts. But point is, that's not too much to reproduce.
 
 #each enemy should have unique states since the states that they have will ultimately be unique since they move in different ways.
-enum OctoState {MOVING, HURT, KO, STUN}
-
-#being replaced with dir class
-#enum MDir {UP = 0, DOWN = 1, LEFT = 2, RIGHT = 3}
+enum OctoState {MOVING, WIGGLE, HURT, KO, STUN}
 
 var octo_state : OctoState = OctoState.MOVING
 
@@ -31,35 +29,50 @@ var octo_dir : DirClass.Dir = DirClass.Dir.DOWN
 
 @export var enemy_node : Node2D
 
-@export var vel : int
+#region export groups
+@export_group("hurt")
+@export var hurt_timer : Timer
+@export var hurt_dur : float = 0.4
+@export var kbvel : int
+@export_group("","")
 
-@export var wall_areas : Array[Area2D]
-
-@export_group("timers")
-@export var move_timer : Timer
+@export_group("stun")
 @export var stun_timer : Timer
+@export_group("","")
+
+@export_group("moving")
+@export var move_timer : Timer				#time between movement direction changes
+@export var mvec : Array[Vector2] = [Vector2(0,0), Vector2(0,0)]
+var mveci : int = 0
+@export_group("","")
+
+@export_group("wiggle")
+@export var wiggle_timer : Timer
+@export var wiggle_anim : String = "wiggle"
+@export var wiggle_dur : float = 1.0
+@export var wiggle_frames : int = 15			#number of frames between each wiggle flip
+var wiggle_index : int = 0
 @export_group("","")
 
 @export_group("animation")
 @export var octo_anim : AnimatedSprite2D
 @export_group("","")
 
-@export_group("collision areas")
+@export_group("wall_collision")
 @export var top_area : Area2D
 @export var bottom_area : Area2D
 @export var left_area : Area2D
 @export var right_area : Area2D
 @export var bump_timer : Timer
 @export_group("","")
+#endregion
 
-#multiplier for knockback speed
-@export var kbvel : int
 
 #autoloads
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
 
 #internals
-var mvec : Vector2 = Vector2(0,0)
+
 var hvec : Vector2 = Vector2(0,0)
 
 func _ready():
@@ -95,43 +108,59 @@ func next_move():
 	if r < 0:
 		set_direction(DirClass.Dir.RIGHT)
 		r += 1000
-		
-	move_timer.start()
+	wiggle_timer.start()
+	set_octo_state(OctoState.MOVING)
 
+func move():
+	match octo_state:
+		OctoState.MOVING:
+			enemy_node.global_position += mvec[mveci]
+			mveci += 1
+			if mveci <= mvec.size():
+				mveci = 0
+		OctoState.HURT:
+			enemy_node.global_position += hvec
+		OctoState.STUN:
+			#TODO: possibly add some sort of stunned movement pattern? but they can just be still for now.
+			pass
+		OctoState.WIGGLE:
+			wiggle_index += 1
+			if wiggle_index >= wiggle_frames:
+				wiggle_index = 0
+				set_direction(DirClass.get_flip(octo_dir))
+			
+func set_direction(ndir : DirClass.Dir):
+	#account for hurt direction?
+	if ndir == DirClass.Dir.UP:
+		mvec[0] = Vector2(0,-1)
+		octo_anim.rotation = deg_to_rad(180)
+		octo_dir = DirClass.Dir.UP
+	elif ndir == DirClass.Dir.DOWN:
+		mvec[0] = Vector2(0,1)
+		octo_anim.rotation = deg_to_rad(0)
+		octo_dir = DirClass.Dir.DOWN
+	elif ndir == DirClass.Dir.LEFT:
+		mvec[0] = Vector2(-1,0)
+		octo_anim.rotation = deg_to_rad(90)
+		octo_dir = DirClass.Dir.LEFT
+	elif ndir == DirClass.Dir.RIGHT:
+		mvec[0] = Vector2(1,0)
+		octo_anim.rotation = deg_to_rad(270)
+		octo_dir = DirClass.Dir.RIGHT
+
+func set_octo_state(s : OctoState):
+	match s:
+		OctoState.MOVING:
+			octo_state = OctoState.MOVING
+		OctoState.WIGGLE:
+			octo_state = OctoState.WIGGLE
+			wiggle_timer.wait_time = wiggle_dur
+			wiggle_timer.start()
+			
 func move_timer_reset():
 	#resets the movement timer. mostly for if a wall collision takes place so there isn't jerky movement
 	move_timer.stop()
 	move_timer.start()
-
-func move():
-	if octo_state == OctoState.MOVING:
-		enemy_node.global_position += mvec
-		if mvec.x != 0 && mvec.y != 0:
-			print(mvec)
-	elif octo_state == OctoState.HURT:
-		enemy_node.global_position += hvec
-	elif octo_state == OctoState.STUN:
-		#TODO: possibly add some sort of stunned movement pattern? but they can just be still for now.
-		pass
-
-func set_direction(ndir : DirClass.Dir):
-	#account for hurt direction?
-	if ndir == DirClass.Dir.UP:
-		mvec = Vector2(0,-1)
-		octo_anim.rotation = deg_to_rad(180)
-		octo_dir = DirClass.Dir.UP
-	elif ndir == DirClass.Dir.DOWN:
-		mvec = Vector2(0,1)
-		octo_anim.rotation = deg_to_rad(0)
-		octo_dir = DirClass.Dir.DOWN
-	elif ndir == DirClass.Dir.LEFT:
-		mvec = Vector2(-1,0)
-		octo_anim.rotation = deg_to_rad(90)
-		octo_dir = DirClass.Dir.LEFT
-	elif ndir == DirClass.Dir.RIGHT:
-		mvec = Vector2(1,0)
-		octo_anim.rotation = deg_to_rad(270)
-		octo_dir = DirClass.Dir.RIGHT
 
 func flip_direction():
 	#should make the octo go the opposite of whatever direction its going.
@@ -153,9 +182,11 @@ func flip_direction():
 
 #add idle direction/pointing direction??
 func _on_move_timer_timeout():
+	print("move timer done")
 	next_move()
 
 #most of these triggers will incur specific changes in the creatures behavior dependent on their current movement state.
+#region area triggers
 func _on_top_area_entered(_area):
 	if octo_state == OctoState.MOVING:
 		#if they're going up, there should be a brief pause, then they should turn around.
@@ -266,12 +297,12 @@ func _on_right_body_entered(_body):
 		enemy_node.position.x += -2
 	print("right")
 
+#endregion
+
 func _on_health_hurt():
-	print("hurt fired")
 	#this signal activates when the health script takes damage.
 	octo_state = OctoState.HURT
 	var player_pos : Vector2 = player_li.player_ins.global_position
-	
 	if abs(enemy_node.global_position.x - player_pos.x) < abs(enemy_node.global_position.y - player_pos.y):
 		#use y direction
 		if enemy_node.global_position.y - player_pos.y < 0:
@@ -287,13 +318,19 @@ func _on_health_hurt():
 		else:
 			hvec = Vector2(1 * kbvel,0)
 			print(hvec)
-
-func _on_hurt_timer_timeout():
-	#this timer marks the end of the octos reaction to being hurt.
-	octo_state = OctoState.MOVING
-
+	hurt_timer.wait_time = hurt_dur
+	hurt_timer.start()
+	
 func _on_hitbox_area_entered(area):
 	if area.get_parent() is boomerang:
 		#TODO: add some sort of animation for being stunned/coming out of stun state
 		octo_state = OctoState.STUN
 		stun_timer.start()
+
+func _on_hurt_timer_timeout():
+	set_octo_state(OctoState.MOVING)
+
+func _on_wiggle_timer_timeout():
+	print("wiggle timer done")
+	set_octo_state(OctoState.WIGGLE)
+	move_timer.start()

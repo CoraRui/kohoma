@@ -13,7 +13,7 @@ class_name simple_bullet
 
 var vec_index : int = 0
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	move()
 	
 func move():

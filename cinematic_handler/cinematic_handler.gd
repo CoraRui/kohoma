@@ -84,11 +84,11 @@ func _on_init_timer_timeout():
 	#this timer activates on ready, using a brief delay to initialize the commands.
 	init_cin_comm()
 
-func _on_init_area_area_entered(area):
+func _on_init_area_area_entered(_area):
 	#initialized the commands if a valid area enters
 	init_cin_comm()
 	
-func _on_init_area_body_entered(body):
+func _on_init_area_body_entered(_body):
 	init_cin_comm()
 
 func _on_comm_timer_timeout():

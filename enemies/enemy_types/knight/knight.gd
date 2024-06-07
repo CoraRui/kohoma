@@ -31,7 +31,7 @@ enum KnightState {ASLEEP, ALERTED, WANDER, AWAKE, REELING, PAUSE}
 @export var knight_state : KnightState = KnightState.ASLEEP
 @export var knight_dir : DirClass.Dir = DirClass.Dir.DOWN
 @export var awake_timer : Timer
-@export var player_prob_mod : int = 10
+@export var player_prob_mod : float = 10
 @export_group("","")
 
 @export_group("alert_state")
@@ -115,10 +115,10 @@ func change_pursuit():
 	#factor in player location. more likely to go in the players direction
 	var to_player : Vector2 = global_position.direction_to(player_li.player_ins.global_position)
 	
-	up -= to_player.y * player_prob_mod
-	down += to_player.y * player_prob_mod
-	left -= to_player.x * player_prob_mod
-	right += to_player.x * player_prob_mod
+	up -= int(to_player.y * player_prob_mod)
+	down += int(to_player.y * player_prob_mod)
+	left -= int(to_player.x * player_prob_mod)
+	right += int(to_player.x * player_prob_mod)
 	
 	#check if the knight is blocked on each side
 	if up_area.has_overlapping_areas() || up_area.has_overlapping_bodies(): 
@@ -208,35 +208,35 @@ func _on_awake_timer_timeout():
 
 #region wall_triggers
 #wall triggers
-func _on_up_area_area_entered(area):
+func _on_up_area_area_entered(_area):
 	if knight_state == KnightState.AWAKE:
 		pause()
 
-func _on_up_area_body_entered(body):
+func _on_up_area_body_entered(_body):
 	if knight_state == KnightState.AWAKE:
 		pause()
 
-func _on_down_area_area_entered(area):
+func _on_down_area_area_entered(_area):
 	if knight_state == KnightState.AWAKE:
 		pause()
 
-func _on_down_area_body_entered(body):
+func _on_down_area_body_entered(_body):
 	if knight_state == KnightState.AWAKE:
 		pause()
 
-func _on_left_area_area_entered(area):
+func _on_left_area_area_entered(_area):
 	if knight_state == KnightState.AWAKE:
 		pause()
 
-func _on_left_area_body_entered(body):
+func _on_left_area_body_entered(_body):
 	if knight_state == KnightState.AWAKE:
 		pause()
 
-func _on_right_area_area_entered(area):
+func _on_right_area_area_entered(_area):
 	if knight_state == KnightState.AWAKE:
 		pause()
 
-func _on_right_area_body_entered(body):
+func _on_right_area_body_entered(_body):
 	if knight_state == KnightState.AWAKE:
 		pause()
 

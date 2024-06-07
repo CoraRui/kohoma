@@ -26,7 +26,7 @@ var fly_state : FlyState = FlyState.THROW
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
 
 func _ready():
-	tvel = dir_auto.get_uvec(player_li.player_ins.direction)
+	tvel = DirClass.get_uvec(player_li.player_ins.direction)
 	throw_timer.start()
 	
 func _process(_delta):
