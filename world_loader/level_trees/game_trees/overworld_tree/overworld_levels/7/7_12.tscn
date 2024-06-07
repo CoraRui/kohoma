@@ -1,6 +1,78 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx0aoo2scckto"]
+[gd_scene load_steps=8 format=3 uid="uid://cx0aoo2scckto"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_qs11m"]
+[ext_resource type="PackedScene" uid="uid://bt8l3i0w1uphp" path="res://cinematic_handler/cinematic_handler.tscn" id="2_6kxpp"]
+[ext_resource type="Script" path="res://cinematic_handler/resources/cin_comm.gd" id="3_1aomd"]
+[ext_resource type="PackedScene" uid="uid://55ge58fckycg" path="res://cinematic_handler/nodes/actors/lief/lief_actor.tscn" id="3_g0di5"]
+
+[sub_resource type="Resource" id="Resource_x442r"]
+script = ExtResource("3_1aomd")
+move_actor = false
+move_actor_name = "default"
+block_vec = Vector2(0, 0)
+animate_actor = true
+anim_actor_name = "lief"
+anim_name = "forward"
+open_dbox = false
+close_dbox = false
+display_text = false
+display_name = false
+dispay_danim = false
+danim_char = "default"
+danim_name = "default"
+jump_to_index = false
+jump_index = 0
+advance_immediately = false
+advance_timer = true
+advance_delay = 3.0
+advance_input = false
+advance_dbox = false
+
+[sub_resource type="Resource" id="Resource_ns25d"]
+script = ExtResource("3_1aomd")
+move_actor = false
+move_actor_name = "default"
+block_vec = Vector2(0, 0)
+animate_actor = true
+anim_actor_name = "lief"
+anim_name = "back"
+open_dbox = false
+close_dbox = false
+display_text = false
+display_name = false
+dispay_danim = false
+danim_char = "default"
+danim_name = "default"
+jump_to_index = false
+jump_index = 0
+advance_immediately = false
+advance_timer = true
+advance_delay = 3.0
+advance_input = false
+advance_dbox = false
+
+[sub_resource type="Resource" id="Resource_cmug6"]
+script = ExtResource("3_1aomd")
+move_actor = false
+move_actor_name = "default"
+block_vec = Vector2(0, 0)
+animate_actor = true
+anim_actor_name = "lief"
+anim_name = "forward"
+open_dbox = false
+close_dbox = false
+display_text = false
+display_name = false
+dispay_danim = false
+danim_char = "default"
+danim_name = "default"
+jump_to_index = true
+jump_index = 1
+advance_immediately = false
+advance_timer = true
+advance_delay = 3.0
+advance_input = false
+advance_dbox = false
 
 [node name="7_12" type="Node2D"]
 
@@ -13,3 +85,13 @@ layer_0/tile_data = PackedInt32Array(196608, 131073, 1, 262144, 131073, 1, 32768
 tile_set = ExtResource("1_qs11m")
 format = 2
 layer_0/tile_data = PackedInt32Array(262144, 1, 1342177283, 262145, 1, 1342177283, 262146, 1, 1342177283, 262147, 1, 1342177283, 262148, 1, 1342177283, 262149, 1, 1342177283, 262150, 1, 1342177283, 327686, 1, 805306371, 393222, 1, 805306371, 458758, 1, 805306371, 524294, 1, 805306371, 589830, 1, 805306371)
+
+[node name="cinematic_handler" parent="." node_paths=PackedStringArray("actor_arr") instance=ExtResource("2_6kxpp")]
+comm_arr = Array[ExtResource("3_1aomd")]([SubResource("Resource_x442r"), SubResource("Resource_ns25d"), SubResource("Resource_cmug6")])
+actor_arr = [NodePath("actors/lief_actor")]
+init_on_ready = true
+
+[node name="lief_actor" parent="cinematic_handler/actors" index="0" instance=ExtResource("3_g0di5")]
+position = Vector2(49, 87)
+
+[editable path="cinematic_handler"]

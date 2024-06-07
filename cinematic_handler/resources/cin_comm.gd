@@ -8,12 +8,13 @@ class_name cin_comm
 #hrm will i be able to move multiple things/have multiple commands in progress at the same time?
 @export_group("blocking")
 @export var move_actor : bool = false				#whether to move an actor this command.
-@export var move_name : String = "default"			#name of character to move.
+@export var move_actor_name : String = "default"			#name of character to move.
 @export var block_vec : Vector2 = Vector2(0,0)		#position to move character to. will probably only work in straight lines.
 @export_group("","")
 
 @export_group("animation")
 @export var animate_actor : bool = false			#whether to actually animate the actor
+@export var anim_actor_name : String = "default"
 @export var anim_name : String = "default"			#name of animation in actor to switch to
 @export_group("","")
 
@@ -32,6 +33,8 @@ class_name cin_comm
 @export_group("","")
 
 @export_group("next_trigger")
+@export var jump_to_index : bool = false
+@export var jump_index : int = 0
 @export var advance_immediately : bool = true		#causes the handler execute the next command as soon as this one is finished.
 @export var advance_timer : bool = false				#links the execution of the next command to the command timer.
 @export var advance_delay : float = 3.0				#time to wait before execution of next command

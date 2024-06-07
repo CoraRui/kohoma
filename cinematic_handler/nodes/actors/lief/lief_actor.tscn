@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://55ge58fckycg"]
+
+[ext_resource type="Script" path="res://cinematic_handler/resources/actor/actor.gd" id="1_4kuvb"]
+[ext_resource type="Texture2D" uid="uid://sabb4ofx3eri" path="res://cinematic_handler/nodes/actors/lief/anim/lief_front1.png" id="2_bvqtq"]
+[ext_resource type="Texture2D" uid="uid://bkjwvgvi6tqvn" path="res://cinematic_handler/nodes/actors/lief/anim/lief_back1.png" id="2_kfoxb"]
+[ext_resource type="Texture2D" uid="uid://lpcys78d1jgb" path="res://cinematic_handler/nodes/actors/lief/anim/lief_back2.png" id="3_2cre1"]
+[ext_resource type="Texture2D" uid="uid://dap4d2tyc8gj2" path="res://cinematic_handler/nodes/actors/lief/anim/lief_front2.png" id="3_qbx7c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6cmag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kfoxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2cre1")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bvqtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qbx7c")
+}],
+"loop": true,
+"name": &"forward",
+"speed": 5.0
+}]
+
+[node name="lief_actor" type="Node2D" node_paths=PackedStringArray("actor_anim")]
+script = ExtResource("1_4kuvb")
+actor_name = "lief"
+actor_anim = NodePath("lief_anim")
+
+[node name="lief_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6cmag")
+animation = &"forward"
+autoplay = "forward"

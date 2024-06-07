@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://doliaqvxojxu7"]
 
-[ext_resource type="Script" path="res://cinematic_handler/nodes/actor.gd" id="1_pdfwf"]
+[ext_resource type="Script" path="res://cinematic_handler/resources/actor/actor.gd" id="1_pdfwf"]
 
 [node name="actor" type="Node2D" node_paths=PackedStringArray("actor_anim")]
 script = ExtResource("1_pdfwf")

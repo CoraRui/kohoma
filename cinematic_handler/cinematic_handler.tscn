@@ -1,36 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://bt8l3i0w1uphp"]
+[gd_scene load_steps=3 format=3 uid="uid://bt8l3i0w1uphp"]
 
 [ext_resource type="Script" path="res://cinematic_handler/cinematic_handler.gd" id="1_x6ab6"]
-[ext_resource type="PackedScene" uid="uid://doliaqvxojxu7" path="res://cinematic_handler/nodes/actor.tscn" id="2_gtgcx"]
-[ext_resource type="Script" path="res://cinematic_handler/resources/cin_comm.gd" id="2_i7g2w"]
 
-[sub_resource type="Resource" id="Resource_8l0mg"]
-script = ExtResource("2_i7g2w")
-move_actor = false
-move_name = "default"
-block_vec = Vector2(0, 0)
-animate_actor = false
-anim_name = "default"
-open_dbox = false
-close_dbox = false
-display_text = false
-display_name = false
-dispay_danim = false
-danim_char = "default"
-danim_name = "default"
-advance_immediately = true
-advance_timer = false
-advance_delay = 3.0
-advance_input = false
-advance_dbox = false
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55c5y"]
 
-[node name="cinematic_handler" type="Node2D" node_paths=PackedStringArray("actors", "comm_timer")]
+[node name="cinematic_handler" type="Node2D" node_paths=PackedStringArray("comm_timer")]
 script = ExtResource("1_x6ab6")
-comm_arr = Array[ExtResource("2_i7g2w")]([SubResource("Resource_8l0mg")])
-actors = [NodePath("lief")]
-comm_timer = NodePath("comm_timer")
+comm_timer = NodePath("timerstriggers/comm_timer")
 
-[node name="lief" parent="." instance=ExtResource("2_gtgcx")]
+[node name="actors" type="Node2D" parent="."]
 
-[node name="comm_timer" type="Timer" parent="."]
+[node name="timerstriggers" type="Node2D" parent="."]
+
+[node name="comm_timer" type="Timer" parent="timerstriggers"]
 one_shot = true
+
+[node name="init_timer" type="Timer" parent="timerstriggers"]
+
+[node name="init_area" type="Area2D" parent="timerstriggers"]
+
+[node name="init_shape" type="CollisionShape2D" parent="timerstriggers/init_area"]
+shape = SubResource("RectangleShape2D_55c5y")
+
+[connection signal="timeout" from="timerstriggers/comm_timer" to="." method="_on_comm_timer_timeout"]
+[connection signal="timeout" from="timerstriggers/init_timer" to="." method="_on_init_timer_timeout"]
+[connection signal="area_entered" from="timerstriggers/init_area" to="." method="_on_init_area_area_entered"]
+[connection signal="body_entered" from="timerstriggers/init_area" to="." method="_on_init_area_body_entered"]
