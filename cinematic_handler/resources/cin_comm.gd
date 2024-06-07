@@ -9,7 +9,8 @@ class_name cin_comm
 @export_group("blocking")
 @export var move_actor : bool = false				#whether to move an actor this command.
 @export var move_actor_name : String = "default"			#name of character to move.
-@export var block_vec : Vector2 = Vector2(0,0)		#position to move character to. will probably only work in straight lines.
+@export var block_dist : int = 16							#distance to be travelled
+@export var block_vel : Array[Vector2] = [Vector2(0,0)]
 @export_group("","")
 
 @export_group("animation")
@@ -19,17 +20,20 @@ class_name cin_comm
 @export_group("","")
 
 @export_group("dialogue")
-@export var open_dbox : bool = false				#shows the dialogue box
+@export var init_dialogue : bool = false				#shows the dialogue box
 @export var close_dbox : bool = false				#closes the dialogue box
-@export var display_text : bool = false				#displays text in the dialogue box
-@export var display_name : bool = false				#displays a name in the dialogue box name box.
+@export var dialogue_obj : dialogue					#dialogue to be passed to the dialogue loader.
 #TODO: add dialogue animation
 #im not exactly sure how the dialogue animation bit will work yet...
 #but I'm pretty sure it will be referenced by name. something like the dbox having references to a 
 #couple of different animatedsprite2D nodes which it can load in and out by name, then
-@export var dispay_danim : bool = false				#displays a dialogue animation in the anim portion of the dbox.
-@export var danim_char : String = "default"			#name of character to animate
-@export var danim_name : String = "default"			#name of dialogue animation
+
+@export_group("","")
+
+@export_group("player_input")
+@export var disable_movement : bool = false
+@export var disable_pause : bool = false
+@export var disable_inventory : bool = false
 @export_group("","")
 
 @export_group("next_trigger")

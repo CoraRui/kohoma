@@ -1,27 +1,27 @@
 extends Node2D
 class_name dialogue_loader
 
+#TODO: load the dialogue box in the correct spot, probably related to the world loaders current worlds position
+#TODO: figure out correct place in draw order
+
 #this autoload is loads in and out the dialogue box and handles the input for progressing the dialogue.
 #are probably a variety of things that will use it.
 
-#try to get packed scene to work eventually
+#signals
+signal dialogue_end
+signal dialogue_advance
+
+#dialogue_ref
 @export var dia_box = preload("res://ui/dialogue_loader/dialogue_box.tscn")
 
+#internal variables
 var dia_ins : dialogue_box
-
 var current_dialogue : dialogue
-
 var dia_index : int = 0
-
 var dia_active : bool = false
 
 #autoloads
-
 @onready var sfx_pi : sfx_player = get_node("/root/sfx_player_auto")
-
-func _process(_delta):
-	if not dia_box:
-		print("its gone")
 
 func _input(event):
 	if not dia_active:
@@ -37,6 +37,7 @@ func start_dialogue(d : dialogue):
 	progress_dialogue()
 
 func progress_dialogue():
+	dialogue_advance.emit()
 	if dia_index >= current_dialogue.lines.size():
 		end_dialogue()
 		return
@@ -44,6 +45,7 @@ func progress_dialogue():
 	dia_index += 1
 	
 func end_dialogue():
+	dialogue_end.emit()
 	dia_active = false
 	current_dialogue = null
 	dia_index = 0
