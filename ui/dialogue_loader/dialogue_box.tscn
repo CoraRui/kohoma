@@ -15,6 +15,11 @@ spacing_space = -5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4y8or"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_ose8b")
@@ -23,7 +28,7 @@ animations = [{
 "texture": null
 }],
 "loop": true,
-"name": &"default",
+"name": &"on",
 "speed": 2.0
 }]
 
@@ -33,7 +38,6 @@ script = ExtResource("1_l2eds")
 m_label = NodePath("m_label")
 n_label = NodePath("n_label")
 adv_sprite = NodePath("adv_arrow")
-char_sfx = "def_pickup"
 
 [node name="border" type="ColorRect" parent="."]
 visible = false
@@ -79,6 +83,6 @@ offset_bottom = 149.0
 [node name="adv_arrow" type="AnimatedSprite2D" parent="."]
 position = Vector2(160, 150)
 sprite_frames = SubResource("SpriteFrames_4y8or")
-autoplay = "default"
-frame_progress = 0.519993
+animation = &"off"
+autoplay = "off"
 offset = Vector2(0.5, 0)

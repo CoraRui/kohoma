@@ -31,6 +31,8 @@ func _input(event):
 		progress_dialogue()
 	
 func start_dialogue(d : dialogue):
+	if dia_active:
+		end_dialogue()
 	dia_active = true
 	current_dialogue = d
 	dia_ins = dia_box.instantiate()
@@ -43,7 +45,7 @@ func progress_dialogue():
 	if dia_index >= current_dialogue.lines.size():
 		end_dialogue()
 		return
-	dia_ins.display_text(current_dialogue.lines[dia_index].line)
+	dia_ins.display_text(current_dialogue.lines[dia_index])
 	dia_index += 1
 	
 func end_dialogue():

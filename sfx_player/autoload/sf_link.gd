@@ -5,7 +5,7 @@ class_name sf_link
 #most importantly the string name, but also, the volume, pitch, things like that.
 
 @export var sf_name : String = "default"
-@export var sf_vol : float = 0.8
+@export var sf_vol : float = -1
 @export var sf_pitch : float = 1.0
 
 

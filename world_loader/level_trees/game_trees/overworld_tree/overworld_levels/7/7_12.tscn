@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cx0aoo2scckto"]
+[gd_scene load_steps=17 format=3 uid="uid://cx0aoo2scckto"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_qs11m"]
 [ext_resource type="PackedScene" uid="uid://bt8l3i0w1uphp" path="res://cinematic_handler/cinematic_handler.tscn" id="2_6kxpp"]
@@ -11,13 +11,15 @@
 [sub_resource type="Resource" id="Resource_txrup"]
 script = ExtResource("3_ghpd4")
 sf_name = "def_pickup"
-sf_vol = -1.0
+sf_vol = -8.0
 sf_pitch = 1.0
 
 [sub_resource type="Resource" id="Resource_03ucu"]
 script = ExtResource("4_6v738")
 line = "hey. this is a font"
 char_sf = SubResource("Resource_txrup")
+char_speed = 4
+sf_speed = 7
 clear_prev = true
 
 [sub_resource type="Resource" id="Resource_gfq1m"]
@@ -47,24 +49,43 @@ advance_delay = 3.0
 advance_input = false
 advance_dbox = false
 
+[sub_resource type="Resource" id="Resource_57xxs"]
+script = ExtResource("3_ghpd4")
+sf_name = "def_pickup"
+sf_vol = -8.0
+sf_pitch = 1.0
+
+[sub_resource type="Resource" id="Resource_iw0li"]
+script = ExtResource("4_6v738")
+line = "line two. this font looks nice!"
+char_sf = SubResource("Resource_57xxs")
+char_speed = 4
+sf_speed = 7
+clear_prev = true
+
+[sub_resource type="Resource" id="Resource_n51um"]
+script = ExtResource("4_0auxh")
+lines = Array[ExtResource("4_6v738")]([SubResource("Resource_iw0li")])
+
 [sub_resource type="Resource" id="Resource_f87sj"]
 script = ExtResource("3_1aomd")
-move_actor = false
-move_actor_name = "default"
+move_actor = true
+move_actor_name = "lief"
 block_dist = 16
-block_vel = Array[Vector2]([Vector2(0, 0)])
-animate_actor = false
-anim_actor_name = "default"
-anim_name = "default"
-init_dialogue = false
+block_vel = Array[Vector2]([Vector2(-1, 0), Vector2(0, 0)])
+animate_actor = true
+anim_actor_name = "lief"
+anim_name = "back"
+init_dialogue = true
 close_dbox = false
+dialogue_obj = SubResource("Resource_n51um")
 disable_movement = false
 disable_pause = false
 disable_inventory = false
 jump_to_index = false
 jump_index = 0
-advance_immediately = true
-advance_timer = false
+advance_immediately = false
+advance_timer = true
 advance_delay = 3.0
 advance_input = false
 advance_dbox = false
@@ -83,7 +104,7 @@ close_dbox = false
 disable_movement = false
 disable_pause = false
 disable_inventory = false
-jump_to_index = false
+jump_to_index = true
 jump_index = 0
 advance_immediately = true
 advance_timer = false

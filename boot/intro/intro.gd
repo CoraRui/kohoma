@@ -11,7 +11,7 @@ extends Node2D
 
 @export_group("timing")
 @export var txt_del_arr : Array[float]
-@export_multiline var txt_arr : Array[String]
+@export var txt_arr : dialogue
 var txt_index : int = 0
 @export var img_del_arr : Array[float]
 @export var img_arr : Array[String]
@@ -31,7 +31,7 @@ func _ready():
 	txt_del.start()
 	img_del.start()
 	mural_anim.play(img_arr[img_index])
-	d_box.display_text(txt_arr[txt_index])
+	d_box.display_text(txt_arr.lines[txt_index])
 	txt_index += 1
 	img_index += 1
 
@@ -46,7 +46,7 @@ func _on_txt_del_timeout():
 	#should update the image and restart the timer with the next time amount
 	txt_del.wait_time = txt_del_arr[txt_index]
 	txt_del.start()
-	d_box.display_text(txt_arr[txt_index])
+	d_box.display_text(txt_arr.lines[txt_index])
 	txt_index += 1 
 
 

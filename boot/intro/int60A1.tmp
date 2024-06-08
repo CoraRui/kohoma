@@ -1,70 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://bh861ens8p1kx"]
+[gd_scene load_steps=12 format=3 uid="uid://bh861ens8p1kx"]
 
 [ext_resource type="Script" path="res://boot/intro/intro.gd" id="1_5i7y0"]
 [ext_resource type="Script" path="res://boot/scripts/to_next.gd" id="2_4keyd"]
-[ext_resource type="Script" path="res://ui/dialogue_loader/resources/dia_line.gd" id="2_kqmha"]
-[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="2_owy0p"]
 [ext_resource type="PackedScene" uid="uid://bhh0i8vm2o6m7" path="res://boot/title_screen/title_screen.tscn" id="3_53b1d"]
-[ext_resource type="Script" path="res://ui/dialogue_loader/resources/dialogue.gd" id="3_rrtrh"]
 [ext_resource type="PackedScene" uid="uid://jfxvdv88hlmx" path="res://music_player/triggers/music_trigger.tscn" id="4_u8nlj"]
 [ext_resource type="PackedScene" uid="uid://bhqaw3q6qu30m" path="res://ui/dialogue_loader/dialogue_box.tscn" id="4_yfyia"]
 [ext_resource type="Texture2D" uid="uid://ve6x2obpvcmd" path="res://world_loader/interactables/drops/coin/Sprite-0002.png" id="5_owkm2"]
 [ext_resource type="Texture2D" uid="uid://buuf1t3bvxrcy" path="res://player_load/items/sword.png" id="6_yim8y"]
 [ext_resource type="Texture2D" uid="uid://bpuoa4hsfvj0t" path="res://world_loader/interactables/drops/key/simple_key.png" id="7_tqku6"]
 [ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="9_axrma"]
-
-[sub_resource type="Resource" id="Resource_jhe1w"]
-script = ExtResource("2_owy0p")
-sf_name = "def_pickup"
-sf_vol = 0.0
-sf_pitch = 1.0
-
-[sub_resource type="Resource" id="Resource_j4256"]
-script = ExtResource("2_kqmha")
-line = "blah blah blah in the land of whatever"
-char_sf = SubResource("Resource_jhe1w")
-char_speed = 5
-sf_speed = 8
-clear_prev = true
-
-[sub_resource type="Resource" id="Resource_vc412"]
-script = ExtResource("2_kqmha")
-line = ""
-char_speed = 15
-sf_speed = 15
-clear_prev = true
-
-[sub_resource type="Resource" id="Resource_c2bw8"]
-script = ExtResource("2_kqmha")
-line = ""
-char_speed = 15
-sf_speed = 15
-clear_prev = true
-
-[sub_resource type="Resource" id="Resource_hdlld"]
-script = ExtResource("2_kqmha")
-line = ""
-char_speed = 15
-sf_speed = 15
-clear_prev = true
-
-[sub_resource type="Resource" id="Resource_r5v88"]
-script = ExtResource("2_kqmha")
-line = ""
-char_speed = 15
-sf_speed = 15
-clear_prev = true
-
-[sub_resource type="Resource" id="Resource_4ur82"]
-script = ExtResource("2_kqmha")
-line = ""
-char_speed = 15
-sf_speed = 15
-clear_prev = true
-
-[sub_resource type="Resource" id="Resource_l5sgi"]
-script = ExtResource("3_rrtrh")
-lines = Array[ExtResource("2_kqmha")]([SubResource("Resource_j4256"), SubResource("Resource_vc412"), SubResource("Resource_c2bw8"), SubResource("Resource_hdlld"), SubResource("Resource_r5v88"), SubResource("Resource_4ur82")])
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4efeq"]
 animations = [{
@@ -99,7 +43,8 @@ base_font = ExtResource("9_axrma")
 [node name="intro" type="Node2D" node_paths=PackedStringArray("txt_del", "img_del", "next_scene", "mural_anim", "d_box")]
 script = ExtResource("1_5i7y0")
 txt_del_arr = Array[float]([14.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 3.0])
-txt_arr = SubResource("Resource_l5sgi")
+txt_arr = Array[String](["", "there is a legend in the land of whatever", "that a great evil existed long ago
+", "which will come back at somepoint", "and a hero will fight it", "", "", "", ""])
 img_del_arr = Array[float]([14.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 3.0])
 img_arr = Array[String](["zero", "one", "two", "three", "four", "five", "six", "seven", "eight"])
 txt_del = NodePath("dialogue_box/txt_del")
@@ -139,7 +84,7 @@ kohoma"
 horizontal_alignment = 1
 
 [node name="adv_arrow" parent="dialogue_box" index="5"]
-autoplay = "off"
+visible = false
 
 [node name="txt_del" type="Timer" parent="dialogue_box"]
 one_shot = true
