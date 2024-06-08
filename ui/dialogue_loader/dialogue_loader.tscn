@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://ui/dialogue_loader/dialogue_loader.gd" id="1_nj8bj"]
 
 [node name="dialogue_loader" type="Node2D"]
+z_index = 15
 script = ExtResource("1_nj8bj")

@@ -6,6 +6,8 @@ class_name dialogue_box
 #TODO: displaying text without clearing old text. mainly to be able to change the style of display midline.
 #TODO: some sort of system for timed sound effects.
 #TODO: variable in dialogue for adjusting char sfx speed
+#TODO: scrolling dialogue??
+#TODO: top.bottom of the screen text box
 
 
 #this script controls the dialogue boxes display functions
@@ -44,7 +46,6 @@ func text_process():
 		return
 	
 	if current_text.length() <= 0:
-		print("play")
 		adv_sprite.play("on")
 		text_processing = false
 		return

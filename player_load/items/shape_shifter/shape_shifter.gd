@@ -6,7 +6,7 @@ extends Node2D
 #for right now I'll just link it to the number keys.
 #I'll attach a certain couple of things to disable/set invisible
 
-@export var player_anim : AnimatedSprite2D
+@export var anim_script : AnimatedSprite2D
 
 @export var player_move : player_movement
 

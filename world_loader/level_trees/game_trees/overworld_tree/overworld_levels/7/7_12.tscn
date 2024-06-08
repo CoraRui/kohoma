@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cx0aoo2scckto"]
+[gd_scene load_steps=24 format=3 uid="uid://cx0aoo2scckto"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_qs11m"]
 [ext_resource type="PackedScene" uid="uid://bt8l3i0w1uphp" path="res://cinematic_handler/cinematic_handler.tscn" id="2_6kxpp"]
@@ -38,9 +38,10 @@ anim_name = "forward"
 init_dialogue = true
 close_dbox = false
 dialogue_obj = SubResource("Resource_gfq1m")
-disable_movement = false
-disable_pause = false
-disable_inventory = false
+set_input = false
+movement_disabled = false
+pause_disabled = false
+inventory_disabled = false
 jump_to_index = false
 jump_index = 0
 advance_immediately = false
@@ -57,7 +58,8 @@ sf_pitch = 1.0
 
 [sub_resource type="Resource" id="Resource_iw0li"]
 script = ExtResource("4_6v738")
-line = "line two. this font looks nice!"
+line = "line two. this font 
+looks nice!"
 char_sf = SubResource("Resource_57xxs")
 char_speed = 4
 sf_speed = 7
@@ -79,9 +81,10 @@ anim_name = "back"
 init_dialogue = true
 close_dbox = false
 dialogue_obj = SubResource("Resource_n51um")
-disable_movement = false
-disable_pause = false
-disable_inventory = false
+set_input = false
+movement_disabled = false
+pause_disabled = false
+inventory_disabled = false
 jump_to_index = false
 jump_index = 0
 advance_immediately = false
@@ -90,7 +93,25 @@ advance_delay = 3.0
 advance_input = false
 advance_dbox = false
 
-[sub_resource type="Resource" id="Resource_1svlb"]
+[sub_resource type="Resource" id="Resource_s67m1"]
+script = ExtResource("3_ghpd4")
+sf_name = "def_pickup"
+sf_vol = -1.0
+sf_pitch = 1.0
+
+[sub_resource type="Resource" id="Resource_dckda"]
+script = ExtResource("4_6v738")
+line = "ok, movement should be frozen."
+char_sf = SubResource("Resource_s67m1")
+char_speed = 4
+sf_speed = 7
+clear_prev = true
+
+[sub_resource type="Resource" id="Resource_ewerp"]
+script = ExtResource("4_0auxh")
+lines = Array[ExtResource("4_6v738")]([SubResource("Resource_dckda")])
+
+[sub_resource type="Resource" id="Resource_phuxa"]
 script = ExtResource("3_1aomd")
 move_actor = false
 move_actor_name = "default"
@@ -99,15 +120,59 @@ block_vel = Array[Vector2]([Vector2(0, 0)])
 animate_actor = false
 anim_actor_name = "default"
 anim_name = "default"
-init_dialogue = false
+init_dialogue = true
 close_dbox = false
-disable_movement = false
-disable_pause = false
-disable_inventory = false
+dialogue_obj = SubResource("Resource_ewerp")
+set_input = true
+movement_disabled = true
+pause_disabled = true
+inventory_disabled = true
+jump_to_index = false
+jump_index = 0
+advance_immediately = false
+advance_timer = true
+advance_delay = 3.0
+advance_input = false
+advance_dbox = false
+
+[sub_resource type="Resource" id="Resource_6cp7u"]
+script = ExtResource("3_ghpd4")
+sf_name = "def_pickup"
+sf_vol = -1.0
+sf_pitch = 1.0
+
+[sub_resource type="Resource" id="Resource_m6ik4"]
+script = ExtResource("4_6v738")
+line = "ok, unfrozen"
+char_sf = SubResource("Resource_6cp7u")
+char_speed = 4
+sf_speed = 7
+clear_prev = true
+
+[sub_resource type="Resource" id="Resource_7i3bl"]
+script = ExtResource("4_0auxh")
+lines = Array[ExtResource("4_6v738")]([SubResource("Resource_m6ik4")])
+
+[sub_resource type="Resource" id="Resource_5rnx6"]
+script = ExtResource("3_1aomd")
+move_actor = false
+move_actor_name = "default"
+block_dist = 16
+block_vel = Array[Vector2]([Vector2(0, 0)])
+animate_actor = false
+anim_actor_name = "default"
+anim_name = "default"
+init_dialogue = true
+close_dbox = false
+dialogue_obj = SubResource("Resource_7i3bl")
+set_input = true
+movement_disabled = false
+pause_disabled = false
+inventory_disabled = false
 jump_to_index = true
 jump_index = 0
-advance_immediately = true
-advance_timer = false
+advance_immediately = false
+advance_timer = true
 advance_delay = 3.0
 advance_input = false
 advance_dbox = false
@@ -126,7 +191,7 @@ layer_0/tile_data = PackedInt32Array(262144, 1, 1342177283, 262145, 1, 134217728
 
 [node name="cinematic_handler" parent="." node_paths=PackedStringArray("actor_arr") instance=ExtResource("2_6kxpp")]
 init_on_ready = true
-comm_arr = Array[ExtResource("3_1aomd")]([SubResource("Resource_x442r"), SubResource("Resource_f87sj"), SubResource("Resource_1svlb")])
+comm_arr = Array[ExtResource("3_1aomd")]([SubResource("Resource_x442r"), SubResource("Resource_f87sj"), SubResource("Resource_phuxa"), SubResource("Resource_5rnx6")])
 actor_arr = [NodePath("actors/lief_actor")]
 
 [node name="lief_actor" parent="cinematic_handler/actors" index="0" instance=ExtResource("3_g0di5")]

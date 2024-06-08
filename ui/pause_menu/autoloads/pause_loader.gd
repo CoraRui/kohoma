@@ -10,35 +10,36 @@ var pause_mi : Node2D
 
 @export_file var inventory_menu_ref : String = "res://"
 var inventory_mi : Node2D
-
 @export var pause_active : bool = false
 
-#autoloads
+var main_pause_active : bool = true
+var inventory_pause_active : bool = true
 
+#region autoloads
 @onready var world_i : world = get_node("/root/world_auto")
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
 @onready var level_bi : level_border = get_node("/root/level_border_auto")
 @onready var stat_bi : stat_bar = get_node("/root/stat_bar_auto")
 @onready var camera_li : camera_loader = get_node("/root/camera_loader_auto")
+#endregion
 
 func _input(event):
 	if not pause_active:
 		return
-	if event.is_action_pressed("start"):
+	if event.is_action_pressed("start") && main_pause_active:
 		if not pause_mi:
 			open_pause_menu()
 		else:
 			close_pause_menu()
-	if event.is_action_pressed("select"):
+	if event.is_action_pressed("select") && inventory_pause_active:
 		if not inventory_mi:
 			if pause_mi:
 				close_pause_menu()
 			open_inventory_menu()
 		else:
 			close_inventory_menu()	
-			
 
-
+#region open/close menus
 func open_pause_menu():
 	world_i.set_process(false)
 	player_li.set_process(false)
@@ -83,5 +84,18 @@ func close_pause_menu():
 	stat_bi.set_visible(true)
 	pause_mi.queue_free()
 
+#endregion
+
+
 func toggle_active(b : bool):
+	#enables/disables both menus
 	pause_active = b
+
+func toggle_inventory_active(b : bool):
+	inventory_pause_active = b
+
+func toggle_main_pause_active(b : bool):
+	main_pause_active = b
+
+
+

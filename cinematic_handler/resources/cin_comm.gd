@@ -31,9 +31,10 @@ class_name cin_comm
 @export_group("","")
 
 @export_group("player_input")
-@export var disable_movement : bool = false
-@export var disable_pause : bool = false
-@export var disable_inventory : bool = false
+@export var set_input : bool = false			#determines whether to use the following three.
+@export var movement_disabled : bool = false	#disables movement/items/attacking of the player
+@export var pause_disabled : bool = false		#disables opening the pause menu
+@export var inventory_disabled : bool = false	#disables opening inventory
 @export_group("","")
 
 @export_group("next_trigger")

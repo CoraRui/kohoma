@@ -29,6 +29,8 @@ var input_active : bool = false			#true when accepting player input. cin_comm ca
 
 #autoloads
 @onready var dialogue_li : dialogue_loader = get_node("/root/dialogue_loader_auto")
+@onready var player_li : player_loader = get_node("/root/player_loader_auto")
+@onready var pause_li : pause_loader = get_node("/root/pause_loader_auto")
 
 func _ready():
 	if init_on_ready:
@@ -48,7 +50,6 @@ func init_cin_comm() -> void:
 
 func next_command() -> void:
 	if comm_index >= comm_arr.size():
-		print("commindex over commarr")
 		return
 	var comm : cin_comm = comm_arr[comm_index]
 	if comm.move_actor:
@@ -57,6 +58,8 @@ func next_command() -> void:
 		animate_actor(comm)
 	if comm.init_dialogue:
 		display_dialogue(comm)
+	if comm.set_input:
+		set_input(comm)
 	if comm.jump_to_index:
 		comm_index = comm.jump_index - 1
 	if comm.advance_immediately:
@@ -71,7 +74,6 @@ func next_command() -> void:
 
 func move_actor(comm : cin_comm) -> void:
 	#triggers a method in the actor for them to move, command handler continues
-	print("triggering block to function in actor")
 	find_actor(comm).block_to(comm)
 
 func find_actor(comm : cin_comm) -> actor:
@@ -88,6 +90,12 @@ func display_dialogue(comm : cin_comm) -> void:
 
 func animate_actor(comm : cin_comm) -> void:
 	find_actor(comm).actor_anim.play(comm.anim_name)
+
+func set_input(comm : cin_comm):
+	pause_li.toggle_main_pause_active(!comm.pause_disabled)
+	pause_li.toggle_inventory_active(!comm.inventory_disabled)
+	player_li.player_ins.set_movement(!comm.movement_disabled)
+	player_li.player_ins.set_sword_active(!comm.movement_disabled)
 
 #endregion
 

@@ -3,6 +3,7 @@ class_name dialogue_loader
 
 #TODO: load the dialogue box in the correct spot, probably related to the world loaders current worlds position
 #TODO: figure out correct place in draw order
+#TODO: cancellable/progressable dialogue
 
 #this autoload is loads in and out the dialogue box and handles the input for progressing the dialogue.
 #are probably a variety of things that will use it.

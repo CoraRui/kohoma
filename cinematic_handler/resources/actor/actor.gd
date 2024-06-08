@@ -26,7 +26,6 @@ func block_to(comm : cin_comm):
 	actor_state = ActorState.MOVE
 	mvec_arr = comm.block_vel
 	mvec_dist = comm.block_dist
-	print("started blocking: ", name)
 
 func move():
 	#move the actor for this frame
