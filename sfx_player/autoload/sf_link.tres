@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="sf_link" load_steps=2 format=3 uid="uid://dlbiwt0ym47b3"]
+
+[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="1_1k1dh"]
+
+[resource]
+script = ExtResource("1_1k1dh")
+sf_name = "default"
+sf_vol = 0.8
+sf_pitch = 1.0

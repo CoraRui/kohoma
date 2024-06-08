@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhqaw3q6qu30m"]
+[gd_scene load_steps=8 format=3 uid="uid://bhqaw3q6qu30m"]
 
 [ext_resource type="Script" path="res://ui/dialogue_loader/dialogue_box.gd" id="1_l2eds"]
 [ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="2_mu4h8"]
 [ext_resource type="FontFile" uid="uid://b54ftq4vakq8n" path="res://ui/fonts/Riveter.ttf" id="3_c0jax"]
+[ext_resource type="Texture2D" uid="uid://brrw1415y3ioj" path="res://ui/dialogue_loader/assets/adv_arrow.aseprite" id="4_ose8b"]
 
 [sub_resource type="FontVariation" id="FontVariation_socjx"]
 base_font = ExtResource("2_mu4h8")
@@ -12,11 +13,27 @@ base_font = ExtResource("3_c0jax")
 spacing_glyph = -1
 spacing_space = -5
 
-[node name="dialogue_box" type="Node2D" node_paths=PackedStringArray("m_label", "n_label")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4y8or"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ose8b")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="dialogue_box" type="Node2D" node_paths=PackedStringArray("m_label", "n_label", "adv_sprite")]
 z_index = 15
 script = ExtResource("1_l2eds")
 m_label = NodePath("m_label")
 n_label = NodePath("n_label")
+adv_sprite = NodePath("adv_arrow")
+char_sfx = "def_pickup"
 
 [node name="border" type="ColorRect" parent="."]
 visible = false
@@ -59,8 +76,9 @@ offset_top = 126.0
 offset_right = 39.0
 offset_bottom = 149.0
 
-[node name="advance_icon" type="ColorRect" parent="."]
-offset_left = 159.0
-offset_top = 147.0
-offset_right = 163.0
-offset_bottom = 151.0
+[node name="adv_arrow" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 150)
+sprite_frames = SubResource("SpriteFrames_4y8or")
+autoplay = "default"
+frame_progress = 0.519993
+offset = Vector2(0.5, 0)

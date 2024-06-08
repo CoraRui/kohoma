@@ -71,13 +71,7 @@ one_shot = true
 
 [node name="dialogue_box" parent="." instance=ExtResource("4_yfyia")]
 
-[node name="border" parent="dialogue_box" index="0"]
-visible = false
-
 [node name="fill" parent="dialogue_box" index="1"]
-visible = false
-
-[node name="n_label" parent="dialogue_box" index="2"]
 visible = false
 
 [node name="m_label" parent="dialogue_box" index="3"]
@@ -88,6 +82,9 @@ offset_bottom = 142.0
 text = "there is a legend in the land of 
 kohoma"
 horizontal_alignment = 1
+
+[node name="adv_arrow" parent="dialogue_box" index="5"]
+visible = false
 
 [node name="txt_del" type="Timer" parent="dialogue_box"]
 one_shot = true

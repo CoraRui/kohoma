@@ -43,7 +43,7 @@ func progress_dialogue():
 	if dia_index >= current_dialogue.lines.size():
 		end_dialogue()
 		return
-	dia_ins.display_text(current_dialogue.lines[dia_index])
+	dia_ins.display_text(current_dialogue.lines[dia_index].line)
 	dia_index += 1
 	
 func end_dialogue():
