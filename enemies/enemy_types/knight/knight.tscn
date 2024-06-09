@@ -165,9 +165,8 @@ position = Vector2(8, 9)
 [node name="CollisionShape2D" parent="spike/Area2D" index="0"]
 position = Vector2(0.5, 3.5)
 
-[node name="enemy_health" parent="." node_paths=PackedStringArray("die_node", "hurt_timer") instance=ExtResource("5_5s6rx")]
+[node name="enemy_health" parent="." node_paths=PackedStringArray("die_node") instance=ExtResource("5_5s6rx")]
 die_node = NodePath("..")
-hurt_timer = NodePath("hurt_timer")
 
 [node name="hurt_timer" type="Timer" parent="enemy_health"]
 

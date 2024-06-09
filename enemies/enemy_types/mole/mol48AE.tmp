@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=3 uid="uid://doqogu2bfym1m"]
+
+[ext_resource type="Script" path="res://enemies/enemy_types/mole/mole.gd" id="1_sf0nu"]
+[ext_resource type="Script" path="res://enemies/enemy_types/mole/mole_movement.gd" id="2_h8e1f"]
+[ext_resource type="Script" path="res://enemies/enemy_types/mole/mole_body.gd" id="2_mf3tu"]
+[ext_resource type="Texture2D" uid="uid://bln4hefwgvebt" path="res://enemies/enemy_types/mole/assets/mole3.png" id="4_7b8ok"]
+[ext_resource type="Texture2D" uid="uid://25krac8doxc3" path="res://enemies/enemy_types/mole/assets/mole1.png" id="4_30k40"]
+[ext_resource type="Texture2D" uid="uid://buha43nb52gu1" path="res://enemies/enemy_types/mole/assets/mole4.png" id="5_fawc2"]
+[ext_resource type="Texture2D" uid="uid://b8xan8q2qul7m" path="res://enemies/enemy_types/mole/assets/mole2.png" id="5_uq83l"]
+[ext_resource type="Texture2D" uid="uid://0dlhdr3ve6ph" path="res://enemies/enemy_types/mole/assets/mole5.png" id="6_2raiq"]
+[ext_resource type="Texture2D" uid="uid://dlmgkm4dl725l" path="res://enemies/enemy_types/mole/assets/mole6.png" id="7_n7bd2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ancld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_30k40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uq83l")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7b8ok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fawc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2raiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n7bd2")
+}],
+"loop": true,
+"name": &"surface",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"under",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_30k40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uq83l")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="mole" type="Node2D" node_paths=PackedStringArray("mole_move", "surface_array")]
+script = ExtResource("1_sf0nu")
+mole_move = NodePath("mole_body/mole_movement")
+surface_array = [NodePath("popup_array/0"), NodePath("popup_array/1"), NodePath("popup_array/2")]
+
+[node name="mole_body" type="Node2D" parent="."]
+script = ExtResource("2_mf3tu")
+
+[node name="mole_movement" type="Node2D" parent="mole_body" node_paths=PackedStringArray("mole_node", "mole_anim", "under_timer", "up_timer", "surface_timer", "down_timer")]
+script = ExtResource("2_h8e1f")
+mole_node = NodePath("..")
+mole_anim = NodePath("../mole_anim")
+under_timer = NodePath("../underground_timer")
+up_timer = NodePath("../up_timer")
+surface_timer = NodePath("../surface_timer")
+down_timer = NodePath("../down_timer")
+
+[node name="mole_anim" type="AnimatedSprite2D" parent="mole_body"]
+sprite_frames = SubResource("SpriteFrames_ancld")
+animation = &"under"
+
+[node name="underground_timer" type="Timer" parent="mole_body"]
+one_shot = true
+
+[node name="up_timer" type="Timer" parent="mole_body"]
+one_shot = true
+
+[node name="surface_timer" type="Timer" parent="mole_body"]
+one_shot = true
+
+[node name="down_timer" type="Timer" parent="mole_body"]
+one_shot = true
+
+[node name="popup_array" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="popup_array"]
+position = Vector2(47, 16)
+
+[node name="1" type="Node2D" parent="popup_array"]
+position = Vector2(97, 14)
+
+[node name="2" type="Node2D" parent="popup_array"]
+position = Vector2(74, 47)
+
+[node name="3" type="Node2D" parent="popup_array"]
+
+[node name="4" type="Node2D" parent="popup_array"]
+
+[node name="5" type="Node2D" parent="popup_array"]
+
+[node name="6" type="Node2D" parent="popup_array"]
+
+[node name="7" type="Node2D" parent="popup_array"]
+
+[node name="8" type="Node2D" parent="popup_array"]
+
+[node name="9" type="Node2D" parent="popup_array"]
+
+[connection signal="timeout" from="mole_body/underground_timer" to="mole_body/mole_movement" method="_on_underground_timer_timeout"]
+[connection signal="timeout" from="mole_body/up_timer" to="mole_body/mole_movement" method="_on_up_timer_timeout"]
+[connection signal="timeout" from="mole_body/surface_timer" to="mole_body/mole_movement" method="_on_surface_timer_timeout"]
+[connection signal="timeout" from="mole_body/down_timer" to="mole_body/mole_movement" method="_on_down_timer_timeout"]

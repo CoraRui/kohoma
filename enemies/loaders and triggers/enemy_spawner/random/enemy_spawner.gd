@@ -35,7 +35,7 @@ func spawn_enemies():
 		tot += e.spawn_chance
 	
 	#array of spawn indexes that haven't been used
-	var spawn_remaining : Array[int] 
+	var spawn_remaining : Array[int] = []
 	var spi : int = 0
 	while spi < spawn_pos.size():
 		spawn_remaining.append(spi)

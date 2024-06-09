@@ -1,0 +1,130 @@
+[gd_scene load_steps=15 format=3 uid="uid://doqogu2bfym1m"]
+
+[ext_resource type="Script" path="res://enemies/enemy_types/mole/mole.gd" id="1_sf0nu"]
+[ext_resource type="Script" path="res://enemies/enemy_types/mole/mole_movement.gd" id="2_h8e1f"]
+[ext_resource type="Script" path="res://enemies/enemy_types/mole/mole_body.gd" id="2_mf3tu"]
+[ext_resource type="Texture2D" uid="uid://bln4hefwgvebt" path="res://enemies/enemy_types/mole/assets/mole3.png" id="4_7b8ok"]
+[ext_resource type="Texture2D" uid="uid://25krac8doxc3" path="res://enemies/enemy_types/mole/assets/mole1.png" id="4_30k40"]
+[ext_resource type="Texture2D" uid="uid://buha43nb52gu1" path="res://enemies/enemy_types/mole/assets/mole4.png" id="5_fawc2"]
+[ext_resource type="Texture2D" uid="uid://b8xan8q2qul7m" path="res://enemies/enemy_types/mole/assets/mole2.png" id="5_uq83l"]
+[ext_resource type="Texture2D" uid="uid://0dlhdr3ve6ph" path="res://enemies/enemy_types/mole/assets/mole5.png" id="6_2raiq"]
+[ext_resource type="Texture2D" uid="uid://dlmgkm4dl725l" path="res://enemies/enemy_types/mole/assets/mole6.png" id="7_n7bd2"]
+[ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="10_0tis7"]
+[ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="11_oocph"]
+[ext_resource type="PackedScene" uid="uid://cv0teegdak2v1" path="res://enemies/effects/explosion/explosion.tscn" id="12_yy4ta"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ancld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_30k40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uq83l")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7b8ok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fawc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2raiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n7bd2")
+}],
+"loop": true,
+"name": &"surface",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"under",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_30k40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uq83l")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrxt1"]
+size = Vector2(11, 10)
+
+[node name="mole" type="Node2D" node_paths=PackedStringArray("mole_health", "mole_move")]
+script = ExtResource("1_sf0nu")
+mole_health = NodePath("mole_body/health/enemy_health")
+mole_move = NodePath("mole_body/mole_movement")
+
+[node name="mole_body" type="Node2D" parent="."]
+script = ExtResource("2_mf3tu")
+
+[node name="mole_movement" type="Node2D" parent="mole_body" node_paths=PackedStringArray("mole_node", "mole_anim", "under_timer", "up_timer", "surface_timer", "down_timer")]
+script = ExtResource("2_h8e1f")
+mole_node = NodePath("..")
+mole_anim = NodePath("../mole_anim")
+under_timer = NodePath("../timers/underground_timer")
+up_timer = NodePath("../timers/up_timer")
+surface_timer = NodePath("../timers/surface_timer")
+down_timer = NodePath("../timers/down_timer")
+
+[node name="mole_anim" type="AnimatedSprite2D" parent="mole_body"]
+sprite_frames = SubResource("SpriteFrames_ancld")
+animation = &"surface"
+
+[node name="timers" type="Node2D" parent="mole_body"]
+
+[node name="underground_timer" type="Timer" parent="mole_body/timers"]
+one_shot = true
+
+[node name="up_timer" type="Timer" parent="mole_body/timers"]
+one_shot = true
+
+[node name="surface_timer" type="Timer" parent="mole_body/timers"]
+one_shot = true
+
+[node name="down_timer" type="Timer" parent="mole_body/timers"]
+one_shot = true
+
+[node name="health" type="Node2D" parent="mole_body"]
+
+[node name="spike" parent="mole_body/health" instance=ExtResource("10_0tis7")]
+visible = false
+
+[node name="CollisionShape2D" parent="mole_body/health/spike/Area2D" index="0"]
+position = Vector2(-0.5, 0.5)
+
+[node name="enemy_health" parent="mole_body/health" node_paths=PackedStringArray("die_node") instance=ExtResource("11_oocph")]
+die_node = NodePath("../../..")
+use_effect = true
+death_effect = ExtResource("12_yy4ta")
+
+[node name="hitbox" type="Area2D" parent="mole_body/health"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="health_shape" type="CollisionShape2D" parent="mole_body/health/hitbox"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_yrxt1")
+
+[connection signal="timeout" from="mole_body/timers/underground_timer" to="mole_body/mole_movement" method="_on_underground_timer_timeout"]
+[connection signal="timeout" from="mole_body/timers/up_timer" to="mole_body/mole_movement" method="_on_up_timer_timeout"]
+[connection signal="timeout" from="mole_body/timers/surface_timer" to="mole_body/mole_movement" method="_on_surface_timer_timeout"]
+[connection signal="timeout" from="mole_body/timers/down_timer" to="mole_body/mole_movement" method="_on_down_timer_timeout"]
+
+[editable path="mole_body/health/spike"]

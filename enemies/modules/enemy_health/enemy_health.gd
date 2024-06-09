@@ -29,12 +29,15 @@ signal death
 @export var use_death_delay : bool = false
 @export var death_delay : float = 0.5
 @export var death_timer : Timer
+@export var use_effect : bool = false
+@export var death_effect : PackedScene
 @export_group("","")
 
 #endregion
 
 #autoloads
 @onready var sfx_pi : sfx_player = get_node("/root/sfx_player_auto")
+@onready var world_i : world = get_node("/root/world_auto")
 
 func _process(_delta):
 	inc_inv()
@@ -51,7 +54,6 @@ func damage(d : int):
 	if inv:
 		return
 	hp -= d
-	print(d, " damage dealt to ", die_node.name)
 	hp = clampi(hp, 0, 999)
 	inv = true
 	if hp == 0:
@@ -61,7 +63,11 @@ func damage(d : int):
 
 func die():
 	death.emit()
-	
+	if use_effect && death_effect:
+		var new_effect : Node2D = death_effect.instantiate()
+		world_i.current_level.add_child(new_effect)
+		new_effect.global_position = global_position
+		
 	if die_node:
 		die_node.queue_free()
 	else:
