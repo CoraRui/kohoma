@@ -1,10 +1,6 @@
 extends Node2D
 class_name enemy_health
 
-
-#node to be deleted on enemu death
-
-
 #region export groups
 @export_group("stats")
 @export var hp : int = 10
@@ -51,23 +47,28 @@ func inc_inv():
 		inv = false
 
 func damage(d : int):
-	if inv:
-		return
-	hp -= d
-	hp = clampi(hp, 0, 999)
-	inv = true
-	if hp == 0:
-		die()
 	hurt.emit()
 	sfx_pi.play_sound("e_hurt")
-
+	#check for invincibility
+	if inv:
+		return
+	inv = true
+	
+	#deal damage/check for death
+	hp -= d
+	hp = clampi(hp, 0, 999)
+	if hp == 0:
+		die()
+	
 func die():
 	death.emit()
+	#instantiate a death effect if there is one.
 	if use_effect && death_effect:
 		var new_effect : Node2D = death_effect.instantiate()
 		world_i.current_level.add_child(new_effect)
 		new_effect.global_position = global_position
-		
+	
+	#free the main node if there is one. (usually there should be)
 	if die_node:
 		die_node.queue_free()
 	else:
