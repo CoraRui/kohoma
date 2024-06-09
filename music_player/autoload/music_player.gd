@@ -20,6 +20,11 @@ func play_track(track_name : String):
 	if track_name == current_track_name:
 		print("attempted to repeat track: ", track_name)
 		return
+	if track_name == "none":
+		stream_player.stop()
+		stream_player.stream = null
+		current_track_name = track_name
+		return
 	if not music_dict.has(track_name):
 		print("music dict does not contain: ", track_name)
 		return

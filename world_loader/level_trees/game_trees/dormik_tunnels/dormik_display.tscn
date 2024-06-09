@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://bk22wkevbdj3k"]
+
+[ext_resource type="PackedScene" uid="uid://ccdexo5dt8ejm" path="res://world_loader/level_trees/game_trees/dormik_tunnels/levels/1/1_1.tscn" id="1_pl6v3"]
+[ext_resource type="PackedScene" uid="uid://iep5x0inl7n0" path="res://world_loader/level_trees/game_trees/dormik_tunnels/levels/2/2_2.tscn" id="1_qp0fk"]
+[ext_resource type="PackedScene" uid="uid://bq7uueukmaiqk" path="res://world_loader/level_trees/game_trees/dormik_tunnels/levels/1/1_2.tscn" id="2_7kkax"]
+[ext_resource type="PackedScene" uid="uid://d3aplovgj1t7o" path="res://world_loader/level_trees/game_trees/dormik_tunnels/levels/2/2_1.tscn" id="2_vitlc"]
+[ext_resource type="PackedScene" uid="uid://bsonf24jxxp1a" path="res://world_loader/level_trees/game_trees/dormik_tunnels/levels/1/1_3.tscn" id="3_s3h4y"]
+[ext_resource type="PackedScene" uid="uid://cpojq8h0xjpx0" path="res://world_loader/level_trees/game_trees/dormik_tunnels/levels/2/2_3.tscn" id="4_3tyus"]
+[ext_resource type="PackedScene" uid="uid://qleailpikl87" path="res://world_loader/level_trees/game_trees/dormik_tunnels/levels/3/3_1.tscn" id="7_y5dhl"]
+[ext_resource type="PackedScene" uid="uid://ci5rnw1nwnnxr" path="res://world_loader/level_trees/game_trees/dormik_tunnels/levels/3/3_2.tscn" id="8_cldkh"]
+[ext_resource type="PackedScene" uid="uid://r8u23xsfrhx0" path="res://world_loader/level_trees/game_trees/dormik_tunnels/levels/3/3_3.tscn" id="9_j18mo"]
+
+[node name="dormik_display" type="Node2D"]
+
+[node name="0" type="Node2D" parent="."]
+
+[node name="1" type="Node2D" parent="."]
+
+[node name="1_1" parent="1" instance=ExtResource("1_pl6v3")]
+visible = false
+position = Vector2(176, 112)
+
+[node name="1_2" parent="1" instance=ExtResource("2_7kkax")]
+position = Vector2(176, 224)
+
+[node name="1_3" parent="1" instance=ExtResource("3_s3h4y")]
+visible = false
+position = Vector2(176, 336)
+
+[node name="2" type="Node2D" parent="."]
+
+[node name="2_1" parent="2" instance=ExtResource("2_vitlc")]
+position = Vector2(352, 112)
+
+[node name="2_2" parent="2" instance=ExtResource("1_qp0fk")]
+position = Vector2(352, 224)
+
+[node name="2_3" parent="2" instance=ExtResource("4_3tyus")]
+position = Vector2(352, 336)
+
+[node name="3" type="Node2D" parent="."]
+
+[node name="3_1" parent="3" instance=ExtResource("7_y5dhl")]
+visible = false
+position = Vector2(528, 112)
+
+[node name="3_2" parent="3" instance=ExtResource("8_cldkh")]
+position = Vector2(528, 224)
+
+[node name="3_3" parent="3" instance=ExtResource("9_j18mo")]
+visible = false
+position = Vector2(528, 336)
+
+[node name="4" type="Node2D" parent="."]

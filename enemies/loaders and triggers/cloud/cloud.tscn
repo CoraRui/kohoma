@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://exv2krlx5ou3"]
+
+[ext_resource type="Script" path="res://enemies/loaders and triggers/cloud/cloud.gd" id="1_81erm"]
+[ext_resource type="Texture2D" uid="uid://56f43gajbrcd" path="res://enemies/loaders and triggers/cloud/cloud1.png" id="2_c428t"]
+[ext_resource type="Texture2D" uid="uid://ncnr87ffqvr2" path="res://enemies/loaders and triggers/cloud/cloud2.png" id="3_ev2dt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dd56g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c428t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ev2dt")
+}],
+"loop": true,
+"name": &"cloud",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"post_spawn",
+"speed": 5.0
+}]
+
+[node name="cloud" type="Node2D" node_paths=PackedStringArray("cloud_anim", "spawn_timer", "exp_timer")]
+script = ExtResource("1_81erm")
+cloud_anim_name = "cloud"
+cloud_anim = NodePath("cloud_anim")
+spawn_timer = NodePath("spawn_timer")
+exp_timer = NodePath("exp_timer")
+
+[node name="cloud_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dd56g")
+animation = &"post_spawn"
+centered = false
+
+[node name="spawn_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="exp_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="exp_timer" to="." method="_on_exp_timer_timeout"]

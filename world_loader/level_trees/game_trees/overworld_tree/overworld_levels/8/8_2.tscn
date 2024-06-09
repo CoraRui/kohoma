@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://der3gfxhtgsun"]
+[gd_scene load_steps=5 format=3 uid="uid://der3gfxhtgsun"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_p40q1"]
+[ext_resource type="PackedScene" uid="uid://mdwtmm3pvout" path="res://world_loader/level_trees/structure/world_autoload/switch_trigger.tscn" id="2_hv1n2"]
+[ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="3_38xdn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0ptl"]
+size = Vector2(10, 10)
 
 [node name="8_2" type="Node2D"]
 
@@ -13,3 +18,30 @@ layer_0/tile_data = PackedInt32Array(196608, 131073, 1, 262144, 131073, 1, 32768
 tile_set = ExtResource("1_p40q1")
 format = 2
 layer_0/tile_data = PackedInt32Array(196608, 131073, 4, 196609, 131073, 4, 196610, 131073, 4, 196611, 131073, 4, 196612, 131073, 4, 196613, 131073, 4, 196614, 131073, 4, 196615, 131073, 4, 196616, 131073, 4, 262144, 131073, 3, 327680, 131073, 4, 393216, 131073, 3, 458752, 131073, 4, 524288, 131073, 3, 589824, 131073, 4, 262154, 131073, 1, 327690, 131073, 1, 589825, 131073, 3, 589826, 131073, 3, 589827, 131073, 3, 589828, 131073, 3, 589829, 131073, 3, 589830, 131073, 3, 589831, 131073, 3, 589832, 131073, 3, 196617, 131073, 4)
+
+[node name="switch_trigger" parent="." instance=ExtResource("2_hv1n2")]
+position = Vector2(24, 70)
+new_tree = "res://world_loader/level_trees/game_trees/dormik_tunnels/dormik_tree.tscn"
+init_pos = Vector2(2, 1)
+psi = 0
+
+[node name="switch_area" type="Area2D" parent="switch_trigger"]
+
+[node name="switch_shape" type="CollisionShape2D" parent="switch_trigger/switch_area"]
+position = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_w0ptl")
+
+[node name="tunnel_entrance" type="ColorRect" parent="switch_trigger"]
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0, 0, 0, 1)
+
+[node name="load_info" parent="." instance=ExtResource("3_38xdn")]
+
+[node name="0" parent="load_info/spawn_points" index="0"]
+position = Vector2(34, 95)
+
+[connection signal="area_entered" from="switch_trigger/switch_area" to="switch_trigger" method="_on_switch_area_area_entered"]
+
+[editable path="switch_trigger"]
+[editable path="load_info"]

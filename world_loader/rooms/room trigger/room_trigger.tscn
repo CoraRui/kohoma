@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://world_loader/rooms/room trigger/room_trigger.gd" id="1_7ks23"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sa03o"]
-size = Vector2(16, 16)
+size = Vector2(13, 12)
 
 [node name="room_trigger" type="Node2D"]
 script = ExtResource("1_7ks23")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnhgearx1cpq2"]
 
-[ext_resource type="Script" path="res://story/ocean_dream.gd" id="1_swnwb"]
+[ext_resource type="Script" path="res://story/archive/ocean_dream.gd" id="1_swnwb"]
 [ext_resource type="Texture2D" uid="uid://co2v7su8h63m0" path="res://world_loader/tile_pallettes/oceandreamtemp.png" id="2_rvkqj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v503p"]

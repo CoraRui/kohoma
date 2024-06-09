@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://evb4w8jswmyj"]
+
+[ext_resource type="Script" path="res://world_loader/level_trees/structure/world_tree/level_slot/level_slot.gd" id="1_5kfvd"]
+[ext_resource type="Script" path="res://world_loader/level_trees/game_trees/dormik_tunnels/dormik_tree.gd" id="1_npyo7"]
+[ext_resource type="Script" path="res://world_loader/level_trees/structure/resources/level/level.gd" id="2_pebph"]
+
+[sub_resource type="Resource" id="Resource_yrl7e"]
+script = ExtResource("2_pebph")
+
+[node name="dormik_tree" type="Node2D"]
+script = ExtResource("1_npyo7")
+
+[node name="0" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="0"]
+script = ExtResource("1_5kfvd")
+level_ref = SubResource("Resource_yrl7e")
+
+[node name="1" type="Node2D" parent="0"]
+script = ExtResource("1_5kfvd")
+
+[node name="2" type="Node2D" parent="0"]
+script = ExtResource("1_5kfvd")
+
+[node name="3" type="Node2D" parent="0"]
+script = ExtResource("1_5kfvd")
+
+[node name="1" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="1"]
+script = ExtResource("1_5kfvd")
+
+[node name="1" type="Node2D" parent="1"]
+script = ExtResource("1_5kfvd")
+
+[node name="2" type="Node2D" parent="1"]
+script = ExtResource("1_5kfvd")
+
+[node name="3" type="Node2D" parent="1"]
+script = ExtResource("1_5kfvd")
+
+[node name="2" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="2"]
+script = ExtResource("1_5kfvd")
+
+[node name="1" type="Node2D" parent="2"]
+script = ExtResource("1_5kfvd")
+
+[node name="2" type="Node2D" parent="2"]
+script = ExtResource("1_5kfvd")
+
+[node name="3" type="Node2D" parent="2"]
+script = ExtResource("1_5kfvd")
+
+[node name="3" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="3"]
+script = ExtResource("1_5kfvd")
+
+[node name="1" type="Node2D" parent="3"]
+script = ExtResource("1_5kfvd")
+
+[node name="2" type="Node2D" parent="3"]
+script = ExtResource("1_5kfvd")
+
+[node name="3" type="Node2D" parent="3"]
+script = ExtResource("1_5kfvd")
+
+[node name="4" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="4"]
+script = ExtResource("1_5kfvd")
+level_ref = SubResource("Resource_yrl7e")
+
+[node name="1" type="Node2D" parent="4"]
+script = ExtResource("1_5kfvd")
+
+[node name="2" type="Node2D" parent="4"]
+script = ExtResource("1_5kfvd")
+
+[node name="3" type="Node2D" parent="4"]
+script = ExtResource("1_5kfvd")

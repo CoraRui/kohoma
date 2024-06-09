@@ -13,6 +13,7 @@ var room_ins : Node2D
 #spawn index for the player
 @export var player_si : int = 0
 
+#region autloads
 #autoloads
 @onready var world_i : world = get_node("/root/world_auto")
 @onready var music_pi : music_player = get_node("/root/music_player_auto")
@@ -21,6 +22,7 @@ var room_ins : Node2D
 @onready var camera_mi : camera_loader = get_node("/root/camera_loader_auto")
 @onready var level_bi : level_border = get_node("/root/level_border_auto")
 @onready var stat_bi : stat_bar = get_node("/root/stat_bar_auto")
+#endregion
 
 func load_room():
 	camera_mi.reset_camera()

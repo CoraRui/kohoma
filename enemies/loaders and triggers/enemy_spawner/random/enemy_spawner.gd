@@ -4,15 +4,16 @@ extends Node2D
 #TODO: work on the random generation of the enemies spawn location
 #TODO: make sure that queueing the spawner free after spawning stuff is actually ok, although im sure its fine.
 #TODO: spawn the enemies far enough from the player so they dont spawn on them, or just use the clouds to give the player time to move away.
+#TODO: randomizing spawn time of cloud
 
 @export_group("rng")
-@export var enemy_arr : Array[enemy_slot]
-#how many enemies to spawn total
-@export var enemy_cnt : int = 3
-#how much the enemy cnt varies
-@export var enemy_var : int = 1
-#locations for enemy spawn
-@export var spawn_pos : Array[Node2D]
+@export var enemy_arr : Array[enemy_slot]		#enemy types
+@export var enemy_cnt : int = 3					#how many enemies to spawn total, must be less than spawn points.
+@export var enemy_var : int = 1					#how much the enemy cnt varies
+@export var spawn_pos : Array[Node2D]			#locations for enemy spawn
+
+
+@export var cloud_ref : PackedScene				#ref to cloud object.
 
 #autoloads:
 @onready var camera_li : camera_loader = get_node("/root/camera_loader_auto")
@@ -33,6 +34,12 @@ func spawn_enemies():
 	for e in enemy_arr:
 		tot += e.spawn_chance
 	
+	#array of spawn indexes that haven't been used
+	var spawn_remaining : Array[int] 
+	var spi : int = 0
+	while spi < spawn_pos.size():
+		spawn_remaining.append(spi)
+		spi += 1
 	#spawn enemy_cnt of enemies
 	while i < enemy_cnt:
 		#rolls a value using the total value of all of the spawn chances.
@@ -53,10 +60,13 @@ func spawn_enemies():
 		if not enemy_arr[i2]:
 			print("couldn't find enemy ref in index", i2, "of", name)
 			return
-		var new_enemy = enemy_arr[i2].enemy_ref.instantiate()
-		new_enemy.position = spawn_pos[randi_range(0, spawn_pos.size()-1)].position
-		world_loader.current_level.add_child(new_enemy)
+		var new_cloud : cloud = cloud_ref.instantiate()
+		new_cloud.enemy_ref = enemy_arr[i2].enemy_ref
+		var ri : int = randi_range(0, spawn_remaining.size()-1)
+		new_cloud.position = spawn_pos[spawn_remaining[ri]].position
+		spawn_remaining.erase(spawn_remaining[ri])
+		world_loader.current_level.add_child(new_cloud)
 
 		i += 1
 		queue_free()
-		
+
