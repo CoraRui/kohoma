@@ -7,6 +7,7 @@ class_name sword
 #TODO: minor, but possibly add reactions to minor things, like drifting away from heavy objects?
 #TODO: should the sword swing be an arc? or just the normal nes zelda stick?
 
+@export var sword_anim_controller : sword_anim
 
 var pdir : int 
 
@@ -53,15 +54,13 @@ func _input(event):
 
 func swing():
 	started_swing.emit()
-	sword_areas[dir].get_parent().set_visible(true)
+	sword_anim_controller.animate_sword(dir)
 	check_area(sword_areas[dir])
 	swinging = true
 	sfx_pi.play_sound(swing_sfx)
 
 func end_swing():
 	ended_swing.emit()
-	for a in sword_areas:
-		a.get_parent().set_visible(false)
 	swinging = false
 	hf_count = 0
 

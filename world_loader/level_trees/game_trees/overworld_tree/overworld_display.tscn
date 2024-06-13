@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://bmnac21j46l7q"]
+[gd_scene load_steps=79 format=3 uid="uid://bmnac21j46l7q"]
 
 [ext_resource type="PackedScene" uid="uid://dkba2yha31nmi" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_8.tscn" id="1_2puen"]
 [ext_resource type="PackedScene" uid="uid://b1ckeikfmsiuu" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_3.tscn" id="1_a4grs"]
@@ -69,8 +69,11 @@
 [ext_resource type="PackedScene" uid="uid://bu7cbeyixej2j" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_6.tscn" id="31_le5au"]
 [ext_resource type="PackedScene" uid="uid://c10m5g8swejfm" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_7.tscn" id="32_udbjn"]
 [ext_resource type="PackedScene" uid="uid://nbi8xv4de776" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_13.tscn" id="38_f5p6u"]
+[ext_resource type="PackedScene" uid="uid://003kwisxbbur" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_15.tscn" id="38_uphsf"]
 [ext_resource type="PackedScene" uid="uid://cq65fvxi7v4ru" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_14.tscn" id="39_6d7ik"]
+[ext_resource type="PackedScene" uid="uid://bcsuwm5v0h35w" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_16.tscn" id="39_dmd6j"]
 [ext_resource type="PackedScene" uid="uid://p765fihpqqmt" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/9/9_2.tscn" id="39_hv1rx"]
+[ext_resource type="PackedScene" uid="uid://vpkl6br0w76f" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/8/8_17.tscn" id="40_akng0"]
 [ext_resource type="PackedScene" uid="uid://cx71emnk455ga" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_13.tscn" id="50_0uofe"]
 [ext_resource type="PackedScene" uid="uid://b6nfmyj35rpcj" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/10/10_14.tscn" id="51_b0o6j"]
 [ext_resource type="PackedScene" uid="uid://dtb63gn6g6bm8" path="res://world_loader/level_trees/game_trees/overworld_tree/overworld_levels/11/11_13.tscn" id="71_w4l3t"]
@@ -559,9 +562,18 @@ position = Vector2(1408, 1568)
 
 [node name="15" type="Node2D" parent="8"]
 
+[node name="8_15" parent="8/15" instance=ExtResource("38_uphsf")]
+position = Vector2(1408, 1680)
+
 [node name="16" type="Node2D" parent="8"]
 
+[node name="8_16" parent="8/16" instance=ExtResource("39_dmd6j")]
+position = Vector2(1408, 1792)
+
 [node name="17" type="Node2D" parent="8"]
+
+[node name="8_17" parent="8/17" instance=ExtResource("40_akng0")]
+position = Vector2(1408, 1904)
 
 [node name="18" type="Node2D" parent="8"]
 

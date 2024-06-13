@@ -18,9 +18,10 @@ layer_0/tile_data = PackedInt32Array(196608, 1, 1, 262144, 131073, 7, 327680, 26
 [node name="house" type="TileMap" parent="."]
 tile_set = ExtResource("1_0u3dl")
 format = 2
-layer_0/tile_data = PackedInt32Array(262150, 327681, 1, 327686, 327681, 2, 262151, 327681, 268435457, 327687, 327681, 268435458, 262152, 262145, 268435457, 327688, 262145, 268435458, 327685, 262145, 2, 262149, 262145, 1)
+layer_0/tile_data = PackedInt32Array(262150, 327681, 1, 327686, 327681, 2, 262151, 262145, 268435457, 262152, 393217, 268435458, 327685, 262145, 2, 262149, 262145, 1, 196613, 393217, 1, 196614, 458753, 1, 196615, 393217, 268435457, 327687, 262145, 268435458)
 
 [node name="door" type="TileMap" parent="."]
+visible = false
 tile_set = ExtResource("1_0u3dl")
 format = 2
 layer_0/tile_data = PackedInt32Array(327686, 262145, 0)

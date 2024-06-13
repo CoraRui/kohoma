@@ -1,10 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6phkn4x5h0kc"]
+[gd_scene load_steps=12 format=3 uid="uid://c6phkn4x5h0kc"]
 
 [ext_resource type="Texture2D" uid="uid://d3bl0xocvylqp" path="res://enemies/enemy_types/chikkin/assets/chikkin1.png" id="1_50hxg"]
 [ext_resource type="Script" path="res://enemies/enemy_types/chikkin/chikkin.gd" id="1_lhn04"]
 [ext_resource type="Texture2D" uid="uid://2nkowcrmg36y" path="res://enemies/enemy_types/chikkin/assets/chikkin2.png" id="2_buis8"]
 [ext_resource type="Texture2D" uid="uid://ca0l6l1gxpsyn" path="res://enemies/enemy_types/chikkin/assets/chikkin3.png" id="2_tmebi"]
 [ext_resource type="Texture2D" uid="uid://1fup17k01wvx" path="res://enemies/enemy_types/chikkin/assets/chikkin4.png" id="4_hdq4i"]
+[ext_resource type="Texture2D" uid="uid://dw06lw2g4tkdq" path="res://enemies/enemy_types/enemy_assets/enemy_sprite_one.aseprite" id="6_yormg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bp5x"]
+atlas = ExtResource("6_yormg")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di4eu"]
+atlas = ExtResource("6_yormg")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bqk1"]
+atlas = ExtResource("6_yormg")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rveva"]
+atlas = ExtResource("6_yormg")
+region = Rect2(48, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p02qd"]
 animations = [{
@@ -27,6 +44,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5bp5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di4eu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bqk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rveva")
+}],
+"loop": true,
+"name": &"dance2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_50hxg")
 }, {
 "duration": 1.0,
@@ -42,6 +76,6 @@ script = ExtResource("1_lhn04")
 
 [node name="chikkin_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p02qd")
-animation = &"dance"
-autoplay = "dance"
-frame_progress = 0.386556
+animation = &"dance2"
+autoplay = "dance2"
+frame_progress = 0.991448
