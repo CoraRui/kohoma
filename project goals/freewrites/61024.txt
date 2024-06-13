@@ -1,0 +1,48 @@
+just going to freewrite for a bit. I think its been a while since i did.
+
+yeah, I got that feeling then of having too much to think about and trying to work on things in a more modular way.
+
+which, like. obviously.
+
+but for the story. how would I do that?
+
+I guess I'd like to combine it with the project files if possible. but the sensibilities for writing and game dev are very different.
+It'd probably be best to do both?
+well... hm. what kind of things am I going to make that represent the story?
+text files. music. drawings. sprites. if theres something else id be surprised.
+anyways. I need some kind of system to organize those things. even if they're a bit silly.
+I think that the way i organized stuff for claude is good, but it was very art directed.
+so i need to figure out the best way to organize things for myself.
+I want to avoid too heavily relying on an organizational system. cause then it wont be in my head as much.
+but i also want to avoid the stress of cramming everything in my head. and if I'm able to take advantage of a good organizational
+system, it could increase my efficiency by a lot.
+
+so. like I was thinking, everything could be tied together by concept. probably starting with the game as a whole.
+but when it comes to webs of connections, theres lots of ways to organize things
+
+physical locations - where does the character live? what location are they associated with?
+
+group affiliatons - what organizations do they belong to?
+
+social connections - who do they know? what other characters do they have a relationship with?
+
+theming - what sort of concepts/feelings area they associated with?
+
+shared/conflicting goals - what are the characters goals, and how do they conflict/align? how are the characters connected through that goal?
+
+events/history - what has happened in the world? how do the characters shared knowledge of events shape the world?
+
+so I think thats enough for now. i can list more as I come up with them. in any case, there are a lot of lenses to view the world through,
+and different purposes for each kind. if I'm going to create a world like this, viewing it through all of these different lenses,
+I have to have ways to track each characters connections to each thing, as well as how each character connects to everything else.
+i think I'll have to create separate files for each of them
+
+
+
+
+
+
+
+
+
+

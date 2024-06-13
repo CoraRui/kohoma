@@ -28,7 +28,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(262147, 1, 0, 327683, 1, 0, 393219, 1, 0, 262148, 1, 0, 327684, 1, 0, 393220, 1, 0, 262149, 1, 0, 327685, 1, 0, 393221, 1, 2, 262150, 1, 0, 327686, 1, 0, 393222, 1, 0, 262151, 1, 0, 327687, 1, 0, 393223, 1, 0)
 
 [node name="switch_trigger" parent="." instance=ExtResource("2_f0i5s")]
-position = Vector2(88, 95)
+position = Vector2(88, 96)
 new_tree = "res://world_loader/level_trees/game_trees/dungeon_one/dungeon_one_tree.tscn"
 init_pos = Vector2(3, 6)
 psi = 0

@@ -1,5 +1,11 @@
 extends Node2D
 #this script should trigger the tree_switch trigger in the world
+#the actual signal comes from something added. theres no inherent trigger area in the node itself
+#I wanna add a transition scene, or maybe a couple possible transition settings.
+#how should it look?
+#in terms of the actual screen darkening, either a short delay then immediate to black, or a delay then an incremental darkening
+#for the player, a walking into the door thing would be cool. but screen first.
+
 
 @export_file var new_tree : String = "res://world_loader/level_trees/game_trees/"
 #initial position in the new level tree.

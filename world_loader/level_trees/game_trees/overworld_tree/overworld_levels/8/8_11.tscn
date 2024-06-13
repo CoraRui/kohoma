@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://nmnnhoqjulmn"]
+[gd_scene load_steps=8 format=3 uid="uid://nmnnhoqjulmn"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_0u3dl"]
 [ext_resource type="PackedScene" uid="uid://d2ij06gtg0fi7" path="res://world_loader/rooms/room trigger/room_trigger.tscn" id="2_n70v1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="4_url0w"]
 [ext_resource type="PackedScene" uid="uid://ckgcuoqhywtrw" path="res://enemies/enemy_types/snf/snfffff.tscn" id="6_ty5ac"]
 [ext_resource type="PackedScene" uid="uid://c6phkn4x5h0kc" path="res://enemies/enemy_types/chikkin/chikkin.tscn" id="6_wikl0"]
+[ext_resource type="PackedScene" uid="uid://jfxvdv88hlmx" path="res://music_player/triggers/music_trigger.tscn" id="7_b8bvh"]
 
 [node name="8_11" type="Node2D"]
 
@@ -43,5 +44,9 @@ position = Vector2(42, 116)
 
 [node name="chikkin2" parent="." instance=ExtResource("6_wikl0")]
 position = Vector2(81, 103)
+
+[node name="music_trigger" parent="." instance=ExtResource("7_b8bvh")]
+track_name = "town_one"
+use_delay = true
 
 [editable path="load_info"]

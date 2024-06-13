@@ -9,7 +9,6 @@ extends Node2D
 #with a unique identity tag
 
 @export var pickup_sfx : String = "proto_jingle"
-
 @export var save_flag : String = "dungeon_x_key_x"
 
 #autoloads

@@ -47,13 +47,13 @@ func inc_inv():
 		inv = false
 
 func damage(d : int):
-	hurt.emit()
-	sfx_pi.play_sound("e_hurt")
+
 	#check for invincibility
 	if inv:
 		return
 	inv = true
-	
+	sfx_pi.play_sound("e_hurt")
+	hurt.emit()
 	#deal damage/check for death
 	hp -= d
 	hp = clampi(hp, 0, 999)

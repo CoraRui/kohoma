@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://sm77pxmrkael"]
+
+[ext_resource type="Texture2D" uid="uid://b5js4rkc5lj60" path="res://enemies/enemy_types/orb_sprite/assets/orb_sprite_sheet.png" id="1_fg1il"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_310fl"]
+atlas = ExtResource("1_fg1il")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j434v"]
+atlas = ExtResource("1_fg1il")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7bxj"]
+atlas = ExtResource("1_fg1il")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmhj7"]
+atlas = ExtResource("1_fg1il")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lywk6"]
+atlas = ExtResource("1_fg1il")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp112"]
+atlas = ExtResource("1_fg1il")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r514o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_310fl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j434v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7bxj")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmhj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lywk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yp112")
+}],
+"loop": false,
+"name": &"land",
+"speed": 8.0
+}]
+
+[node name="orb_sprite" type="Node2D"]
+
+[node name="orb_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r514o")
+animation = &"land"
+frame = 2
+frame_progress = 1.0
