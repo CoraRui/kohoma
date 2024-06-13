@@ -1,0 +1,4 @@
+most assets will go with their subjects. like character themes go in the character folders, level themes go with those places.
+but, music that applies to more than one place/subject is listed here.
+
+same with other assets.

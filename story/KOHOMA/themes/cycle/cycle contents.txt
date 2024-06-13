@@ -1,0 +1,139 @@
+
+tldr;
+
+I'm gonna use save points and events which are located in certain places to plan where events are and in what order players see things. so each time I 
+think about adding an event, I should think about where the player will start, where they'll go, what will happen, then what will happen after.
+Those things need to be short enough so that the play sessions arent too long. but they need to have a firm beginning and end so that I can plan each event.
+i could technically use a more lose save system from menu that allows you to save/quit from anywhere, but that would chop up story events in a weird way. so no.
+
+
+
+
+
+comfort
+
+conflict
+
+win or lose
+
+reset
+
+
+i mean its basic. but thats what its gonna be. 
+
+I think I'm just trying to think in terms of like. what exactly is the player going to be doing from start to finish per "play session".
+
+
+with an open world thing like this, its going to be exploration mostly, right?
+
+I don't know if I'm going to do much with "save points", at least for this demo.
+
+maybe at major locations, like the dungeons. like links awakening, maybe "at doors" or something.
+
+anyways, considering if you always start in your house, which is probably going to be how it is, at least at first.
+
+the cycle is gonna be that you explore a bit, find some things, then close the game. maybe on a death.
+
+I don't really know what the end point would be though.
+
+obviously deaths. but I don't want the player to have to play forever just cause they never die.
+
+i just don't really like the idea of save points cause its not like  theres really anywhere thats that far.
+
+so it feels kind of tacky to have them. so ill have few if any.
+
+maybe one at the dungeon, at the mountain, then somewhere near the left top.
+
+anyways, the gameplay cycle is going to go something like this:
+
+
+player explores, finds things, experiences events
+
+either dies, or manually saves and quits.
+
+I think the main thing im grappling with is theres a natural need to save and quit.
+
+and having that in the pause menu isn't quite satisfying for whatever. I think its something about the fact that its not going to save your exact location.
+
+anyways its just a little less tacky, and a little more definite and memorable/satisfying for the player.
+
+or else they're gonna have to wonder "oh no, how far back will i go if i quit from menu?"
+
+games that have a menu quit usually have a collection of near exact save states for it, or something like that
+
+the old snes rpgs usually have like 3 files, and they're all accessed by save point. I think it just makes more sense like that.
+
+it also limits the amount of possibilities i have to consider when writing the story/events.
+
+cause I know that once they leave a certain event, then I can program everything else in the world to be reactive to that.
+
+its less 
+
+
+you know actually? I think I COULD do a more exact save system.
+
+I just really don't like it.
+
+i wonder why? it just feels really tacky i think.
+
+i mean if they can save anywhere, its like. they might experience story events in a weird order?
+
+in undertale, it felt like the save points were placed strategically so that he could tell the story in between them.
+
+like chapters. so if I have some "return points" I can place events in between them so that the player experiences stuff in the order I expect, in the 
+
+way I expect. anyways, it lets me have finer control of the players experience. Its just that if I do that, I have to be careful to design the game in digestible portions.
+
+I think undertale was designed in like. 15 minute chunks? or so?
+
+letting the player quit whenever means that certain story events wont be experienced in the right way/order.
+
+or they'll do something, then forget about it, then a thing will happen which they wont remember.
+
+anyways,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

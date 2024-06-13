@@ -1,0 +1,227 @@
+yeah, its time.
+
+cause I have all of the basic pieces, right?
+
+story is the next piece.
+
+and also the piece I have the least experience with.
+
+hmmm.
+
+I guess I should approach it with the same modular approach as the code.
+
+which I've sort of already been doing...
+
+but its not quite habit yet.
+
+the only real story bits I have so far are that its boy and girl dreaming, and there are a bunch of weird creatures in
+
+the dream, some friendly some not.
+
+so what are the goals and themes?
+
+are they trying to wake up? is there something they want to "solve" in the dream?
+
+probably a combination of both.
+
+whats the real world? are the characters going to be defined by that?
+
+i think the only ideas that will really persist are that they are friends of some kind in the real world.
+
+but whats the nature of the sleep? I think it just needs to match the feeling of the piece.
+
+I remember that I didn't want the dream to be too malicious/edgy. like no "the kid is in a coma", or "its a government experiment"
+type of guilt tripping bullshit.
+
+I more just want a pleasant dream adventure. Sure there might be a sort of scary themed thing like a "nightmare", but it shouldn't
+try too hard to be super dark and edgy. although, I think there should still be some kind of stakes.
+
+obviously its not much of an adventure if there isn't some kind of threat. I think  good compromise would be that there is some
+sort of emotional piece of the characters mind at stake.
+
+like if they don't win, the child will lose his sense of wonder, or something. I suppose the "nightmare" could refer to some sort of
+fear. which is cliche but thats ok.
+
+I think it should refer to some magical force rather than to his anxiety or something. I really hate that trope. like oh the monsters represent
+his mental illness etc etc.
+
+its a little too much of a cheap shot. like oh look how sad it is hes ill. I'd rather have it covered in a layer of secrecy or two at least.
+
+
+so I think the proto idea is that:
+
+its a shared dream between the two of them.
+the "nightmare" is some sort of magical demon that eats dreams or happiness or hope or something.
+the demon was attracted to them because they are good friends, and he wants to eat their friendship.
+So I guess its their friendship on the line.
+
+
+_____
+
+so do I like that concept?
+
+I think so. again, its a little undefined, so it has the potential to be sort of unrefined if I'm not careful.
+
+But I think it works. so whats the next step?
+
+what are the actual events? I guess I just need to start asking questions.
+
+so i think the beginning of the story makes sense. just send the player on a little initial fetch quest. like oh deliver this thing.
+
+obviously there needs to be some direction. on the way there they should get a couple hints of things to come later, some entertaining things.
+
+so thats the intro. but before I decide on what exactly that is, I'll do some more world building kind of music n stuff.
+
+so. start asking questions.
+
+what do the characters remember from before?
+
+nothing probably.
+
+when is the player inserted?
+
+I'm thinking that the world and pretty much all of the characters existed before him, and he comes in.
+
+most relatable to the player that way. same purpose as a memory loss gimmick. gives a good narrative push to show the player 
+
+around the world. the main character would have the same drive to explore and learn. you don't have so many of those 
+
+"dont you remember mc?? its your birthday!" kind of things. little bit more cohesive with what the player is doing/asking/learning about.
+
+
+okay, summarize.
+
+the initial event will be a fetch quest to go see someone.
+
+well no, thats not really necessary. and I'll have to change the beginning if hes going to be a new introduction into the world.
+
+so how does he get there? and where does the story begin? I honestly dont think itd be too bad to use the washed up onshore and taken to room by villagers 
+
+thing from links awakening. its going to be pretty obvious that the whole thing is LA inspired anyways. black and white, legend of zelda.
+
+also, if they're new to the world, then their memories don't matter, as they don't apply to the place they are in.
+
+
+
+they should get a brief direction though very quickly. links awakening had that with the owl. showed up when link got the shield and said "go north + wind fish"
+and whatever. again i need a lot more world building before that.
+
+whats the goal right? to:
+
+wake up
+
+defeat dream demon
+
+befriend dream demon
+
+do i want "multiple endings" and all that?
+
+hmm. maybe. anyways I need some sort of machination for waking up. and the nature of the world as created by the dream demon.
+
+how long has it been there? what do the inhabitants know/remember?
+
+considering I don't want it to be too edgy and stuff, I should have some sort of history. 
+
+the inhabitants believe that they've been there "forever". the nature of the place is unknown to them.
+
+they're not really too dead set on "figuring things out" though. 
+
+most of them are blissfully unaware/content to live in the place they are in.
+
+I'm not sure how they would feel about you ending the dream.
+
+I'm sure though, that on the whole, the general feeling among them should be that they all care about "the two",
+and they know that they need to wake up.
+
+are the other dream beings conscious? are they real? hm. I think so. although most of them aren't super intelligent.
+
+they're more like monsters/animals/creatures than people.
+
+so whats the cycle? whats the drive to take action?
+
+mystery/learning about the world, to wake up, to help the other characters "reach the end"
+
+obviously everything should be fun and cool. which should naturally drive the interest in the rest of the world.
+
+the "main goal" is to wake up and defeat the dream demon/possibly befriend him.
+
+i don't even technically need to have an intro sequence. overall, eventually, the players going to get dropped into the world and be able to explore it.
+
+anyways! the goal is to wake up. if the "dungeons" are connected to that, that would be mega convienient.
+
+I think the most inline with the gameplay would be either to defeat all of the dream beasts, or to collect treasures that happen to be at the dungeons.
+
+then you can fight the final guy. theres really only so many ways you can structure something like this...
+
+anyways. so the "demo" will be a small piece of the island. there'll be like one dungeon, a couple story events. other things to explore/learn about around the island.
+
+basically just show that there is a little bit of a story written, the mechanics basically work and that I'm actually capable of making the entire thing.
+
+how do I sum all of that up?
+
+what kind of things can I add to the world that will actually be fun/revealing to find?
+
+also on theme.
+
+well ok ok wait. whats the MAIN LINE STUFF. what do I actually need to do to make the main bit playable?
+
+
+
+player wakes up. 
+
+meets important characters.
+
+finds out that the dungeon is somehow important to leaving the island(or is at least directed towards it generally)
+
+player beats the dungeon, and some major piece of the plot is revealed.
+
+BAM! KOHOMA! thats the hook.
+
+
+
+
+
+
+
+
+
+
+**i should play more links awakening btw.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

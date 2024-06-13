@@ -1,0 +1,4 @@
+everything will be sorted in their own categories however its best to sort them.
+once I get down to the individual objects of focus, then their connections to other things will be outlined.
+which is going to be complex and annoying... but thats the best its going to get with a folder structure.
+I suppose I could program something to manage the data better. but that would be sort of overcomplicated and dumb.
