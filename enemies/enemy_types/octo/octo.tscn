@@ -45,6 +45,7 @@ size = Vector2(4, 7)
 size = Vector2(4, 7)
 
 [node name="octo" type="Node2D" node_paths=PackedStringArray("movement")]
+position = Vector2(7, 8)
 script = ExtResource("1_ms26n")
 movement = NodePath("move/movement")
 

@@ -1,19 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://2pehxvxoowqc"]
+[gd_scene load_steps=8 format=3 uid="uid://2pehxvxoowqc"]
 
 [ext_resource type="Script" path="res://music_player/autoload/music_player.gd" id="1_qqdo3"]
 [ext_resource type="AudioStream" uid="uid://uralsaluigkw" path="res://music_player/assets/music/peaceful_kohoma_v1.ogg" id="2_mp736"]
 [ext_resource type="AudioStream" uid="uid://b6aatl0eii1un" path="res://music_player/assets/music/title_screen.ogg" id="3_m130l"]
 [ext_resource type="AudioStream" uid="uid://c16vj42fibxld" path="res://music_player/assets/music/dungeon one maybe.ogg" id="4_xtryx"]
 [ext_resource type="AudioStream" uid="uid://fw1s44hmdof2" path="res://music_player/assets/music/01_the legend(proto).ogg" id="5_c6018"]
+[ext_resource type="AudioStream" uid="uid://bh1oj8puqjkm0" path="res://music_player/assets/music/wonder_of_ocean.ogg" id="6_ipl2j"]
+[ext_resource type="AudioStream" uid="uid://biryh8svftudi" path="res://music_player/assets/music/town_one.ogg" id="7_2kl1h"]
 
 [node name="music_player" type="Node2D" node_paths=PackedStringArray("stream_player")]
 script = ExtResource("1_qqdo3")
 music_dict = {
 "dungeon_one": ExtResource("4_xtryx"),
 "legend_intro": ExtResource("5_c6018"),
+"ocean_wonder": ExtResource("6_ipl2j"),
 "peaceful_kohoma": ExtResource("2_mp736"),
 "test_track": null,
-"title_screen": ExtResource("3_m130l")
+"title_screen": ExtResource("3_m130l"),
+"town_one": ExtResource("7_2kl1h")
 }
 stream_player = NodePath("stream_player")
 

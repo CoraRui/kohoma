@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmrcwlb7sp623"]
+
+[ext_resource type="Texture2D" uid="uid://d11uvfvjf55aw" path="res://enemies/enemy_types/lizard/lizard.png" id="1_qgf5d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_28xfi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qgf5d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="lizard" type="Node2D"]
+
+[node name="lizard_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_28xfi")

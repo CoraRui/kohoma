@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://dwtm01o12cw26"
-=======
-uid="uid://bgsny5e4vjv7e"
->>>>>>> 0a9338b0579bfe114b4b337f732f426f83dec73c
-path="res://.godot/imported/little_girl.png-75fafd7a31e2172a588150e57e590ce4.ctex"
+uid="uid://d0a5wkou64k3q"
+path="res://.godot/imported/orb_sprite.aseprite-2af2f6b42d14995b512818cf99311e2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raw_assets/brainstorming/little_girl.png"
-dest_files=["res://.godot/imported/little_girl.png-75fafd7a31e2172a588150e57e590ce4.ctex"]
+source_file="res://enemies/enemy_types/orb_sprite/assets/orb_sprite.aseprite"
+dest_files=["res://.godot/imported/orb_sprite.aseprite-2af2f6b42d14995b512818cf99311e2d.ctex"]
 
 [params]
 

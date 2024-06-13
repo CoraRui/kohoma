@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://dwtm01o12cw26"
-=======
-uid="uid://bgsny5e4vjv7e"
->>>>>>> 0a9338b0579bfe114b4b337f732f426f83dec73c
-path="res://.godot/imported/little_girl.png-75fafd7a31e2172a588150e57e590ce4.ctex"
+uid="uid://d11uvfvjf55aw"
+path="res://.godot/imported/lizard.png-0676840851406a06a075fde1bb326489.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raw_assets/brainstorming/little_girl.png"
-dest_files=["res://.godot/imported/little_girl.png-75fafd7a31e2172a588150e57e590ce4.ctex"]
+source_file="res://enemies/enemy_types/lizard/lizard.png"
+dest_files=["res://.godot/imported/lizard.png-0676840851406a06a075fde1bb326489.ctex"]
 
 [params]
 

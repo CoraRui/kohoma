@@ -4,5 +4,3 @@
 
 [node name="switch_trigger" type="Node2D"]
 script = ExtResource("1_f8pqm")
-init_pos = null
-psi = null

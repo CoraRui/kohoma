@@ -18,10 +18,4 @@ position = Vector2(80, 48)
 position = Vector2(-16, 0)
 texture = ExtResource("3_idhg6")
 
-[node name="unlock_area" parent="key_door" index="1"]
-visible = false
-
-[node name="wall_area" parent="key_door" index="2"]
-visible = false
-
 [editable path="key_door"]

@@ -1,0 +1,24 @@
+
+I'm not sure exactly what I want it to do.
+
+I just wanted to take advantage of the simple shape.
+
+I'm thinking of a slime. and also of the multibody piece thing.
+
+so I could have side to side "hopping"
+
+that would take advantage of the shape and the way I can move it.
+
+splitting into smaller orbs
+
+attaching smaller orbs to main body
+
+shooting smaller orbs
+
+whats the main item?
+
+fishing rod
+
+boomerang
+
+

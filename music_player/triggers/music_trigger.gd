@@ -18,6 +18,7 @@ extends Node2D
 @export var use_ready : bool = true
 #triggers the track after a delay in ready
 @export var use_delay : bool = false
+@export var delay_duration : float = 1
 #triggers the track when something triggers the area2D
 @export var on_collision : bool = false
 #timer used for delayed playing
