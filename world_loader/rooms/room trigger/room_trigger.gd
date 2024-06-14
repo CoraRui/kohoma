@@ -32,6 +32,7 @@ func load_room():
 	world_i.reset_position()
 	room_ins = room_ref.instantiate()
 	get_tree().get_root().add_child.call_deferred(room_ins)
+	room_ins.global_position += Vector2(0,-32)
 	stat_bi.reset_position()
 	
 	for c in room_ins.get_children():

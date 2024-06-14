@@ -14,6 +14,7 @@ config/name="kohoma"
 config/version="1.0a"
 run/main_scene="res://boot/root.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0.168627, 0.168627, 0.168627, 1)
 config/icon="res://raw_assets/archive/icon.svg"
 
 [aseprite_importers]
@@ -44,7 +45,7 @@ gdscript/warnings/integer_division=0
 [display]
 
 window/size/viewport_width=176
-window/size/viewport_height=176
+window/size/viewport_height=128
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
@@ -201,4 +202,4 @@ row_zero={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.168627, 0.168627, 0.168627, 1)

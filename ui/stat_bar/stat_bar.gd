@@ -6,6 +6,7 @@ class_name stat_bar
 #TODO: flavor text dialogue box
 #TODO: flavor text empty state
 #TODO: add map?
+#TODO: have flavor text appear over ruppees, keys, etc. when called for
 
 
 @export var hp_bar : heart_bar

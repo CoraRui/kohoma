@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cq4ypfsxg6eh0"]
+[gd_scene load_steps=19 format=3 uid="uid://cq4ypfsxg6eh0"]
 
 [ext_resource type="Script" path="res://ui/stat_bar/stat_bar.gd" id="1_iytto"]
 [ext_resource type="Texture2D" uid="uid://kxxugbydfir4" path="res://raw_assets/archive/proto bar.png" id="2_8tjp7"]
@@ -47,6 +47,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="FontVariation" id="FontVariation_xjojb"]
+base_font = ExtResource("11_ggi63")
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mv41o"]
 animations = [{
 "frames": [{
@@ -82,19 +85,19 @@ script = ExtResource("1_iytto")
 hp_bar = NodePath("heart_bar")
 flav = NodePath("flav_text")
 key_label = NodePath("key_label")
-x_item_anim = NodePath("x_item")
-y_item_anim = NodePath("y_item")
+x_item_anim = NodePath("xitem/x_item")
+y_item_anim = NodePath("yitem/y_item")
 
 [node name="background" type="ColorRect" parent="."]
+offset_top = -16.0
 offset_right = 176.0
-offset_bottom = 48.0
-color = Color(0, 0, 0, 1)
+color = Color(0.168627, 0.168627, 0.168627, 1)
 
 [node name="bottom bar" type="ColorRect" parent="."]
-offset_top = 160.0
+offset_top = 112.0
 offset_right = 176.0
-offset_bottom = 176.0
-color = Color(0, 0, 0, 1)
+offset_bottom = 128.0
+color = Color(0.792157, 0.792157, 0.792157, 1)
 
 [node name="test_sprite" type="Sprite2D" parent="."]
 visible = false
@@ -102,85 +105,121 @@ position = Vector2(88, 24)
 texture = ExtResource("2_8tjp7")
 
 [node name="heart_bar" type="Node2D" parent="." node_paths=PackedStringArray("heart_arr")]
-position = Vector2(6, 7)
+position = Vector2(4, 113)
 script = ExtResource("3_5ek21")
 heart_arr = [NodePath("heart_0"), NodePath("heart_1"), NodePath("heart_2"), NodePath("heart_3"), NodePath("heart_4"), NodePath("heart_5"), NodePath("heart_6"), NodePath("heart_7"), NodePath("heart_8"), NodePath("heart_9"), NodePath("heart_10"), NodePath("heart_11")]
 heart_txt = Array[Texture2D]([ExtResource("4_56eaf"), ExtResource("5_47h2p"), ExtResource("6_cpapu"), ExtResource("7_r678a"), ExtResource("3_nb8mf"), ExtResource("9_mq8by")])
 
 [node name="heart_0" parent="heart_bar" instance=ExtResource("10_kmavy")]
-animation = &"44"
+autoplay = "no_heart"
 
 [node name="heart_1" parent="heart_bar" instance=ExtResource("10_kmavy")]
 position = Vector2(12, 3)
-animation = &"44"
+autoplay = "no_heart"
+offset = Vector2(0.5, 0)
 
 [node name="heart_2" parent="heart_bar" instance=ExtResource("10_kmavy")]
-position = Vector2(20, 3)
-animation = &"44"
+position = Vector2(21, 3)
+autoplay = "no_heart"
 offset = Vector2(0.5, 0)
 
 [node name="heart_3" parent="heart_bar" instance=ExtResource("10_kmavy")]
-position = Vector2(-2.5, -4)
-animation = &"44"
+position = Vector2(30, 3)
+autoplay = "no_heart"
+offset = Vector2(0.5, 0)
 
 [node name="heart_4" parent="heart_bar" instance=ExtResource("10_kmavy")]
-position = Vector2(-2.5, -4)
+position = Vector2(39, 3)
+autoplay = "no_heart"
+offset = Vector2(0.5, 0)
 
 [node name="heart_5" parent="heart_bar" instance=ExtResource("10_kmavy")]
-position = Vector2(-2.5, -4)
+position = Vector2(48, 3)
+autoplay = "no_heart"
+offset = Vector2(0.5, 0)
 
 [node name="heart_6" parent="heart_bar" instance=ExtResource("10_kmavy")]
-position = Vector2(-2.5, -4)
+position = Vector2(3, 11)
+autoplay = "no_heart"
+offset = Vector2(0.5, 0)
 
 [node name="heart_7" parent="heart_bar" instance=ExtResource("10_kmavy")]
-position = Vector2(-2.5, -4)
+position = Vector2(12, 11)
+autoplay = "no_heart"
+offset = Vector2(0.5, 0)
 
 [node name="heart_8" parent="heart_bar" instance=ExtResource("10_kmavy")]
-position = Vector2(-2.5, -4)
+position = Vector2(21, 11)
+autoplay = "no_heart"
+offset = Vector2(0.5, 0)
 
 [node name="heart_9" parent="heart_bar" instance=ExtResource("10_kmavy")]
-position = Vector2(-2.5, -4)
+position = Vector2(30, 11)
+autoplay = "no_heart"
+offset = Vector2(0.5, 0)
 
 [node name="heart_10" parent="heart_bar" instance=ExtResource("10_kmavy")]
-position = Vector2(-2.5, -4)
+position = Vector2(39, 11)
+autoplay = "no_heart"
+offset = Vector2(0.5, 0)
 
 [node name="heart_11" parent="heart_bar" instance=ExtResource("10_kmavy")]
-position = Vector2(-2.5, -4)
+position = Vector2(48, 11)
+autoplay = "no_heart"
+offset = Vector2(0.5, 0)
 
 [node name="flav_text" parent="." instance=ExtResource("10_xmvkb")]
-position = Vector2(34, -2)
+position = Vector2(103, 113)
 
 [node name="key_label" type="Label" parent="."]
-offset_left = 8.0
-offset_top = 24.0
-offset_right = 40.0
-offset_bottom = 30.0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 38.0
+offset_bottom = 9.0
 theme_override_fonts/font = SubResource("FontVariation_vfx5n")
 theme_override_font_sizes/font_size = 5
 text = "keys x 0"
 
 [node name="xitem" type="ColorRect" parent="."]
-offset_left = 65.0
-offset_top = 7.0
-offset_right = 83.0
-offset_bottom = 31.0
-color = Color(0.0447414, 3.85046e-07, 0.313199, 1)
+offset_left = 64.0
+offset_top = 114.0
+offset_right = 76.0
+offset_bottom = 126.0
+color = Color(0.168627, 0.168627, 0.168627, 1)
 
-[node name="yitem" type="ColorRect" parent="."]
-offset_left = 88.0
-offset_top = 7.0
-offset_right = 106.0
-offset_bottom = 31.0
-color = Color(0.254902, 0, 0.0235294, 1)
-
-[node name="x_item" type="AnimatedSprite2D" parent="."]
-position = Vector2(67, 9)
+[node name="x_item" type="AnimatedSprite2D" parent="xitem"]
 sprite_frames = SubResource("SpriteFrames_36l3d")
 animation = &"NONE"
 centered = false
 
-[node name="y_item" type="AnimatedSprite2D" parent="."]
-position = Vector2(90, 9)
+[node name="xlabel" type="Label" parent="xitem"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = 5.0
+theme_override_fonts/font = SubResource("FontVariation_xjojb")
+theme_override_font_sizes/font_size = 5
+text = "x"
+
+[node name="yitem" type="ColorRect" parent="."]
+offset_left = 83.0
+offset_top = 114.0
+offset_right = 95.0
+offset_bottom = 126.0
+color = Color(0.168627, 0.168627, 0.168627, 1)
+
+[node name="y_item" type="AnimatedSprite2D" parent="yitem"]
 sprite_frames = SubResource("SpriteFrames_mv41o")
 animation = &"NONE"
 centered = false
+
+[node name="ylabel" type="Label" parent="yitem"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = 5.0
+theme_override_fonts/font = SubResource("FontVariation_xjojb")
+theme_override_font_sizes/font_size = 5
+text = "y"

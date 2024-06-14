@@ -22,6 +22,8 @@ var current_level : Node2D
 
 @export var level_size : Vector2i = Vector2i(176, 112)
 
+@export var world_draw_offset : Vector2i = Vector2(0,0)
+
 #autoloads
 @onready var camera_li : camera_loader = get_node("/root/camera_loader_auto")
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
@@ -37,6 +39,7 @@ func draw_level_at(lp : Vector2i):
 		current_level.queue_free()
 	current_level = current_grid.get_level_at(lp).level_node.instantiate()
 	get_tree().get_root().add_child.call_deferred(current_level)
+	current_level.global_position += Vector2(world_draw_offset)
 	camera_li.reset_camera()
 	player_li.unload_player_fast()
 	#make sure that theres a spawn point in the level where the player is being loaded
@@ -52,7 +55,7 @@ func draw_level_adj(dp : Vector2i):
 	previous_level = current_level
 	current_level = current_grid.get_level_at(clp).level_node.instantiate()
 	get_tree().get_root().add_child.call_deferred(current_level)
-	current_level.global_position = tlp * level_size
+	current_level.global_position = (tlp * level_size) + world_draw_offset
 
 func clear_previous_level():
 	#function used to clear the previous level.

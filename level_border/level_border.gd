@@ -36,7 +36,7 @@ func shift_level(sv : Vector2i):
 	global_position += Vector2(sv) * level_size
 
 func reset_position():
-	position = Vector2(0,0)
+	position = Vector2(0, 0)
 
 #area signals
 
