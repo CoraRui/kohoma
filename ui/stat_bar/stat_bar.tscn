@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cq4ypfsxg6eh0"]
+[gd_scene load_steps=18 format=3 uid="uid://cq4ypfsxg6eh0"]
 
 [ext_resource type="Script" path="res://ui/stat_bar/stat_bar.gd" id="1_iytto"]
 [ext_resource type="Texture2D" uid="uid://kxxugbydfir4" path="res://raw_assets/archive/proto bar.png" id="2_8tjp7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cfp54gipeh23x" path="res://ui/stat_bar/heart_bar/heart 24.png" id="6_cpapu"]
 [ext_resource type="Texture2D" uid="uid://d20jaw16l6ou8" path="res://ui/stat_bar/heart_bar/heart 34.png" id="7_r678a"]
 [ext_resource type="Texture2D" uid="uid://ycfin6t4oh64" path="res://ui/stat_bar/heart_bar/heart 00.png" id="9_mq8by"]
+[ext_resource type="PackedScene" uid="uid://bc8jy1xhvvlym" path="res://ui/stat_bar/heart_bar/heart_icon.tscn" id="10_kmavy"]
 [ext_resource type="PackedScene" uid="uid://de7j7jxw7w5c6" path="res://ui/stat_bar/flav_text/flav_text.tscn" id="10_xmvkb"]
 [ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="11_ggi63"]
 [ext_resource type="Texture2D" uid="uid://ducan1lse00wf" path="res://player_load/items/boomerang/boomerang.png" id="12_uccnx"]
@@ -106,53 +107,45 @@ script = ExtResource("3_5ek21")
 heart_arr = [NodePath("heart_0"), NodePath("heart_1"), NodePath("heart_2"), NodePath("heart_3"), NodePath("heart_4"), NodePath("heart_5"), NodePath("heart_6"), NodePath("heart_7"), NodePath("heart_8"), NodePath("heart_9"), NodePath("heart_10"), NodePath("heart_11")]
 heart_txt = Array[Texture2D]([ExtResource("4_56eaf"), ExtResource("5_47h2p"), ExtResource("6_cpapu"), ExtResource("7_r678a"), ExtResource("3_nb8mf"), ExtResource("9_mq8by")])
 
-[node name="heart_0" type="Sprite2D" parent="heart_bar"]
-position = Vector2(3.5, 3)
-texture = ExtResource("3_nb8mf")
+[node name="heart_0" parent="heart_bar" instance=ExtResource("10_kmavy")]
+animation = &"44"
 
-[node name="heart_1" type="Sprite2D" parent="heart_bar"]
-position = Vector2(11.5, 3)
-texture = ExtResource("3_nb8mf")
+[node name="heart_1" parent="heart_bar" instance=ExtResource("10_kmavy")]
+position = Vector2(12, 3)
+animation = &"44"
 
-[node name="heart_2" type="Sprite2D" parent="heart_bar"]
-position = Vector2(19.5, 3)
-texture = ExtResource("3_nb8mf")
+[node name="heart_2" parent="heart_bar" instance=ExtResource("10_kmavy")]
+position = Vector2(20, 3)
+animation = &"44"
+offset = Vector2(0.5, 0)
 
-[node name="heart_3" type="Sprite2D" parent="heart_bar"]
-position = Vector2(27.5, 3)
-texture = ExtResource("3_nb8mf")
+[node name="heart_3" parent="heart_bar" instance=ExtResource("10_kmavy")]
+position = Vector2(-2.5, -4)
+animation = &"44"
 
-[node name="heart_4" type="Sprite2D" parent="heart_bar"]
-position = Vector2(35.5, 3)
-texture = ExtResource("3_nb8mf")
+[node name="heart_4" parent="heart_bar" instance=ExtResource("10_kmavy")]
+position = Vector2(-2.5, -4)
 
-[node name="heart_5" type="Sprite2D" parent="heart_bar"]
-position = Vector2(43.5, 3)
-texture = ExtResource("3_nb8mf")
+[node name="heart_5" parent="heart_bar" instance=ExtResource("10_kmavy")]
+position = Vector2(-2.5, -4)
 
-[node name="heart_6" type="Sprite2D" parent="heart_bar"]
-position = Vector2(3.5, 10)
-texture = ExtResource("3_nb8mf")
+[node name="heart_6" parent="heart_bar" instance=ExtResource("10_kmavy")]
+position = Vector2(-2.5, -4)
 
-[node name="heart_7" type="Sprite2D" parent="heart_bar"]
-position = Vector2(11.5, 10)
-texture = ExtResource("3_nb8mf")
+[node name="heart_7" parent="heart_bar" instance=ExtResource("10_kmavy")]
+position = Vector2(-2.5, -4)
 
-[node name="heart_8" type="Sprite2D" parent="heart_bar"]
-position = Vector2(19.5, 10)
-texture = ExtResource("3_nb8mf")
+[node name="heart_8" parent="heart_bar" instance=ExtResource("10_kmavy")]
+position = Vector2(-2.5, -4)
 
-[node name="heart_9" type="Sprite2D" parent="heart_bar"]
-position = Vector2(27.5, 10)
-texture = ExtResource("3_nb8mf")
+[node name="heart_9" parent="heart_bar" instance=ExtResource("10_kmavy")]
+position = Vector2(-2.5, -4)
 
-[node name="heart_10" type="Sprite2D" parent="heart_bar"]
-position = Vector2(35.5, 10)
-texture = ExtResource("3_nb8mf")
+[node name="heart_10" parent="heart_bar" instance=ExtResource("10_kmavy")]
+position = Vector2(-2.5, -4)
 
-[node name="heart_11" type="Sprite2D" parent="heart_bar"]
-position = Vector2(43.5, 10)
-texture = ExtResource("3_nb8mf")
+[node name="heart_11" parent="heart_bar" instance=ExtResource("10_kmavy")]
+position = Vector2(-2.5, -4)
 
 [node name="flav_text" parent="." instance=ExtResource("10_xmvkb")]
 position = Vector2(34, -2)

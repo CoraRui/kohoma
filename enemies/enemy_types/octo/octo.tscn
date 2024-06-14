@@ -1,14 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://tnmauhs4oxc6"]
+[gd_scene load_steps=17 format=3 uid="uid://tnmauhs4oxc6"]
 
-[ext_resource type="Texture2D" uid="uid://ba6cv20yqio3m" path="res://enemies/enemy_types/octo/assets/octo_0.png" id="1_lr7bp"]
 [ext_resource type="Script" path="res://enemies/enemy_types/octo/octo.gd" id="1_ms26n"]
-[ext_resource type="Texture2D" uid="uid://cdo1rfxn7x47c" path="res://enemies/enemy_types/octo/assets/octo_1.png" id="2_15ksy"]
+[ext_resource type="Texture2D" uid="uid://dw06lw2g4tkdq" path="res://enemies/enemy_types/enemy_assets/enemy_sprite_one.aseprite" id="2_j7soo"]
 [ext_resource type="Script" path="res://enemies/modules/enemy_health/enemy_health.gd" id="2_kkp7y"]
 [ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="3_6r727"]
 [ext_resource type="PackedScene" uid="uid://kfo6qktvvv65" path="res://world_loader/interactables/drops/heart/heart.tscn" id="3_ps614"]
 [ext_resource type="Script" path="res://enemies/enemy_types/octo/octo_movement.gd" id="4_u40ge"]
 [ext_resource type="PackedScene" uid="uid://dlmrxk1ghikip" path="res://world_loader/interactables/drops/simple_drop/simple_drop.tscn" id="6_h151m"]
 [ext_resource type="PackedScene" uid="uid://gj5r6lcm7gm7" path="res://enemies/enemy_types/octo/boulder/rock_launcher.tscn" id="9_atg68"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_487ci"]
+atlas = ExtResource("2_j7soo")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lfo4"]
+atlas = ExtResource("2_j7soo")
+region = Rect2(16, 48, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_17rsw"]
 animations = [{
@@ -19,10 +26,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_lr7bp")
+"texture": SubResource("AtlasTexture_487ci")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_15ksy")
+"texture": SubResource("AtlasTexture_7lfo4")
 }],
 "loop": true,
 "name": &"walk",
@@ -60,7 +67,7 @@ offset_bottom = 8.0
 sprite_frames = SubResource("SpriteFrames_17rsw")
 animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.528681
+frame_progress = 0.452648
 
 [node name="health and damage" type="Node2D" parent="."]
 visible = false
@@ -151,6 +158,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="hurt_timer" type="Timer" parent="move"]
+one_shot = true
 
 [node name="attacks" type="Node2D" parent="."]
 

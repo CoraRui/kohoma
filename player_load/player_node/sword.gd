@@ -6,6 +6,7 @@ class_name sword
 #TODO: better sfx
 #TODO: minor, but possibly add reactions to minor things, like drifting away from heavy objects?
 #TODO: should the sword swing be an arc? or just the normal nes zelda stick?
+#TODO: add 3 sword frames
 
 @export var sword_anim_controller : sword_anim
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bm6r33rcfa1j6"]
+[gd_scene load_steps=43 format=3 uid="uid://bm6r33rcfa1j6"]
 
 [ext_resource type="Script" path="res://player_load/player_node/player_movement.gd" id="1_eisff"]
 [ext_resource type="Script" path="res://player_load/player_node/player.gd" id="1_tearn"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://player_load/items/items.gd" id="8_ks4q4"]
 [ext_resource type="PackedScene" uid="uid://ylblj4sykkqg" path="res://player_load/items/fishing rod/fishing_rod.tscn" id="9_wus56"]
 [ext_resource type="Script" path="res://player_load/player_node/player_anim.gd" id="10_1w8a4"]
-[ext_resource type="Texture2D" uid="uid://ds8qux00jdjhd" path="res://player_load/player_node/assets/lief.png" id="10_2oxbd"]
 [ext_resource type="Texture2D" uid="uid://bmjtmf4h8ix3b" path="res://player_load/player_node/assets/lief_anim.aseprite" id="11_os4df"]
 [ext_resource type="PackedScene" uid="uid://c0k4nawcq1y6y" path="res://player_load/items/shape_shifter/shape_shifter.tscn" id="12_c2wva"]
 
@@ -53,7 +52,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq415"]
-size = Vector2(17, 4)
+size = Vector2(15, 4)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h87re"]
 atlas = ExtResource("11_os4df")
@@ -79,7 +78,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8amp"]
-size = Vector2(18, 4)
+size = Vector2(4, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lsk76"]
 atlas = ExtResource("11_os4df")
@@ -105,7 +104,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_da7sj"]
-size = Vector2(17, 4)
+size = Vector2(4, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4f0s"]
 atlas = ExtResource("11_os4df")
@@ -131,37 +130,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be1wq"]
-size = Vector2(17, 4)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2jkad"]
-atlas = ExtResource("10_2oxbd")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mwdr3"]
-atlas = ExtResource("10_2oxbd")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_knvq7"]
-atlas = ExtResource("10_2oxbd")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tsva4"]
-atlas = ExtResource("10_2oxbd")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gtqs0"]
-atlas = ExtResource("10_2oxbd")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xxroy"]
-atlas = ExtResource("11_os4df")
-region = Rect2(0, 0, 16, 16)
+size = Vector2(12, 4)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7p2b4"]
 atlas = ExtResource("11_os4df")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ipify"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxroy"]
 atlas = ExtResource("11_os4df")
 region = Rect2(0, 0, 16, 16)
 
@@ -169,31 +144,31 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("11_os4df")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yqgv3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipify"]
 atlas = ExtResource("11_os4df")
-region = Rect2(0, 48, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1wdt"]
 atlas = ExtResource("11_os4df")
 region = Rect2(16, 48, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qydmx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqgv3"]
 atlas = ExtResource("11_os4df")
-region = Rect2(0, 32, 16, 16)
+region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0rr3"]
 atlas = ExtResource("11_os4df")
 region = Rect2(16, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q3h3p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qydmx"]
 atlas = ExtResource("11_os4df")
-region = Rect2(0, 16, 16, 16)
+region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vdvey"]
 atlas = ExtResource("11_os4df")
 region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ml3rf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3h3p"]
 atlas = ExtResource("11_os4df")
 region = Rect2(0, 16, 16, 16)
 
@@ -201,45 +176,24 @@ region = Rect2(0, 16, 16, 16)
 atlas = ExtResource("11_os4df")
 region = Rect2(32, 16, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml3rf"]
+atlas = ExtResource("11_os4df")
+region = Rect2(0, 16, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_x8b2j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2jkad")
-}],
-"loop": true,
-"name": &"stand_down",
-"speed": 5.0
+"texture": SubResource("AtlasTexture_7p2b4")
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mwdr3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_knvq7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tsva4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gtqs0")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}, {
-"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xxroy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7p2b4")
+"texture": SubResource("AtlasTexture_d3gmk")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ipify")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d3gmk")
 }],
 "loop": true,
 "name": &"walk_down",
@@ -247,10 +201,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yqgv3")
+"texture": SubResource("AtlasTexture_j1wdt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j1wdt")
+"texture": SubResource("AtlasTexture_yqgv3")
 }],
 "loop": true,
 "name": &"walk_left",
@@ -258,10 +212,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qydmx")
+"texture": SubResource("AtlasTexture_a0rr3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a0rr3")
+"texture": SubResource("AtlasTexture_qydmx")
 }],
 "loop": true,
 "name": &"walk_right",
@@ -269,16 +223,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q3h3p")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_vdvey")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ml3rf")
+"texture": SubResource("AtlasTexture_q3h3p")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ap20l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml3rf")
 }],
 "loop": true,
 "name": &"walk_up",
@@ -360,9 +314,9 @@ sword_anim_controller = NodePath("sword_anim")
 sword_areas = [NodePath("sword_up/us_area"), NodePath("sword_down/ds_area"), NodePath("sword_left/ls_area"), NodePath("sword_right/rs_area")]
 
 [node name="sword_left" type="AnimatedSprite2D" parent="sword"]
-position = Vector2(-13, 1)
+position = Vector2(-12, 0)
 sprite_frames = SubResource("SpriteFrames_5gxbn")
-animation = &"notswing"
+animation = &"swing"
 autoplay = "notswing"
 
 [node name="ls_area" type="Area2D" parent="sword/sword_left"]
@@ -370,53 +324,49 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="ls_shape" type="CollisionShape2D" parent="sword/sword_left/ls_area"]
-visible = false
-position = Vector2(2.5, 0)
+position = Vector2(2.5, 2)
 shape = SubResource("RectangleShape2D_yq415")
 
 [node name="sword_up" type="AnimatedSprite2D" parent="sword"]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_s8ihq")
-animation = &"notswing"
+animation = &"swing"
 autoplay = "notswing"
 
 [node name="us_area" type="Area2D" parent="sword/sword_up"]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
 [node name="us_shape" type="CollisionShape2D" parent="sword/sword_up/us_area"]
-position = Vector2(3, 0)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_d8amp")
 
 [node name="sword_down" type="AnimatedSprite2D" parent="sword"]
-position = Vector2(0, 15)
+position = Vector2(0, 14)
 sprite_frames = SubResource("SpriteFrames_sxcw6")
 animation = &"swing"
 autoplay = "notswing"
 
 [node name="ds_area" type="Area2D" parent="sword/sword_down"]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
 [node name="ds_shape" type="CollisionShape2D" parent="sword/sword_down/ds_area"]
-position = Vector2(2.5, -2.27374e-13)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_da7sj")
 
 [node name="sword_right" type="AnimatedSprite2D" parent="sword"]
-position = Vector2(13, 1)
+position = Vector2(12, 0)
 sprite_frames = SubResource("SpriteFrames_a50ti")
 animation = &"swing"
 autoplay = "notswing"
 
 [node name="rs_area" type="Area2D" parent="sword/sword_right"]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
 [node name="rs_shape" type="CollisionShape2D" parent="sword/sword_right/rs_area"]
-position = Vector2(2.5, 0)
+position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_be1wq")
 
 [node name="sword_anim" type="Node2D" parent="sword" node_paths=PackedStringArray("up_sword", "down_sword", "left_sword", "right_sword", "swing_timer")]
@@ -428,7 +378,7 @@ right_sword = NodePath("../sword_right")
 swing_timer = NodePath("swing_timer")
 
 [node name="swing_timer" type="Timer" parent="sword/sword_anim"]
-wait_time = 0.12
+wait_time = 0.2
 one_shot = true
 
 [node name="items" type="Node2D" parent="." node_paths=PackedStringArray("boom_launch", "rod_node")]
@@ -442,7 +392,7 @@ rod_node = NodePath("fishing_rod")
 
 [node name="player_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x8b2j")
-animation = &"walk_up"
+animation = &"walk_down"
 autoplay = "walk_down"
 script = ExtResource("10_1w8a4")
 

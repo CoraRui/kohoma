@@ -72,6 +72,7 @@ func move():
 func freeze():
 	#stops the players movement
 	frozen = true
+	anim_controller.animate_movement(Vector2(0,0))
 
 func unfreeze():
 	frozen = false

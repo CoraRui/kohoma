@@ -23,5 +23,5 @@ func animate_movement(mvec : Vector2):
 			play(walk_right)
 		Vector2(0,0):
 			pause()
-			frame = 0
+			frame = 1
 

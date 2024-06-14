@@ -152,10 +152,14 @@ func set_octo_state(s : OctoState):
 	match s:
 		OctoState.MOVING:
 			octo_state = OctoState.MOVING
+			move_timer.start()
 		OctoState.WIGGLE:
 			octo_state = OctoState.WIGGLE
 			wiggle_timer.wait_time = wiggle_dur
 			wiggle_timer.start()
+		OctoState.HURT:
+			octo_state = OctoState.HURT
+			wiggle_timer.stop()
 			
 func move_timer_reset():
 	#resets the movement timer. mostly for if a wall collision takes place so there isn't jerky movement
@@ -182,8 +186,8 @@ func flip_direction():
 
 #add idle direction/pointing direction??
 func _on_move_timer_timeout():
-	print("move timer done")
-	next_move()
+	set_octo_state(OctoState.WIGGLE)
+	wiggle_timer.start()
 
 #most of these triggers will incur specific changes in the creatures behavior dependent on their current movement state.
 #region area triggers
@@ -301,7 +305,7 @@ func _on_right_body_entered(_body):
 
 func _on_health_hurt():
 	#this signal activates when the health script takes damage.
-	octo_state = OctoState.HURT
+	set_octo_state(OctoState.HURT)
 	var player_pos : Vector2 = player_li.player_ins.global_position
 	if abs(enemy_node.global_position.x - player_pos.x) < abs(enemy_node.global_position.y - player_pos.y):
 		#use y direction
@@ -318,6 +322,7 @@ func _on_health_hurt():
 		else:
 			hvec = Vector2(1 * kbvel,0)
 			print(hvec)
+	wiggle_timer.stop()
 	hurt_timer.wait_time = hurt_dur
 	hurt_timer.start()
 	
@@ -328,9 +333,11 @@ func _on_hitbox_area_entered(area):
 		stun_timer.start()
 
 func _on_hurt_timer_timeout():
-	set_octo_state(OctoState.MOVING)
+	print("wiggling after hurt")
+	set_octo_state(OctoState.WIGGLE)
+	wiggle_timer.start()
 
 func _on_wiggle_timer_timeout():
-	print("wiggle timer done")
-	set_octo_state(OctoState.WIGGLE)
+	print("should exit")
+	next_move()
 	move_timer.start()
