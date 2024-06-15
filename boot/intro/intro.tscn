@@ -109,14 +109,14 @@ mural_anim = NodePath("anim_mural")
 d_box = NodePath("dialogue_box")
 
 [node name="temp_mural" type="ColorRect" parent="."]
-offset_left = 11.0
+offset_left = 23.0
 offset_top = 9.0
-offset_right = 166.0
-offset_bottom = 99.0
-color = Color(0.0784314, 0, 0.372549, 1)
+offset_right = 155.0
+offset_bottom = 83.0
+color = Color(0.682353, 0.682353, 0.682353, 1)
 
 [node name="anim_mural" type="AnimatedSprite2D" parent="."]
-position = Vector2(11, 9)
+position = Vector2(23, 9)
 sprite_frames = SubResource("SpriteFrames_4efeq")
 animation = &"two"
 centered = false
@@ -130,13 +130,15 @@ one_shot = true
 visible = false
 
 [node name="m_label" parent="dialogue_box" index="3"]
-offset_left = 9.0
-offset_top = 106.0
-offset_right = 172.0
-offset_bottom = 142.0
-text = "there is a legend in the land of 
-kohoma"
+offset_left = 6.0
+offset_top = 90.0
+offset_right = 169.0
+offset_bottom = 120.0
+text = "there is a legend in the land of whatever"
 horizontal_alignment = 1
+
+[node name="adv_arrow" parent="dialogue_box" index="5"]
+position = Vector2(157, 134)
 
 [node name="txt_del" type="Timer" parent="dialogue_box"]
 one_shot = true

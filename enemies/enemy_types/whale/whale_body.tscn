@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://tv5otmo255l3"]
+[gd_scene load_steps=13 format=3 uid="uid://tv5otmo255l3"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/whale/whale.gd" id="1_0e55k"]
 [ext_resource type="Texture2D" uid="uid://c21hdqtn85qdw" path="res://enemies/enemy_types/whale/assets/whale1.png" id="2_77cht"]
+[ext_resource type="PackedScene" uid="uid://caqihyi58sptl" path="res://enemies/enemy_types/whale/water_drop/bubble.tscn" id="2_mcg1x"]
 [ext_resource type="Texture2D" uid="uid://dxt2modp371o6" path="res://enemies/enemy_types/whale/assets/whale2.png" id="3_0b6lg"]
+[ext_resource type="Texture2D" uid="uid://yot42iuq4cj8" path="res://enemies/projectiles/bubble/assets/water1.png" id="4_1frej"]
+[ext_resource type="Texture2D" uid="uid://d2wwd7ns0lvb0" path="res://enemies/projectiles/bubble/assets/water2.png" id="5_yewfm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jsklx"]
 animations = [{
@@ -18,6 +21,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_npoxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1frej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yewfm")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2c27t"]
 size = Vector2(11, 2)
 
@@ -30,55 +55,82 @@ size = Vector2(2, 7)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rc120"]
 size = Vector2(2, 7)
 
-[node name="whale" type="Node2D"]
+[node name="whale" type="Node2D" node_paths=PackedStringArray("move_timer", "charge_timer", "shoot_timer", "bubble_anim")]
 script = ExtResource("1_0e55k")
+move_timer = NodePath("move_timers/move_timer")
+charge_timer = NodePath("move_timers/charge_timer")
+shoot_timer = NodePath("move_timers/shoot_timer")
+water_ref = ExtResource("2_mcg1x")
+bubble_anim = NodePath("bubble_anim")
 
 [node name="anim_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jsklx")
 autoplay = "default"
 frame_progress = 0.761077
 
-[node name="top" type="Area2D" parent="."]
+[node name="bubble_anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -9)
+sprite_frames = SubResource("SpriteFrames_npoxn")
+animation = &"none"
+autoplay = "none"
+
+[node name="collision_areas" type="Node2D" parent="."]
+
+[node name="top" type="Area2D" parent="collision_areas"]
 visible = false
 position = Vector2(0, -4)
 collision_layer = 0
 collision_mask = 64
 
-[node name="top_shape" type="CollisionShape2D" parent="top"]
+[node name="top_shape" type="CollisionShape2D" parent="collision_areas/top"]
 position = Vector2(-0.5, 3)
 shape = SubResource("RectangleShape2D_2c27t")
 
-[node name="bottom" type="Area2D" parent="."]
+[node name="bottom" type="Area2D" parent="collision_areas"]
 visible = false
 position = Vector2(0, 6)
 collision_layer = 0
 collision_mask = 64
 
-[node name="bot_shape" type="CollisionShape2D" parent="bottom"]
+[node name="bot_shape" type="CollisionShape2D" parent="collision_areas/bottom"]
 position = Vector2(-0.25, 0)
 shape = SubResource("RectangleShape2D_k5jb2")
 
-[node name="left" type="Area2D" parent="."]
+[node name="left" type="Area2D" parent="collision_areas"]
 visible = false
 position = Vector2(-8, 0)
 collision_layer = 0
 collision_mask = 64
 
-[node name="left_shape" type="CollisionShape2D" parent="left"]
+[node name="left_shape" type="CollisionShape2D" parent="collision_areas/left"]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_b5hm2")
 
-[node name="right" type="Area2D" parent="."]
+[node name="right" type="Area2D" parent="collision_areas"]
 visible = false
 position = Vector2(7, 0)
 collision_layer = 0
 collision_mask = 64
 
-[node name="right_shape" type="CollisionShape2D" parent="right"]
+[node name="right_shape" type="CollisionShape2D" parent="collision_areas/right"]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_rc120")
 
-[connection signal="area_entered" from="top" to="." method="_on_top_area_entered"]
-[connection signal="area_entered" from="bottom" to="." method="_on_bottom_area_entered"]
-[connection signal="area_entered" from="left" to="." method="_on_left_area_entered"]
-[connection signal="area_entered" from="right" to="." method="_on_right_area_entered"]
+[node name="move_timers" type="Node2D" parent="."]
+
+[node name="move_timer" type="Timer" parent="move_timers"]
+one_shot = true
+
+[node name="charge_timer" type="Timer" parent="move_timers"]
+one_shot = true
+
+[node name="shoot_timer" type="Timer" parent="move_timers"]
+one_shot = true
+
+[connection signal="area_entered" from="collision_areas/top" to="." method="_on_top_area_entered"]
+[connection signal="area_entered" from="collision_areas/bottom" to="." method="_on_bottom_area_entered"]
+[connection signal="area_entered" from="collision_areas/left" to="." method="_on_left_area_entered"]
+[connection signal="area_entered" from="collision_areas/right" to="." method="_on_right_area_entered"]
+[connection signal="timeout" from="move_timers/move_timer" to="." method="_on_move_timer_timeout"]
+[connection signal="timeout" from="move_timers/charge_timer" to="." method="_on_charge_timer_timeout"]
+[connection signal="timeout" from="move_timers/shoot_timer" to="." method="_on_shoot_timer_timeout"]

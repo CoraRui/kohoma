@@ -1,0 +1,41 @@
+man. writings hard. lot like music. the creative freedom aspect at least. could write. anything! but nothings "right".
+
+well ok. what are the actual goals for the beginning/ the story in general?
+
+hmm.
+
+well I want to have sort of a funny and weird theme going in the town.
+
+and the actual first major plot point should be the direction to the first dungeon, or in the direction of that quest.
+
+again, avoid pointless fetch quests. but also make the world interesting.
+
+I guess thats the issue, right? i have this open world for the player to explore, but if I only give them one goal, then they'll just go
+
+straight there and finish it.
+
+I think I'll try it that way. I'll reveal the "main goal" *almost* immediately, allow the player to go straight there and finish the game.
+
+the extra exploring will be largely optional. but whats the incentive?
+
+I think I want to rely on intrigue. if the things I have to entertain the player aren't enought to make them question and be curious about the world,
+then they probably won't enjoy the world anyways.
+
+i mean, even if I tell them its "north", its not like they'll find it immediately, right?
+
+I mean, with ANY game, whats the "point"? its just to throw as much in as you can.
+
+new music, new characters to meet, new art, new challenges, enemies.
+
+so, I guess what I want to draw from this is:
+
+polish the MAIN LINE. 
+
+initial overworld enemy patterns, initial cutscene, first dungeon, "end" event.
+
+then, possibly allow for a completed state, where the next event that allows the player to proceed isn't there yet.
+
+like oh theres an item at the shop which isn't in stock yet, which they need to move the rock which is in their path.
+
+which will take. potentially months...
+

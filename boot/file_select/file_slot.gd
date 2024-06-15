@@ -8,6 +8,7 @@ class_name file_slot
 
 @export var file_index : int
 @export var name_label : Label
+@export var text_color : Color
 @export var money_label : Label
 
 #autoloads
@@ -16,6 +17,8 @@ class_name file_slot
 
 func _ready():
 	refresh_display()
+	name_label.add_theme_color_override("font_color", text_color)
+	money_label.add_theme_color_override("font_color", text_color)
 	
 func refresh_display():
 	if not FileAccess.file_exists(save_fi.save_dir[file_index]) :

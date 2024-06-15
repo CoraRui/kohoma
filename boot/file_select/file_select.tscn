@@ -67,7 +67,7 @@ script = ExtResource("6_7pwqp")
 options = [NodePath("file_one"), NodePath("file_two"), NodePath("file_three")]
 
 [node name="file_one" type="Node2D" parent="simple_select/files" node_paths=PackedStringArray("icon_point", "up_option", "down_option")]
-position = Vector2(79, 19)
+position = Vector2(83, 9)
 script = ExtResource("7_sc3r0")
 icon_point = NodePath("icon_point")
 up_option = NodePath("../file_three")
@@ -75,12 +75,13 @@ down_option = NodePath("../file_two")
 
 [node name="file_slot" parent="simple_select/files/file_one" instance=ExtResource("9_kxmnt")]
 file_index = 0
+text_color = Color(0.682353, 0.682353, 0.682353, 1)
 
 [node name="icon_point" type="Node2D" parent="simple_select/files/file_one"]
 position = Vector2(-12, 8)
 
 [node name="file_two" type="Node2D" parent="simple_select/files" node_paths=PackedStringArray("icon_point", "up_option", "down_option")]
-position = Vector2(79, 61)
+position = Vector2(83, 51)
 script = ExtResource("7_sc3r0")
 icon_point = NodePath("icon_point")
 up_option = NodePath("../file_one")
@@ -88,12 +89,13 @@ down_option = NodePath("../file_three")
 
 [node name="file_slot" parent="simple_select/files/file_two" instance=ExtResource("9_kxmnt")]
 file_index = 1
+text_color = Color(0.682353, 0.682353, 0.682353, 1)
 
 [node name="icon_point" type="Node2D" parent="simple_select/files/file_two"]
 position = Vector2(-12, 8)
 
 [node name="file_three" type="Node2D" parent="simple_select/files" node_paths=PackedStringArray("icon_point", "up_option", "down_option")]
-position = Vector2(79, 100)
+position = Vector2(83, 90)
 script = ExtResource("7_sc3r0")
 icon_point = NodePath("icon_point")
 up_option = NodePath("../file_two")
@@ -101,6 +103,7 @@ down_option = NodePath("../file_one")
 
 [node name="file_slot" parent="simple_select/files/file_three" instance=ExtResource("9_kxmnt")]
 file_index = 2
+text_color = Color(0.682353, 0.682353, 0.682353, 1)
 
 [node name="icon_point" type="Node2D" parent="simple_select/files/file_three"]
 position = Vector2(-12, 8)

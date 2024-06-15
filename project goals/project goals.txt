@@ -36,7 +36,13 @@ break a pot and an enemy will move, step on creaky tile etc.
 
 I kind of want to figure out what parts of the enemy movement are reproducible, that way I can reuse what is, and only write unique code for what isn't.
 
-
+was thinking about the pallete swap thing, but:
+	
+	I don't think I'll have so many pallettes that it'll be undoable to swap things by making multiple sets
+	its in the future so maybe postpone that decision
+	how hard is it really to do in engine?
+	it seems like it would be a pain. itd probably be better to just make unique tilesets.
+	that'll be something I do later in development though. like as a finishing touch.
 
 
 
