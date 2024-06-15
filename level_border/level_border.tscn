@@ -19,7 +19,6 @@ z_index = 5
 script = ExtResource("1_j4t56")
 
 [node name="left_area" type="Area2D" parent="."]
-visible = false
 position = Vector2(0, 98)
 collision_layer = 32
 collision_mask = 16
@@ -28,7 +27,6 @@ collision_mask = 16
 shape = SubResource("RectangleShape2D_wkkbk")
 
 [node name="right_area" type="Area2D" parent="."]
-visible = false
 position = Vector2(176, 102)
 collision_layer = 32
 collision_mask = 16
@@ -37,8 +35,7 @@ collision_mask = 16
 shape = SubResource("RectangleShape2D_476r2")
 
 [node name="top_area" type="Area2D" parent="."]
-visible = false
-position = Vector2(128, 48)
+position = Vector2(102, 0)
 collision_layer = 32
 collision_mask = 16
 
@@ -46,8 +43,7 @@ collision_mask = 16
 shape = SubResource("RectangleShape2D_mnp7l")
 
 [node name="bottom_area" type="Area2D" parent="."]
-visible = false
-position = Vector2(128, 160)
+position = Vector2(92, 112)
 collision_layer = 32
 collision_mask = 16
 

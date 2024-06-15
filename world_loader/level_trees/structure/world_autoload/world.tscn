@@ -6,5 +6,6 @@
 [node name="world" type="Node2D" node_paths=PackedStringArray("current_grid")]
 script = ExtResource("1_r0ehf")
 current_grid = NodePath("overworld_tree")
+world_draw_offset = Vector2i(0, -48)
 
 [node name="overworld_tree" parent="." instance=ExtResource("2_7yy0j")]
