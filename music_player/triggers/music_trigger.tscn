@@ -10,6 +10,7 @@ track_timer = NodePath("track_timer")
 track_coll = NodePath("track_collider")
 
 [node name="track_timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="track_collider" type="Area2D" parent="."]
 collision_layer = 0
