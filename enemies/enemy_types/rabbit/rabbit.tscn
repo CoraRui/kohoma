@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b56wn1dctrh8x"]
+[gd_scene load_steps=10 format=3 uid="uid://b56wn1dctrh8x"]
 
 [ext_resource type="Texture2D" uid="uid://6kx1do5kk62u" path="res://enemies/enemy_types/rabbit/assets/rabbit.png" id="1_svuvg"]
 [ext_resource type="Script" path="res://enemies/enemy_types/rabbit/rabbit_movement.gd" id="2_atdhp"]
 [ext_resource type="Texture2D" uid="uid://bofcprn52klmy" path="res://enemies/enemy_types/rabbit/assets/rabbit2.png" id="2_pe3a5"]
+[ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="4_jyqx5"]
+[ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="5_xku3m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qyrwv"]
 animations = [{
@@ -23,6 +25,9 @@ size = Vector2(5, 1.96875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cu1v"]
 size = Vector2(2, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fndl"]
+size = Vector2(14, 11)
 
 [node name="rabbit" type="Node2D"]
 
@@ -70,6 +75,23 @@ position = Vector2(-7, 0)
 [node name="right" type="Node2D" parent="collision_points"]
 position = Vector2(7, 0)
 
+[node name="health+damage" type="Node2D" parent="."]
+
+[node name="spike" parent="health+damage" instance=ExtResource("4_jyqx5")]
+
+[node name="CollisionShape2D" parent="health+damage/spike/Area2D" index="0"]
+position = Vector2(0, 0.5)
+
+[node name="hitbox_area" type="Area2D" parent="health+damage"]
+
+[node name="hitbox_shape" type="CollisionShape2D" parent="health+damage/hitbox_area"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_4fndl")
+
+[node name="enemy_health" parent="health+damage" instance=ExtResource("5_xku3m")]
+
 [connection signal="timeout" from="h_timer" to="rabbit_movement" method="_on_h_timer_timeout"]
 [connection signal="area_entered" from="rdown_area" to="rabbit_movement" method="_on_rdown_area_area_entered"]
 [connection signal="body_entered" from="rdown_area" to="rabbit_movement" method="_on_rdown_area_body_entered"]
+
+[editable path="health+damage/spike"]

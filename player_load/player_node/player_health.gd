@@ -78,6 +78,7 @@ func _on_hit_area_area_entered(area):
 
 func _on_i_frames_timeout():
 	inv = false
+	#TODO: no idea how but the get index 0 was apparently out of bounds here at some ponit. idk
 	if hitbox.has_overlapping_areas():
 		check_for_hit(hitbox.get_overlapping_areas()[0])
 	anim_node.set_visible(true)

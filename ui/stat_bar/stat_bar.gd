@@ -7,6 +7,7 @@ class_name stat_bar
 #TODO: flavor text empty state
 #TODO: add map?
 #TODO: have flavor text appear over ruppees, keys, etc. when called for
+#TODO: in dungeon color scheme change
 
 
 @export var hp_bar : heart_bar

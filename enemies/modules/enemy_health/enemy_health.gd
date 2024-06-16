@@ -21,6 +21,9 @@ var inv : bool = false
 @export_group("hurt")
 signal hurt
 @export var hurt_sf : String = "e_hurt"
+@export var use_flash : bool = true
+@export var flasher_node : flasher
+@export var flash_dur : float = 0.4
 @export_group("","")
 
 #region death
@@ -59,6 +62,7 @@ func damage(d : int):
 	inv = true
 	sfx_pi.play_sound("e_hurt")
 	hurt.emit()
+	flasher_node.flash_timed(flash_dur)
 	#deal damage/check for death
 	hp -= d
 	hp = clampi(hp, 0, 999)

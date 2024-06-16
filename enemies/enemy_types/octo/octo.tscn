@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://tnmauhs4oxc6"]
+[gd_scene load_steps=18 format=3 uid="uid://tnmauhs4oxc6"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/octo/octo.gd" id="1_ms26n"]
 [ext_resource type="Texture2D" uid="uid://dw06lw2g4tkdq" path="res://enemies/enemy_types/enemy_assets/enemy_sprite_one.aseprite" id="2_j7soo"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://kfo6qktvvv65" path="res://world_loader/interactables/drops/heart/heart.tscn" id="3_ps614"]
 [ext_resource type="Script" path="res://enemies/enemy_types/octo/octo_movement.gd" id="4_u40ge"]
 [ext_resource type="PackedScene" uid="uid://dlmrxk1ghikip" path="res://world_loader/interactables/drops/simple_drop/simple_drop.tscn" id="6_h151m"]
+[ext_resource type="PackedScene" uid="uid://mi12axkylgws" path="res://misc/flasher/flasher.tscn" id="7_jh6va"]
 [ext_resource type="PackedScene" uid="uid://gj5r6lcm7gm7" path="res://enemies/enemy_types/octo/boulder/rock_launcher.tscn" id="9_atg68"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_487ci"]
@@ -81,8 +82,9 @@ visible = false
 [node name="CollisionShape2D" parent="health and damage/spike/Area2D" index="0"]
 position = Vector2(0, -0.5)
 
-[node name="health" type="Node2D" parent="health and damage" node_paths=PackedStringArray("die_node")]
+[node name="health" type="Node2D" parent="health and damage" node_paths=PackedStringArray("flasher_node", "die_node")]
 script = ExtResource("2_kkp7y")
+flasher_node = NodePath("../flasher")
 die_node = NodePath("../..")
 
 [node name="hitbox" type="Area2D" parent="health and damage"]
@@ -95,6 +97,11 @@ shape = SubResource("RectangleShape2D_yg3l8")
 [node name="hurt_timer" type="Timer" parent="health and damage"]
 wait_time = 0.45
 one_shot = true
+
+[node name="flasher" parent="health and damage" node_paths=PackedStringArray("target_nodes") instance=ExtResource("7_jh6va")]
+target_nodes = [NodePath("../../octo_anim")]
+init_visible = true
+visible_frames = 1
 
 [node name="move" type="Node2D" parent="."]
 visible = false
