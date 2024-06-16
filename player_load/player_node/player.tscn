@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c0k4nawcq1y6y" path="res://player_load/items/shape_shifter/shape_shifter.tscn" id="12_c2wva"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdxc5"]
-size = Vector2(10, 6)
+size = Vector2(6, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h231d"]
 size = Vector2(4, 2)
@@ -248,6 +248,8 @@ sword_script = NodePath("sword")
 anim_script = NodePath("player_anim")
 
 [node name="movement" type="Node2D" parent="." node_paths=PackedStringArray("pos", "hit_area", "up_col", "down_col", "left_col", "right_col", "anim_controller", "hurt_timer")]
+visible = false
+position = Vector2(0, -4)
 script = ExtResource("1_eisff")
 pos = NodePath("..")
 vel = Array[int]([1, 1])
@@ -264,11 +266,11 @@ wait_time = 0.1
 one_shot = true
 
 [node name="hit_area" type="Area2D" parent="."]
+visible = false
 collision_layer = 16
 collision_mask = 132
 
 [node name="hit_box" type="CollisionShape2D" parent="hit_area"]
-position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_cdxc5")
 
 [node name="notes" type="Node2D" parent="hit_area"]
@@ -276,6 +278,7 @@ script = ExtResource("2_uvbfg")
 
 [node name="wall_collision" type="Node2D" parent="."]
 visible = false
+position = Vector2(0, -4)
 
 [node name="up" type="Area2D" parent="wall_collision"]
 collision_layer = 0
@@ -310,6 +313,7 @@ position = Vector2(3, 4.5)
 shape = SubResource("RectangleShape2D_afak3")
 
 [node name="player_health" parent="." node_paths=PackedStringArray("hitbox", "anim_node", "move_node") instance=ExtResource("2_iokp0")]
+visible = false
 position = Vector2(62.75, 66.25)
 mhp = null
 hp = null
@@ -322,6 +326,7 @@ anim_node = NodePath("../player_anim")
 move_node = NodePath("../movement")
 
 [node name="sword" type="Node2D" parent="." node_paths=PackedStringArray("sword_anim_controller", "sword_areas")]
+position = Vector2(0, -2)
 script = ExtResource("4_rbmau")
 sword_anim_controller = NodePath("sword_anim")
 sword_areas = [NodePath("sword_up/us_area"), NodePath("sword_down/ds_area"), NodePath("sword_left/ls_area"), NodePath("sword_right/rs_area")]
@@ -329,10 +334,11 @@ sword_areas = [NodePath("sword_up/us_area"), NodePath("sword_down/ds_area"), Nod
 [node name="sword_left" type="AnimatedSprite2D" parent="sword"]
 position = Vector2(-12, 0)
 sprite_frames = SubResource("SpriteFrames_5gxbn")
-animation = &"swing"
+animation = &"notswing"
 autoplay = "notswing"
 
 [node name="ls_area" type="Area2D" parent="sword/sword_left"]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -343,10 +349,11 @@ shape = SubResource("RectangleShape2D_yq415")
 [node name="sword_up" type="AnimatedSprite2D" parent="sword"]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_s8ihq")
-animation = &"swing"
+animation = &"notswing"
 autoplay = "notswing"
 
 [node name="us_area" type="Area2D" parent="sword/sword_up"]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -355,12 +362,13 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_d8amp")
 
 [node name="sword_down" type="AnimatedSprite2D" parent="sword"]
-position = Vector2(0, 14)
+position = Vector2(0, 12)
 sprite_frames = SubResource("SpriteFrames_sxcw6")
-animation = &"swing"
+animation = &"notswing"
 autoplay = "notswing"
 
 [node name="ds_area" type="Area2D" parent="sword/sword_down"]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -371,10 +379,11 @@ shape = SubResource("RectangleShape2D_da7sj")
 [node name="sword_right" type="AnimatedSprite2D" parent="sword"]
 position = Vector2(12, 0)
 sprite_frames = SubResource("SpriteFrames_a50ti")
-animation = &"swing"
+animation = &"notswing"
 autoplay = "notswing"
 
 [node name="rs_area" type="Area2D" parent="sword/sword_right"]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -395,6 +404,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="items" type="Node2D" parent="." node_paths=PackedStringArray("boom_launch", "rod_node")]
+position = Vector2(0, -4)
 script = ExtResource("8_ks4q4")
 boom_launch = NodePath("boomerang_launch")
 rod_node = NodePath("fishing_rod")
@@ -404,12 +414,15 @@ rod_node = NodePath("fishing_rod")
 [node name="fishing_rod" parent="items" instance=ExtResource("9_wus56")]
 
 [node name="player_anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_x8b2j")
 animation = &"walk_down"
 autoplay = "walk_down"
 script = ExtResource("10_1w8a4")
 
 [node name="shape_shifter" parent="." node_paths=PackedStringArray("player_move", "player_items") instance=ExtResource("12_c2wva")]
+visible = false
+position = Vector2(0, -4)
 player_move = NodePath("../movement")
 player_items = NodePath("../items")
 

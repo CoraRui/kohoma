@@ -6,7 +6,6 @@
 script = ExtResource("1_m02lw")
 cam_vel = 2
 main_camera = NodePath("main_camera")
-snap_tol = 4.0
 
 [node name="main_camera" type="Camera2D" parent="."]
 anchor_mode = 0

@@ -3,8 +3,6 @@ class_name camera_loader
 
 #this autoload contains the camera, and functions for moving it.
 
-
-
 @onready var main_window : Window = get_window()
 
 @export var cam_vel : int = 5
@@ -13,7 +11,7 @@ class_name camera_loader
 
 @onready var shift_point : Vector2 = main_camera.position
 
-@export var snap_tol : float = 7
+@export var snap_tol : float = 2
 
 #size of the level. smaller than the screen cause stat bar and lower bar.
 @export var level_size : Vector2i = Vector2(176, 112)
@@ -46,7 +44,7 @@ func start_shift(sv : Vector2i):
 	player_li.player_ins.set_sword_active(false)
 	pause_li.toggle_active(false)
 	player_shifting = true
-	player_point = player_li.player_ins.global_position + (Vector2(sv) * 20)
+	player_point = player_li.player_ins.global_position + (Vector2(sv) * 13)
 
 func move_camera():
 	if not shifting:
@@ -64,7 +62,6 @@ func shift_player():
 		player_li.player_ins.global_position = player_point
 		player_shifting = false
 	
-
 func end_shift():
 	shifting = false
 	main_camera.position = shift_point
@@ -74,11 +71,7 @@ func end_shift():
 	player_li.player_ins.set_movement(true)
 	player_li.player_ins.set_sword_active(true)
 	pause_li.toggle_active(true)
-		
-
+	
 func reset_camera():
 	main_camera.position = Vector2(0,0)
-	
-	
-	
 	
