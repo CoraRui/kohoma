@@ -123,12 +123,15 @@ shape = SubResource("RectangleShape2D_rc120")
 [node name="move_timers" type="Node2D" parent="."]
 
 [node name="move_timer" type="Timer" parent="move_timers"]
+wait_time = 3.0
 one_shot = true
 
 [node name="charge_timer" type="Timer" parent="move_timers"]
+wait_time = 0.8
 one_shot = true
 
 [node name="shoot_timer" type="Timer" parent="move_timers"]
+wait_time = 0.8
 one_shot = true
 
 [node name="health+damage" type="Node2D" parent="."]
