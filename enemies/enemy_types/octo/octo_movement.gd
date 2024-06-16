@@ -179,10 +179,8 @@ func flip_direction():
 
 		if octo_dir == DirClass.Dir.UP:
 			set_direction(DirClass.Dir.DOWN)
-			print("flipped to down")
 		else:
 			set_direction(DirClass.Dir.UP)
-			print("flipped to up")
 
 #add idle direction/pointing direction??
 func _on_move_timer_timeout():
@@ -285,7 +283,6 @@ func _on_left_body_entered(_body):
 	if octo_state == OctoState.HURT:
 		hvec.x = 0
 		enemy_node.position.x += 2
-	print("left")
 
 func _on_right_body_entered(_body):
 	if octo_state == OctoState.MOVING:
@@ -299,7 +296,6 @@ func _on_right_body_entered(_body):
 	if octo_state == OctoState.HURT:
 		hvec.x = 0
 		enemy_node.position.x += -2
-	print("right")
 
 #endregion
 
@@ -311,17 +307,13 @@ func _on_health_hurt():
 		#use y direction
 		if enemy_node.global_position.y - player_pos.y < 0:
 			hvec = Vector2(0,-1 * kbvel)
-			print(hvec)
 		else:
 			hvec = Vector2(0,1 * kbvel)
-			print(hvec)
 	else:
 		if enemy_node.global_position.x - player_pos.x < 0:
 			hvec = Vector2(-1 * kbvel,0)
-			print(hvec)
 		else:
 			hvec = Vector2(1 * kbvel,0)
-			print(hvec)
 	wiggle_timer.stop()
 	hurt_timer.wait_time = hurt_dur
 	hurt_timer.start()
@@ -333,11 +325,9 @@ func _on_hitbox_area_entered(area):
 		stun_timer.start()
 
 func _on_hurt_timer_timeout():
-	print("wiggling after hurt")
 	set_octo_state(OctoState.WIGGLE)
 	wiggle_timer.start()
 
 func _on_wiggle_timer_timeout():
-	print("should exit")
 	next_move()
 	move_timer.start()

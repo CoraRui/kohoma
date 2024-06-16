@@ -14,7 +14,7 @@ class_name sword_anim
 
 
 func animate_sword(dir : int):
-	print("animating: ", dir)
+
 	match dir:
 		0:
 			up_sword.play("swing")

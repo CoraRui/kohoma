@@ -44,7 +44,6 @@ func spawn_enemies():
 	while i < enemy_cnt:
 		#rolls a value using the total value of all of the spawn chances.
 		var roll : int = randi_range(0, tot)
-		print(roll, tot)
 		#subtract the spawn chance of each enemy from the roll. if the roll is less than or equal to 0, that means that
 		#the roll was in the current enemies range. so, when the while loop breaks, i2 will be the enemy to spawn
 		var i2 : int = 0

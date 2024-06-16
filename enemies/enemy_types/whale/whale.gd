@@ -54,9 +54,12 @@ func move():
 		fdel += 1
 	
 func shoot():
-	var new_bubble = water_ref.instantiate()
+	var new_bubble : bubble = water_ref.instantiate()
 	world_i.current_level.add_child(new_bubble)
 	new_bubble.global_position = bubble_anim.global_position
+	new_bubble.init_bubble()
+	
+	
 
 #region collision_signals
 
