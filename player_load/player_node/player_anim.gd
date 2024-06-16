@@ -8,8 +8,6 @@ class_name player_anim
 @export var walk_right : String = "walk_right"
 @export_group("","")
 
-
-
 func animate_movement(mvec : Vector2):
 	#takes the movement vector from the movement script and determines players movement animation.
 	match mvec:

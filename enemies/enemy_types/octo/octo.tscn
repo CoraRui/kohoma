@@ -37,7 +37,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yg3l8"]
-size = Vector2(10, 10)
+size = Vector2(12, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hawlc"]
 size = Vector2(10, 4)
@@ -70,13 +70,16 @@ autoplay = "walk"
 frame_progress = 0.452648
 
 [node name="health and damage" type="Node2D" parent="."]
-visible = false
 
 [node name="simple_drop" parent="health and damage" node_paths=PackedStringArray("pos_target") instance=ExtResource("6_h151m")]
 drop_thing = ExtResource("3_ps614")
 pos_target = NodePath("../..")
 
 [node name="spike" parent="health and damage" instance=ExtResource("3_6r727")]
+visible = false
+
+[node name="CollisionShape2D" parent="health and damage/spike/Area2D" index="0"]
+position = Vector2(0, -0.5)
 
 [node name="health" type="Node2D" parent="health and damage" node_paths=PackedStringArray("die_node")]
 script = ExtResource("2_kkp7y")
@@ -94,6 +97,7 @@ wait_time = 0.45
 one_shot = true
 
 [node name="move" type="Node2D" parent="."]
+visible = false
 
 [node name="movement" type="Node2D" parent="move" node_paths=PackedStringArray("enemy_node", "hurt_timer", "stun_timer", "move_timer", "wiggle_timer", "octo_anim", "top_area", "bottom_area", "left_area", "right_area", "bump_timer")]
 script = ExtResource("4_u40ge")
@@ -182,3 +186,5 @@ one_shot = true
 [connection signal="body_entered" from="move/wall_areas/right" to="move/movement" method="_on_right_body_entered"]
 [connection signal="timeout" from="move/hurt_timer" to="move/movement" method="_on_hurt_timer_timeout"]
 [connection signal="timeout" from="wiggle_timer" to="move/movement" method="_on_wiggle_timer_timeout"]
+
+[editable path="health and damage/spike"]

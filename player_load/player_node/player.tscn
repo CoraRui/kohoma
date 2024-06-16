@@ -247,7 +247,7 @@ movement_script = NodePath("movement")
 sword_script = NodePath("sword")
 anim_script = NodePath("player_anim")
 
-[node name="movement" type="Node2D" parent="." node_paths=PackedStringArray("pos", "hit_area", "up_col", "down_col", "left_col", "right_col", "anim_controller")]
+[node name="movement" type="Node2D" parent="." node_paths=PackedStringArray("pos", "hit_area", "up_col", "down_col", "left_col", "right_col", "anim_controller", "hurt_timer")]
 script = ExtResource("1_eisff")
 pos = NodePath("..")
 vel = Array[int]([1, 1])
@@ -257,6 +257,11 @@ down_col = NodePath("../wall_collision/down")
 left_col = NodePath("../wall_collision/left")
 right_col = NodePath("../wall_collision/right")
 anim_controller = NodePath("../player_anim")
+hurt_timer = NodePath("hurt_timer")
+
+[node name="hurt_timer" type="Timer" parent="movement"]
+wait_time = 0.1
+one_shot = true
 
 [node name="hit_area" type="Area2D" parent="."]
 collision_layer = 16
@@ -304,9 +309,17 @@ collision_mask = 2
 position = Vector2(3, 4.5)
 shape = SubResource("RectangleShape2D_afak3")
 
-[node name="player_health" parent="." node_paths=PackedStringArray("hitbox") instance=ExtResource("2_iokp0")]
+[node name="player_health" parent="." node_paths=PackedStringArray("hitbox", "anim_node", "move_node") instance=ExtResource("2_iokp0")]
 position = Vector2(62.75, 66.25)
+mhp = null
+hp = null
 hitbox = NodePath("../hit_area")
+half_hurt_sf = null
+heal_sf = null
+inv_vis_flash_interval = 2
+inv_invis_flash_interval = 4
+anim_node = NodePath("../player_anim")
+move_node = NodePath("../movement")
 
 [node name="sword" type="Node2D" parent="." node_paths=PackedStringArray("sword_anim_controller", "sword_areas")]
 script = ExtResource("4_rbmau")
@@ -400,6 +413,7 @@ script = ExtResource("10_1w8a4")
 player_move = NodePath("../movement")
 player_items = NodePath("../items")
 
+[connection signal="timeout" from="movement/hurt_timer" to="movement" method="_on_hurt_timer_timeout"]
 [connection signal="area_entered" from="hit_area" to="player_health" method="_on_hit_area_area_entered"]
 [connection signal="ended_swing" from="sword" to="movement" method="_on_sword_ended_swing"]
 [connection signal="started_swing" from="sword" to="movement" method="_on_sword_started_swing"]
