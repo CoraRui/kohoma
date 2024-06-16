@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://tv5otmo255l3"]
+[gd_scene load_steps=15 format=3 uid="uid://tv5otmo255l3"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/whale/whale.gd" id="1_0e55k"]
 [ext_resource type="Texture2D" uid="uid://c21hdqtn85qdw" path="res://enemies/enemy_types/whale/assets/whale1.png" id="2_77cht"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dxt2modp371o6" path="res://enemies/enemy_types/whale/assets/whale2.png" id="3_0b6lg"]
 [ext_resource type="Texture2D" uid="uid://yot42iuq4cj8" path="res://enemies/projectiles/bubble/assets/water1.png" id="4_1frej"]
 [ext_resource type="Texture2D" uid="uid://d2wwd7ns0lvb0" path="res://enemies/projectiles/bubble/assets/water2.png" id="5_yewfm"]
+[ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="7_carwn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jsklx"]
 animations = [{
@@ -54,6 +55,9 @@ size = Vector2(2, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rc120"]
 size = Vector2(2, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da5uq"]
+size = Vector2(12, 7)
 
 [node name="whale" type="Node2D" node_paths=PackedStringArray("move_timer", "charge_timer", "shoot_timer", "bubble_anim")]
 script = ExtResource("1_0e55k")
@@ -126,6 +130,19 @@ one_shot = true
 
 [node name="shoot_timer" type="Timer" parent="move_timers"]
 one_shot = true
+
+[node name="health+damage" type="Node2D" parent="."]
+
+[node name="enemy_health" parent="health+damage" node_paths=PackedStringArray("die_node") instance=ExtResource("7_carwn")]
+die_node = NodePath("../..")
+
+[node name="hitbox_area" type="Area2D" parent="health+damage"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="hitbox_shape" type="CollisionShape2D" parent="health+damage/hitbox_area"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_da5uq")
 
 [connection signal="area_entered" from="collision_areas/top" to="." method="_on_top_area_entered"]
 [connection signal="area_entered" from="collision_areas/bottom" to="." method="_on_bottom_area_entered"]

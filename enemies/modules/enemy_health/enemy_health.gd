@@ -1,6 +1,11 @@
 extends Node2D
 class_name enemy_health
 
+#the enemy health script generally works by just waiting to be contacted by the sword script.
+#the sword script checks for areas when swung and looks for nodes of type enemy_health.
+#the area should be placed as a sibling of the health script, on the enemy layer.
+
+
 #region export groups
 @export_group("stats")
 @export var hp : int = 10
@@ -8,7 +13,6 @@ class_name enemy_health
 @export_group("","")
 
 @export_group("invincibility")
-#TODO: 
 @export var i_frames : int = 17
 var if_count : int = 0
 var inv : bool = false
@@ -19,6 +23,7 @@ signal hurt
 @export var hurt_sf : String = "e_hurt"
 @export_group("","")
 
+#region death
 @export_group("death")
 signal death
 @export var die_node : Node2D
@@ -28,6 +33,7 @@ signal death
 @export var use_effect : bool = false
 @export var death_effect : PackedScene
 @export_group("","")
+#endregion
 
 #endregion
 
@@ -47,7 +53,6 @@ func inc_inv():
 		inv = false
 
 func damage(d : int):
-
 	#check for invincibility
 	if inv:
 		return

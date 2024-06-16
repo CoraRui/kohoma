@@ -33,9 +33,7 @@ var swinging : bool = false
 var swing_sfx : String = "p_sword_swing"
 
 #autoloads
-
 @onready var sfx_pi : sfx_player = get_node("/root/sfx_player_auto")
-
 
 #main 
 func _physics_process(_delta):

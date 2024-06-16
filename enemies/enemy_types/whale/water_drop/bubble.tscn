@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://caqihyi58sptl"]
+[gd_scene load_steps=6 format=3 uid="uid://caqihyi58sptl"]
 
 [ext_resource type="Texture2D" uid="uid://yot42iuq4cj8" path="res://enemies/projectiles/bubble/assets/water1.png" id="1_3jn84"]
 [ext_resource type="Script" path="res://enemies/enemy_types/whale/water_drop/bubble.gd" id="1_k0ek5"]
 [ext_resource type="Texture2D" uid="uid://d2wwd7ns0lvb0" path="res://enemies/projectiles/bubble/assets/water2.png" id="2_4bn21"]
+[ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="4_l2q73"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v6cps"]
 animations = [{
@@ -29,5 +30,14 @@ frame = 1
 frame_progress = 0.408111
 
 [node name="dur_timer" type="Timer" parent="."]
+wait_time = 2.7
+one_shot = true
+
+[node name="spike" parent="." instance=ExtResource("4_l2q73")]
+
+[node name="CollisionShape2D" parent="spike/Area2D" index="0"]
+position = Vector2(-0.5, -0.5)
 
 [connection signal="timeout" from="dur_timer" to="." method="_on_dur_timer_timeout"]
+
+[editable path="spike"]
