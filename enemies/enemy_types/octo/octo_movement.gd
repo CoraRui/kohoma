@@ -42,7 +42,7 @@ var octo_dir : DirClass.Dir = DirClass.Dir.DOWN
 
 @export_group("moving")
 @export var move_timer : Timer				#time between movement direction changes
-@export var mvec : Array[Vector2] = [Vector2(0,0), Vector2(0,0)]
+@export var mvec : Array[Vector2] = [Vector2(0,0)]
 var mveci : int = 0
 @export_group("","")
 
@@ -67,7 +67,6 @@ var wiggle_index : int = 0
 @export_group("","")
 #endregion
 
-
 #autoloads
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
 
@@ -76,11 +75,22 @@ var wiggle_index : int = 0
 var hvec : Vector2 = Vector2(0,0)
 
 func _ready():
+	init_mvec()
 	next_move()
-
+	
 func _physics_process(_delta):
 	move()
 
+func init_mvec():
+	#add more vector2 to make it slower.
+	#thinking from 2-4 vectors
+	var rint : int = randi_range(0,1)
+	
+	for i in rint:
+		mvec.append(Vector2(0,0))
+		print("yep")
+	
+	print(mvec.size())
 func next_move():
 #ok. this function calculates prob for a turn in some direction.
 #the directions get added up and used as weights for probability
@@ -116,7 +126,7 @@ func move():
 		OctoState.MOVING:
 			enemy_node.global_position += mvec[mveci]
 			mveci += 1
-			if mveci <= mvec.size():
+			if mveci >= mvec.size():
 				mveci = 0
 		OctoState.HURT:
 			enemy_node.global_position += hvec
@@ -128,7 +138,7 @@ func move():
 			if wiggle_index >= wiggle_frames:
 				wiggle_index = 0
 				set_direction(DirClass.get_flip(octo_dir))
-			
+
 func set_direction(ndir : DirClass.Dir):
 	#account for hurt direction?
 	if ndir == DirClass.Dir.UP:
@@ -160,7 +170,7 @@ func set_octo_state(s : OctoState):
 		OctoState.HURT:
 			octo_state = OctoState.HURT
 			wiggle_timer.stop()
-			
+
 func move_timer_reset():
 	#resets the movement timer. mostly for if a wall collision takes place so there isn't jerky movement
 	move_timer.stop()
