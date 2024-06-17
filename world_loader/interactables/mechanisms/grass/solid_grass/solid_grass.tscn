@@ -1,13 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7cjgfpor30c1"]
+[gd_scene load_steps=12 format=3 uid="uid://c7cjgfpor30c1"]
 
 [ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="1_h8sgv"]
 [ext_resource type="PackedScene" uid="uid://dlmrxk1ghikip" path="res://world_loader/interactables/drops/simple_drop/simple_drop.tscn" id="2_2abty"]
+[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="2_vp78i"]
 [ext_resource type="PackedScene" uid="uid://cog5ygf7ssly" path="res://world_loader/interactables/drops/coin/coin.tscn" id="3_l2gk6"]
 [ext_resource type="Texture2D" uid="uid://cre88cpoeyldt" path="res://world_loader/tile_pallettes/perm_tilesheet (3).png" id="4_6mjhx"]
 [ext_resource type="PackedScene" uid="uid://bvuxox78ckq2f" path="res://world_loader/interactables/effects/grass/grass_cut/grass_cut.tscn" id="5_s6h0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3yvcf"]
 size = Vector2(16, 16)
+
+[sub_resource type="Resource" id="Resource_cfegg"]
+script = ExtResource("2_vp78i")
+sf_name = "grass_cut_one"
+sf_vol = -1.0
+sf_pitch = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rw34i"]
 size = Vector2(12, 12)
@@ -43,13 +50,12 @@ shape = SubResource("RectangleShape2D_3yvcf")
 [node name="enemy_health" parent="health" node_paths=PackedStringArray("die_node") instance=ExtResource("1_h8sgv")]
 hp = 1
 mhp = 1
-hurt_sf = "grass_cut_one"
+hurt_sf = SubResource("Resource_cfegg")
 die_node = NodePath("../..")
 
 [node name="simple_drop" parent="." node_paths=PackedStringArray("pos_target") instance=ExtResource("2_2abty")]
 position = Vector2(8, 8)
 drop_thing = ExtResource("3_l2gk6")
-drop_sn = "none"
 pos_target = NodePath(".")
 
 [node name="grass_body" type="StaticBody2D" parent="."]
@@ -67,7 +73,6 @@ centered = false
 [node name="simple_drop2" parent="." node_paths=PackedStringArray("pos_target") instance=ExtResource("2_2abty")]
 position = Vector2(8, 8)
 drop_thing = ExtResource("5_s6h0h")
-drop_sn = "none"
 pos_target = NodePath(".")
 
 [connection signal="death" from="health/enemy_health" to="simple_drop" method="_on_enemy_health_death"]

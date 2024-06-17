@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxcoeilkci57a"]
+[gd_scene load_steps=7 format=3 uid="uid://dxcoeilkci57a"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_8x3nu"]
 [ext_resource type="PackedScene" uid="uid://dsypgxe33srq6" path="res://enemies/loaders and triggers/enemy_spawner/random/enemy_spawner.tscn" id="2_dbdv1"]
 [ext_resource type="PackedScene" uid="uid://tnmauhs4oxc6" path="res://enemies/enemy_types/octo/octo.tscn" id="3_xoryt"]
 [ext_resource type="Script" path="res://enemies/loaders and triggers/enemy_spawner/resources/enemy_slot.gd" id="4_exhuk"]
+[ext_resource type="PackedScene" uid="uid://doqogu2bfym1m" path="res://enemies/enemy_types/mole/mole.tscn" id="5_orws2"]
 
 [sub_resource type="Resource" id="Resource_htid6"]
 script = ExtResource("4_exhuk")
@@ -45,5 +46,23 @@ position = Vector2(28, 126)
 
 [node name="6" parent="enemy_spawner/spawn_points" index="6"]
 position = Vector2(146, 70)
+
+[node name="mole" parent="." node_paths=PackedStringArray("surface_array") instance=ExtResource("5_orws2")]
+surface_array = [NodePath("0"), NodePath("1"), NodePath("2"), NodePath("3"), NodePath("4")]
+
+[node name="0" type="Node2D" parent="mole"]
+position = Vector2(54, 67)
+
+[node name="1" type="Node2D" parent="mole"]
+position = Vector2(133, 67)
+
+[node name="2" type="Node2D" parent="mole"]
+position = Vector2(166, 112)
+
+[node name="3" type="Node2D" parent="mole"]
+position = Vector2(45, 111)
+
+[node name="4" type="Node2D" parent="mole"]
+position = Vector2(98, 121)
 
 [editable path="enemy_spawner"]

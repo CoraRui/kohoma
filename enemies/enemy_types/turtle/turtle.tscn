@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://yuq3h7sfuerx"]
+[gd_scene load_steps=13 format=3 uid="uid://yuq3h7sfuerx"]
 
 [ext_resource type="Texture2D" uid="uid://bnmc7x5v1brvq" path="res://enemies/enemy_types/turtle/assets/turtle2.png" id="1_l52f8"]
 [ext_resource type="Script" path="res://enemies/enemy_types/turtle/turtle.gd" id="1_wnjy3"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b17m42rd7osqy" path="res://enemies/enemy_types/turtle/assets/blueturtle1png.png" id="3_v0ldp"]
 [ext_resource type="Texture2D" uid="uid://bggoj6bthnqtc" path="res://enemies/enemy_types/turtle/assets/blueturtle2.png" id="4_m7ju4"]
 [ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="6_qt7pu"]
+[ext_resource type="PackedScene" uid="uid://cv0teegdak2v1" path="res://enemies/effects/explosion/explosion.tscn" id="7_10b3r"]
+[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="7_qhob7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hr1kc"]
 animations = [{
@@ -41,6 +43,12 @@ class_name init_signal
 #cause it seems like. wait. does the ready function happen on instantiate or add_child?
 "
 
+[sub_resource type="Resource" id="Resource_etil4"]
+script = ExtResource("7_qhob7")
+sf_name = "enemy_hurt_one"
+sf_vol = -1.0
+sf_pitch = 1.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6fd7"]
 size = Vector2(13, 9)
 
@@ -61,7 +69,10 @@ script = SubResource("GDScript_4eo1n")
 visible = false
 
 [node name="enemy_health" parent="health and damage" node_paths=PackedStringArray("die_node") instance=ExtResource("6_qt7pu")]
+hurt_sf = SubResource("Resource_etil4")
 die_node = NodePath("../..")
+use_effect = true
+death_effect = ExtResource("7_10b3r")
 
 [node name="health_area" type="Area2D" parent="health and damage"]
 collision_layer = 4

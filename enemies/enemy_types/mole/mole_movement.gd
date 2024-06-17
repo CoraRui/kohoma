@@ -19,6 +19,8 @@ class_name mole_movement
 @export var surface_timer : Timer
 @export var down_timer : Timer
 
+@export var mole_spike : spike
+
 #states:
 #underground
 #coming up
@@ -41,10 +43,12 @@ func _on_underground_timer_timeout():
 func _on_up_timer_timeout():
 	surface_timer.start()
 	mole_anim.play("surface")
+	mole_spike.spike_area.get_child(0).set_disabled(false)
 
 func _on_surface_timer_timeout():
 	down_timer.start()
 	mole_anim.play("down")
+	mole_spike.spike_area.get_child(0).set_disabled(true)
 
 func _on_down_timer_timeout():
 	under_timer.start()

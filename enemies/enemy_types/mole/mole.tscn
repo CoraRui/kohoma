@@ -1,26 +1,53 @@
-[gd_scene load_steps=15 format=3 uid="uid://doqogu2bfym1m"]
+[gd_scene load_steps=18 format=3 uid="uid://doqogu2bfym1m"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/mole/mole.gd" id="1_sf0nu"]
 [ext_resource type="Script" path="res://enemies/enemy_types/mole/mole_movement.gd" id="2_h8e1f"]
 [ext_resource type="Script" path="res://enemies/enemy_types/mole/mole_body.gd" id="2_mf3tu"]
-[ext_resource type="Texture2D" uid="uid://bln4hefwgvebt" path="res://enemies/enemy_types/mole/assets/mole3.png" id="4_7b8ok"]
-[ext_resource type="Texture2D" uid="uid://25krac8doxc3" path="res://enemies/enemy_types/mole/assets/mole1.png" id="4_30k40"]
-[ext_resource type="Texture2D" uid="uid://buha43nb52gu1" path="res://enemies/enemy_types/mole/assets/mole4.png" id="5_fawc2"]
-[ext_resource type="Texture2D" uid="uid://b8xan8q2qul7m" path="res://enemies/enemy_types/mole/assets/mole2.png" id="5_uq83l"]
-[ext_resource type="Texture2D" uid="uid://0dlhdr3ve6ph" path="res://enemies/enemy_types/mole/assets/mole5.png" id="6_2raiq"]
-[ext_resource type="Texture2D" uid="uid://dlmgkm4dl725l" path="res://enemies/enemy_types/mole/assets/mole6.png" id="7_n7bd2"]
+[ext_resource type="Texture2D" uid="uid://0lqw6umlaavi" path="res://enemies/enemy_types/enemy_assets/enemy_sprite_one.png" id="4_5epge"]
 [ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="10_0tis7"]
 [ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="11_oocph"]
 [ext_resource type="PackedScene" uid="uid://cv0teegdak2v1" path="res://enemies/effects/explosion/explosion.tscn" id="12_yy4ta"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_biuq0"]
+atlas = ExtResource("4_5epge")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jfeg"]
+atlas = ExtResource("4_5epge")
+region = Rect2(16, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52hk1"]
+atlas = ExtResource("4_5epge")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w8m5"]
+atlas = ExtResource("4_5epge")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gngcj"]
+atlas = ExtResource("4_5epge")
+region = Rect2(32, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unyvn"]
+atlas = ExtResource("4_5epge")
+region = Rect2(48, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh8vw"]
+atlas = ExtResource("4_5epge")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lix5r"]
+atlas = ExtResource("4_5epge")
+region = Rect2(16, 80, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ancld"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_30k40")
+"texture": SubResource("AtlasTexture_biuq0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_uq83l")
+"texture": SubResource("AtlasTexture_5jfeg")
 }],
 "loop": true,
 "name": &"down",
@@ -28,16 +55,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_7b8ok")
+"texture": SubResource("AtlasTexture_52hk1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_fawc2")
+"texture": SubResource("AtlasTexture_7w8m5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_2raiq")
+"texture": SubResource("AtlasTexture_gngcj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_n7bd2")
+"texture": SubResource("AtlasTexture_unyvn")
 }],
 "loop": true,
 "name": &"surface",
@@ -53,10 +80,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_30k40")
+"texture": SubResource("AtlasTexture_vh8vw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_uq83l")
+"texture": SubResource("AtlasTexture_lix5r")
 }],
 "loop": true,
 "name": &"up",
@@ -74,7 +101,7 @@ mole_move = NodePath("mole_body/mole_movement")
 [node name="mole_body" type="Node2D" parent="."]
 script = ExtResource("2_mf3tu")
 
-[node name="mole_movement" type="Node2D" parent="mole_body" node_paths=PackedStringArray("mole_node", "mole_anim", "under_timer", "up_timer", "surface_timer", "down_timer")]
+[node name="mole_movement" type="Node2D" parent="mole_body" node_paths=PackedStringArray("mole_node", "mole_anim", "under_timer", "up_timer", "surface_timer", "down_timer", "mole_spike")]
 script = ExtResource("2_h8e1f")
 mole_node = NodePath("..")
 mole_anim = NodePath("../mole_anim")
@@ -82,10 +109,12 @@ under_timer = NodePath("../timers/underground_timer")
 up_timer = NodePath("../timers/up_timer")
 surface_timer = NodePath("../timers/surface_timer")
 down_timer = NodePath("../timers/down_timer")
+mole_spike = NodePath("../health/spike")
 
 [node name="mole_anim" type="AnimatedSprite2D" parent="mole_body"]
 sprite_frames = SubResource("SpriteFrames_ancld")
-animation = &"surface"
+animation = &"up"
+frame_progress = 0.0722784
 
 [node name="timers" type="Node2D" parent="mole_body"]
 

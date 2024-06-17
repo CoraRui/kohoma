@@ -33,7 +33,7 @@ func load_world(fi : int):
 	else:
 		var new_room = load_room.instantiate()
 		get_tree().get_root().add_child(new_room)
-		new_room.global_position += Vector2(0,-48)
+		new_room.global_position += Vector2(0,-32)
 	save_fi.load_file(fi)
 	player_li.load_player()
 	stat_bi.set_visible(true)

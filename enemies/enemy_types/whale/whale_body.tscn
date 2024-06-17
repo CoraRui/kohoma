@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://tv5otmo255l3"]
+[gd_scene load_steps=20 format=3 uid="uid://tv5otmo255l3"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/whale/whale.gd" id="1_0e55k"]
 [ext_resource type="PackedScene" uid="uid://caqihyi58sptl" path="res://enemies/enemy_types/whale/water_drop/bubble.tscn" id="2_mcg1x"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="7_carwn"]
 [ext_resource type="PackedScene" uid="uid://mi12axkylgws" path="res://misc/flasher/flasher.tscn" id="7_y1rsg"]
 [ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="9_tdk8y"]
+[ext_resource type="PackedScene" uid="uid://cv0teegdak2v1" path="res://enemies/effects/explosion/explosion.tscn" id="9_wm3qs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ko7yy"]
 atlas = ExtResource("3_3k1b1")
@@ -158,6 +159,8 @@ target_nodes = [NodePath("../../anim_sprite")]
 hurt_sf = SubResource("Resource_uyc68")
 flasher_node = NodePath("../flasher")
 die_node = NodePath("../..")
+use_effect = true
+death_effect = ExtResource("9_wm3qs")
 
 [node name="hitbox_area" type="Area2D" parent="health+damage"]
 collision_layer = 4

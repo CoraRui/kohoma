@@ -8,4 +8,4 @@ class_name spike
 
 @export var damage : int = 1
 
-
+@export var spike_area : Area2D

@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://tnmauhs4oxc6"]
+[gd_scene load_steps=20 format=3 uid="uid://tnmauhs4oxc6"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/octo/octo.gd" id="1_ms26n"]
 [ext_resource type="Texture2D" uid="uid://dw06lw2g4tkdq" path="res://enemies/enemy_types/enemy_assets/enemy_sprite_one.aseprite" id="2_j7soo"]
 [ext_resource type="Script" path="res://enemies/modules/enemy_health/enemy_health.gd" id="2_kkp7y"]
 [ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="3_6r727"]
 [ext_resource type="Script" path="res://enemies/enemy_types/octo/octo_movement.gd" id="4_u40ge"]
+[ext_resource type="PackedScene" uid="uid://cv0teegdak2v1" path="res://enemies/effects/explosion/explosion.tscn" id="6_1ce7y"]
 [ext_resource type="PackedScene" uid="uid://mi12axkylgws" path="res://misc/flasher/flasher.tscn" id="7_jh6va"]
 [ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="7_rlc3d"]
 [ext_resource type="PackedScene" uid="uid://4qo357tuh8" path="res://world_loader/interactables/drops/drop_module/drop_module.tscn" id="7_wp3ey"]
@@ -95,7 +96,8 @@ flash_dur = null
 die_node = NodePath("../..")
 use_death_delay = null
 death_delay = null
-use_effect = null
+use_effect = true
+death_effect = ExtResource("6_1ce7y")
 
 [node name="hitbox" type="Area2D" parent="health and damage"]
 collision_layer = 4

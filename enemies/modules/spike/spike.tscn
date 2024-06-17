@@ -5,8 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydath"]
 size = Vector2(14, 14)
 
-[node name="spike" type="Node2D"]
+[node name="spike" type="Node2D" node_paths=PackedStringArray("spike_area")]
 script = ExtResource("1_vgx75")
+spike_area = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

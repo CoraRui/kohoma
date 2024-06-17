@@ -9,7 +9,7 @@ extends Node2D
 
 @export var drop_thing : PackedScene
 
-@export var drop_sn : String = "default_sn"
+@export var drop_sn : sf_link
 
 #node to attach dropped object to
 @export var inh_target : Node2D
