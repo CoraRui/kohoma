@@ -9,6 +9,7 @@ var direction : DirClass.Dir = DirClass.Dir.DOWN
 @export var movement_script : player_movement
 @export var sword_script : sword
 @export var anim_script : player_anim
+@export var health_script : player_health
 
 func set_movement(f : bool):
 	if f:

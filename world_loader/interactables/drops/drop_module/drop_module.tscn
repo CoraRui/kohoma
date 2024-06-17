@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://4qo357tuh8"]
+[gd_scene load_steps=4 format=3 uid="uid://4qo357tuh8"]
 
 [ext_resource type="Script" path="res://world_loader/interactables/drops/drop_module/drop_module.gd" id="1_1kwym"]
+[ext_resource type="PackedScene" uid="uid://kfo6qktvvv65" path="res://world_loader/interactables/drops/heart/heart.tscn" id="2_a662v"]
+[ext_resource type="PackedScene" uid="uid://cog5ygf7ssly" path="res://world_loader/interactables/drops/coin/coin.tscn" id="3_0jp2p"]
 
 [node name="drop_module" type="Node2D"]
 script = ExtResource("1_1kwym")
+heart_drop = ExtResource("2_a662v")
+coin_drop = ExtResource("3_0jp2p")

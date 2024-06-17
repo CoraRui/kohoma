@@ -1,22 +1,30 @@
-[gd_scene load_steps=16 format=3 uid="uid://tv5otmo255l3"]
+[gd_scene load_steps=19 format=3 uid="uid://tv5otmo255l3"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/whale/whale.gd" id="1_0e55k"]
-[ext_resource type="Texture2D" uid="uid://c21hdqtn85qdw" path="res://enemies/enemy_types/whale/assets/whale1.png" id="2_77cht"]
 [ext_resource type="PackedScene" uid="uid://caqihyi58sptl" path="res://enemies/enemy_types/whale/water_drop/bubble.tscn" id="2_mcg1x"]
-[ext_resource type="Texture2D" uid="uid://dxt2modp371o6" path="res://enemies/enemy_types/whale/assets/whale2.png" id="3_0b6lg"]
+[ext_resource type="Texture2D" uid="uid://dw06lw2g4tkdq" path="res://enemies/enemy_types/enemy_assets/enemy_sprite_one.aseprite" id="3_3k1b1"]
 [ext_resource type="Texture2D" uid="uid://yot42iuq4cj8" path="res://enemies/projectiles/bubble/assets/water1.png" id="4_1frej"]
 [ext_resource type="Texture2D" uid="uid://d2wwd7ns0lvb0" path="res://enemies/projectiles/bubble/assets/water2.png" id="5_yewfm"]
 [ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="7_carwn"]
 [ext_resource type="PackedScene" uid="uid://mi12axkylgws" path="res://misc/flasher/flasher.tscn" id="7_y1rsg"]
+[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="9_tdk8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko7yy"]
+atlas = ExtResource("3_3k1b1")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liky6"]
+atlas = ExtResource("3_3k1b1")
+region = Rect2(16, 64, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jsklx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_77cht")
+"texture": SubResource("AtlasTexture_ko7yy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_0b6lg")
+"texture": SubResource("AtlasTexture_liky6")
 }],
 "loop": true,
 "name": &"default",
@@ -57,6 +65,12 @@ size = Vector2(2, 7)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rc120"]
 size = Vector2(2, 7)
 
+[sub_resource type="Resource" id="Resource_uyc68"]
+script = ExtResource("9_tdk8y")
+sf_name = "enemy_hurt_one"
+sf_vol = -1.0
+sf_pitch = 1.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_da5uq"]
 size = Vector2(12, 7)
 
@@ -71,7 +85,7 @@ bubble_anim = NodePath("bubble_anim")
 [node name="anim_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jsklx")
 autoplay = "default"
-frame_progress = 0.761077
+frame_progress = 0.261184
 
 [node name="bubble_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -9)
@@ -141,6 +155,7 @@ one_shot = true
 target_nodes = [NodePath("../../anim_sprite")]
 
 [node name="enemy_health" parent="health+damage" node_paths=PackedStringArray("flasher_node", "die_node") instance=ExtResource("7_carwn")]
+hurt_sf = SubResource("Resource_uyc68")
 flasher_node = NodePath("../flasher")
 die_node = NodePath("../..")
 
