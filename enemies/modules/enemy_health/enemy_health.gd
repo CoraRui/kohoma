@@ -60,9 +60,10 @@ func damage(d : int):
 	if inv:
 		return
 	inv = true
-	sfx_pi.play_sound("e_hurt")
+	sfx_pi.play_sound(hurt_sf)
 	hurt.emit()
-	flasher_node.flash_timed(flash_dur)
+	if flasher_node:
+		flasher_node.flash_timed(flash_dur)
 	#deal damage/check for death
 	hp -= d
 	hp = clampi(hp, 0, 999)

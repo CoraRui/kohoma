@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvuxox78ckq2f"]
+
+[ext_resource type="Texture2D" uid="uid://cre88cpoeyldt" path="res://world_loader/tile_pallettes/perm_tilesheet (3).png" id="1_t4e5s"]
+[ext_resource type="Script" path="res://world_loader/interactables/effects/grass/grass_cut/grass_cut.gd" id="1_x2eo0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umbg1"]
+atlas = ExtResource("1_t4e5s")
+region = Rect2(80, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbao0"]
+atlas = ExtResource("1_t4e5s")
+region = Rect2(80, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n0w8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umbg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbao0")
+}],
+"loop": true,
+"name": &"cut",
+"speed": 11.0
+}]
+
+[node name="grass_cut" type="Node2D"]
+script = ExtResource("1_x2eo0")
+
+[node name="cut_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n0w8s")
+animation = &"cut"
+autoplay = "cut"
+frame_progress = 0.528959
+
+[node name="duration_timer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="duration_timer" to="." method="_on_duration_timer_timeout"]

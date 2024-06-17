@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://tv5otmo255l3"]
+[gd_scene load_steps=16 format=3 uid="uid://tv5otmo255l3"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/whale/whale.gd" id="1_0e55k"]
 [ext_resource type="Texture2D" uid="uid://c21hdqtn85qdw" path="res://enemies/enemy_types/whale/assets/whale1.png" id="2_77cht"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://yot42iuq4cj8" path="res://enemies/projectiles/bubble/assets/water1.png" id="4_1frej"]
 [ext_resource type="Texture2D" uid="uid://d2wwd7ns0lvb0" path="res://enemies/projectiles/bubble/assets/water2.png" id="5_yewfm"]
 [ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="7_carwn"]
+[ext_resource type="PackedScene" uid="uid://mi12axkylgws" path="res://misc/flasher/flasher.tscn" id="7_y1rsg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jsklx"]
 animations = [{
@@ -136,7 +137,11 @@ one_shot = true
 
 [node name="health+damage" type="Node2D" parent="."]
 
-[node name="enemy_health" parent="health+damage" node_paths=PackedStringArray("die_node") instance=ExtResource("7_carwn")]
+[node name="flasher" parent="health+damage" node_paths=PackedStringArray("target_nodes") instance=ExtResource("7_y1rsg")]
+target_nodes = [NodePath("../../anim_sprite")]
+
+[node name="enemy_health" parent="health+damage" node_paths=PackedStringArray("flasher_node", "die_node") instance=ExtResource("7_carwn")]
+flasher_node = NodePath("../flasher")
 die_node = NodePath("../..")
 
 [node name="hitbox_area" type="Area2D" parent="health+damage"]

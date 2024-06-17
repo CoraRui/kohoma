@@ -33,9 +33,9 @@ func drop():
 	
 func _on_health_death():
 	drop()
-	
-	
-
 
 func _on_push_block_block_clicked():
+	drop()
+
+func _on_enemy_health_death():
 	drop()

@@ -30,7 +30,7 @@ var hf_count : int = 0
 #which direction the player is facing: udlr,0123
 var dir : int = 0
 var swinging : bool = false
-var swing_sfx : String = "p_sword_swing"
+@export var swing_sfx : String = "sword_swing_one"
 
 #autoloads
 @onready var sfx_pi : sfx_player = get_node("/root/sfx_player_auto")

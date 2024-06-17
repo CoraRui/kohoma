@@ -330,6 +330,7 @@ position = Vector2(0, -2)
 script = ExtResource("4_rbmau")
 sword_anim_controller = NodePath("sword_anim")
 sword_areas = [NodePath("sword_up/us_area"), NodePath("sword_down/ds_area"), NodePath("sword_left/ls_area"), NodePath("sword_right/rs_area")]
+swing_sfx = "sword_swing_two"
 
 [node name="sword_left" type="AnimatedSprite2D" parent="sword"]
 position = Vector2(-12, 0)
@@ -347,7 +348,7 @@ position = Vector2(2.5, 2)
 shape = SubResource("RectangleShape2D_yq415")
 
 [node name="sword_up" type="AnimatedSprite2D" parent="sword"]
-position = Vector2(0, -11)
+position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_s8ihq")
 animation = &"notswing"
 autoplay = "notswing"
