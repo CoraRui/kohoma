@@ -1,10 +1,11 @@
-[gd_scene load_steps=43 format=3 uid="uid://bm6r33rcfa1j6"]
+[gd_scene load_steps=47 format=3 uid="uid://bm6r33rcfa1j6"]
 
 [ext_resource type="Script" path="res://player_load/player_node/player_movement.gd" id="1_eisff"]
 [ext_resource type="Script" path="res://player_load/player_node/player.gd" id="1_tearn"]
 [ext_resource type="PackedScene" uid="uid://de7vva81jj68i" path="res://player_load/player_node/player_health.tscn" id="2_iokp0"]
 [ext_resource type="Script" path="res://misc/notes.gd" id="2_uvbfg"]
 [ext_resource type="Script" path="res://player_load/player_node/sword.gd" id="4_rbmau"]
+[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="6_dcine"]
 [ext_resource type="Script" path="res://player_load/player_node/sword_anim.gd" id="7_lhvyy"]
 [ext_resource type="PackedScene" uid="uid://blfgs8vhomjk8" path="res://player_load/items/boomerang/boomerang_launch.tscn" id="7_vj8eh"]
 [ext_resource type="Script" path="res://player_load/items/items.gd" id="8_ks4q4"]
@@ -27,6 +28,24 @@ size = Vector2(2, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afak3"]
 size = Vector2(2, 5)
+
+[sub_resource type="Resource" id="Resource_pk2hp"]
+script = ExtResource("6_dcine")
+sf_name = "sword_swing_one"
+sf_vol = -1.0
+sf_pitch = 1.0
+
+[sub_resource type="Resource" id="Resource_2lenv"]
+script = ExtResource("6_dcine")
+sf_name = "sword_swing_two"
+sf_vol = -1.0
+sf_pitch = 1.0
+
+[sub_resource type="Resource" id="Resource_4fdpj"]
+script = ExtResource("6_dcine")
+sf_name = "sword_swing_three"
+sf_vol = -1.0
+sf_pitch = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_okkvo"]
 atlas = ExtResource("11_os4df")
@@ -330,7 +349,7 @@ position = Vector2(0, -2)
 script = ExtResource("4_rbmau")
 sword_anim_controller = NodePath("sword_anim")
 sword_areas = [NodePath("sword_up/us_area"), NodePath("sword_down/ds_area"), NodePath("sword_left/ls_area"), NodePath("sword_right/rs_area")]
-swing_sfx = "sword_swing_two"
+swing_sfx = Array[ExtResource("6_dcine")]([SubResource("Resource_pk2hp"), SubResource("Resource_2lenv"), SubResource("Resource_4fdpj")])
 
 [node name="sword_left" type="AnimatedSprite2D" parent="sword"]
 position = Vector2(-12, 0)

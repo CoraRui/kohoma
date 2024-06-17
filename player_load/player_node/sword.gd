@@ -30,7 +30,7 @@ var hf_count : int = 0
 #which direction the player is facing: udlr,0123
 var dir : int = 0
 var swinging : bool = false
-@export var swing_sfx : String = "sword_swing_one"
+@export var swing_sfx : Array[sf_link]
 
 #autoloads
 @onready var sfx_pi : sfx_player = get_node("/root/sfx_player_auto")
@@ -56,7 +56,7 @@ func swing():
 	sword_anim_controller.animate_sword(dir)
 	check_area(sword_areas[dir])
 	swinging = true
-	sfx_pi.play_sound(swing_sfx)
+	sfx_pi.play_sound(swing_sfx.pick_random().sf_name)
 
 func end_swing():
 	ended_swing.emit()

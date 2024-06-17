@@ -9,11 +9,11 @@ extends Node2D
 
 @export var value : int = 1
 
-@export var pickup_sn : String = "def_pickup"
+@export var pickup_sn : sf_link
 
 func add_coin():
 	save_fi.current_file.gold += value
-	sfx_pi.play_sound(pickup_sn)
+	sfx_pi.play_sound(pickup_sn.sf_name)
 	queue_free()
 
 func _on_coin_area_area_entered(_area):
