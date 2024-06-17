@@ -20,7 +20,7 @@ var inv : bool = false
 
 @export_group("hurt")
 signal hurt
-@export var hurt_sf : String = "e_hurt"
+@export var hurt_sf : sf_link
 @export var use_flash : bool = true
 @export var flasher_node : flasher
 @export var flash_dur : float = 0.4
@@ -60,7 +60,7 @@ func damage(d : int):
 	if inv:
 		return
 	inv = true
-	sfx_pi.play_sound(hurt_sf)
+	sfx_pi.play_sound(hurt_sf.sf_name)
 	hurt.emit()
 	if flasher_node:
 		flasher_node.flash_timed(flash_dur)

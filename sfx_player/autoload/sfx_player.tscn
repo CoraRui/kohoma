@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://qqiuchrf8abg"]
+[gd_scene load_steps=15 format=3 uid="uid://qqiuchrf8abg"]
 
 [ext_resource type="Script" path="res://sfx_player/autoload/sfx_player.gd" id="1_p0478"]
 [ext_resource type="AudioStream" uid="uid://dmmsx7lfl14lh" path="res://sfx_player/assets/sword.ogg" id="2_qqke6"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://c8ytcnitlkjsn" path="res://sfx_player/assets/player/sword/sword_swing_two.ogg" id="11_v1bq5"]
 [ext_resource type="AudioStream" uid="uid://dk17t0m5fkryl" path="res://sfx_player/assets/player/sword/sword_swing_three.ogg" id="12_8ydbx"]
 [ext_resource type="AudioStream" uid="uid://dtf2ojwice5i1" path="res://sfx_player/assets/items/coin_pickup_one.ogg" id="13_i6j0c"]
+[ext_resource type="AudioStream" uid="uid://ccy4konwwinmn" path="res://sfx_player/assets/enemy/enemy_hit_one.ogg" id="14_nj60x"]
 
 [node name="sfx_player" type="Node2D" node_paths=PackedStringArray("sfx_streams")]
 script = ExtResource("1_p0478")
@@ -21,6 +22,7 @@ sfx_dict = {
 "coin_pickup_one": ExtResource("13_i6j0c"),
 "def_pickup": ExtResource("5_1se5d"),
 "e_hurt": ExtResource("4_rrwqp"),
+"enemy_hurt_one": ExtResource("14_nj60x"),
 "grass_cut_one": ExtResource("9_lwosl"),
 "hit_boing": ExtResource("6_2s7bo"),
 "p_hurt_med": ExtResource("3_tmfrv"),

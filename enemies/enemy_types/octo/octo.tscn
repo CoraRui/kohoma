@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://tnmauhs4oxc6"]
+[gd_scene load_steps=20 format=3 uid="uid://tnmauhs4oxc6"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/octo/octo.gd" id="1_ms26n"]
 [ext_resource type="Texture2D" uid="uid://dw06lw2g4tkdq" path="res://enemies/enemy_types/enemy_assets/enemy_sprite_one.aseprite" id="2_j7soo"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://enemies/enemy_types/octo/octo_movement.gd" id="4_u40ge"]
 [ext_resource type="PackedScene" uid="uid://dlmrxk1ghikip" path="res://world_loader/interactables/drops/simple_drop/simple_drop.tscn" id="6_h151m"]
 [ext_resource type="PackedScene" uid="uid://mi12axkylgws" path="res://misc/flasher/flasher.tscn" id="7_jh6va"]
+[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="7_rlc3d"]
 [ext_resource type="PackedScene" uid="uid://gj5r6lcm7gm7" path="res://enemies/enemy_types/octo/boulder/rock_launcher.tscn" id="9_atg68"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_487ci"]
@@ -36,6 +37,12 @@ animations = [{
 "name": &"walk",
 "speed": 7.0
 }]
+
+[sub_resource type="Resource" id="Resource_3jnff"]
+script = ExtResource("7_rlc3d")
+sf_name = "enemy_hurt_one"
+sf_vol = 0.0
+sf_pitch = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yg3l8"]
 size = Vector2(12, 12)
@@ -84,8 +91,17 @@ position = Vector2(0, -0.5)
 
 [node name="health" type="Node2D" parent="health and damage" node_paths=PackedStringArray("flasher_node", "die_node")]
 script = ExtResource("2_kkp7y")
+hp = null
+mhp = null
+i_frames = null
+hurt_sf = SubResource("Resource_3jnff")
+use_flash = null
 flasher_node = NodePath("../flasher")
+flash_dur = null
 die_node = NodePath("../..")
+use_death_delay = null
+death_delay = null
+use_effect = null
 
 [node name="hitbox" type="Area2D" parent="health and damage"]
 collision_layer = 4
