@@ -52,7 +52,7 @@ func move_camera():
 	if abs(shift_point.distance_to(main_camera.position)) < snap_tol:
 		end_shift()
 	main_camera.position = main_camera.position.move_toward(shift_point, cam_vel)
-	stat_bi.global_position = main_camera.global_position
+	stat_bi.global_position = main_camera.global_position - Vector2(88, 64)
 	
 func shift_player():
 	if not player_shifting:
@@ -73,5 +73,6 @@ func end_shift():
 	pause_li.toggle_active(true)
 	
 func reset_camera():
-	main_camera.position = Vector2(0,0)
+	main_camera.position = Vector2(88,64)
+	
 	

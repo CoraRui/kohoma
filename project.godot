@@ -47,7 +47,6 @@ gdscript/warnings/integer_division=0
 window/size/viewport_width=176
 window/size/viewport_height=128
 window/size/resizable=false
-window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
 [editor_plugins]

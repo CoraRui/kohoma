@@ -1,0 +1,13 @@
+hrm.
+
+I'm having trouble managing the window size and stuff.
+
+so. theres the position of the CAMERA.
+
+the position of the ORIGIN.
+
+those are the main two reference points for things.
+
+I guess I'll have to go through everything that needs to position itself in terms of those things and
+find out how to write some sort of class to keep that information available.
+buuuuut. everythings working right now! so its fine!

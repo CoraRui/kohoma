@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://doqogu2bfym1m"]
+[gd_scene load_steps=20 format=3 uid="uid://doqogu2bfym1m"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/mole/mole.gd" id="1_sf0nu"]
 [ext_resource type="Script" path="res://enemies/enemy_types/mole/mole_movement.gd" id="2_h8e1f"]
 [ext_resource type="Script" path="res://enemies/enemy_types/mole/mole_body.gd" id="2_mf3tu"]
 [ext_resource type="Texture2D" uid="uid://0lqw6umlaavi" path="res://enemies/enemy_types/enemy_assets/enemy_sprite_one.png" id="4_5epge"]
+[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="7_1antb"]
 [ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="10_0tis7"]
 [ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="11_oocph"]
 [ext_resource type="PackedScene" uid="uid://cv0teegdak2v1" path="res://enemies/effects/explosion/explosion.tscn" id="12_yy4ta"]
@@ -90,6 +91,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_m1rc3"]
+script = ExtResource("7_1antb")
+sf_name = "enemy_hurt"
+sf_vol = -1.0
+sf_pitch = 1.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yrxt1"]
 size = Vector2(11, 10)
 
@@ -139,6 +146,7 @@ visible = false
 position = Vector2(-0.5, 0.5)
 
 [node name="enemy_health" parent="mole_body/health" node_paths=PackedStringArray("die_node") instance=ExtResource("11_oocph")]
+hurt_sf = SubResource("Resource_m1rc3")
 die_node = NodePath("../../..")
 use_effect = true
 death_effect = ExtResource("12_yy4ta")

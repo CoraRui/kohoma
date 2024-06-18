@@ -1,3 +1,27 @@
+
+ok. im finally at somewhat of an end stage.
+the overworld patterns are! instantiated. I do actually have to finish/steamroll/polish them.
+but all of the stuff is basically made for them.
+now the DUNGEON is in a rough place. it still needs a LOT of work.
+
+buuuut. i don't think that should be too awful. only deal is that I'll likely have to have items for it.
+which. is a pain. I guess the initial idea was fishing rod, and shapeshifting.
+but I kind of want an interesting ability.
+and a fishing rod is... not interesting. to me.
+so. what then?
+it really doesn't have to be super deep. just. something! remember, this is a self improvement project, so I'm kind of purposely
+with holding my "better" mechanics ideas in terms of narrative. right now, I'm using this project to improve "basic" mechanics.
+like reproduced stuff. swinging the sword, using various items, animations, sprite work. this is mostly just a "reproduction".
+I'm using to reaaaally get in touch with how to have these systems work together.
+
+so I guess when i get home I'll just keep working on the dungeon mechanisms, some kind of boss fight.
+once thats finished I'll start adding some events in the overworld. I assume that will come hand in hand with making various 
+improvements to the event/dialogue/ other systems. also writing music, spritework, story, characters, etc.
+
+I'm happy with this so far!
+
+
+
 what to do?
 	
 	world enemy patterns
