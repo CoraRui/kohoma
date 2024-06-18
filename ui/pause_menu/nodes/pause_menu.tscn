@@ -14,12 +14,14 @@ base_font = ExtResource("2_jitha")
 script = ExtResource("1_fxur1")
 
 [node name="background" type="ColorRect" parent="."]
-offset_top = 16.0
-offset_right = 176.0
-offset_bottom = 176.0
+offset_left = -67.0
+offset_top = -56.0
+offset_right = 109.0
+offset_bottom = 104.0
 color = Color(0, 0, 0, 1)
 
 [node name="simple_select" type="Node2D" parent="." node_paths=PackedStringArray("active_option", "active_group", "icon")]
+position = Vector2(-67, -72)
 script = ExtResource("3_v6yii")
 active_option = NodePath("main/continue")
 active_group = NodePath("main")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr4smdb6xpog0"]
+
+[ext_resource type="Texture2D" uid="uid://b5gto58e2b3j1" path="res://player_load/items/bombs/assets/bomb.png" id="1_xdran"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hlmjr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xdran")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="bomb" type="Node2D"]
+
+[node name="bomb_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hlmjr")
+animation = &"idle"

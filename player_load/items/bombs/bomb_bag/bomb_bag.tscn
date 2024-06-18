@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://75l6vl3x6b6w"]
+
+[ext_resource type="Script" path="res://player_load/items/bombs/bomb_bag/bomb_bag.gd" id="1_62idh"]
+[ext_resource type="PackedScene" uid="uid://dr4smdb6xpog0" path="res://player_load/items/bombs/bomb/bomb.tscn" id="2_3fcjk"]
+
+[node name="bomb_bag" type="Node2D" node_paths=PackedStringArray("bomb_point")]
+script = ExtResource("1_62idh")
+bomb_point = NodePath("bomb_point")
+bomb_node = ExtResource("2_3fcjk")
+
+[node name="bomb_point" type="Node2D" parent="."]

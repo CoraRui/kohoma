@@ -57,8 +57,12 @@ func update_slot(i : items.ItemState, is_x : bool):
 			anim.play("BOOMERANG")
 		items.ItemState.FISH_ROD:
 			anim.play("FISH_ROD")
+		items.ItemState.BOMB:
+			anim.play("BOMB")
 		items.ItemState.NONE:
 			anim.play("NONE")
+		_:
+			print("update_slot in stat_bar is missing that item state")
 	
 	
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bm6r33rcfa1j6"]
+[gd_scene load_steps=48 format=3 uid="uid://bm6r33rcfa1j6"]
 
 [ext_resource type="Script" path="res://player_load/player_node/player_movement.gd" id="1_eisff"]
 [ext_resource type="Script" path="res://player_load/player_node/player.gd" id="1_tearn"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://player_load/player_node/player_anim.gd" id="10_1w8a4"]
 [ext_resource type="Texture2D" uid="uid://bmjtmf4h8ix3b" path="res://player_load/player_node/assets/lief_anim.aseprite" id="11_os4df"]
 [ext_resource type="PackedScene" uid="uid://c0k4nawcq1y6y" path="res://player_load/items/shape_shifter/shape_shifter.tscn" id="12_c2wva"]
+[ext_resource type="PackedScene" uid="uid://75l6vl3x6b6w" path="res://player_load/items/bombs/bomb_bag/bomb_bag.tscn" id="12_x5cs1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdxc5"]
 size = Vector2(6, 4)
@@ -24,10 +25,10 @@ size = Vector2(4, 2)
 size = Vector2(4, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12nd1"]
-size = Vector2(2, 5)
+size = Vector2(2, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afak3"]
-size = Vector2(2, 5)
+size = Vector2(2, 3)
 
 [sub_resource type="Resource" id="Resource_pk2hp"]
 script = ExtResource("6_dcine")
@@ -286,7 +287,6 @@ wait_time = 0.1
 one_shot = true
 
 [node name="hit_area" type="Area2D" parent="."]
-visible = false
 collision_layer = 16
 collision_mask = 132
 
@@ -297,10 +297,10 @@ shape = SubResource("RectangleShape2D_cdxc5")
 script = ExtResource("2_uvbfg")
 
 [node name="wall_collision" type="Node2D" parent="."]
-visible = false
-position = Vector2(0, -4)
+position = Vector2(0, -6)
 
 [node name="up" type="Area2D" parent="wall_collision"]
+position = Vector2(0, 2)
 collision_layer = 0
 collision_mask = 2
 
@@ -321,7 +321,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="left_box" type="CollisionShape2D" parent="wall_collision/left"]
-position = Vector2(-3, 4.5)
+position = Vector2(-3, 5.5)
 shape = SubResource("RectangleShape2D_12nd1")
 
 [node name="right" type="Area2D" parent="wall_collision"]
@@ -329,7 +329,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="right_box" type="CollisionShape2D" parent="wall_collision/right"]
-position = Vector2(3, 4.5)
+position = Vector2(3, 5.5)
 shape = SubResource("RectangleShape2D_afak3")
 
 [node name="player_health" parent="." node_paths=PackedStringArray("hitbox", "anim_node", "move_node") instance=ExtResource("2_iokp0")]
@@ -424,15 +424,19 @@ swing_timer = NodePath("swing_timer")
 wait_time = 0.2
 one_shot = true
 
-[node name="items" type="Node2D" parent="." node_paths=PackedStringArray("boom_launch", "rod_node")]
+[node name="items" type="Node2D" parent="." node_paths=PackedStringArray("boom_launch", "rod_node", "bomb_bag_node")]
 position = Vector2(0, -4)
 script = ExtResource("8_ks4q4")
 boom_launch = NodePath("boomerang_launch")
 rod_node = NodePath("fishing_rod")
+bomb_bag_node = NodePath("bomb_bag")
 
 [node name="boomerang_launch" parent="items" instance=ExtResource("7_vj8eh")]
 
 [node name="fishing_rod" parent="items" instance=ExtResource("9_wus56")]
+
+[node name="bomb_bag" parent="items" instance=ExtResource("12_x5cs1")]
+position = Vector2(0, 4)
 
 [node name="player_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cq4ypfsxg6eh0"]
+[gd_scene load_steps=20 format=3 uid="uid://cq4ypfsxg6eh0"]
 
 [ext_resource type="Script" path="res://ui/stat_bar/stat_bar.gd" id="1_iytto"]
 [ext_resource type="Texture2D" uid="uid://kxxugbydfir4" path="res://raw_assets/archive/proto bar.png" id="2_8tjp7"]
@@ -14,12 +14,18 @@
 [ext_resource type="FontFile" uid="uid://df0ks0cymrjb7" path="res://ui/fonts/Teeny Tiny Pixls.otf" id="11_ggi63"]
 [ext_resource type="Texture2D" uid="uid://ducan1lse00wf" path="res://player_load/items/boomerang/boomerang.png" id="12_uccnx"]
 [ext_resource type="Texture2D" uid="uid://df0t05pjfvkwd" path="res://player_load/player_node/assets/tools/fishing rod/fishing rod.png" id="13_c250d"]
+[ext_resource type="Texture2D" uid="uid://b5gto58e2b3j1" path="res://player_load/items/bombs/assets/bomb.png" id="15_ghoxh"]
 
 [sub_resource type="FontVariation" id="FontVariation_vfx5n"]
 base_font = ExtResource("11_ggi63")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_36l3d"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"BOMB",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("12_uccnx")
@@ -52,6 +58,14 @@ base_font = ExtResource("11_ggi63")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mv41o"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ghoxh")
+}],
+"loop": true,
+"name": &"BOMB",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("12_uccnx")
@@ -189,7 +203,7 @@ color = Color(0.168627, 0.168627, 0.168627, 1)
 
 [node name="x_item" type="AnimatedSprite2D" parent="xitem"]
 sprite_frames = SubResource("SpriteFrames_36l3d")
-animation = &"NONE"
+animation = &"BOMB"
 centered = false
 
 [node name="xlabel" type="Label" parent="xitem"]
@@ -211,7 +225,7 @@ color = Color(0.168627, 0.168627, 0.168627, 1)
 
 [node name="y_item" type="AnimatedSprite2D" parent="yitem"]
 sprite_frames = SubResource("SpriteFrames_mv41o")
-animation = &"NONE"
+animation = &"BOMB"
 centered = false
 
 [node name="ylabel" type="Label" parent="yitem"]

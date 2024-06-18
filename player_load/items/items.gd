@@ -13,7 +13,7 @@ class_name items
 #TODO: update to save file when an item is switched
 
 
-enum ItemState {BOOMERANG, BOW, FISH_ROD, NONE}
+enum ItemState {BOOMERANG, BOW, FISH_ROD, BOMB, NONE}
 
 #I'll attach these manually at first, eventually I can add them through code?
 signal item_x
@@ -25,6 +25,7 @@ signal item_y
 #item refs
 @export var boom_launch : boomerang_launcher
 @export var rod_node : fishing_rod
+@export var bomb_bag_node : bomb_bag
 
 @onready var player_script : player = get_parent()
 
@@ -50,5 +51,7 @@ func check_item(i : ItemState):
 		ItemState.FISH_ROD:
 			#the rod should activate pretty much a whole new control scheme, so its going to be a pain... but i think its ok.
 			rod_node.toggle_rod()
+		ItemState.BOMB:
+			bomb_bag_node.place_bomb()
 
 

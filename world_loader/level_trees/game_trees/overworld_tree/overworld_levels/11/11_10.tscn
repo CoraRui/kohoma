@@ -21,7 +21,7 @@ layer_0/tile_data = PackedInt32Array(327680, 131073, 0, 393216, 131073, 0, 45875
 [node name="trees" type="TileMap" parent="."]
 tile_set = ExtResource("1_ayd8n")
 format = 2
-layer_0/tile_data = PackedInt32Array(262154, 131073, 5, 327690, 131073, 5, 393226, 131073, 5, 458762, 131073, 5, 524298, 131073, 5, 589834, 131073, 5, 196618, 131073, 5, 196616, 131073, 5, 196612, 131073, 5, 262148, 131073, 5, 262152, 131073, 5, 327683, 131073, 5, 327685, 131073, 5, 327687, 131073, 5, 327689, 131073, 5, 458756, 131073, 5, 458760, 131073, 5, 458758, 131073, 5, 589827, 131073, 5, 589833, 131073, 5)
+layer_0/tile_data = PackedInt32Array(262154, 131073, 5, 327690, 131073, 5, 393226, 131073, 5, 458762, 131073, 5, 524298, 131073, 5, 589834, 131073, 5, 196618, 131073, 5, 196616, 131073, 5, 196612, 131073, 5, 262148, 131073, 5, 262152, 131073, 5, 327683, 131073, 5, 327685, 131073, 5, 327687, 131073, 5, 327689, 131073, 5, 458756, 131073, 5, 458760, 131073, 5, 458758, 131073, 5, 589827, 131073, 5, 589832, 131073, 5)
 
 [node name="enemy_spawner" parent="." instance=ExtResource("3_cugjs")]
 enemy_arr = Array[ExtResource("5_bmqsf")]([SubResource("Resource_5ulc6")])
@@ -51,19 +51,15 @@ position = Vector2(41, 104)
 position = Vector2(18, 93)
 
 [node name="top" parent="whale" index="1"]
-visible = false
 position = Vector2(1, -46)
 
 [node name="bottom" parent="whale" index="2"]
-visible = false
 position = Vector2(-1, 68)
 
 [node name="left" parent="whale" index="3"]
-visible = false
 position = Vector2(-19, 11)
 
 [node name="right" parent="whale" index="4"]
-visible = false
 position = Vector2(15, 10)
 
 [node name="shape" parent="whale/right" index="0"]

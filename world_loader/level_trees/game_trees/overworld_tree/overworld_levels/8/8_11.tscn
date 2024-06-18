@@ -29,7 +29,6 @@ layer_0/tile_data = PackedInt32Array(262150, 327681, 1, 327686, 327681, 2, 26215
 [node name="door" type="TileMap" parent="."]
 tile_set = ExtResource("1_0u3dl")
 format = 2
-layer_0/tile_data = PackedInt32Array(327686, 262145, 0)
 
 [node name="room_trigger" parent="." instance=ExtResource("2_n70v1")]
 position = Vector2(104, 80)

@@ -26,3 +26,9 @@ func _on_fishing_rod_activated():
 	player_li.player_ins.items_node.x_item = items.ItemState.FISH_ROD
 	save_fi.current_file.x_item = items.ItemState.FISH_ROD
 	stat_bi.update_slot(items.ItemState.FISH_ROD, true)
+
+
+func _on_bomb_bag_activated():
+	player_li.player_ins.items_node.x_item = items.ItemState.BOMB
+	save_fi.current_file.x_item = items.ItemState.BOMB
+	stat_bi.update_slot(items.ItemState.BOMB, true)

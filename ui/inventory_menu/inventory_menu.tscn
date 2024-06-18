@@ -17,9 +17,11 @@ base_font = ExtResource("4_n33cr")
 base_font = ExtResource("4_n33cr")
 
 [node name="inventory_menu" type="Node2D"]
+z_index = 20
 script = ExtResource("1_we0mr")
 
 [node name="ugh" type="Node2D" parent="."]
+position = Vector2(-88, -112)
 
 [node name="ColorRect" type="ColorRect" parent="ugh"]
 offset_top = 48.0
@@ -28,6 +30,7 @@ offset_bottom = 176.0
 color = Color(0, 0, 0, 1)
 
 [node name="simple_select" type="Node2D" parent="." node_paths=PackedStringArray("active_option", "active_group", "icon")]
+position = Vector2(-88, -112)
 script = ExtResource("1_ws83t")
 active_option = NodePath("items/boomerang")
 active_group = NodePath("items")
@@ -35,7 +38,7 @@ icon = NodePath("icon")
 
 [node name="items" type="Node2D" parent="simple_select" node_paths=PackedStringArray("options")]
 script = ExtResource("2_1q00y")
-options = [NodePath("boomerang"), NodePath("bow"), NodePath("fishing rod"), NodePath("option 4"), NodePath("option 5"), NodePath("option 6"), NodePath("option 7"), NodePath("option 8")]
+options = [NodePath("boomerang"), NodePath("bow"), NodePath("fishing rod"), NodePath("bomb_bag"), NodePath("option 5"), NodePath("option 6"), NodePath("option 7"), NodePath("option 8")]
 
 [node name="item_switch" type="Node2D" parent="simple_select/items"]
 position = Vector2(0, 43)
@@ -83,7 +86,7 @@ position = Vector2(14, 74)
 script = ExtResource("3_n0vl0")
 icon_point = NodePath("icon_point")
 up_option = NodePath("../bow")
-down_option = NodePath("../option 4")
+down_option = NodePath("../bomb_bag")
 right_option = NodePath("../option 7")
 
 [node name="option_text" type="Label" parent="simple_select/items/fishing rod"]
@@ -96,23 +99,23 @@ text = "fish rod"
 [node name="icon_point" type="Node2D" parent="simple_select/items/fishing rod"]
 position = Vector2(-4, 2)
 
-[node name="option 4" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "up_option", "right_option")]
+[node name="bomb_bag" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "up_option", "right_option")]
 position = Vector2(10, 85)
 script = ExtResource("3_n0vl0")
 icon_point = NodePath("option_point")
 up_option = NodePath("../fishing rod")
 right_option = NodePath("../option 8")
 
-[node name="option_text" type="Label" parent="simple_select/items/option 4"]
+[node name="option_text" type="Label" parent="simple_select/items/bomb_bag"]
 offset_left = 4.0
 offset_top = -3.0
 offset_right = 44.0
 offset_bottom = 3.0
 theme_override_fonts/font = SubResource("FontVariation_pvovm")
 theme_override_font_sizes/font_size = 5
-text = "option 4"
+text = "bomb"
 
-[node name="option_point" type="Node2D" parent="simple_select/items/option 4"]
+[node name="option_point" type="Node2D" parent="simple_select/items/bomb_bag"]
 
 [node name="option 5" type="Node2D" parent="simple_select/items" node_paths=PackedStringArray("icon_point", "down_option", "left_option")]
 position = Vector2(60, 59)
@@ -175,7 +178,7 @@ position = Vector2(60, 85)
 script = ExtResource("3_n0vl0")
 icon_point = NodePath("option_point")
 up_option = NodePath("../option 7")
-left_option = NodePath("../option 4")
+left_option = NodePath("../bomb_bag")
 
 [node name="option_text" type="Label" parent="simple_select/items/option 8"]
 offset_left = 4.0
@@ -198,3 +201,4 @@ color = Color(0.623529, 0.00392157, 0, 1)
 [connection signal="activated" from="simple_select/items/boomerang" to="simple_select/items/item_switch" method="_on_boomerang_activated"]
 [connection signal="activated" from="simple_select/items/bow" to="simple_select/items/item_switch" method="_on_bow_activated"]
 [connection signal="activated" from="simple_select/items/fishing rod" to="simple_select/items/item_switch" method="_on_fishing_rod_activated"]
+[connection signal="activated" from="simple_select/items/bomb_bag" to="simple_select/items/item_switch" method="_on_bomb_bag_activated"]
