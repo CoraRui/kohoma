@@ -24,6 +24,8 @@ var current_level : Node2D
 
 @export var world_draw_offset : Vector2i = Vector2(0,0)
 
+@export var shift_speed : int = 3
+
 #autoloads
 @onready var camera_li : camera_loader = get_node("/root/camera_loader_auto")
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
@@ -31,6 +33,29 @@ var current_level : Node2D
 @onready var level_bi : level_border = get_node("/root/level_border_auto")
 @onready var stat_bi : stat_bar = get_node("/root/stat_bar_auto")
 
+var shifting : bool = 0
+var target_pos : Vector2 = Vector2(0,0)
+
+func _physics_process(_delta):
+	shift_level()
+	
+func shift_level():
+	if not shifting:
+		return
+	print("yes")
+	previous_level.global_position = previous_level.global_position.move_toward(target_pos, shift_speed)
+	current_level.global_position = current_level.global_position.move_toward(target_pos, shift_speed)
+	player_li.player_ins.global_position += shift_speed * current_level.global_position.direction_to(target_pos)
+	
+	print(previous_level.global_position, " ", target_pos)
+	if previous_level.global_position == target_pos:
+		level_bi.toggle_border(true)
+		shifting = false
+		target_pos = Vector2(0,0)
+		print("snapped")
+		previous_level.queue_free()
+		current_level.global_position = Vector2(0,0)
+	
 func draw_level_at(lp : Vector2i):
 	#instantiates the level at lp in the current world tree and resets everything to zero
 	print("twice?")
@@ -39,7 +64,6 @@ func draw_level_at(lp : Vector2i):
 		current_level.queue_free()
 	current_level = current_grid.get_level_at(lp).level_node.instantiate()
 	get_tree().get_root().add_child.call_deferred(current_level)
-	current_level.global_position += Vector2(world_draw_offset)
 	camera_li.reset_camera()
 	player_li.unload_player_fast()
 	#make sure that theres a spawn point in the level where the player is being loaded
@@ -51,11 +75,13 @@ func draw_level_at(lp : Vector2i):
 func draw_level_adj(dp : Vector2i):
 	#draws the level at the position clp + dp in the current world tree.
 	clp += dp
-	tlp += dp
 	previous_level = current_level
 	current_level = current_grid.get_level_at(clp).level_node.instantiate()
 	get_tree().get_root().add_child.call_deferred(current_level)
-	current_level.global_position = (tlp * level_size) + world_draw_offset
+	current_level.global_position = level_size * dp
+	shifting = true
+	target_pos = Vector2(-176, -112) * Vector2(dp)
+	print(target_pos)
 
 func clear_previous_level():
 	#function used to clear the previous level.

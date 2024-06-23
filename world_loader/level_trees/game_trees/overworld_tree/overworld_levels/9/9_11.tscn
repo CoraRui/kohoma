@@ -6,63 +6,65 @@
 [node name="9_11" type="Node2D"]
 
 [node name="ground" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_86h0m")
 format = 2
 layer_0/tile_data = PackedInt32Array(327680, 131073, 1, 393216, 131073, 1, 458752, 65537, 1073741828, 524288, 131073, 1, 589824, 131073, 1, 327681, 131073, 1, 393217, 131073, 1, 458753, 65537, 1073741828, 524289, 131073, 1, 589825, 65537, 1610612740, 327682, 131073, 1, 393218, 131073, 1, 458754, 131073, 1, 524290, 131073, 1, 589826, 131073, 1, 327683, 131073, 1, 393219, 131073, 1, 458755, 131073, 1, 524291, 131073, 1, 589827, 65537, 1610612740, 327684, 131073, 1, 393220, 131073, 1, 458756, 131073, 1, 524292, 131073, 1, 589828, 131073, 1, 327685, 131073, 1, 393221, 131073, 1, 458757, 131073, 1, 524293, 65537, 0, 589829, 131073, 1, 327686, 131073, 1, 393222, 65537, 4, 458758, 131073, 1, 524294, 65537, 0, 589830, 131073, 1, 327687, 131073, 1, 393223, 131073, 1, 458759, 131073, 1, 524295, 65537, 0, 589831, 65537, 0, 327688, 65537, 0, 393224, 65537, 0, 458760, 65537, 0, 524296, 65537, 0, 589832, 131073, 1, 327689, 131073, 1, 393225, 131073, 1, 458761, 131073, 1, 524297, 131073, 1, 589833, 131073, 1, 196618, 1, 1, 262154, 131073, 1, 327690, 131073, 1, 393226, 131073, 1, 458762, 131073, 1, 524298, 131073, 1, 589834, 131073, 1, 262150, 131073, 1, 196614, 131073, 1, 262149, 131073, 1, 262144, 131073, 1, 196608, 131073, 1, 196609, 131073, 1, 196613, 131073, 1, 262145, 131073, 1, 262146, 131073, 1, 262147, 131073, 1, 262148, 131073, 1, 196610, 131073, 1, 196611, 131073, 1, 196612, 131073, 1, 196615, 131073, 1, 262151, 131073, 1, 196616, 65537, 0, 262152, 65537, 0, 196617, 131073, 1, 262153, 131073, 1)
 
 [node name="over" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_86h0m")
 format = 2
 layer_0/tile_data = PackedInt32Array(393219, 393217, 2, 393218, 327681, 2, 393217, 262145, 2, 327683, 327681, 1, 327682, 327681, 1, 327681, 262145, 1, 327685, 262145, 268435457, 262154, 1, 1, 327690, 1, 1, 393226, 1, 1, 458762, 1, 1, 524298, 1, 1, 589834, 1, 1, 524290, 65537, 0, 524291, 65537, 0, 524292, 65537, 0, 524293, 65537, 0, 458754, 65537, 0, 524289, 65537, 0, 524288, 65537, 0, 589833, 131073, 2, 393216, 131073, 2, 262148, 458753, 1, 393222, 131073, 2, 589825, 131073, 2, 589827, 131073, 2, 262146, 458753, 1, 262147, 458753, 1, 327684, 327681, 1, 393220, 327681, 2, 262145, 393217, 1, 393221, 262145, 268435458, 262149, 393217, 268435457)
-
-[node name="label" type="Label" parent="."]
-visible = false
-offset_left = 99.0
-offset_top = 78.0
-offset_right = 143.0
-offset_bottom = 101.0
-text = "10_10"
 
 [node name="music_trigger" parent="." instance=ExtResource("2_msfli")]
 track_name = "peaceful_kohoma"
 use_ready = false
 
 [node name="trees" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_86h0m")
 format = 2
 layer_0/tile_data = PackedInt32Array(196618, 393217, 7, 196608, 458753, 7, 196609, 393217, 7, 196610, 458753, 7, 196611, 393217, 7, 196612, 458753, 7, 196613, 393217, 7, 196614, 458753, 7)
 
 [node name="trees2" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_86h0m")
 format = 2
 layer_0/tile_data = PackedInt32Array(196618, 393217, 6, 262154, 393217, 7)
 
 [node name="trees3" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_86h0m")
 format = 2
 layer_0/tile_data = PackedInt32Array(262154, 393217, 6, 327690, 393217, 7)
 
 [node name="trees4" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_86h0m")
 format = 2
 layer_0/tile_data = PackedInt32Array(327690, 393217, 6, 393226, 393217, 7)
 
 [node name="trees5" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_86h0m")
 format = 2
 layer_0/tile_data = PackedInt32Array(393226, 393217, 6, 458762, 393217, 7)
 
 [node name="trees6" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_86h0m")
 format = 2
 layer_0/tile_data = PackedInt32Array(458762, 393217, 6, 524298, 393217, 7)
 
 [node name="trees7" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_86h0m")
 format = 2
 layer_0/tile_data = PackedInt32Array(458762, 393217, 6, 524298, 393217, 6, 589834, 393217, 7)
 
 [node name="trees8" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_86h0m")
 format = 2
 layer_0/tile_data = PackedInt32Array(458762, 393217, 6, 524298, 393217, 6, 589834, 393217, 6)

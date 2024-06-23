@@ -31,9 +31,8 @@ func shift_level(sv : Vector2i):
 	if pause:
 		return
 	world_i.draw_level_adj(sv)
-	camera_li.start_shift(sv)
+	#camera_li.start_shift(sv)
 	pause = true
-	global_position += Vector2(sv) * level_size
 
 func reset_position():
 	position = Vector2(0, 0)

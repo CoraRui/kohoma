@@ -18,18 +18,19 @@ enemy_ref = ExtResource("4_cximu")
 [node name="7_11" type="Node2D"]
 
 [node name="ground" type="TileMap" parent="."]
-visible = false
+position = Vector2(0, -48)
 tile_set = ExtResource("1_gy4qi")
 format = 2
 layer_0/tile_data = PackedInt32Array(196608, 131073, 1, 262144, 131073, 1, 327680, 131073, 1, 393216, 131073, 1, 458752, 131073, 1, 524288, 131073, 1, 589824, 131073, 1, 196609, 131073, 1, 262145, 131073, 1, 327681, 131073, 0, 393217, 131073, 0, 458753, 131073, 0, 524289, 131073, 0, 589825, 131073, 1, 196610, 131073, 1, 262146, 131073, 1, 327682, 131073, 0, 393218, 131073, 0, 458754, 131073, 0, 524290, 131073, 0, 589826, 131073, 1, 196611, 131073, 1, 262147, 131073, 1, 327683, 131073, 0, 393219, 131073, 0, 458755, 131073, 0, 524291, 131073, 0, 589827, 131073, 1, 196612, 131073, 1, 262148, 131073, 1, 327684, 131073, 0, 393220, 131073, 0, 458756, 131073, 0, 524292, 131073, 0, 589828, 131073, 1, 196613, 131073, 1, 262149, 131073, 1, 327685, 131073, 0, 393221, 131073, 0, 458757, 131073, 0, 524293, 131073, 0, 589829, 131073, 1, 196614, 131073, 1, 262150, 131073, 1, 327686, 131073, 1, 393222, 131073, 1, 458758, 393217, 5, 524294, 131073, 1, 589830, 131073, 1, 196615, 131073, 1, 262151, 131073, 1, 327687, 131073, 1, 393223, 131073, 1, 458759, 393217, 5, 524295, 131073, 1, 589831, 393217, 5, 196616, 131073, 1, 262152, 131073, 1, 327688, 131073, 1, 393224, 131073, 1, 458760, 131073, 1, 524296, 131073, 1, 589832, 131073, 1, 196617, 131073, 1, 262153, 131073, 1, 327689, 131073, 1, 393225, 393217, 5, 458761, 131073, 1, 524297, 131073, 1, 589833, 131073, 1, 196618, 131073, 1, 262154, 131073, 1, 327690, 131073, 1, 393226, 393217, 5, 458762, 131073, 1, 524298, 131073, 1, 589834, 131073, 1)
 
 [node name="trees" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_gy4qi")
 format = 2
 layer_0/tile_data = PackedInt32Array(196609, 393217, 6, 196610, 458753, 6, 196611, 393217, 6, 196612, 458753, 6, 196613, 393217, 7, 196614, 458753, 7, 196615, 393217, 7, 196616, 458753, 7, 196617, 393217, 7, 196618, 458753, 7, 262145, 393217, 7, 262146, 458753, 7, 262147, 393217, 7, 262148, 458753, 7, 196608, 458753, 6, 262144, 458753, 7)
 
 [node name="switch_trigger" parent="." instance=ExtResource("2_6ynjy")]
-position = Vector2(113, 73)
+position = Vector2(113, 25)
 new_tree = "res://world_loader/level_trees/game_trees/dungeon_one/dungeon_one_tree.tscn"
 init_pos = Vector2(3, 6)
 
@@ -50,6 +51,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="enemy_spawner" parent="." instance=ExtResource("3_jhji4")]
 process_mode = 4
+position = Vector2(0, -48)
 enemy_arr = Array[ExtResource("5_uyr1g")]([SubResource("Resource_bt1yi")])
 enemy_cnt = 1
 
@@ -75,6 +77,7 @@ position = Vector2(76, 108)
 position = Vector2(120, 95)
 
 [node name="mole" parent="." node_paths=PackedStringArray("surface_array") instance=ExtResource("6_2nuxt")]
+position = Vector2(0, -48)
 surface_array = [NodePath("surface_array/0"), NodePath("surface_array/1"), NodePath("surface_array/2"), NodePath("surface_array/3"), NodePath("surface_array/4")]
 
 [node name="surface_array" type="Node2D" parent="mole"]
@@ -95,37 +98,45 @@ position = Vector2(133, 136)
 position = Vector2(90, 105)
 
 [node name="trees1" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_gy4qi")
 format = 2
 layer_0/tile_data = PackedInt32Array(262144, 458753, 6, 327680, 458753, 7)
 
 [node name="trees2" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_gy4qi")
 format = 2
 layer_0/tile_data = PackedInt32Array(327680, 458753, 6, 393216, 458753, 7)
 
 [node name="trees3" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_gy4qi")
 format = 2
 layer_0/tile_data = PackedInt32Array(393216, 458753, 6, 458752, 458753, 7)
 
 [node name="trees4" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_gy4qi")
 format = 2
 
 [node name="trees5" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_gy4qi")
 format = 2
 
 [node name="trees6" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_gy4qi")
 format = 2
 
 [node name="trees7" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_gy4qi")
 format = 2
 
 [node name="trees8" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_gy4qi")
 format = 2
 

@@ -13,42 +13,48 @@
 [node name="8_11" type="Node2D"]
 
 [node name="ground" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_0u3dl")
 format = 2
 layer_0/tile_data = PackedInt32Array(196608, 1, 5, 262144, 131073, 1, 327680, 131073, 1, 393216, 131073, 1, 458752, 131073, 2, 524288, 131073, 1, 589824, 131073, 1, 196609, 1, 5, 262145, 131073, 1, 327681, 131073, 1, 393217, 131073, 1, 458753, 131073, 1, 524289, 131073, 1, 589825, 131073, 2, 196610, 1, 5, 262146, 131073, 1, 327682, 131073, 1, 458754, 131073, 1, 524290, 131073, 1, 589826, 131073, 1, 196611, 1, 5, 262147, 131073, 1, 327683, 131073, 1, 393219, 131073, 1, 458755, 131073, 1, 524291, 131073, 1, 589827, 131073, 1, 196612, 1, 5, 262148, 131073, 1, 327684, 131073, 1, 393220, 131073, 1, 458756, 131073, 1, 524292, 131073, 1, 589828, 131073, 1, 196613, 1, 5, 262149, 131073, 1, 327685, 131073, 1, 393221, 131073, 1, 458757, 131073, 1, 524293, 131073, 1, 589829, 131073, 1, 196614, 1, 5, 262150, 131073, 1, 327686, 131073, 1, 393222, 393217, 5, 458758, 393217, 5, 524294, 131073, 1, 589830, 131073, 1, 196615, 1, 5, 262151, 131073, 1, 327687, 131073, 1, 393223, 131073, 1, 458759, 393217, 5, 524295, 131073, 1, 589831, 131073, 1, 196616, 1, 5, 262152, 131073, 1, 327688, 131073, 1, 393224, 131073, 1, 458760, 131073, 1, 524296, 131073, 1, 589832, 131073, 1, 196617, 1, 5, 262153, 131073, 1, 327689, 131073, 1, 393225, 131073, 1, 458761, 131073, 1, 524297, 393217, 5, 589833, 131073, 1, 196618, 1, 5, 262154, 131073, 1, 327690, 131073, 2, 393226, 131073, 1, 458762, 131073, 2, 524298, 393217, 5, 589834, 131073, 1, 393218, 131073, 1)
 
 [node name="trees" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_0u3dl")
 format = 2
 layer_0/tile_data = PackedInt32Array(196608, 393217, 7, 196609, 458753, 7, 196610, 393217, 7, 196611, 458753, 7, 196612, 393217, 7, 196613, 458753, 7, 196614, 393217, 7, 196615, 458753, 7, 196616, 393217, 7, 196617, 458753, 7, 196618, 393217, 7)
 
 [node name="house" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_0u3dl")
 format = 2
 layer_0/tile_data = PackedInt32Array(262150, 327681, 1, 327686, 327681, 2, 262151, 262145, 268435457, 327685, 262145, 2, 262149, 262145, 1, 196613, 393217, 1, 196614, 458753, 1, 196615, 393217, 268435457, 327687, 262145, 268435458)
 
 [node name="door" type="TileMap" parent="."]
+position = Vector2(0, -48)
 tile_set = ExtResource("1_0u3dl")
 format = 2
 
 [node name="room_trigger" parent="." instance=ExtResource("2_n70v1")]
-position = Vector2(104, 80)
+position = Vector2(104, 32)
 room_ref = ExtResource("3_ytljt")
 room_track = "nothing"
 player_si = 1
 
 [node name="load_info" parent="." instance=ExtResource("4_url0w")]
+position = Vector2(0, -48)
 
 [node name="0" parent="load_info/spawn_points" index="0"]
 position = Vector2(104, 96)
 
 [node name="snfffff" parent="." instance=ExtResource("6_ty5ac")]
-position = Vector2(100, 121)
+position = Vector2(100, 73)
 
 [node name="chikkin2" parent="." instance=ExtResource("6_wikl0")]
-position = Vector2(40, 88)
+position = Vector2(40, 40)
 
 [node name="music_trigger" parent="." instance=ExtResource("7_b8bvh")]
+position = Vector2(0, -48)
 track_name = "town_one"
 use_delay = true
 
@@ -63,18 +69,18 @@ text = "dungeon is north
  fucknuts"
 
 [node name="solid_grass" parent="." instance=ExtResource("8_s4drw")]
-position = Vector2(128, 64)
+position = Vector2(128, 16)
 
 [node name="solid_grass2" parent="." instance=ExtResource("8_s4drw")]
-position = Vector2(128, 80)
+position = Vector2(128, 32)
 
 [node name="solid_grass3" parent="." instance=ExtResource("8_s4drw")]
-position = Vector2(64, 64)
+position = Vector2(64, 16)
 
 [node name="solid_grass4" parent="." instance=ExtResource("8_s4drw")]
-position = Vector2(64, 80)
+position = Vector2(64, 32)
 
 [node name="bomb_wall" parent="." instance=ExtResource("9_kanuq")]
-position = Vector2(56, 120)
+position = Vector2(56, 72)
 
 [editable path="load_info"]
