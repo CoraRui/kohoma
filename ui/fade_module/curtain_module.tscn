@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://c71qcpinyuq2p"]
+
+[ext_resource type="Script" path="res://ui/fade_module/curtain_module.gd" id="1_bti5x"]
+
+[node name="curtain_module" type="Node2D" node_paths=PackedStringArray("fade_out_timer", "hold_timer", "fade_in_timer", "curtain_rect")]
+script = ExtResource("1_bti5x")
+fade_out_timer = NodePath("fade_out")
+hold_timer = NodePath("hold")
+fade_in_timer = NodePath("fade_in")
+curtain_rect = NodePath("curtain_rect")
+hold_del = 0.1
+
+[node name="fade_out" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="hold" type="Timer" parent="."]
+one_shot = true
+
+[node name="fade_in" type="Timer" parent="."]
+one_shot = true
+
+[node name="curtain_rect" type="ColorRect" parent="."]
+z_index = 30
+offset_right = 176.0
+offset_bottom = 128.0
+color = Color(0.827451, 0.827451, 0.827451, 0)
+
+[connection signal="timeout" from="fade_out" to="." method="_on_fade_out_timeout"]
+[connection signal="timeout" from="hold" to="." method="_on_hold_timeout"]
+[connection signal="timeout" from="fade_in" to="." method="_on_fade_in_timeout"]

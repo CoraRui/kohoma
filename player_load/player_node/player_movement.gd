@@ -87,6 +87,19 @@ func detect_collisions():
 	if right_col.has_overlapping_bodies():
 		mvec.x = clampi(mvec.x, -20, 0)
 		hvec.x = clampi(hvec.x, -20, 0)
+		
+	if up_col.has_overlapping_areas():
+		mvec.y = clampi(mvec.y, 0, 20)
+		hvec.y = clampi(hvec.y, 0, 20)
+	if down_col.has_overlapping_areas():
+		mvec.y = clampi(mvec.y,-20, 0)
+		hvec.y = clampi(hvec.y,-20, 0)
+	if left_col.has_overlapping_areas():
+		mvec.x = clampi(mvec.x, 0, 20)
+		hvec.x = clampi(hvec.x, 0, 20)
+	if right_col.has_overlapping_areas():
+		mvec.x = clampi(mvec.x, -20, 0)
+		hvec.x = clampi(hvec.x, -20, 0)
 	
 func move():
 	#I think I want to interpret thise vector here in order to determine movement animations.

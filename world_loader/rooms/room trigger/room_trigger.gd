@@ -13,6 +13,8 @@ var room_ins : Node2D
 #spawn index for the player
 @export var player_si : int = 0
 
+@export var load_timer : Timer
+
 #region autloads
 #autoloads
 @onready var world_i : world = get_node("/root/world_auto")
@@ -22,6 +24,8 @@ var room_ins : Node2D
 @onready var camera_mi : camera_loader = get_node("/root/camera_loader_auto")
 @onready var level_bi : level_border = get_node("/root/level_border_auto")
 @onready var stat_bi : stat_bar = get_node("/root/stat_bar_auto")
+@onready var curtain_mi : curtain_module = get_node("/root/curtain_module_auto")
+
 #endregion
 
 func load_room():
@@ -34,6 +38,7 @@ func load_room():
 	get_tree().get_root().add_child.call_deferred(room_ins)
 	room_ins.global_position += Vector2(0,-32)
 	stat_bi.reset_position()
+	player_li.player_ins.set_movement(true)
 	
 	for c in room_ins.get_children():
 		if c is load_info:
@@ -42,4 +47,9 @@ func load_room():
 	music_pi.play_track(room_track)
 
 func _on_rt_area_area_entered(_area):
+	load_timer.start()
+	curtain_mi.init_shift()
+	player_li.player_ins.set_movement(false)
+
+func _on_load_delay_timeout():
 	load_room()

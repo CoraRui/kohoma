@@ -1,13 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqnfr4q3imt4s"]
+[gd_scene load_steps=5 format=3 uid="uid://cqnfr4q3imt4s"]
 
 [ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://world_loader/tile_pallettes/green_dungeon.tres" id="1_077uk"]
+[ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="2_58lt3"]
+[ext_resource type="PackedScene" uid="uid://j2gcqncpoo46" path="res://world_loader/rooms/room trigger/exit_trigger.tscn" id="3_x16wc"]
+[ext_resource type="PackedScene" uid="uid://bbeu5b1kpw1lv" path="res://world_loader/interactables/drops/key/key.tscn" id="4_nt30o"]
 
 [node name="basement" type="Node2D"]
 
 [node name="brick" type="TileMap" parent="."]
+position = Vector2(0, -16)
 tile_set = ExtResource("1_077uk")
 format = 2
-layer_0/tile_data = PackedInt32Array(196608, 196609, 0, 196609, 196609, 0, 196610, 196609, 0, 196611, 196609, 0, 196618, 196609, 0, 196612, 196609, 0, 196613, 196609, 1, 196614, 196609, 0, 196615, 196609, 0, 196616, 196609, 0, 196617, 196609, 0, 589824, 196609, 0, 589825, 196609, 0, 589826, 196609, 0, 589827, 196609, 0, 589828, 196609, 0, 589829, 196609, 0, 589830, 196609, 0, 589831, 196609, 0, 589832, 196609, 0, 589833, 196609, 0, 589834, 196609, 0, 524290, 196609, 1, 458754, 196609, 1, 393218, 196609, 1, 393219, 196609, 0, 393220, 196609, 0, 393221, 196609, 0, 393222, 196609, 0, 393223, 196609, 0, 393224, 196609, 1, 458760, 196609, 1, 524296, 196609, 1, 458756, 196609, 0, 458757, 196609, 0, 458758, 196609, 0, 327685, 196609, 1, 262149, 196609, 1)
+layer_0/tile_data = PackedInt32Array(196608, 196609, 0, 196609, 196609, 0, 196610, 196609, 0, 196611, 196609, 0, 196618, 196609, 0, 196612, 196609, 0, 196613, 196609, 1, 196614, 196609, 0, 196615, 196609, 0, 196616, 196609, 0, 196617, 196609, 0, 589824, 196609, 0, 589825, 196609, 0, 589826, 196609, 0, 589827, 196609, 0, 589828, 196609, 0, 589829, 196609, 0, 589830, 196609, 0, 589831, 196609, 0, 589832, 196609, 0, 589833, 196609, 0, 589834, 196609, 0, 524290, 196609, 1, 458754, 196609, 1, 393218, 196609, 1, 393219, 196609, 0, 393220, 196609, 0, 393221, 196609, 0, 393222, 196609, 0, 393223, 196609, 0, 393224, 196609, 1, 458760, 196609, 1, 524296, 196609, 1, 458756, 196609, 0, 458757, 196609, 0, 458758, 196609, 0, 327685, 196609, 1, 262149, 196609, 1, 262148, 131073, 2, 262147, 131073, 2, 262146, 131073, 2, 262145, 131073, 2, 262144, 131073, 2, 327680, 131073, 2, 393216, 131073, 2, 458752, 131073, 2, 458753, 131073, 2, 393217, 131073, 2, 327681, 131073, 2, 458755, 131073, 2, 458759, 131073, 2, 458761, 131073, 2, 393225, 131073, 2, 327689, 131073, 2, 262153, 131073, 2, 262152, 131073, 2, 262151, 131073, 2, 262154, 131073, 2, 327690, 131073, 2, 393226, 131073, 2, 458762, 131073, 2, 262150, 131073, 2, 327682, 196609, 2, 327688, 196609, 2, 327683, 196609, 2, 327684, 196609, 2, 327686, 196609, 2, 327687, 196609, 2, 524289, 196609, 2, 524288, 196609, 2, 524291, 196609, 2, 524292, 196609, 2, 524293, 196609, 2, 524294, 196609, 2, 524295, 196609, 2, 524297, 196609, 2, 524298, 196609, 2)
 
 [node name="chest" type="ColorRect" parent="."]
 offset_left = 80.0
@@ -15,3 +19,19 @@ offset_top = 130.0
 offset_right = 95.0
 offset_bottom = 143.0
 color = Color(0.196078, 0.121569, 0.0705882, 1)
+
+[node name="load_info" parent="." instance=ExtResource("2_58lt3")]
+
+[node name="0" parent="load_info/spawn_points" index="0"]
+position = Vector2(89, 58)
+
+[node name="exit_trigger" parent="." node_paths=PackedStringArray("room_ins") instance=ExtResource("3_x16wc")]
+position = Vector2(89, 45)
+room_ins = NodePath("..")
+exit_pos = Vector2(4, 5)
+
+[node name="key" parent="." instance=ExtResource("4_nt30o")]
+position = Vector2(89, 120)
+save_flag = "dungeon_one_key_three"
+
+[editable path="load_info"]

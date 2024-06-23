@@ -5,8 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sa03o"]
 size = Vector2(13, 12)
 
-[node name="room_trigger" type="Node2D"]
+[node name="room_trigger" type="Node2D" node_paths=PackedStringArray("load_timer")]
 script = ExtResource("1_7ks23")
+load_timer = NodePath("load_timer")
 
 [node name="rt_area" type="Area2D" parent="."]
 collision_layer = 0
@@ -15,4 +16,9 @@ collision_mask = 16
 [node name="rt_shape" type="CollisionShape2D" parent="rt_area"]
 shape = SubResource("RectangleShape2D_sa03o")
 
+[node name="load_timer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
 [connection signal="area_entered" from="rt_area" to="." method="_on_rt_area_area_entered"]
+[connection signal="timeout" from="load_timer" to="." method="_on_load_delay_timeout"]

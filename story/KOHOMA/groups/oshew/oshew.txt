@@ -1,0 +1,17 @@
+directive collect shiny objects
+
+hello. i like to dig. i eat worms.
+
+but i also find shiny things.
+
+are you looking for something shiny?
+
+y / n -> ok. well, let me know if you're looking for something shiny.
+
+y
+
+hm. I couldn't seem to find a "wrong_item".
+
+but if i do find a "wrong item", ill be sure to let you know.
+
+but im not sure why you would want one to begin with...

@@ -2,6 +2,8 @@ extends Node2D
 class_name camera_loader
 
 #this autoload contains the camera, and functions for moving it.
+#TODO: redesign scrolling movement system to center levels at origin to simplify working with level positioning stuff.
+
 
 @onready var main_window : Window = get_window()
 
@@ -29,6 +31,7 @@ signal camera_snapped
 @onready var stat_bi : stat_bar = get_node("/root/stat_bar_auto")
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
 @onready var pause_li : pause_loader = get_node("/root/pause_loader_auto")
+@onready var curtain_mi : curtain_module = get_node("/root/curtain_module_auto")
 
 func _physics_process(_delta):
 	move_camera()
@@ -53,6 +56,7 @@ func move_camera():
 		end_shift()
 	main_camera.position = main_camera.position.move_toward(shift_point, cam_vel)
 	stat_bi.global_position = main_camera.global_position - Vector2(88, 64)
+	curtain_mi.global_position = main_camera.global_position - Vector2(88, 64)
 	
 func shift_player():
 	if not player_shifting:

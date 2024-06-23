@@ -13,11 +13,18 @@ extends Node2D
 #spawn index for player in initial room
 @export var psi : int
 
+@export var load_timer : Timer
+
 
 #autoloads
 @onready var world_i : world = get_node("/root/world_auto")
+@onready var curtain_mi : curtain_module = get_node("/root/curtain_module_auto")
+@onready var player_mi : player_loader = get_node("/root/player_loader_auto")
+
+
 
 var fuck_you : bool = false
+
 
 func switch_tree():
 	if fuck_you:
@@ -30,6 +37,9 @@ func switch_tree():
 #i don't know WHY. but it does. 
 #the fuck you variable just disables that second run for now.
 func _on_switch_area_area_entered(_area):
+	load_timer.start()
+	curtain_mi.init_shift()
+	player_mi.player_ins.set_movement(false)
+
+func _on_load_timer_timeout():
 	switch_tree()
-
-

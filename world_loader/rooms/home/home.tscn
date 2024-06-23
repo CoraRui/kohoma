@@ -27,7 +27,7 @@ position = Vector2(89, 59)
 position = Vector2(88, 129)
 
 [node name="exit_trigger" parent="." node_paths=PackedStringArray("room_ins") instance=ExtResource("3_a5g0s")]
-position = Vector2(88, 144)
+position = Vector2(88, 141)
 overworld_track = "none"
 room_ins = NodePath("..")
 exit_pos = Vector2(8, 11)

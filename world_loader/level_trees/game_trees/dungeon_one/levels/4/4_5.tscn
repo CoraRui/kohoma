@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://2vpwnh1swna3"]
+[gd_scene load_steps=7 format=3 uid="uid://2vpwnh1swna3"]
 
 [ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://world_loader/tile_pallettes/green_dungeon.tres" id="1_pdx1c"]
 [ext_resource type="PackedScene" uid="uid://bymqb0demnt7k" path="res://world_loader/interactables/mechanisms/push_blocks/push_block.tscn" id="2_0x03f"]
 [ext_resource type="Texture2D" uid="uid://db658kk63x25g" path="res://enemies/enemy_types/statue/assets/dino statue2.png" id="3_8mxry"]
+[ext_resource type="PackedScene" uid="uid://d2ij06gtg0fi7" path="res://world_loader/rooms/room trigger/room_trigger.tscn" id="4_g083y"]
+[ext_resource type="PackedScene" uid="uid://cqnfr4q3imt4s" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/rooms/basement.tscn" id="5_8q4gi"]
+[ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="6_jwtdv"]
 
 [node name="4_5" type="Node2D"]
 
@@ -21,4 +24,19 @@ visible = false
 position = Vector2(8, 8)
 texture = ExtResource("3_8mxry")
 
+[node name="room_trigger" parent="." instance=ExtResource("4_g083y")]
+position = Vector2(46, 72)
+room_ref = ExtResource("5_8q4gi")
+room_track = ""
+player_si = 0
+
+[node name="load_info" parent="." instance=ExtResource("6_jwtdv")]
+
+[node name="0" parent="load_info/spawn_points" index="0"]
+position = Vector2(24, 72)
+
+[node name="4" type="Node2D" parent="load_info/spawn_points" index="1"]
+position = Vector2(24, 72)
+
 [editable path="push_block"]
+[editable path="load_info"]

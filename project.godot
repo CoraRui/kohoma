@@ -37,6 +37,7 @@ dialogue_loader_auto="*res://ui/dialogue_loader/dialogue_loader.tscn"
 pause_loader_auto="*res://ui/pause_menu/autoloads/pause_loader.tscn"
 file_tester_auto="*res://debugging/save_files/file_tester.tscn"
 dir_auto="*res://player_load/enums/Direction.gd"
+curtain_module_auto="*res://ui/fade_module/curtain_module.tscn"
 
 [debug]
 
@@ -197,6 +198,7 @@ row_zero={
 2d_physics/layer_8="pickup"
 2d_physics/layer_9="boomerang"
 2d_physics/layer_10="mechanism"
+2d_physics/layer_11="explosion"
 
 [rendering]
 
