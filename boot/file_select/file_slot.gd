@@ -21,8 +21,7 @@ func _ready():
 	money_label.add_theme_color_override("font_color", text_color)
 	
 func refresh_display():
-	if not FileAccess.file_exists(save_fi.save_dir[file_index]) :
-		print("no file in file ", file_index + 1, ".")
+	if not FileAccess.file_exists(save_fi.save_dir[file_index]):
 		return
 	var f : file_01 = ResourceLoader.load(save_fi.save_dir[file_index])
 	name_label.text = f.player_name

@@ -4,6 +4,7 @@ class_name boomerang
 #the boomerang should travel in a straight line from where thrown, then return to the player
 #following a simple return movement pattern
 
+#TODO: clear boomerang on level load
 #TODO: make hitting stuff actually doing stuff. that might not even mean doing anything in this script.
 #you might have to program all of the other scripts to do stuff manually. like each enemy, each thing that
 #can recieve some sort of hit. like switches and stuff.

@@ -5,6 +5,7 @@ extends Node2D
 #then whatever "door" script I have will have its own save file 
 #that will save that you opened it, and take one key away.
 
+#TODO: carry back to player with boomerang
 #TODO: each key placed in a dungeon/ in the world should be unique. should update to the save file as picked up
 #with a unique identity tag
 

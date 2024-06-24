@@ -31,7 +31,8 @@ func shift_level(sv : Vector2i):
 	if pause:
 		return
 	world_i.draw_level_adj(sv)
-	#camera_li.start_shift(sv)
+	player_li.player_ins.set_movement(false)
+	player_li.player_ins.shift_by(Vector2(sv), 18)
 	pause = true
 
 func reset_position():

@@ -4,7 +4,7 @@ extends Node2D
 #TODO: input setup/changing submenu
 #TODO: rethink gameplay loop and pause/quit. should quitting at any point always save progress?
 #TODO: in what conditions should things save not save? when should quitting be disabled altogether?
-
+#TODO: slow level shift option cause slow slow, and fast hurts.
 
 
 #this script controls the actual pause menu

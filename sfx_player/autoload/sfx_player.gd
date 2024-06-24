@@ -15,10 +15,16 @@ var sf_index : int = 0
 
 @export var sfx_dict : Dictionary
 
+@export var debug_name : String = "sfx_player"
+
+#autoloads
+@onready var debug_hi : debug_helper = get_node("/root/debug_helper_auto")
+
+
 func play_sound(sn : String):
 	#so this function should put the sound named sn into the next stream player and play it.
 	if not sfx_dict.has(sn):
-		print("sfx player attempted to play nonexistent sound:", sn)
+		debug_hi.db_message("sfx player attempted to play nonexistent sound:" + sn, debug_name)
 		return
 	
 	sfx_streams[sf_index].stream = sfx_dict[sn]
@@ -30,8 +36,11 @@ func play_sound(sn : String):
 
 func play_sound_link(sfl : sf_link):
 		#so this function should put the sound named sn into the next stream player and play it.
+	if not sfl:
+		return
+	
 	if not sfx_dict.has(sfl.sf_name):
-		print("sfx player attempted to play nonexistent sound:", sfl.sf_name)
+		debug_hi.db_message("sfx player attempted to play nonexistent sound:" + sfl.sf_name, debug_name)
 		return
 	
 	sfx_streams[sf_index].stream = sfx_dict[sfl.sf_name]

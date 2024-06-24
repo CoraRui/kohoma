@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt2r7p32eu3y2"]
+
+[ext_resource type="Script" path="res://enemies/enemy_types/orb_sprite/orb_boss.gd" id="1_6ck3w"]
+[ext_resource type="PackedScene" uid="uid://sm77pxmrkael" path="res://enemies/enemy_types/orb_sprite/orb_sprite.tscn" id="1_pk1am"]
+
+[node name="orb_boss" type="Node2D"]
+script = ExtResource("1_6ck3w")
+
+[node name="orb_sprite" parent="." instance=ExtResource("1_pk1am")]

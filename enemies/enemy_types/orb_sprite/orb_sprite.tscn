@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://sm77pxmrkael"]
+[gd_scene load_steps=10 format=3 uid="uid://sm77pxmrkael"]
 
 [ext_resource type="Texture2D" uid="uid://b5js4rkc5lj60" path="res://enemies/enemy_types/orb_sprite/assets/orb_sprite_sheet.png" id="1_fg1il"]
+[ext_resource type="Script" path="res://enemies/enemy_types/orb_sprite/orb_sprite.gd" id="1_su0og"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_310fl"]
 atlas = ExtResource("1_fg1il")
@@ -58,6 +59,7 @@ animations = [{
 }]
 
 [node name="orb_sprite" type="Node2D"]
+script = ExtResource("1_su0og")
 
 [node name="orb_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r514o")

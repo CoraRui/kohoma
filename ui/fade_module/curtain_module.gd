@@ -46,9 +46,11 @@ var curtain_state : CurtainState = CurtainState.INACTIVE
 
 #endregion
 
+@export var debug_name : String = "curtain"
+@onready var debug_hi : debug_helper = get_node("/root/debug_helper_auto")
 @onready var camera_li : camera_loader = get_node("/root/camera_loader_auto")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	curtain_state_cross()
 
 func curtain_state_cross():
@@ -64,11 +66,10 @@ func curtain_state_cross():
 		CurtainState.INACTIVE:
 			pass
 		_:
-			print("curtain_state has a weird value. why tho")
+			debug_hi.db_message("curtain_state has a weird value. why tho", debug_name)
 
 func proc_fade_out():
 	curtain_rect.color.a = clampf(curtain_rect.color.a + fade_out_speed, 0, 1)
-	print(clampf(curtain_rect.color.a + fade_out_speed, 0, 1))
 
 func proc_hold():
 	pass
@@ -81,18 +82,15 @@ func init_shift():
 	init_fade_out()
 
 func init_fade_out():
-	print("begin fadeout")
 	fade_out_timer.start()
 	curtain_state = CurtainState.FADEOUT
 	curtain_rect.color.a = 0
 
 func init_hold():
-	print("begin hold")
 	hold_timer.start()
 	curtain_state = CurtainState.HOLD
 
 func init_fade_in():
-	print("begin fadein")
 	fade_in_timer.start()
 	curtain_state = CurtainState.FADEIN
 

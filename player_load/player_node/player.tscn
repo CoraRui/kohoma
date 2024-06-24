@@ -360,12 +360,13 @@ autoplay = "notswing"
 
 [node name="ls_area" type="Area2D" parent="sword/sword_left"]
 visible = false
-collision_layer = 0
+collision_layer = 2048
 collision_mask = 4
 
 [node name="ls_shape" type="CollisionShape2D" parent="sword/sword_left/ls_area"]
 position = Vector2(2.5, 2)
 shape = SubResource("RectangleShape2D_yq415")
+disabled = true
 
 [node name="sword_up" type="AnimatedSprite2D" parent="sword"]
 position = Vector2(0, -13)
@@ -375,12 +376,13 @@ autoplay = "notswing"
 
 [node name="us_area" type="Area2D" parent="sword/sword_up"]
 visible = false
-collision_layer = 0
+collision_layer = 2048
 collision_mask = 4
 
 [node name="us_shape" type="CollisionShape2D" parent="sword/sword_up/us_area"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_d8amp")
+disabled = true
 
 [node name="sword_down" type="AnimatedSprite2D" parent="sword"]
 position = Vector2(0, 12)
@@ -390,12 +392,13 @@ autoplay = "notswing"
 
 [node name="ds_area" type="Area2D" parent="sword/sword_down"]
 visible = false
-collision_layer = 0
+collision_layer = 2048
 collision_mask = 4
 
 [node name="ds_shape" type="CollisionShape2D" parent="sword/sword_down/ds_area"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_da7sj")
+disabled = true
 
 [node name="sword_right" type="AnimatedSprite2D" parent="sword"]
 position = Vector2(12, 0)
@@ -405,12 +408,13 @@ autoplay = "notswing"
 
 [node name="rs_area" type="Area2D" parent="sword/sword_right"]
 visible = false
-collision_layer = 0
+collision_layer = 2048
 collision_mask = 4
 
 [node name="rs_shape" type="CollisionShape2D" parent="sword/sword_right/rs_area"]
 position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_be1wq")
+disabled = true
 
 [node name="sword_anim" type="Node2D" parent="sword" node_paths=PackedStringArray("up_sword", "down_sword", "left_sword", "right_sword", "swing_timer")]
 script = ExtResource("7_lhvyy")

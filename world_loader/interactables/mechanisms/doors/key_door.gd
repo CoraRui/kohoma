@@ -21,7 +21,7 @@ func _ready():
 		if save_fi.current_file.event_dict[save_flag]:
 			queue_free()
 		
-func _on_unlock_area_area_entered(area):
+func _on_unlock_area_area_entered(_area):
 	if save_fi.current_file.keys <= 0:
 		print("no keys to unlock door")
 		return

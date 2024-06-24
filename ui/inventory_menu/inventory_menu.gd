@@ -8,3 +8,6 @@ extends Node2D
 #TODO: add option for no item, or to return item to empty slot.
 #TODO: sfx
 #TODO: quick select of some kind(non priority)
+#TODO: keycount in inventory, not main screen
+#item selection persist through player load/unload
+

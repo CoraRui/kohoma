@@ -1,0 +1,16 @@
+what is the actual base shit i have to do for this to be "finished"
+
+boss battle
+
+post boss scene
+not sure exactly what that will be. there will be some "final thing". like when link holds up the triforce, fade to white.
+then some text about what happens next. bam! KOHOMA
+then, it goes back to title screen.
+if you reload the file, there'll be somebody to vaguely explain that thats it for now, but you can go back and explore more
+stuff that you missed if you want.
+
+
+town rooms
+overworld encounters/rooms
+fix pause menu
+save system

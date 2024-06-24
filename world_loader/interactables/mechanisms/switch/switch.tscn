@@ -1,25 +1,88 @@
-[gd_scene load_steps=4 format=3 uid="uid://domav4268i3gf"]
+[gd_scene load_steps=11 format=3 uid="uid://domav4268i3gf"]
 
 [ext_resource type="Script" path="res://world_loader/interactables/mechanisms/switch/switch.gd" id="1_h045k"]
-[ext_resource type="PackedScene" uid="uid://ddk1mtyqkjqx1" path="res://enemies/modules/hook_module/hook_module.tscn" id="2_bwmfn"]
+[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="2_3jdje"]
+[ext_resource type="Texture2D" uid="uid://b36oabpq8a3dc" path="res://world_loader/tile_pallettes/green_dungeon.png" id="3_cfdaj"]
+
+[sub_resource type="Resource" id="Resource_v27y0"]
+script = ExtResource("2_3jdje")
+sf_name = "default"
+sf_vol = -1.0
+sf_pitch = 1.0
+
+[sub_resource type="Resource" id="Resource_58umt"]
+script = ExtResource("2_3jdje")
+sf_name = "default"
+sf_vol = -1.0
+sf_pitch = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8e6u"]
+size = Vector2(12, 11)
 
-[node name="switch" type="Node2D" node_paths=PackedStringArray("pull_timer")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwyx2"]
+atlas = ExtResource("3_cfdaj")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q1ig"]
+atlas = ExtResource("3_cfdaj")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x4j0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwyx2")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q1ig")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s2sp"]
+size = Vector2(12, 11)
+
+[node name="switch" type="Node2D" node_paths=PackedStringArray("switch_anim", "switch_timer")]
 script = ExtResource("1_h045k")
-pull_timer = NodePath("pull_timer")
-
-[node name="hook_module" parent="." instance=ExtResource("2_bwmfn")]
+switch_anim = NodePath("switch_anim")
+switch_timer = NodePath("switch_timer")
+switch_on_sf = SubResource("Resource_v27y0")
+switch_off_sf = SubResource("Resource_58umt")
+switch_active = true
+debug_name = "mechanisms"
 
 [node name="switch_area" type="Area2D" parent="."]
-collision_layer = 512
-collision_mask = 0
+visible = false
+collision_layer = 0
+collision_mask = 2304
 
 [node name="switch_shape" type="CollisionShape2D" parent="switch_area"]
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_i8e6u")
 
-[node name="pull_timer" type="Timer" parent="."]
+[node name="switch_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x4j0f")
+animation = &"on"
 
-[connection signal="pull" from="hook_module" to="." method="_on_hook_module_pull"]
-[connection signal="relax" from="hook_module" to="." method="_on_hook_module_relax"]
-[connection signal="timeout" from="pull_timer" to="." method="_on_pull_timer_timeout"]
+[node name="wall_area" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 0
+
+[node name="wall_shape" type="CollisionShape2D" parent="wall_area"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_0s2sp")
+
+[node name="switch_timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="area_entered" from="switch_area" to="." method="_on_switch_area_area_entered"]
+[connection signal="timeout" from="switch_timer" to="." method="_on_switch_timer_timeout"]
