@@ -36,25 +36,28 @@ var current_level : Node2D
 var shifting : bool = 0
 var target_pos : Vector2 = Vector2(0,0)
 
+
+signal world_snapped			#signal to be emitted when the world is finished shifting
+
+
+
 func _physics_process(_delta):
 	shift_level()
 	
 func shift_level():
 	if not shifting:
 		return
-	print("yes")
 	previous_level.global_position = previous_level.global_position.move_toward(target_pos, shift_speed)
 	current_level.global_position = current_level.global_position.move_toward(target_pos, shift_speed)
 	player_li.player_ins.global_position += shift_speed * current_level.global_position.direction_to(target_pos)
 	
-	print(previous_level.global_position, " ", target_pos)
 	if previous_level.global_position == target_pos:
 		level_bi.toggle_border(true)
 		shifting = false
 		target_pos = Vector2(0,0)
-		print("snapped")
 		previous_level.queue_free()
 		current_level.global_position = Vector2(0,0)
+		player_li.player_ins.set_movement(true)
 	
 func draw_level_at(lp : Vector2i):
 	#instantiates the level at lp in the current world tree and resets everything to zero
@@ -81,7 +84,6 @@ func draw_level_adj(dp : Vector2i):
 	current_level.global_position = level_size * dp
 	shifting = true
 	target_pos = Vector2(-176, -112) * Vector2(dp)
-	print(target_pos)
 
 func clear_previous_level():
 	#function used to clear the previous level.
