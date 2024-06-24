@@ -1,6 +1,8 @@
 extends Node2D
 class_name player
 
+#TODO: turn animation when against wall without moving
+
 #collects information for other scripts to reference to avoid having to access children.
 
 var direction : DirClass.Dir = DirClass.Dir.DOWN

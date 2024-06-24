@@ -1,5 +1,7 @@
 extends Node2D
 
+#TODO: enable activation by various things
+
 
 #region node refs
 @export_group("node refs")
@@ -76,7 +78,7 @@ func flip():
 	switch_timer.start()
 	delay_active = true
 
-func _on_switch_area_area_entered(area):
+func _on_switch_area_area_entered(_area):
 	flip()
 
 func _on_switch_timer_timeout():

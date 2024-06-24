@@ -113,12 +113,12 @@ func move():
 	
 #endregion
 
-func trigger_hurt(pos : Vector2):
+func trigger_hurt(hpos : Vector2):
 	#this function starts the movement effects for the player being hurt
 	hvec = Vector2(0,0)
 	player_state = PlayerState.HURT
 	
-	var dir_vec : Vector2 = global_position.direction_to(pos)
+	var dir_vec : Vector2 = global_position.direction_to(hpos)
 	
 	if abs(dir_vec.x) > abs(dir_vec.y):
 		hvec.x = -1 * dir_vec.x/abs(dir_vec.x)

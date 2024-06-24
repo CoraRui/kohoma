@@ -7,7 +7,7 @@ static func random_dict(rd : Dictionary) -> String:
 	#this function accepts a dictionary with string keys and int values.
 	#it selects one of those keys based on the weighted proportion of their value in the dict
 	
-	var total : int
+	var total : int = 0
 	
 	#collect total
 	for v in rd.values():

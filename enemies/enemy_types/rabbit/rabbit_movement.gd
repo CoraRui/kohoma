@@ -1,5 +1,8 @@
 extends Node2D
 
+#TODO: bomb count in inventory, and places to get them.
+
+
 
 enum RabbitState { MOVE, HURT, DYING}
 var rabbit_state : RabbitState = RabbitState.MOVE
@@ -94,12 +97,12 @@ func _on_rdown_area_body_entered(_body):
 		RabbitState.MOVE:
 			switch_y()
 
-func _on_rside_area_area_entered(area):
+func _on_rside_area_area_entered(_area):
 	match rabbit_state:
 		RabbitState.MOVE:
 			switch_x()
 		RabbitState.HURT:
 			pass
 
-func _on_rside_area_body_entered(body):
+func _on_rside_area_body_entered(_body):
 	switch_x()

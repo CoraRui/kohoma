@@ -21,7 +21,7 @@ func destroy_wall():
 	#destroy the wall
 	queue_free()
 
-func _on_wall_area_area_entered(area):
+func _on_wall_area_area_entered(_area):
 	#area on layer explosion detected
 	destroy_wall()
 

@@ -1,15 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://da0tetbese7hm"]
+[gd_scene load_steps=7 format=3 uid="uid://da0tetbese7hm"]
 
-[ext_resource type="Texture2D" uid="uid://db658kk63x25g" path="res://enemies/enemy_types/statue/assets/dino statue2.png" id="1_7ib2m"]
 [ext_resource type="Script" path="res://enemies/enemy_types/statue/dragon_statue.gd" id="1_vdq76"]
 [ext_resource type="PackedScene" uid="uid://dc7otf26gfy33" path="res://enemies/projectiles/fireball/fireball.tscn" id="2_iwicx"]
-[ext_resource type="Texture2D" uid="uid://c8qlpvn7pena0" path="res://enemies/enemy_types/statue/assets/dino statue.png" id="2_ki6c1"]
+[ext_resource type="Texture2D" uid="uid://b36oabpq8a3dc" path="res://world_loader/tile_pallettes/green_dungeon.png" id="3_ygr1t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l15ao"]
+atlas = ExtResource("3_ygr1t")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjjf1"]
+atlas = ExtResource("3_ygr1t")
+region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_78d4j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7ib2m")
+"texture": SubResource("AtlasTexture_l15ao")
 }],
 "loop": true,
 "name": &"default",
@@ -17,7 +24,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ki6c1")
+"texture": SubResource("AtlasTexture_yjjf1")
 }],
 "loop": true,
 "name": &"nya",
@@ -35,6 +42,7 @@ anim_timer = NodePath("anim_del")
 
 [node name="nya" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_78d4j")
+animation = &"nya"
 autoplay = "default"
 
 [node name="fire_timer" type="Timer" parent="."]

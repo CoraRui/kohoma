@@ -7,6 +7,7 @@ class_name world
 #this creates a 2D array like structure of levels, which the world autoload can reference.
 
 #TODO: smooth level shift speed cause its really shocking right now
+#TODO: disable inventory/pause on level scroll
 
 
 @export var current_grid : world_tree

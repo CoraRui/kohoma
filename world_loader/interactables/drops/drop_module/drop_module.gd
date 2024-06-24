@@ -21,7 +21,7 @@ func drop_item():
 	var heart_prob : int = heart_base_prob
 	var coin_prob : int = coin_base_prob
 	var none_prob : int = none_base_prob
-	var drop_dict : Dictionary
+	var drop_dict : Dictionary = {}
 	
 	#if max hp, give heart_prob to coin_prob. if more than 4/5 hp, cut heart prob in half and give to coin.
 	if player_li.player_ins.health_script.hp == player_li.player_ins.health_script.mhp:

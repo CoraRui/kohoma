@@ -76,7 +76,6 @@ pause_timer = NodePath("pause_timer")
 [node name="knight_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_paqkx")
-autoplay = "default"
 frame_progress = 0.227177
 
 [node name="wake_areas" type="Node2D" parent="."]

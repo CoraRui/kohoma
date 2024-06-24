@@ -4,6 +4,8 @@ extends Node2D
 #at certain intervals, it will stop momentarily and shoot a water droplet.
 #should telegraph that action in some way. likely by animating a droplet above itself.
 
+#TODO: delete whale projectile on world scroll
+
 
 enum WhaleState{MOVE, CHARGE, SHOOT}
 var whale_state : WhaleState = WhaleState.MOVE 
