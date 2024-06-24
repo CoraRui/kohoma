@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://dbye2741q7ep1"]
+[gd_scene load_steps=19 format=3 uid="uid://dbye2741q7ep1"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/knight/knight.gd" id="1_c7ep4"]
 [ext_resource type="Texture2D" uid="uid://c4biptn6olafd" path="res://enemies/enemy_types/knight/assets/knight_sheet.png" id="2_bkbge"]
 [ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="4_uwmnw"]
 [ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="5_5s6rx"]
+[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="5_5urxs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gfeqj"]
 atlas = ExtResource("2_bkbge")
@@ -50,6 +51,12 @@ size = Vector2(2, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iyy2j"]
 size = Vector2(2, 5)
+
+[sub_resource type="Resource" id="Resource_2dpq8"]
+script = ExtResource("5_5urxs")
+sf_name = "def_hurt"
+sf_vol = -1.0
+sf_pitch = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdt8"]
 size = Vector2(15, 9)
@@ -166,6 +173,7 @@ position = Vector2(8, 9)
 position = Vector2(0.5, 3.5)
 
 [node name="enemy_health" parent="." node_paths=PackedStringArray("die_node") instance=ExtResource("5_5s6rx")]
+hurt_sf = SubResource("Resource_2dpq8")
 die_node = NodePath("..")
 
 [node name="hurt_timer" type="Timer" parent="enemy_health"]

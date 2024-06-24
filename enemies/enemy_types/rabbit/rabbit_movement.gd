@@ -1,11 +1,13 @@
 extends Node2D
 
 
-#TODO: add health and knockback behavior
+enum RabbitState { MOVE, HURT, DYING}
+var rabbit_state : RabbitState = RabbitState.MOVE
 
+#region exports
 @export_group("node exports")
 @export var rab_body : Node2D
-@export var h_timer : Timer 	#timer for delay between direction changes
+@export var h_timer : Timer 			#timer for delay between direction changes
 @export var rabbit_anim : AnimatedSprite2D
 @export_group("","")
 
@@ -15,59 +17,89 @@ extends Node2D
 @export_group("collision")
 @export var side_area : Area2D
 @export var vert_area : Area2D
-@export var col_pts : Array[Node2D]
+@export var col_pts : Array[Node2D]		#holds points for collision area relocation. udlr indexes.
 @export_group("","")
 
-var mvec = Vector2(1,1)
-var f_skip : int = 0
-var skip : int = 2
+#endregion
+
+#region movement state variables
+
+#MOVE
+var mvec : Array[Vector2] = [Vector2(1,1), Vector2(0,0)]
+var mindex : int = 0
+
+#HURT
+var hvec : Array[Vector2] = [Vector2(0,0), Vector2(0,0)]
+var hindex : int = 0
+
+#endregion
 
 func _ready():
 	h_timer.wait_time = h_del
 	h_timer.start()
-	if mvec.y == -1:
+	if mvec[0].y == -1:
 		vert_area.global_position = col_pts[0].global_position
-	if mvec.y == 1:
+	if mvec[0].y == 1:
 		vert_area.global_position = col_pts[1].global_position
 
 func _physics_process(_delta):
-	move()
+	select_move_state()
+
+func select_move_state():
+	#chooses the movement type based on the state
+	match rabbit_state:
+		RabbitState.MOVE:
+			move()
 
 func change_move():
 	#so here, every time the timer fires, the rabbit switches horizontal direction.
 	#it also randomizes the timer for the next movement.
-	mvec.x *= -1
+	mvec[0].x *= -1
 	#reset the timer
 	h_timer.wait_time = h_del
 	h_timer.start()
 
 func move():
-	if f_skip < skip:
-		f_skip += 1
-		return
-	else:
-		rab_body.position += mvec
-		f_skip = 0
+	rab_body.global_position += mvec[mindex]
+	mindex += 1
 
 func _on_h_timer_timeout():
 	change_move()
 
 func switch_y():
-	mvec.y *= -1
+	#switches the y direction. use during wall collision
+	mvec[0].y *= -1
+	match mvec[0].y:
+		1:
+			vert_area.global_position = col_pts[1].global_position
+		-1:
+			vert_area.global_position = col_pts[0].global_position
+
+func switch_x():
+	#flips x direction. use during wall collision and timed movement
+	mvec[0].y *= -1
+	match mvec[0].y:
+		1:
+			vert_area.global_position = col_pts[3].global_position
+		-1:
+			vert_area.global_position = col_pts[2].global_position
 
 func _on_rdown_area_area_entered(_area):
-	print(rab_body.global_position)
-	#vertical area collision, change y direction
-	mvec.y *= -1
-	if mvec.y == 1:
-		vert_area.global_position = col_pts[1].global_position
-	else:
-		vert_area.global_position = col_pts[0].global_position
+	match rabbit_state:
+		RabbitState.MOVE:
+			switch_y()
 
 func _on_rdown_area_body_entered(_body):
-	#vertical area collision, change y direction
-	mvec.y *= -1
-	if mvec.y == 1:
-		vert_area.global_position = col_pts[1].global_position
-	else:
-		vert_area.global_position = col_pts[0].global_position
+	match rabbit_state:
+		RabbitState.MOVE:
+			switch_y()
+
+func _on_rside_area_area_entered(area):
+	match rabbit_state:
+		RabbitState.MOVE:
+			switch_x()
+		RabbitState.HURT:
+			pass
+
+func _on_rside_area_body_entered(body):
+	switch_x()

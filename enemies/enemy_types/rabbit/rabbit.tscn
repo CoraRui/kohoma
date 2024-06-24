@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b56wn1dctrh8x"]
+[gd_scene load_steps=12 format=3 uid="uid://b56wn1dctrh8x"]
 
 [ext_resource type="Texture2D" uid="uid://6kx1do5kk62u" path="res://enemies/enemy_types/rabbit/assets/rabbit.png" id="1_svuvg"]
 [ext_resource type="Script" path="res://enemies/enemy_types/rabbit/rabbit_movement.gd" id="2_atdhp"]
 [ext_resource type="Texture2D" uid="uid://bofcprn52klmy" path="res://enemies/enemy_types/rabbit/assets/rabbit2.png" id="2_pe3a5"]
 [ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="4_jyqx5"]
 [ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="5_xku3m"]
+[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="6_h16ms"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qyrwv"]
 animations = [{
@@ -28,6 +29,12 @@ size = Vector2(2, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fndl"]
 size = Vector2(14, 11)
+
+[sub_resource type="Resource" id="Resource_bswtp"]
+script = ExtResource("6_h16ms")
+sf_name = "hurt"
+sf_vol = -1.0
+sf_pitch = 1.0
 
 [node name="rabbit" type="Node2D"]
 
@@ -83,15 +90,20 @@ position = Vector2(7, 0)
 position = Vector2(0, 0.5)
 
 [node name="hitbox_area" type="Area2D" parent="health+damage"]
+collision_layer = 4
 
 [node name="hitbox_shape" type="CollisionShape2D" parent="health+damage/hitbox_area"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_4fndl")
 
-[node name="enemy_health" parent="health+damage" instance=ExtResource("5_xku3m")]
+[node name="enemy_health" parent="health+damage" node_paths=PackedStringArray("die_node") instance=ExtResource("5_xku3m")]
+hurt_sf = SubResource("Resource_bswtp")
+die_node = NodePath("../..")
 
 [connection signal="timeout" from="h_timer" to="rabbit_movement" method="_on_h_timer_timeout"]
 [connection signal="area_entered" from="rdown_area" to="rabbit_movement" method="_on_rdown_area_area_entered"]
 [connection signal="body_entered" from="rdown_area" to="rabbit_movement" method="_on_rdown_area_body_entered"]
+[connection signal="area_entered" from="rside_area" to="rabbit_movement" method="_on_rside_area_area_entered"]
+[connection signal="body_entered" from="rside_area" to="rabbit_movement" method="_on_rside_area_body_entered"]
 
 [editable path="health+damage/spike"]
