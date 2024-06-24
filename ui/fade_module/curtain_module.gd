@@ -68,7 +68,6 @@ func curtain_state_cross():
 
 func proc_fade_out():
 	curtain_rect.color.a = clampf(curtain_rect.color.a + fade_out_speed, 0, 1)
-	print(clampf(curtain_rect.color.a + fade_out_speed, 0, 1))
 
 func proc_hold():
 	pass
@@ -81,18 +80,15 @@ func init_shift():
 	init_fade_out()
 
 func init_fade_out():
-	print("begin fadeout")
 	fade_out_timer.start()
 	curtain_state = CurtainState.FADEOUT
 	curtain_rect.color.a = 0
 
 func init_hold():
-	print("begin hold")
 	hold_timer.start()
 	curtain_state = CurtainState.HOLD
 
 func init_fade_in():
-	print("begin fadein")
 	fade_in_timer.start()
 	curtain_state = CurtainState.FADEIN
 

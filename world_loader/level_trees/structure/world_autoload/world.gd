@@ -6,6 +6,9 @@ class_name world
 #that world tree contains a series of children with children, which contain a level in each node.
 #this creates a 2D array like structure of levels, which the world autoload can reference.
 
+#TODO: smooth level shift speed cause its really shocking right now
+
+
 @export var current_grid : world_tree
 
 #current level position in the level tree
@@ -61,7 +64,6 @@ func shift_level():
 	
 func draw_level_at(lp : Vector2i):
 	#instantiates the level at lp in the current world tree and resets everything to zero
-	print("twice?")
 	clp = lp
 	if current_level:
 		current_level.queue_free()

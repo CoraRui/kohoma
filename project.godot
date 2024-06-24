@@ -38,6 +38,7 @@ pause_loader_auto="*res://ui/pause_menu/autoloads/pause_loader.tscn"
 file_tester_auto="*res://debugging/save_files/file_tester.tscn"
 dir_auto="*res://player_load/enums/Direction.gd"
 curtain_module_auto="*res://ui/fade_module/curtain_module.tscn"
+debug_helper_auto="*res://debugging/debug_helper.tscn"
 
 [debug]
 

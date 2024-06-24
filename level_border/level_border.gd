@@ -33,7 +33,6 @@ func shift_level(sv : Vector2i):
 	world_i.draw_level_adj(sv)
 	player_li.player_ins.set_movement(false)
 	player_li.player_ins.shift_by(Vector2(sv), 18)
-	print("shift vec",sv)
 	pause = true
 
 func reset_position():

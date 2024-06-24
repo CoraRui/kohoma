@@ -39,6 +39,7 @@ var swinging : bool = false
 func _physics_process(_delta):
 	if swinging:
 		check_frames()
+	
 
 func _input(event):
 	if not sword_active:
@@ -55,6 +56,7 @@ func swing():
 	started_swing.emit()
 	sword_anim_controller.animate_sword(dir)
 	check_area(sword_areas[dir])
+	sword_areas[dir].get_child(0).disabled = false				#activate the sword area
 	swinging = true
 	sfx_pi.play_sound(swing_sfx.pick_random().sf_name)
 
@@ -62,6 +64,7 @@ func end_swing():
 	ended_swing.emit()
 	swinging = false
 	hf_count = 0
+	sword_areas[dir].get_child(0).disabled = true				#activate the sword area
 
 func check_frames():
 	hf_count += 1

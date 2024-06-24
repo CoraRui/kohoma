@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://nmnnhoqjulmn"]
+[gd_scene load_steps=11 format=3 uid="uid://nmnnhoqjulmn"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_0u3dl"]
 [ext_resource type="PackedScene" uid="uid://d2ij06gtg0fi7" path="res://world_loader/rooms/room trigger/room_trigger.tscn" id="2_n70v1"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c6phkn4x5h0kc" path="res://enemies/enemy_types/chikkin/chikkin.tscn" id="6_wikl0"]
 [ext_resource type="PackedScene" uid="uid://jfxvdv88hlmx" path="res://music_player/triggers/music_trigger.tscn" id="7_b8bvh"]
 [ext_resource type="PackedScene" uid="uid://c7cjgfpor30c1" path="res://world_loader/interactables/mechanisms/grass/solid_grass/solid_grass.tscn" id="8_s4drw"]
-[ext_resource type="PackedScene" uid="uid://b7cb36b5pe52v" path="res://world_loader/interactables/mechanisms/bomb_wall/bomb_wall.tscn" id="9_kanuq"]
+[ext_resource type="PackedScene" uid="uid://bymqb0demnt7k" path="res://world_loader/interactables/mechanisms/push_blocks/push_block.tscn" id="9_u4p0b"]
+[ext_resource type="PackedScene" uid="uid://domav4268i3gf" path="res://world_loader/interactables/mechanisms/switch/switch.tscn" id="10_h8xeb"]
 
 [node name="8_11" type="Node2D"]
 
@@ -80,7 +81,11 @@ position = Vector2(64, 16)
 [node name="solid_grass4" parent="." instance=ExtResource("8_s4drw")]
 position = Vector2(64, 32)
 
-[node name="bomb_wall" parent="." instance=ExtResource("9_kanuq")]
-position = Vector2(56, 72)
+[node name="push_block" parent="." instance=ExtResource("9_u4p0b")]
+position = Vector2(40, 24)
+
+[node name="switch" parent="." instance=ExtResource("10_h8xeb")]
+position = Vector2(24, 32)
+switch_active = false
 
 [editable path="load_info"]

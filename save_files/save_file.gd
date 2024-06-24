@@ -12,18 +12,25 @@ class_name save_file
 
 @export var file_index : int = 0
 
+@export var debug_name : String = "save/load"
+
+#autoload
+
+@onready var debug_hi : debug_helper = get_node("/root/debug_helper_auto")
+
+
 #writes the current_file to the save_directory
 func record_file(fi : int):
 	var dir : DirAccess = DirAccess.open("user://")
 	if not dir.dir_exists("save/"):
 		dir.make_dir("save/")
 	if ResourceSaver.save(current_file, save_dir[fi]) != OK:
-		print("save_file could't record the file")
+		debug_hi.db_message("save_file could't record the file", debug_name)
 
 #updates the current file with the one in the directory.
 func load_file(fi : int):
 	if not FileAccess.file_exists(save_dir[fi]):
-		#print("no save file at: ", save_dir[fi], ", creating new file.")
+		debug_hi.db_message("no save file at: " + save_dir[fi] + ", creating new file.", debug_name)
 		current_file = file_01.new()
 		record_file(fi)
 		return
