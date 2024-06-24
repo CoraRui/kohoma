@@ -62,6 +62,8 @@ func change_move():
 func move():
 	rab_body.global_position += mvec[mindex]
 	mindex += 1
+	if mindex >= mvec.size():
+		mindex = 0
 
 func _on_h_timer_timeout():
 	change_move()
