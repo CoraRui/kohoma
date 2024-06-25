@@ -13,9 +13,10 @@ class_name enemy_health
 @export_group("","")
 
 @export_group("invincibility")
+@export var temp_inv : bool = false		#invincibility for use by other scripts
 @export var i_frames : int = 17
 var if_count : int = 0
-var inv : bool = false
+var inv : bool = false					#invincibility for recoil
 @export_group("","")
 
 @export_group("hurt")
@@ -57,7 +58,7 @@ func inc_inv():
 
 func damage(d : int):
 	#check for invincibility
-	if inv:
+	if inv || temp_inv:
 		return
 	inv = true
 	sfx_pi.play_sound(hurt_sf.sf_name)

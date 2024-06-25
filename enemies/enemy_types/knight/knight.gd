@@ -1,16 +1,12 @@
 extends Node2D
 
-#TODO: settable initial direction for the knight, for alert. I think I can just set the alvec for now though anyways.
-#TODO: adjust iframes
-#TODO: make them not walk into walls
-
 #the knight only starts to move once the player enters a four directional tile adjacent to it.
 #after that, it moves slowly in 4 directions
 
 #asleep means theyre not doing anything, awake means purusing the player
 #alerted is a temporary state between asleep and awake, wander is a state of moving that isn't locked 
 #onto the player, reeling means that the player just struck them/knock back.
-#pause is a brief state before moving again
+#pause is a brief state before moving again usually after colliding with the wall
 enum KnightState {ASLEEP, ALERTED, WANDER, AWAKE, REELING, PAUSE}
 
 #region export groups
@@ -47,6 +43,7 @@ var awindex : int = 0
 @export_group("","")
 
 @export_group("reeling_state")
+@export var reel_timer : Timer
 var rvec : Vector2 = Vector2(0,0)
 @export_group("","")
 
@@ -54,10 +51,16 @@ var rvec : Vector2 = Vector2(0,0)
 @export var pause_timer : Timer
 @export_group("","")
 
+@export_group("health")
+@export var ehp_script : enemy_health
+@export_group("","")
+
+
 #endregion
 
 #autoloads
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
+@onready var debug_hi : debug_helper = get_node("/root/debug_helper_auto")
 
 func _ready():
 	pass
@@ -65,11 +68,11 @@ func _ready():
 func _process(_delta):
 	match knight_state:
 		KnightState.AWAKE:
-			pursue()
+			pursue_move()
 		KnightState.ALERTED:
-			alert()
+			alert_move()
 		KnightState.REELING:
-			reel()
+			reel_move()
 		KnightState.PAUSE:
 			pass
 
@@ -91,18 +94,20 @@ func change_direction(d : DirClass.Dir):
 #KnightState.AWAKE
 func wake_up():
 	#changes the knight to the KnightState.AWAKE state
+	debug_hi.db_message("knight woke up", "enemies")
 	knight_state = KnightState.AWAKE
 	change_pursuit()
 	awake_timer.start()
+	knight_anim.play("awake")
+	ehp_script.temp_inv = false
 
-func pursue():
+func pursue_move():
 	position += awvec[awindex]
 	awindex += 1
 	if awindex >= awvec.size():
 		awindex = 0
 
 func change_pursuit():
-	print("tried to change irection")
 	#this script should calculate the possibility for changes in certain directions.
 	#two phases: prob calc, then roll
 
@@ -135,8 +140,6 @@ func change_pursuit():
 	
 	var rand : int = randi_range(0,total)
 	
-	print("total/rand", total, rand)
-	
 	total -= up
 	if total < rand:
 		change_direction(DirClass.Dir.UP)
@@ -153,15 +156,34 @@ func change_pursuit():
 	if total < rand:
 		change_direction(DirClass.Dir.RIGHT)
 		return
-	print("didnt move?")
 
 #KnightState.REEL
 func reel():
+	debug_hi.db_message("knight began reeling", "enemies")
+	knight_state = KnightState.REELING
+	reel_timer.start()
+	knight_anim.play("reeling")
+	
+	#determine direction of reel(opposite player direction)
+	var player_dir : Vector2 = global_position.direction_to(player_li.player_ins.global_position)
+	
+	if abs(player_dir.x) > abs(player_dir.y):
+		rvec = Vector2(player_dir.x * -1, 0)
+	else:
+		rvec = Vector2(0, player_dir.y * -1)
+
+func reel_move():
 	#movement pattern representing being knocked back
 	position += rvec
 
 #KnightState.ALERTED
 func alert():
+	#changes state to alert
+	knight_state = KnightState.ALERTED
+	alert_timer.start()
+	knight_anim.play("alert")
+
+func alert_move():
 	position += alvec[alindex]
 	alindex += 1
 	if alindex >= alvec.size():
@@ -177,28 +199,23 @@ func pause():
 #wake triggers
 func _on_up_wake_area_entered(_area):
 	if knight_state == KnightState.ASLEEP:
-		knight_state = KnightState.ALERTED
-		alert_timer.start()
+		alert()
 
 func _on_down_wake_area_entered(_area):
 	if knight_state == KnightState.ASLEEP:
-		knight_state = KnightState.ALERTED
-		alert_timer.start()
+		alert()
 
 func _on_left_wake_area_entered(_area):
 	if knight_state == KnightState.ASLEEP:
-		knight_state = KnightState.ALERTED
-		alert_timer.start()
+		alert()
 
 func _on_right_wake_area_entered(_area):
 	if knight_state == KnightState.ASLEEP:
-		knight_state = KnightState.ALERTED
-		alert_timer.start()
+		alert()
 
 func _on_alert_timer_timeout():
 	#alert cycle finished, start awake state
-	knight_state = KnightState.AWAKE
-	awake_timer.start()
+	wake_up()
 
 func _on_awake_timer_timeout():
 	#randomize the direction of movement
@@ -252,5 +269,7 @@ func _on_hurt_timer_timeout():
 
 func _on_enemy_health_hurt():
 	#activates when the enemy is hurt. 0
-	knight_state = KnightState.REELING
+	reel()
 
+func _on_reel_timer_timeout():
+	wake_up()

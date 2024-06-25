@@ -1,13 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://yuq3h7sfuerx"]
+[gd_scene load_steps=21 format=3 uid="uid://yuq3h7sfuerx"]
 
 [ext_resource type="Texture2D" uid="uid://bnmc7x5v1brvq" path="res://enemies/enemy_types/turtle/assets/turtle2.png" id="1_l52f8"]
 [ext_resource type="Script" path="res://enemies/enemy_types/turtle/turtle.gd" id="1_wnjy3"]
 [ext_resource type="Texture2D" uid="uid://dg8o8k4gfoskc" path="res://enemies/enemy_types/turtle/assets/turtle3.png" id="2_i47ow"]
 [ext_resource type="Texture2D" uid="uid://b17m42rd7osqy" path="res://enemies/enemy_types/turtle/assets/blueturtle1png.png" id="3_v0ldp"]
+[ext_resource type="Texture2D" uid="uid://cbh55q6ejdnxl" path="res://enemies/enemy_types/turtle/assets/blueturtleshell1.png" id="4_62otr"]
 [ext_resource type="Texture2D" uid="uid://bggoj6bthnqtc" path="res://enemies/enemy_types/turtle/assets/blueturtle2.png" id="4_m7ju4"]
+[ext_resource type="Texture2D" uid="uid://cwtpsg72sd2gj" path="res://enemies/enemy_types/turtle/assets/blueturtleshell2.png" id="5_t2w8r"]
 [ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="6_qt7pu"]
 [ext_resource type="PackedScene" uid="uid://cv0teegdak2v1" path="res://enemies/effects/explosion/explosion.tscn" id="7_10b3r"]
 [ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="7_qhob7"]
+[ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="9_fl7k5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hr1kc"]
 animations = [{
@@ -19,8 +22,19 @@ animations = [{
 "texture": ExtResource("2_i47ow")
 }],
 "loop": true,
-"name": &"default",
+"name": &"green_walk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_62otr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t2w8r")
+}],
+"loop": true,
+"name": &"shelled",
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -30,7 +44,7 @@ animations = [{
 "texture": ExtResource("4_m7ju4")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -52,21 +66,37 @@ sf_pitch = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6fd7"]
 size = Vector2(13, 9)
 
-[node name="turtle" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpdve"]
+size = Vector2(44, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi0u0"]
+size = Vector2(11, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdxav"]
+size = Vector2(11, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ao62"]
+size = Vector2(2, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fggud"]
+size = Vector2(3, 6)
+
+[node name="turtle" type="Node2D" node_paths=PackedStringArray("turtle_anim", "walk_timer")]
 script = ExtResource("1_wnjy3")
+turtle_anim = NodePath("turtle_anim")
 walk_vel_arr = Array[int]([1, 0, 0, 0])
 snap_tol = 1
+walk_timer = NodePath("movement/walk_timer")
 
 [node name="turtle_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hr1kc")
-animation = &"new_animation"
-autoplay = "new_animation"
+animation = &"walk"
+autoplay = "walk"
 
 [node name="init_signal" type="Node2D" parent="."]
 script = SubResource("GDScript_4eo1n")
 
 [node name="health and damage" type="Node2D" parent="."]
-visible = false
 
 [node name="enemy_health" parent="health and damage" node_paths=PackedStringArray("die_node") instance=ExtResource("6_qt7pu")]
 hurt_sf = SubResource("Resource_etil4")
@@ -75,9 +105,79 @@ use_effect = true
 death_effect = ExtResource("7_10b3r")
 
 [node name="health_area" type="Area2D" parent="health and damage"]
+visible = false
 collision_layer = 4
 collision_mask = 0
 
 [node name="health_shape" type="CollisionShape2D" parent="health and damage/health_area"]
 position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_x6fd7")
+
+[node name="spike" parent="health and damage" instance=ExtResource("9_fl7k5")]
+visible = false
+damage = 2
+
+[node name="CollisionShape2D" parent="health and damage/spike/Area2D" index="0"]
+position = Vector2(0.5, 1.5)
+
+[node name="movement" type="Node2D" parent="."]
+
+[node name="shell_area" type="Area2D" parent="movement"]
+visible = false
+collision_layer = 0
+collision_mask = 16
+
+[node name="shell_shape" type="CollisionShape2D" parent="movement/shell_area"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_wpdve")
+
+[node name="walk_timer" type="Timer" parent="movement"]
+one_shot = true
+
+[node name="wall_areas" type="Node2D" parent="movement"]
+
+[node name="up" type="Area2D" parent="movement/wall_areas"]
+collision_layer = 0
+collision_mask = 34
+
+[node name="up_shape" type="CollisionShape2D" parent="movement/wall_areas/up"]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_wi0u0")
+
+[node name="down" type="Area2D" parent="movement/wall_areas"]
+collision_layer = 0
+collision_mask = 34
+
+[node name="down_shape" type="CollisionShape2D" parent="movement/wall_areas/down"]
+position = Vector2(0.5, 6)
+shape = SubResource("RectangleShape2D_wdxav")
+
+[node name="left" type="Area2D" parent="movement/wall_areas"]
+collision_layer = 0
+collision_mask = 34
+
+[node name="left_shape" type="CollisionShape2D" parent="movement/wall_areas/left"]
+position = Vector2(-6, 2)
+shape = SubResource("RectangleShape2D_5ao62")
+
+[node name="right" type="Area2D" parent="movement/wall_areas"]
+collision_layer = 0
+collision_mask = 34
+
+[node name="right_shape" type="CollisionShape2D" parent="movement/wall_areas/right"]
+position = Vector2(7.5, 2)
+shape = SubResource("RectangleShape2D_fggud")
+
+[connection signal="area_entered" from="movement/shell_area" to="." method="_on_shell_area_area_entered"]
+[connection signal="area_exited" from="movement/shell_area" to="." method="_on_shell_area_area_exited"]
+[connection signal="timeout" from="movement/walk_timer" to="." method="_on_walk_timer_timeout"]
+[connection signal="area_entered" from="movement/wall_areas/up" to="." method="_on_up_area_entered"]
+[connection signal="body_entered" from="movement/wall_areas/up" to="." method="_on_up_body_entered"]
+[connection signal="area_entered" from="movement/wall_areas/down" to="." method="_on_down_area_entered"]
+[connection signal="body_entered" from="movement/wall_areas/down" to="." method="_on_down_body_entered"]
+[connection signal="area_entered" from="movement/wall_areas/left" to="." method="_on_left_area_entered"]
+[connection signal="body_entered" from="movement/wall_areas/left" to="." method="_on_left_body_entered"]
+[connection signal="area_entered" from="movement/wall_areas/right" to="." method="_on_right_area_entered"]
+[connection signal="body_entered" from="movement/wall_areas/right" to="." method="_on_right_body_entered"]
+
+[editable path="health and damage/spike"]

@@ -9,9 +9,9 @@ extends Node2D
 #for turtle, I want to go with 16 pixel tile movement relative to the 
 #ready function should lock position in to nearest 16x16 point.
 
+#TODO: WHY THE FUCK DID YOU USE A TARGET POINT LMAO
 #TODO: add wall /other collision responses
 #TODO: add health and hurt movement responses
-#TODO: take into account player movement
 #TODO: add invincibility while shelled
 #TODO: flip animation left/right
 
@@ -22,16 +22,20 @@ extends Node2D
 
 #enums
 #describes the possible types of movement
-enum MoveState {WALKING, SHELLED, HURT}
-var move_state : MoveState = MoveState.WALKING
+enum MoveState {WALK, SHELLED, HURT}
+var move_state : MoveState = MoveState.WALK
 
-#describes the possible directions of movement within "WALKING"
-enum WalkDir {UP, DOWN, LEFT, RIGHT}
-var walk_dir : WalkDir = WalkDir.DOWN
+var walk_dir : DirClass.Dir = DirClass.Dir.DOWN
 
 #possible directions withing "HURT"
 enum HurtDir {UP, DOWN, LEFT, RIGHT, STOP}
-var hurt_dir : HurtDir = HurtDir.UP
+var hurt_dir : DirClass.Dir = DirClass.Dir.UP
+
+#region exports
+
+@export_group("animation")
+@export var turtle_anim : AnimatedSprite2D
+@export_group("","")
 
 #each frame, the move_frame function uses one index from the vel_arr for the current movement state to 
 #determine how far to move the enemy.
@@ -39,8 +43,13 @@ var hurt_dir : HurtDir = HurtDir.UP
 @export var walk_vel_arr : Array[int] = [1]
 @export var hurt_vel_arr : Array[int] = [1]
 @export var snap_tol : int = 3
+@export var walk_timer : Timer 			#delay before starting to walk after player leaves shell area
 @export_group("","")
 
+#endregion
+
+#autoloads
+@onready var debug_hi : debug_helper = get_node("/root/debug_helper_auto")
 
 #movement variables
 var move_index : int = 0 #tracks which frame in the movement pattern to use.
@@ -53,9 +62,16 @@ func _ready():
 	check_for_rand()
 
 func _physics_process(_delta):
-	move_frame()
+	walk_move()
 	check_for_rand()
-	
+
+func find_state():
+	match move_state:
+		MoveState.WALK:
+			walk_move()
+		MoveState.SHELLED:
+			pass
+
 func rand_dir():
 	var up : int = 25
 	var down : int = 25
@@ -66,19 +82,19 @@ func rand_dir():
 	
 	r -= up
 	if r < 0:
-		walk_dir = WalkDir.UP
+		walk_dir = DirClass.Dir.UP
 		r += 1000
 	r -= down
 	if r < 0:
-		walk_dir = WalkDir.DOWN
+		walk_dir = DirClass.Dir.DOWN
 		r += 1000
 	r-= left
 	if r < 0:
-		walk_dir = WalkDir.LEFT
+		walk_dir = DirClass.Dir.LEFT
 		r += 1000
 	r -= right
 	if r < 0:
-		walk_dir = WalkDir.RIGHT
+		walk_dir = DirClass.Dir.RIGHT
 		r += 1000
 		
 func check_for_rand():
@@ -88,42 +104,50 @@ func check_for_rand():
 		rand_dir()
 		var tvec : Vector2 = Vector2(0,0)
 		match walk_dir:
-			WalkDir.UP:
+			DirClass.Dir.UP:
 				tvec.y = -16
-			WalkDir.DOWN:
+			DirClass.Dir.DOWN:
 				tvec.y = 16
-			WalkDir.LEFT:
+			DirClass.Dir.LEFT:
 				tvec.x = -16
-			WalkDir.RIGHT:
+			DirClass.Dir.RIGHT:
 				tvec.x = 16
 		
 		target_point = global_position + tvec
+		
+#region state functions
 
-func move_frame():
+#WALK state
+
+func go_walk():
+	move_state = MoveState.WALK
+	turtle_anim.play("walk")
+
+func walk_move():
 
 	#determines how the enemy should move this frame.
-	if move_state == MoveState.WALKING:
+	if move_state == MoveState.WALK:
 		if move_index >= walk_vel_arr.size():
 			move_index = 0
-		if walk_dir == WalkDir.UP:
+		if walk_dir == DirClass.Dir.UP:
 			position += Vector2(0, -walk_vel_arr[move_index])
-		if walk_dir == WalkDir.DOWN:
+		if walk_dir == DirClass.Dir.DOWN:
 			position += Vector2(0, walk_vel_arr[move_index])
-		if walk_dir == WalkDir.LEFT:
+		if walk_dir == DirClass.Dir.LEFT:
 			position += Vector2(-walk_vel_arr[move_index], 0)
-		if walk_dir == WalkDir.RIGHT:
+		if walk_dir == DirClass.Dir.RIGHT:
 			position += Vector2(walk_vel_arr[move_index], 0)
 	if move_state == MoveState.HURT:
 		if hurt_dir != HurtDir.STOP:
 			if move_index >= hurt_vel_arr.size():
 				move_index = 0
-			if walk_dir == WalkDir.UP:
+			if walk_dir == DirClass.Dir.UP:
 				position += Vector2(0, -hurt_vel_arr[move_index])
-			if walk_dir == WalkDir.DOWN:
+			if walk_dir == DirClass.Dir.DOWN:
 				position += Vector2(0, hurt_vel_arr[move_index])
-			if walk_dir == WalkDir.LEFT:
+			if walk_dir == DirClass.Dir.LEFT:
 				position += Vector2(-hurt_vel_arr[move_index], 0)
-			if walk_dir == WalkDir.RIGHT:
+			if walk_dir == DirClass.Dir.RIGHT:
 				position += Vector2(hurt_vel_arr[move_index], 0)
 	if move_state == MoveState.SHELLED:
 		#this might actually be it. its not supposed to move...
@@ -131,12 +155,73 @@ func move_frame():
 	
 	#update move_index for next frame
 	move_index += 1
+
+func flip_x():
+	walk_vel_arr[0] *= -1
 	
+func flip_y():
+	walk_vel_arr[0] *= -1
+
+#SHELLED state
+func go_shell():
+	move_state = MoveState.SHELLED
+	turtle_anim.play("shelled")
+
+#endregion
+
+#region shell_triggers
+func _on_shell_area_area_entered(_area):
+	go_shell()
+
+func _on_shell_area_area_exited(_area):
+	walk_timer.start()
+
+func _on_walk_timer_timeout():
+	go_walk()
+
+#endregion
+
+#region wall triggers
+
+func _on_up_area_entered(area):
+	match move_state:
+		MoveState.WALK:
+			flip_y()
+	
+func _on_down_area_entered(area):
+	match move_state:
+		MoveState.WALK:
+			flip_y()
+
+func _on_left_area_entered(area):
+	match move_state:
+		MoveState.WALK:
+			flip_x()
+
+func _on_right_area_entered(area):
+	match move_state:
+		MoveState.WALK:
+			flip_x()
+
+func _on_up_body_entered(body):
+	match move_state:
+		MoveState.WALK:
+			flip_y()
+
+func _on_down_body_entered(body):
+	match move_state:
+		MoveState.WALK:
+			flip_y()
+
+func _on_left_body_entered(body):
+	match move_state:
+		MoveState.WALK:
+			flip_x()
+
+func _on_right_body_entered(body):
+	match move_state:
+		MoveState.WALK:
+			flip_x()
 
 
-
-
-
-
-
-
+#endregion

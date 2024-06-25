@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbye2741q7ep1"]
+[gd_scene load_steps=24 format=3 uid="uid://dbye2741q7ep1"]
 
 [ext_resource type="Script" path="res://enemies/enemy_types/knight/knight.gd" id="1_c7ep4"]
 [ext_resource type="Texture2D" uid="uid://c4biptn6olafd" path="res://enemies/enemy_types/knight/assets/knight_sheet.png" id="2_bkbge"]
+[ext_resource type="Texture2D" uid="uid://mwn0o3k4ofli" path="res://enemies/enemy_types/knight/assets/knight1.png" id="3_eknmy"]
 [ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="4_uwmnw"]
 [ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="5_5s6rx"]
 [ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="5_5urxs"]
@@ -10,9 +11,25 @@
 atlas = ExtResource("2_bkbge")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ns6k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbl1i"]
+atlas = ExtResource("2_bkbge")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwlqu"]
+atlas = ExtResource("2_bkbge")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3ucl"]
+atlas = ExtResource("2_bkbge")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt5o7"]
 atlas = ExtResource("2_bkbge")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p2hg"]
+atlas = ExtResource("3_eknmy")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_paqkx"]
 animations = [{
@@ -21,12 +38,54 @@ animations = [{
 "texture": SubResource("AtlasTexture_gfeqj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3ns6k")
+"texture": SubResource("AtlasTexture_qbl1i")
 }],
 "loop": true,
-"name": &"default",
-"speed": 3.0
+"name": &"alert",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwlqu")
+}],
+"loop": true,
+"name": &"asleep",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3ucl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt5o7")
+}],
+"loop": true,
+"name": &"awake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p2hg")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"reeling",
+"speed": 20.0
 }]
+
+[sub_resource type="Resource" id="Resource_2dpq8"]
+script = ExtResource("5_5urxs")
+sf_name = "def_hurt"
+sf_vol = -1.0
+sf_pitch = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdt8"]
+size = Vector2(15, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtc8w"]
 size = Vector2(16, 8)
@@ -52,160 +111,163 @@ size = Vector2(2, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iyy2j"]
 size = Vector2(2, 5)
 
-[sub_resource type="Resource" id="Resource_2dpq8"]
-script = ExtResource("5_5urxs")
-sf_name = "def_hurt"
-sf_vol = -1.0
-sf_pitch = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdt8"]
-size = Vector2(15, 9)
-
-[node name="knight" type="Node2D" node_paths=PackedStringArray("knight_anim", "up_area", "down_area", "left_area", "right_area", "awake_timer", "alert_timer", "pause_timer")]
+[node name="knight" type="Node2D" node_paths=PackedStringArray("knight_anim", "up_area", "down_area", "left_area", "right_area", "awake_timer", "alert_timer", "reel_timer", "pause_timer", "ehp_script")]
 script = ExtResource("1_c7ep4")
 knight_anim = NodePath("knight_anim")
-up_area = NodePath("wall_areas/up_area")
-down_area = NodePath("wall_areas/down_area")
-left_area = NodePath("wall_areas/left_area")
-right_area = NodePath("wall_areas/right_area")
-awake_timer = NodePath("awake_timer")
-player_prob_mod = 30
-alert_timer = NodePath("alert_timer")
-pause_timer = NodePath("pause_timer")
+up_area = NodePath("movement/wall_areas/up_area")
+down_area = NodePath("movement/wall_areas/down_area")
+left_area = NodePath("movement/wall_areas/left_area")
+right_area = NodePath("movement/wall_areas/right_area")
+awake_timer = NodePath("movement/awake_timer")
+alert_timer = NodePath("movement/alert_timer")
+reel_timer = NodePath("movement/reel_timer")
+pause_timer = NodePath("movement/pause_timer")
+ehp_script = NodePath("enemy_health")
 
 [node name="knight_anim" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_paqkx")
-frame_progress = 0.227177
-
-[node name="wake_areas" type="Node2D" parent="."]
-visible = false
-
-[node name="up_wake" type="Area2D" parent="wake_areas"]
-position = Vector2(0, -8)
-collision_layer = 0
-collision_mask = 16
-
-[node name="up_shape" type="CollisionShape2D" parent="wake_areas/up_wake"]
-position = Vector2(8, 4)
-shape = SubResource("RectangleShape2D_qtc8w")
-
-[node name="down_wake" type="Area2D" parent="wake_areas"]
-position = Vector2(0, 16)
-collision_layer = 0
-collision_mask = 16
-
-[node name="down_shape" type="CollisionShape2D" parent="wake_areas/down_wake"]
-position = Vector2(8, 4.5)
-shape = SubResource("RectangleShape2D_b81aj")
-
-[node name="left_wake" type="Area2D" parent="wake_areas"]
-position = Vector2(-9, 0)
-collision_layer = 0
-collision_mask = 16
-
-[node name="left_shape" type="CollisionShape2D" parent="wake_areas/left_wake"]
-position = Vector2(4.5, 8)
-shape = SubResource("RectangleShape2D_jew5k")
-
-[node name="right_wake" type="Area2D" parent="wake_areas"]
-position = Vector2(16, 0)
-collision_layer = 0
-collision_mask = 16
-
-[node name="right_shape" type="CollisionShape2D" parent="wake_areas/right_wake"]
-position = Vector2(4.5, 8)
-shape = SubResource("RectangleShape2D_wwjeg")
-
-[node name="wall_areas" type="Node2D" parent="."]
-visible = false
-
-[node name="up_area" type="Area2D" parent="wall_areas"]
-position = Vector2(8, 9)
-collision_layer = 0
-collision_mask = 34
-
-[node name="up_shape" type="CollisionShape2D" parent="wall_areas/up_area"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_qbtan")
-
-[node name="down_area" type="Area2D" parent="wall_areas"]
-position = Vector2(8, 15)
-collision_layer = 0
-collision_mask = 34
-
-[node name="down_shape" type="CollisionShape2D" parent="wall_areas/down_area"]
-shape = SubResource("RectangleShape2D_b6rp4")
-
-[node name="left_area" type="Area2D" parent="wall_areas"]
-position = Vector2(3, 12)
-collision_layer = 0
-collision_mask = 34
-
-[node name="left_shape" type="CollisionShape2D" parent="wall_areas/left_area"]
-position = Vector2(-1, -0.5)
-shape = SubResource("RectangleShape2D_otbky")
-
-[node name="right_area" type="Area2D" parent="wall_areas"]
-position = Vector2(14, 12)
-collision_layer = 0
-collision_mask = 34
-
-[node name="right_shape" type="CollisionShape2D" parent="wall_areas/right_area"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_iyy2j")
-
-[node name="alert_timer" type="Timer" parent="."]
-wait_time = 0.6
-one_shot = true
-
-[node name="awake_timer" type="Timer" parent="."]
+animation = &"awake"
+autoplay = "asleep"
 
 [node name="spike" parent="." instance=ExtResource("4_uwmnw")]
 visible = false
+position = Vector2(-8, -11)
 damage = 2
 
 [node name="Area2D" parent="spike" index="0"]
 position = Vector2(8, 9)
 
 [node name="CollisionShape2D" parent="spike/Area2D" index="0"]
-position = Vector2(0.5, 3.5)
+position = Vector2(0.5, 4.5)
 
 [node name="enemy_health" parent="." node_paths=PackedStringArray("die_node") instance=ExtResource("5_5s6rx")]
+hp = 20
+mhp = 20
+temp_inv = true
 hurt_sf = SubResource("Resource_2dpq8")
 die_node = NodePath("..")
 
 [node name="hurt_timer" type="Timer" parent="enemy_health"]
 
 [node name="hit_area" type="Area2D" parent="."]
-visible = false
-position = Vector2(8, 8)
 collision_layer = 4
 collision_mask = 0
 
 [node name="hit_shape" type="CollisionShape2D" parent="hit_area"]
-position = Vector2(0.5, 3.5)
+position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_mxdt8")
 
-[node name="pause_timer" type="Timer" parent="."]
+[node name="movement" type="Node2D" parent="."]
+
+[node name="wake_areas" type="Node2D" parent="movement"]
+visible = false
+position = Vector2(-7, -5)
+
+[node name="up_wake" type="Area2D" parent="movement/wake_areas"]
+position = Vector2(0, -8)
+collision_layer = 0
+collision_mask = 16
+
+[node name="up_shape" type="CollisionShape2D" parent="movement/wake_areas/up_wake"]
+position = Vector2(8, 4)
+shape = SubResource("RectangleShape2D_qtc8w")
+
+[node name="down_wake" type="Area2D" parent="movement/wake_areas"]
+position = Vector2(0, 16)
+collision_layer = 0
+collision_mask = 16
+
+[node name="down_shape" type="CollisionShape2D" parent="movement/wake_areas/down_wake"]
+position = Vector2(8, 4.5)
+shape = SubResource("RectangleShape2D_b81aj")
+
+[node name="left_wake" type="Area2D" parent="movement/wake_areas"]
+position = Vector2(-9, 0)
+collision_layer = 0
+collision_mask = 16
+
+[node name="left_shape" type="CollisionShape2D" parent="movement/wake_areas/left_wake"]
+position = Vector2(4.5, 8)
+shape = SubResource("RectangleShape2D_jew5k")
+
+[node name="right_wake" type="Area2D" parent="movement/wake_areas"]
+position = Vector2(16, 0)
+collision_layer = 0
+collision_mask = 16
+
+[node name="right_shape" type="CollisionShape2D" parent="movement/wake_areas/right_wake"]
+position = Vector2(4.5, 8)
+shape = SubResource("RectangleShape2D_wwjeg")
+
+[node name="wall_areas" type="Node2D" parent="movement"]
+visible = false
+position = Vector2(-7, -7)
+
+[node name="up_area" type="Area2D" parent="movement/wall_areas"]
+position = Vector2(8, 9)
+collision_layer = 0
+collision_mask = 34
+
+[node name="up_shape" type="CollisionShape2D" parent="movement/wall_areas/up_area"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_qbtan")
+
+[node name="down_area" type="Area2D" parent="movement/wall_areas"]
+position = Vector2(8, 15)
+collision_layer = 0
+collision_mask = 34
+
+[node name="down_shape" type="CollisionShape2D" parent="movement/wall_areas/down_area"]
+shape = SubResource("RectangleShape2D_b6rp4")
+
+[node name="left_area" type="Area2D" parent="movement/wall_areas"]
+position = Vector2(3, 12)
+collision_layer = 0
+collision_mask = 34
+
+[node name="left_shape" type="CollisionShape2D" parent="movement/wall_areas/left_area"]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_otbky")
+
+[node name="right_area" type="Area2D" parent="movement/wall_areas"]
+position = Vector2(14, 12)
+collision_layer = 0
+collision_mask = 34
+
+[node name="right_shape" type="CollisionShape2D" parent="movement/wall_areas/right_area"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_iyy2j")
+
+[node name="alert_timer" type="Timer" parent="movement"]
+wait_time = 0.6
+one_shot = true
+
+[node name="awake_timer" type="Timer" parent="movement"]
+
+[node name="pause_timer" type="Timer" parent="movement"]
 wait_time = 0.397
 
-[connection signal="area_entered" from="wake_areas/up_wake" to="." method="_on_up_wake_area_entered"]
-[connection signal="area_entered" from="wake_areas/down_wake" to="." method="_on_down_wake_area_entered"]
-[connection signal="area_entered" from="wake_areas/left_wake" to="." method="_on_left_wake_area_entered"]
-[connection signal="area_entered" from="wake_areas/right_wake" to="." method="_on_right_wake_area_entered"]
-[connection signal="area_entered" from="wall_areas/up_area" to="." method="_on_up_area_area_entered"]
-[connection signal="body_entered" from="wall_areas/up_area" to="." method="_on_up_area_body_entered"]
-[connection signal="area_entered" from="wall_areas/down_area" to="." method="_on_down_area_area_entered"]
-[connection signal="body_entered" from="wall_areas/down_area" to="." method="_on_down_area_body_entered"]
-[connection signal="area_entered" from="wall_areas/left_area" to="." method="_on_left_area_area_entered"]
-[connection signal="body_entered" from="wall_areas/left_area" to="." method="_on_left_area_body_entered"]
-[connection signal="area_entered" from="wall_areas/right_area" to="." method="_on_right_area_area_entered"]
-[connection signal="body_entered" from="wall_areas/right_area" to="." method="_on_right_area_body_entered"]
-[connection signal="timeout" from="alert_timer" to="." method="_on_alert_timer_timeout"]
-[connection signal="timeout" from="awake_timer" to="." method="_on_awake_timer_timeout"]
+[node name="reel_timer" type="Timer" parent="movement"]
+wait_time = 0.28
+one_shot = true
+
 [connection signal="hurt" from="enemy_health" to="." method="_on_enemy_health_hurt"]
 [connection signal="timeout" from="enemy_health/hurt_timer" to="." method="_on_hurt_timer_timeout"]
-[connection signal="timeout" from="pause_timer" to="." method="_on_pause_timer_timeout"]
+[connection signal="area_entered" from="movement/wake_areas/up_wake" to="." method="_on_up_wake_area_entered"]
+[connection signal="area_entered" from="movement/wake_areas/down_wake" to="." method="_on_down_wake_area_entered"]
+[connection signal="area_entered" from="movement/wake_areas/left_wake" to="." method="_on_left_wake_area_entered"]
+[connection signal="area_entered" from="movement/wake_areas/right_wake" to="." method="_on_right_wake_area_entered"]
+[connection signal="area_entered" from="movement/wall_areas/up_area" to="." method="_on_up_area_area_entered"]
+[connection signal="body_entered" from="movement/wall_areas/up_area" to="." method="_on_up_area_body_entered"]
+[connection signal="area_entered" from="movement/wall_areas/down_area" to="." method="_on_down_area_area_entered"]
+[connection signal="body_entered" from="movement/wall_areas/down_area" to="." method="_on_down_area_body_entered"]
+[connection signal="area_entered" from="movement/wall_areas/left_area" to="." method="_on_left_area_area_entered"]
+[connection signal="body_entered" from="movement/wall_areas/left_area" to="." method="_on_left_area_body_entered"]
+[connection signal="area_entered" from="movement/wall_areas/right_area" to="." method="_on_right_area_area_entered"]
+[connection signal="body_entered" from="movement/wall_areas/right_area" to="." method="_on_right_area_body_entered"]
+[connection signal="timeout" from="movement/alert_timer" to="." method="_on_alert_timer_timeout"]
+[connection signal="timeout" from="movement/awake_timer" to="." method="_on_awake_timer_timeout"]
+[connection signal="timeout" from="movement/pause_timer" to="." method="_on_pause_timer_timeout"]
+[connection signal="timeout" from="movement/reel_timer" to="." method="_on_reel_timer_timeout"]
 
 [editable path="spike"]
