@@ -1,9 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckgcuoqhywtrw"]
+[gd_scene load_steps=16 format=3 uid="uid://ckgcuoqhywtrw"]
 
 [ext_resource type="Texture2D" uid="uid://bbclgsjc3iw2f" path="res://enemies/enemy_types/snf/assets/snfffnsnnffffsnffffismell small dog1.png" id="1_4jdp0"]
+[ext_resource type="Script" path="res://enemies/enemy_types/snf/snfffff.gd" id="1_pvjdk"]
 [ext_resource type="Texture2D" uid="uid://boe17ps7c16fn" path="res://enemies/enemy_types/snf/assets/snfffnsnnffffsnffffismell small dog2.png" id="2_b1q50"]
+[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="2_lufs2"]
 [ext_resource type="Script" path="res://enemies/enemy_types/snf/snf_movement.gd" id="3_qe44y"]
 [ext_resource type="Texture2D" uid="uid://dw06lw2g4tkdq" path="res://enemies/enemy_types/enemy_assets/enemy_sprite_one.aseprite" id="3_vorly"]
+
+[sub_resource type="Resource" id="Resource_k2egf"]
+script = ExtResource("2_lufs2")
+sf_name = "bork_one"
+sf_vol = -1.0
+sf_pitch = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wet1m"]
 atlas = ExtResource("3_vorly")
@@ -50,7 +58,12 @@ size = Vector2(12, 1.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_126dh"]
 size = Vector2(12, 1.25)
 
-[node name="snfffff" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii35l"]
+
+[node name="snfffff" type="Node2D" node_paths=PackedStringArray("pet_area")]
+script = ExtResource("1_pvjdk")
+pet_area = NodePath("pet_area")
+pet_sf = SubResource("Resource_k2egf")
 
 [node name="snf_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6v7vc")
@@ -109,6 +122,15 @@ collision_mask = 34
 position = Vector2(1, 1.625)
 shape = SubResource("RectangleShape2D_126dh")
 
+[node name="pet" type="Node2D" parent="."]
+
+[node name="pet_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="pet_shape" type="CollisionShape2D" parent="pet_area"]
+shape = SubResource("RectangleShape2D_ii35l")
+
 [connection signal="timeout" from="roll_timer" to="snf_movement" method="_on_roll_timer_timeout"]
 [connection signal="area_entered" from="left_area" to="snf_movement" method="_on_left_area_area_entered"]
 [connection signal="body_entered" from="left_area" to="snf_movement" method="_on_left_area_body_entered"]
@@ -118,3 +140,5 @@ shape = SubResource("RectangleShape2D_126dh")
 [connection signal="body_entered" from="down_area" to="snf_movement" method="_on_down_area_body_entered"]
 [connection signal="area_entered" from="up_area" to="snf_movement" method="_on_up_area_area_entered"]
 [connection signal="body_entered" from="up_area" to="snf_movement" method="_on_up_area_body_entered"]
+[connection signal="area_entered" from="pet_area" to="." method="_on_pet_area_area_entered"]
+[connection signal="area_exited" from="pet_area" to="." method="_on_pet_area_area_exited"]
