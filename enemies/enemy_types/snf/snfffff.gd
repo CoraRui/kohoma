@@ -15,8 +15,8 @@ func _input(event):
 	if event.is_action_pressed("confirm") && canpet:
 		sfx_pi.play_sound_link(pet_sf)
 		
-func _on_pet_area_area_entered(area):
+func _on_pet_area_area_entered(_area):
 	canpet = true
 
-func _on_pet_area_area_exited(area):
+func _on_pet_area_area_exited(_area):
 	canpet = false

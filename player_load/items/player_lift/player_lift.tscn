@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://h4jc680hewwt"]
+
+[ext_resource type="Script" path="res://player_load/items/player_lift/player_lift.gd" id="1_koe64"]
+
+[node name="player_lift" type="Node2D"]
+script = ExtResource("1_koe64")

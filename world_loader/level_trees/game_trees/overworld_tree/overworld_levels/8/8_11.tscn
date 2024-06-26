@@ -81,6 +81,6 @@ position = Vector2(64, 16)
 position = Vector2(64, 32)
 
 [node name="turtle" parent="." instance=ExtResource("9_badj8")]
-position = Vector2(112, 72)
+position = Vector2(40, 72)
 
 [editable path="load_info"]

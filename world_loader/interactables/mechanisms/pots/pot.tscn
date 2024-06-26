@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://biktt5wuq41on"]
+
+[ext_resource type="Script" path="res://world_loader/interactables/mechanisms/pots/pot.gd" id="1_51u7s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ls07"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"pot",
+"speed": 5.0
+}]
+
+[node name="pot" type="Node2D"]
+script = ExtResource("1_51u7s")
+
+[node name="pot_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0ls07")
+animation = &"pot"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0, 0, 0, 1)
