@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bm6r33rcfa1j6"]
+[gd_scene load_steps=49 format=3 uid="uid://bm6r33rcfa1j6"]
 
 [ext_resource type="Script" path="res://player_load/player_node/player_movement.gd" id="1_eisff"]
 [ext_resource type="Script" path="res://player_load/player_node/player.gd" id="1_tearn"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bmjtmf4h8ix3b" path="res://player_load/player_node/assets/lief_anim.aseprite" id="11_os4df"]
 [ext_resource type="PackedScene" uid="uid://c0k4nawcq1y6y" path="res://player_load/items/shape_shifter/shape_shifter.tscn" id="12_c2wva"]
 [ext_resource type="PackedScene" uid="uid://75l6vl3x6b6w" path="res://player_load/items/bombs/bomb_bag/bomb_bag.tscn" id="12_x5cs1"]
+[ext_resource type="PackedScene" uid="uid://h4jc680hewwt" path="res://player_load/items/player_lift/player_lift.tscn" id="15_xckcm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdxc5"]
 size = Vector2(6, 4)
@@ -455,8 +456,18 @@ position = Vector2(0, -4)
 player_move = NodePath("../movement")
 player_items = NodePath("../items")
 
+[node name="player_lift" parent="." instance=ExtResource("15_xckcm")]
+
+[node name="grab_area" parent="player_lift" index="1"]
+position = Vector2(5, -3)
+
+[node name="grab_shape" parent="player_lift/grab_area" index="0"]
+position = Vector2(2, 4.5)
+
 [connection signal="timeout" from="movement/hurt_timer" to="movement" method="_on_hurt_timer_timeout"]
 [connection signal="area_entered" from="hit_area" to="player_health" method="_on_hit_area_area_entered"]
 [connection signal="ended_swing" from="sword" to="movement" method="_on_sword_ended_swing"]
 [connection signal="started_swing" from="sword" to="movement" method="_on_sword_started_swing"]
 [connection signal="timeout" from="sword/sword_anim/swing_timer" to="sword/sword_anim" method="_on_swing_timer_timeout"]
+
+[editable path="player_lift"]

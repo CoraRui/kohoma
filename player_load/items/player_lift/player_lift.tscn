@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://h4jc680hewwt"]
+[gd_scene load_steps=3 format=3 uid="uid://h4jc680hewwt"]
 
 [ext_resource type="Script" path="res://player_load/items/player_lift/player_lift.gd" id="1_koe64"]
 
-[node name="player_lift" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_836mq"]
+size = Vector2(4, 3)
+
+[node name="player_lift" type="Node2D" node_paths=PackedStringArray("hold_point", "grab_arr")]
 script = ExtResource("1_koe64")
+hold_point = NodePath("hold_point")
+grab_arr = [NodePath("grab_points/up"), NodePath("grab_points/down"), NodePath("grab_points/left"), NodePath("grab_points/right")]
+
+[node name="hold_point" type="Node2D" parent="."]
+
+[node name="grab_area" type="Area2D" parent="."]
+
+[node name="grab_shape" type="CollisionShape2D" parent="grab_area"]
+position = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_836mq")
+
+[node name="grab_points" type="Node2D" parent="."]
+
+[node name="up" type="Node2D" parent="grab_points"]
+
+[node name="down" type="Node2D" parent="grab_points"]
+
+[node name="left" type="Node2D" parent="grab_points"]
+
+[node name="right" type="Node2D" parent="grab_points"]

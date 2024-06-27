@@ -7,6 +7,37 @@ enum Dir {UP = 0, DOWN = 1, LEFT = 2, RIGHT = 3, NONE = 4}
 
 #add a function for attributing a unit vector to a direction
 
+static func udlr_to_dir(i : int) -> Dir:
+	#converts 0,1,2,3 to up,down,left, or right. considering doing other integers cyclically. like 4=0=up and so on.
+	match i % 3:
+		0:
+			return Dir.UP
+		1:
+			return Dir.DOWN
+		2:
+			return Dir.LEFT
+		3:
+			return Dir.RIGHT
+		_:
+			return Dir.NONE
+	
+static func dir_to_udlr(d : Dir) -> Dir:
+	match d:
+		Dir.UP:
+			return 0
+		Dir.DOWN:
+			return 1
+		Dir.LEFT:
+			return 2
+		Dir.RIGHT:
+			return 3
+		Dir.NONE:
+			return 4
+		_:
+			return -1
+	
+	
+
 static func get_dir(v : Vector2) -> Dir:
 	#this function returns
 	var dir : Dir

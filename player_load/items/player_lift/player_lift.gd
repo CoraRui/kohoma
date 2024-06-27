@@ -5,6 +5,7 @@ class_name player_lift
 #TODO: throw pot in other situations, like when hurt
 #TODO: how to get directional information?
 #TODO: when to disable input for player_lift
+#TODO: which things need to be relocated when the player turns? (grab_area, throw_direction, hold_point stays)
 
 #ok. so the player approaches the pot.
 #they grab it
@@ -31,6 +32,10 @@ var grab_dir : DirClass.Dir = DirClass.Dir.NONE
 #then lifts them over the players head, and can throw them.
 
 @export var grab_area : Area2D
+
+@export var hold_point : Node2D
+
+@export var grab_arr : Array[Node2D]		#points that the grab area should be relocated to on turn, udlr
 
 #region autoloads
 
@@ -107,6 +112,7 @@ func dir_input(e : InputEvent) ->void:
 				DirClass.Dir.UP:
 					pass
 
+#region actions
 func try_grab() -> void:
 	#attempts to find an object and grab it.
 	if grab_area.has_overlapping_bodies():
@@ -123,6 +129,7 @@ func try_grab() -> void:
 func grab(p : pot):
 	lift_state = LiftState.GRAB
 	grab_signal.emit()
+	#how does the pot move on top of the player? straight line to hold point
 	
 func try_pull() -> void:
 	pass
@@ -155,3 +162,5 @@ func try_put_down() -> void:
 	
 func put_down() -> void:
 	pass
+
+#endregion
