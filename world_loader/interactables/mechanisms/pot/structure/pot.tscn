@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://biktt5wuq41on"]
 
-[ext_resource type="Script" path="res://world_loader/interactables/mechanisms/pots/pot.gd" id="1_51u7s"]
+[ext_resource type="Script" path="res://world_loader/interactables/mechanisms/pot/structure/pot.gd" id="1_241wl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0ls07"]
 animations = [{
@@ -14,7 +14,7 @@ animations = [{
 size = Vector2(10, 10)
 
 [node name="pot" type="Node2D" node_paths=PackedStringArray("lift_point")]
-script = ExtResource("1_51u7s")
+script = ExtResource("1_241wl")
 lift_point = NodePath("lift_point")
 
 [node name="pot_anim" type="AnimatedSprite2D" parent="."]

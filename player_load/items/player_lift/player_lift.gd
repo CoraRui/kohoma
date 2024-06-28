@@ -147,7 +147,7 @@ func dir_input(e : InputEvent) -> void:
 func move_pot() -> void:
 	if !pot_ins || lift_state != LiftState.HOLD:
 		return
-	pot_ins.global_position = hold_point.global_position
+	pot_ins.pot_target.global_position = hold_point.global_position
 
 func turn(e : InputEvent):
 	#changes enumerator state on directional movement input while in idle state.
@@ -226,7 +226,6 @@ func try_lift() -> void:
 func lift(p : pot) -> void:
 	#moves pot to hold point. 
 	#TODO: fix to move to hold point gradually, right now it just warps it.
-	p.global_position = hold_point.global_position
 	lift_state = LiftState.HOLD
 	player_li.player_ins.set_movement(true)
 	player_li.player_ins.set_sword_active(false)
@@ -259,7 +258,7 @@ func try_release() -> void:
 func release() -> void:
 	lift_state = LiftState.IDLE
 	release_signal.emit()
-	pot_ins.global_position = drop_point.global_position
+	pot_ins.pot_target.global_position = drop_point.global_position
 	pot_ins = null
 
 func try_put_down() -> void:

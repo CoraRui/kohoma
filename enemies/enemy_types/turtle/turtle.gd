@@ -187,4 +187,4 @@ func _on_rand_timer_timeout():
 	match move_state:
 		MoveState.WALK:
 			rand_dir()
-			print("turtle random")
+			debug_helper.db_message("turtle random", "enemies")

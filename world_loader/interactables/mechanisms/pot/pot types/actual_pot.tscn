@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b833j5de50v6g"]
+
+[ext_resource type="PackedScene" uid="uid://biktt5wuq41on" path="res://world_loader/interactables/mechanisms/pot/structure/pot.tscn" id="1_f37kq"]
+
+[node name="actual_pot" type="Node2D"]
+
+[node name="pot" parent="." node_paths=PackedStringArray("pot_target") instance=ExtResource("1_f37kq")]
+pull_type = 2
+pot_target = NodePath("..")

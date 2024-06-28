@@ -498,7 +498,7 @@ position = Vector2(6, 1)
 position = Vector2(10, 1)
 
 [node name="up" parent="player_lift/drop_points" index="0"]
-position = Vector2(0, -5)
+position = Vector2(0, -10)
 
 [node name="down" parent="player_lift/drop_points" index="1"]
 position = Vector2(0, 8)

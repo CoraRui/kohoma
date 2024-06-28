@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://jfxvdv88hlmx" path="res://music_player/triggers/music_trigger.tscn" id="7_b8bvh"]
 [ext_resource type="PackedScene" uid="uid://c7cjgfpor30c1" path="res://world_loader/interactables/mechanisms/grass/solid_grass/solid_grass.tscn" id="8_s4drw"]
 [ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://enemies/enemy_types/turtle/turtle.tscn" id="9_badj8"]
-[ext_resource type="PackedScene" uid="uid://biktt5wuq41on" path="res://world_loader/interactables/mechanisms/pots/pot.tscn" id="10_y2q01"]
+[ext_resource type="PackedScene" uid="uid://b833j5de50v6g" path="res://world_loader/interactables/mechanisms/pot/pot types/actual_pot.tscn" id="10_ba2fd"]
 
 [node name="8_11" type="Node2D"]
 
@@ -84,8 +84,7 @@ position = Vector2(64, 32)
 [node name="turtle" parent="." instance=ExtResource("9_badj8")]
 position = Vector2(40, 72)
 
-[node name="pot" parent="." instance=ExtResource("10_y2q01")]
-position = Vector2(64, 72)
-pull_type = 2
+[node name="actual_pot" parent="." instance=ExtResource("10_ba2fd")]
+position = Vector2(72, 72)
 
 [editable path="load_info"]

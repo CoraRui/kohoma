@@ -1,7 +1,8 @@
 extends Node2D
 class_name pot
 
-#ok. im trying to think about just liftables in general.
+#so this script is going to be added to objects that I want to act like pots.
+
 
 #when you pull on this object, what happens?
 #does it drag on the floor? does it lift? does it only lift if you have the 
@@ -16,8 +17,7 @@ enum PullType {PULL, HEAVY_PULL, LIFT, HEAVY_LIFT, STATIC}
 #also want to think about button assignment. pretty sure that it will be combined with the confirm button.
 #confirm will probably take precedence.
 
-
-@export var pot_target : Node2D		#target for positional translation with the player and throwing movement
+@export var pot_target : Node2D		#target for positional translation with the player and throwing movement. usually parent
 
 @export var lift_point : Node2D		#spot the player will be moved to when lifting/grabbing the pot if applicable
 									#possibly only bind to an axis if its like a wall or something.
