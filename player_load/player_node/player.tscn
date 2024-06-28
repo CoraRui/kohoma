@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bm6r33rcfa1j6"]
+[gd_scene load_steps=51 format=3 uid="uid://bm6r33rcfa1j6"]
 
 [ext_resource type="Script" path="res://player_load/player_node/player_movement.gd" id="1_eisff"]
 [ext_resource type="Script" path="res://player_load/player_node/player.gd" id="1_tearn"]
@@ -260,6 +260,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_1mqla"]
+script = ExtResource("6_dcine")
+sf_name = "none"
+sf_vol = -1.0
+sf_pitch = 1.0
+
+[sub_resource type="Resource" id="Resource_mv7gb"]
+script = ExtResource("6_dcine")
+sf_name = "none"
+sf_vol = -1.0
+sf_pitch = 1.0
+
 [node name="player" type="Node2D" node_paths=PackedStringArray("items_node", "movement_script", "sword_script", "anim_script", "health_script")]
 z_index = 15
 script = ExtResource("1_tearn")
@@ -457,12 +469,45 @@ player_move = NodePath("../movement")
 player_items = NodePath("../items")
 
 [node name="player_lift" parent="." instance=ExtResource("15_xckcm")]
+grab_sf = SubResource("Resource_1mqla")
+throw_sf = SubResource("Resource_mv7gb")
+
+[node name="hold_point" parent="player_lift" index="0"]
+position = Vector2(0, -14)
+scale = Vector2(-0.167331, 2.15214)
 
 [node name="grab_area" parent="player_lift" index="1"]
 position = Vector2(5, -3)
 
 [node name="grab_shape" parent="player_lift/grab_area" index="0"]
 position = Vector2(2, 4.5)
+
+[node name="up" parent="player_lift/grab_points" index="0"]
+position = Vector2(0, -4)
+
+[node name="down" parent="player_lift/grab_points" index="1"]
+position = Vector2(0, 6)
+
+[node name="left" parent="player_lift/grab_points" index="2"]
+position = Vector2(-8, 1)
+
+[node name="right" parent="player_lift/grab_points" index="3"]
+position = Vector2(6, 1)
+
+[node name="drop_point" parent="player_lift" index="4"]
+position = Vector2(10, 1)
+
+[node name="up" parent="player_lift/drop_points" index="0"]
+position = Vector2(0, -5)
+
+[node name="down" parent="player_lift/drop_points" index="1"]
+position = Vector2(0, 8)
+
+[node name="left" parent="player_lift/drop_points" index="2"]
+position = Vector2(-8, 0)
+
+[node name="right" parent="player_lift/drop_points" index="3"]
+position = Vector2(8, 0)
 
 [connection signal="timeout" from="movement/hurt_timer" to="movement" method="_on_hurt_timer_timeout"]
 [connection signal="area_entered" from="hit_area" to="player_health" method="_on_hit_area_area_entered"]

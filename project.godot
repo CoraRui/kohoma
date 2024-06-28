@@ -200,6 +200,7 @@ row_zero={
 2d_physics/layer_9="boomerang"
 2d_physics/layer_10="mechanism"
 2d_physics/layer_11="explosion"
+2d_physics/layer_12="pot"
 
 [rendering]
 

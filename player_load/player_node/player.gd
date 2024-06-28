@@ -7,7 +7,6 @@ class_name player
 
 var direction : DirClass.Dir = DirClass.Dir.DOWN
 
-
 @export_group("move_to parameters")
 @export var move_speed : int = 2		#how many pixels to move the character per frame
 @export var snap_tol : int = 3
@@ -40,7 +39,6 @@ func move_to_frame():
 		return
 	global_position = global_position + shift_vec
 	shift_index -= 1
-
 
 func shift_by(sv : Vector2, dist : int):
 	#this function accepts a directional vector and an index.

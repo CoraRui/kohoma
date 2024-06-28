@@ -66,7 +66,7 @@ func curtain_state_cross():
 		CurtainState.INACTIVE:
 			pass
 		_:
-			debug_hi.db_message("curtain_state has a weird value. why tho", debug_name)
+			debug_helper.db_message("curtain_state has a weird value. why tho", debug_name)
 
 func proc_fade_out():
 	curtain_rect.color.a = clampf(curtain_rect.color.a + fade_out_speed, 0, 1)

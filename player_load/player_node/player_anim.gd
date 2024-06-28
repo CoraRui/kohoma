@@ -14,7 +14,6 @@ var anim_state : AnimState = AnimState.MOVE
 @export var walk_right : String = "walk_right"
 @export_group("","")
 
-
 func animate_movement(mvec : Vector2) -> void:
 	#takes the movement vector from the movement script and determines players movement animation.
 	
@@ -37,3 +36,5 @@ func animate_pot(ls : player_lift.LiftState) -> void:
 	#just animate the player according to the current liftstate in the player lift script.
 	pass
 
+func switch_anim_state(s : AnimState) -> void:
+	pass

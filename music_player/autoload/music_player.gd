@@ -24,7 +24,7 @@ var current_track_name : String
 
 func play_track(track_name : String):
 	if track_name == current_track_name:
-		debug_hi.db_message(" attempted to repeat track: " + track_name, debug_tag)
+		debug_helper.db_message(" attempted to repeat track: " + track_name, debug_tag)
 		return
 	if track_name == "none":
 		stream_player.stop()
@@ -32,7 +32,7 @@ func play_track(track_name : String):
 		current_track_name = track_name
 		return
 	if not music_dict.has(track_name):
-		debug_hi.db_message(" music dict does not contain: " + track_name, debug_tag)
+		debug_helper.db_message(" music dict does not contain: " + track_name, debug_tag)
 		return
 	stream_player.stream = music_dict[track_name]
 	stream_player.play()

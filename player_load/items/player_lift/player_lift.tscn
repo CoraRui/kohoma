@@ -5,25 +5,51 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_836mq"]
 size = Vector2(4, 3)
 
-[node name="player_lift" type="Node2D" node_paths=PackedStringArray("hold_point", "grab_arr")]
+[node name="player_lift" type="Node2D" node_paths=PackedStringArray("grab_area", "hold_point", "drop_point", "grab_arr", "drop_arr")]
 script = ExtResource("1_koe64")
+grab_area = NodePath("grab_area")
 hold_point = NodePath("hold_point")
+drop_point = NodePath("drop_point")
 grab_arr = [NodePath("grab_points/up"), NodePath("grab_points/down"), NodePath("grab_points/left"), NodePath("grab_points/right")]
+drop_arr = [NodePath("drop_points/up"), NodePath("drop_points/down"), NodePath("drop_points/left"), NodePath("drop_points/right")]
 
 [node name="hold_point" type="Node2D" parent="."]
 
 [node name="grab_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2048
 
 [node name="grab_shape" type="CollisionShape2D" parent="grab_area"]
 position = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_836mq")
 
 [node name="grab_points" type="Node2D" parent="."]
+position = Vector2(0, -4)
 
 [node name="up" type="Node2D" parent="grab_points"]
 
 [node name="down" type="Node2D" parent="grab_points"]
+position = Vector2(0, 10)
 
 [node name="left" type="Node2D" parent="grab_points"]
+position = Vector2(-7, 5)
 
 [node name="right" type="Node2D" parent="grab_points"]
+position = Vector2(6, 5)
+
+[node name="throw_timer" type="Timer" parent="."]
+
+[node name="drop_point" type="Node2D" parent="."]
+position = Vector2(5, 5)
+
+[node name="drop_points" type="Node2D" parent="."]
+
+[node name="up" type="Node2D" parent="drop_points"]
+
+[node name="down" type="Node2D" parent="drop_points"]
+
+[node name="left" type="Node2D" parent="drop_points"]
+
+[node name="right" type="Node2D" parent="drop_points"]
+
+[connection signal="timeout" from="throw_timer" to="." method="_on_throw_timer_timeout"]

@@ -7,6 +7,8 @@ enum Dir {UP = 0, DOWN = 1, LEFT = 2, RIGHT = 3, NONE = 4}
 
 #add a function for attributing a unit vector to a direction
 
+
+
 static func udlr_to_dir(i : int) -> Dir:
 	#converts 0,1,2,3 to up,down,left, or right. considering doing other integers cyclically. like 4=0=up and so on.
 	match i % 3:
@@ -21,7 +23,7 @@ static func udlr_to_dir(i : int) -> Dir:
 		_:
 			return Dir.NONE
 	
-static func dir_to_udlr(d : Dir) -> Dir:
+static func dir_to_udlr(d : Dir) -> int:
 	match d:
 		Dir.UP:
 			return 0
@@ -36,12 +38,7 @@ static func dir_to_udlr(d : Dir) -> Dir:
 		_:
 			return -1
 	
-	
-
-static func get_dir(v : Vector2) -> Dir:
-	#this function returns
-	var dir : Dir
-	
+static func get_dir(v : Vector2) -> Dir:	
 	if v.x == 0:
 		if v.y == 0:
 			return Dir.NONE
@@ -81,6 +78,34 @@ static func get_flip(d : Dir) -> Dir:
 		_:
 			print("flip wasnt in a direction, is that bad?")
 			return Dir.NONE
+
+static func input_to_dir(e : InputEvent) -> Dir:
+	#takes an input event, translates up down left right into directions.
+	if e.is_action_pressed("up"):
+		return Dir.UP
+	if e.is_action_pressed("down"):
+		return Dir.DOWN
+	if e.is_action_pressed("left"):
+		return Dir.LEFT
+	if e.is_action_pressed("right"):
+		return Dir.RIGHT
+	debug_helper.db_message("input to dir returned none. intentional?", "direction")
+	return Dir.NONE
+	
+static func are_opposite(d1 : Dir, d2 : Dir) -> bool:
+	#returns true if the directions are opposite(left/right, up/down)
+	
+	if d1 == Dir.UP && d2 == Dir.DOWN:
+		return true
+	if d1 == Dir.DOWN && d2 == Dir.UP:
+		return true
+	if d1 == Dir.LEFT && d2 == Dir.RIGHT:
+		return true
+	if d1 == Dir.RIGHT && d2 == Dir.LEFT:
+		return true
+	
+	return false
+	
 
 #after all this time im still trying to figure out how to move in four directions... ugh.
 #i want to be able to turn directional input into a direction(Dir)

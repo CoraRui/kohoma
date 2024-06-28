@@ -24,7 +24,7 @@ var sf_index : int = 0
 func play_sound(sn : String):
 	#so this function should put the sound named sn into the next stream player and play it.
 	if not sfx_dict.has(sn):
-		debug_hi.db_message("sfx player attempted to play nonexistent sound:" + sn, debug_name)
+		debug_helper.db_message("sfx player attempted to play nonexistent sound:" + sn, debug_name)
 		return
 	
 	sfx_streams[sf_index].stream = sfx_dict[sn]
@@ -37,10 +37,11 @@ func play_sound(sn : String):
 func play_sound_link(sfl : sf_link):
 		#so this function should put the sound named sn into the next stream player and play it.
 	if not sfl:
+		debug_helper.db_message("sfx player was sent an empty sound link.", "debug_name")
 		return
 	
 	if not sfx_dict.has(sfl.sf_name):
-		debug_hi.db_message("sfx player attempted to play nonexistent sound:" + sfl.sf_name, debug_name)
+		debug_helper.db_message("sfx player attempted to play nonexistent sound:" + sfl.sf_name, debug_name)
 		return
 	
 	sfx_streams[sf_index].stream = sfx_dict[sfl.sf_name]
@@ -49,4 +50,4 @@ func play_sound_link(sfl : sf_link):
 	sf_index += 1
 	if sf_index >= sfx_streams.size():
 		sf_index = 0
-
+	debug_helper.db_message("sfx player played: " + sfl.sf_name, debug_name)

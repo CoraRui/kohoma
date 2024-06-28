@@ -7,11 +7,20 @@ class_name debug_helper
 #I also want a way to categorize them. like having messages labelled certain things, and some dictionary here that tells whether
 #to use that.
 
-@export var print_all : bool = false		
+static var print_all : bool = false		
 
-@export var tag_dict : Dictionary			#dictionary boolean value, string keys. determines whether to print messages with that tag.
+static var tag_dict : Dictionary = {
+	"player" : false,
+	"enemies" : false,
+	"mechanisms" : false,
+	"music player" : false,
+	"save/load" : false,
+	"lift" : true,
+	"direction" : false,
+	"sfx_player" : false
+}
 
-func db_message(m : String, t : String):
+static func db_message(m : String, t : String):
 	#m is the message to print, t is the tag determining whether to print it.
 	if tag_dict.has(t) && !print_all:
 		if !tag_dict[t]:

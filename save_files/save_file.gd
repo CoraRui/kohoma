@@ -25,12 +25,12 @@ func record_file(fi : int):
 	if not dir.dir_exists("save/"):
 		dir.make_dir("save/")
 	if ResourceSaver.save(current_file, save_dir[fi]) != OK:
-		debug_hi.db_message("save_file could't record the file", debug_name)
+		debug_helper.db_message("save_file could't record the file", debug_name)
 
 #updates the current file with the one in the directory.
 func load_file(fi : int):
 	if not FileAccess.file_exists(save_dir[fi]):
-		debug_hi.db_message("no save file at: " + save_dir[fi] + ", creating new file.", debug_name)
+		debug_helper.db_message("no save file at: " + save_dir[fi] + ", creating new file.", debug_name)
 		current_file = file_01.new()
 		record_file(fi)
 		return
