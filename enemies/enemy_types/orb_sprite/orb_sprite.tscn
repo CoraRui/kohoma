@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://sm77pxmrkael"]
+[gd_scene load_steps=15 format=3 uid="uid://sm77pxmrkael"]
 
 [ext_resource type="Texture2D" uid="uid://b5js4rkc5lj60" path="res://enemies/enemy_types/orb_sprite/assets/orb_sprite_sheet.png" id="1_fg1il"]
 [ext_resource type="Script" path="res://enemies/enemy_types/orb_sprite/orb_sprite.gd" id="1_su0og"]
+[ext_resource type="PackedScene" uid="uid://wsyev6mgyaxq" path="res://enemies/modules/enemy_health/enemy_health.tscn" id="3_k8kcb"]
+[ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="4_euhbs"]
+[ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="5_xhnho"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_310fl"]
 atlas = ExtResource("1_fg1il")
@@ -58,6 +61,14 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Resource" id="Resource_pqni2"]
+script = ExtResource("4_euhbs")
+sf_name = "default"
+sf_vol = -1.0
+sf_pitch = 1.0
+
+[sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_grrtl"]
+
 [node name="orb_sprite" type="Node2D"]
 script = ExtResource("1_su0og")
 
@@ -66,3 +77,32 @@ sprite_frames = SubResource("SpriteFrames_r514o")
 animation = &"land"
 frame = 2
 frame_progress = 1.0
+
+[node name="hit_area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hit_area"]
+polygon = PackedVector2Array(0, 11, 11, 10, 14, 2, 9, -8, 0, -11, -10, -7, -14, 2, -11, 10)
+
+[node name="enemy_health" parent="." node_paths=PackedStringArray("die_node") instance=ExtResource("3_k8kcb")]
+hp = 50
+hurt_sf = SubResource("Resource_pqni2")
+die_node = NodePath("..")
+
+[node name="spike" parent="." instance=ExtResource("5_xhnho")]
+
+[node name="Area2D" parent="spike" index="0"]
+visible = false
+
+[node name="Area2D2" type="Area2D" parent="spike"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="spike/Area2D2"]
+polygon = PackedVector2Array(0, -11, 9, -8, 14, 2, 11, 10, 0, 11, -11, 10, -14, 2, -10, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike/Area2D2/CollisionPolygon2D"]
+shape = SubResource("ConcavePolygonShape2D_grrtl")
+
+[editable path="spike"]

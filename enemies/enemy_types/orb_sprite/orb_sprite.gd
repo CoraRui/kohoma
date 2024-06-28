@@ -1,12 +1,34 @@
 extends Node2D
 
 
-#controls movement of the orb sprite.
-#oh man i have so much to think of...
+#TODO: movement patterns(splitting, charging, stunned)
+#TODO: sfx
+#TODO: animations
+#TODO: 
 
-#related to item/ earlier things? boomerang, fishing rod, etc.
-#if i do a boomerang thing, I could have the water have something come out of it, then you have to "catch" it
-#with the boomerang. thinkin an explosive fish. BOOMfish.
-#in that case i should do pickups first...
 
-#
+enum OrbState { SLIDE }
+var orb_state : OrbState = OrbState.SLIDE
+
+#movement patterns:
+#split
+#charge
+#stunned
+#side side
+#slide towards point
+
+
+#slide state
+@export var slide_point : Node2D		#point that the orb will move towards while sliding.
+
+func _physics_process(_delta):
+	move_state()
+
+func move_state() -> void:
+	match orb_state:
+		OrbState.SLIDE:
+			slide()
+
+#movement patterns
+func slide():
+	pass

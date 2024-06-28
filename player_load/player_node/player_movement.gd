@@ -55,6 +55,7 @@ func directional_input():
 	#modifies the mvec vector according to the players input
 	var x : int = int(Input.get_axis("left", "right"))
 	var y : int = int(Input.get_axis("up", "down"))
+	anim_controller.animate_movement(Vector2(x,y))
 	if y == 0:
 		mvec.x += vel[vel_index] * x
 		if x == 1: direction = DirClass.Dir.RIGHT

@@ -41,6 +41,7 @@ signal death
 
 #endregion
 
+
 #autoloads
 @onready var sfx_pi : sfx_player = get_node("/root/sfx_player_auto")
 @onready var world_i : world = get_node("/root/world_auto")

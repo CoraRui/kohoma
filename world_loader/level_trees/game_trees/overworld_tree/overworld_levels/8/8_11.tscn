@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://nmnnhoqjulmn"]
+[gd_scene load_steps=12 format=3 uid="uid://nmnnhoqjulmn"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_0u3dl"]
 [ext_resource type="PackedScene" uid="uid://d2ij06gtg0fi7" path="res://world_loader/rooms/room trigger/room_trigger.tscn" id="2_n70v1"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c7cjgfpor30c1" path="res://world_loader/interactables/mechanisms/grass/solid_grass/solid_grass.tscn" id="8_s4drw"]
 [ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://enemies/enemy_types/turtle/turtle.tscn" id="9_badj8"]
 [ext_resource type="PackedScene" uid="uid://b833j5de50v6g" path="res://world_loader/interactables/mechanisms/pot/pot types/actual_pot.tscn" id="10_ba2fd"]
+[ext_resource type="PackedScene" uid="uid://sm77pxmrkael" path="res://enemies/enemy_types/orb_sprite/orb_sprite.tscn" id="11_5kx3f"]
 
 [node name="8_11" type="Node2D"]
 
@@ -86,5 +87,8 @@ position = Vector2(40, 72)
 
 [node name="actual_pot" parent="." instance=ExtResource("10_ba2fd")]
 position = Vector2(72, 72)
+
+[node name="orb_sprite" parent="." instance=ExtResource("11_5kx3f")]
+position = Vector2(40, 40)
 
 [editable path="load_info"]
