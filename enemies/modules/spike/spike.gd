@@ -9,3 +9,8 @@ class_name spike
 @export var damage : int = 1
 
 @export var spike_area : Area2D
+
+@export var spike_active : bool = true
+
+func toggle_spike(b : bool) -> void:
+	spike_active = b

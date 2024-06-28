@@ -348,11 +348,7 @@ shape = SubResource("RectangleShape2D_afak3")
 [node name="player_health" parent="." node_paths=PackedStringArray("hitbox", "anim_node", "move_node") instance=ExtResource("2_iokp0")]
 visible = false
 position = Vector2(62.75, 66.25)
-mhp = null
-hp = null
 hitbox = NodePath("../hit_area")
-half_hurt_sf = null
-heal_sf = null
 inv_vis_flash_interval = 2
 inv_invis_flash_interval = 4
 anim_node = NodePath("../player_anim")

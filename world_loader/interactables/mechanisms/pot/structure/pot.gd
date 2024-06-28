@@ -10,6 +10,7 @@ class_name pot
 enum PullType {PULL, HEAVY_PULL, LIFT, HEAVY_LIFT, STATIC}
 @export var pull_type : PullType = PullType.STATIC
 
+@export var pot_active : bool = true
 
 #you can lift them. you can throw them.
 #i think I'll design pot to be the liftable script.
@@ -44,7 +45,9 @@ func throw():
 	#this function starts the throw movement for the pot.
 	pass
 
-
+func toggle_pot(b : bool) -> void:
+	pot_active = b
+	
 
 
 

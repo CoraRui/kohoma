@@ -55,7 +55,7 @@ func heal(nhp : int):
 
 func check_for_hit(area : Area2D):
 	if area.get_parent() is spike:
-		damage(area.get_parent().damage, area.global_position)
+		if area.get_parent().spike_active:	damage(area.get_parent().damage, area.global_position)
 
 func i_frame():
 	if !inv:

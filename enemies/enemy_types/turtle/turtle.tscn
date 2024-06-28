@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://yuq3h7sfuerx"]
+[gd_scene load_steps=22 format=3 uid="uid://yuq3h7sfuerx"]
 
 [ext_resource type="Texture2D" uid="uid://bnmc7x5v1brvq" path="res://enemies/enemy_types/turtle/assets/turtle2.png" id="1_l52f8"]
 [ext_resource type="Script" path="res://enemies/enemy_types/turtle/turtle.gd" id="1_wnjy3"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cv0teegdak2v1" path="res://enemies/effects/explosion/explosion.tscn" id="7_10b3r"]
 [ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="7_qhob7"]
 [ext_resource type="PackedScene" uid="uid://cayf47pm8vmxd" path="res://enemies/modules/spike/spike.tscn" id="9_fl7k5"]
+[ext_resource type="PackedScene" uid="uid://biktt5wuq41on" path="res://world_loader/interactables/mechanisms/pot/structure/pot.tscn" id="12_toxir"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hr1kc"]
 animations = [{
@@ -81,13 +82,15 @@ size = Vector2(2, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fggud"]
 size = Vector2(3, 6)
 
-[node name="turtle" type="Node2D" node_paths=PackedStringArray("turtle_anim", "walk_timer", "rand_timer", "hp_script")]
+[node name="turtle" type="Node2D" node_paths=PackedStringArray("turtle_anim", "walk_timer", "rand_timer", "pot_ins", "hp_script", "spike_ins")]
 script = ExtResource("1_wnjy3")
 turtle_anim = NodePath("turtle_anim")
 snap_tol = 1
 walk_timer = NodePath("movement/walk_timer")
 rand_timer = NodePath("movement/rand_timer")
+pot_ins = NodePath("pot")
 hp_script = NodePath("health and damage/enemy_health")
+spike_ins = NodePath("health and damage/spike")
 
 [node name="turtle_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hr1kc")
@@ -172,6 +175,12 @@ shape = SubResource("RectangleShape2D_fggud")
 [node name="rand_timer" type="Timer" parent="movement"]
 autostart = true
 
+[node name="pot" parent="." node_paths=PackedStringArray("pot_target") instance=ExtResource("12_toxir")]
+position = Vector2(0, 2)
+pull_type = 2
+pot_active = false
+pot_target = NodePath("..")
+
 [connection signal="area_entered" from="movement/shell_area" to="." method="_on_shell_area_area_entered"]
 [connection signal="area_exited" from="movement/shell_area" to="." method="_on_shell_area_area_exited"]
 [connection signal="timeout" from="movement/walk_timer" to="." method="_on_walk_timer_timeout"]
@@ -186,3 +195,4 @@ autostart = true
 [connection signal="timeout" from="movement/rand_timer" to="." method="_on_rand_timer_timeout"]
 
 [editable path="health and damage/spike"]
+[editable path="pot"]

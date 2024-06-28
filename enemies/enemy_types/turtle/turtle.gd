@@ -43,11 +43,13 @@ var move_state : MoveState = MoveState.WALK :
 @export var snap_tol : int = 3
 @export var walk_timer : Timer 			#delay before starting to walk after player leaves shell area
 @export var rand_timer : Timer			#timer between random directional changes.
+@export var pot_ins : pot 				#allows turtle to be picked up while shelled
 @export_group("","")
 
 #endregion
 
 @export var hp_script : enemy_health
+@export var spike_ins : spike
 
 #autoloads
 @onready var debug_hi : debug_helper = get_node("/root/debug_helper_auto")
@@ -110,6 +112,8 @@ func go_walk():
 	move_state = MoveState.WALK
 	turtle_anim.play("walk")
 	rand_dir()
+	pot_ins.toggle_pot(false)
+	spike_ins.toggle_spike(true)
 
 func walk_move():
 #Im going to change this from being a target point.
@@ -124,7 +128,9 @@ func go_shell():
 	move_state = MoveState.SHELLED
 	turtle_anim.play("shelled")
 	hp_script.temp_inv = true
-
+	pot_ins.toggle_pot(true)
+	spike_ins.toggle_spike(false)
+	
 #endregion
 
 #region shell_triggers
