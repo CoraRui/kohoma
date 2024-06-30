@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://nmnnhoqjulmn"]
+[gd_scene load_steps=13 format=3 uid="uid://nmnnhoqjulmn"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_0u3dl"]
 [ext_resource type="PackedScene" uid="uid://d2ij06gtg0fi7" path="res://world_loader/rooms/room trigger/room_trigger.tscn" id="2_n70v1"]
@@ -10,7 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://c7cjgfpor30c1" path="res://world_loader/interactables/mechanisms/grass/solid_grass/solid_grass.tscn" id="8_s4drw"]
 [ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://enemies/enemy_types/turtle/turtle.tscn" id="9_badj8"]
 [ext_resource type="PackedScene" uid="uid://b833j5de50v6g" path="res://world_loader/interactables/mechanisms/pot/pot types/actual_pot.tscn" id="10_ba2fd"]
-[ext_resource type="PackedScene" uid="uid://sm77pxmrkael" path="res://enemies/enemy_types/orb_sprite/orb_sprite.tscn" id="11_5kx3f"]
+[ext_resource type="PackedScene" uid="uid://mdwtmm3pvout" path="res://world_loader/level_trees/structure/world_autoload/switch_trigger.tscn" id="12_8ypbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg7ia"]
+size = Vector2(16, 16)
 
 [node name="8_11" type="Node2D"]
 
@@ -88,7 +91,25 @@ position = Vector2(40, 72)
 [node name="actual_pot" parent="." instance=ExtResource("10_ba2fd")]
 position = Vector2(72, 72)
 
-[node name="orb_sprite" parent="." instance=ExtResource("11_5kx3f")]
-position = Vector2(40, 40)
+[node name="switch_trigger" parent="." instance=ExtResource("12_8ypbp")]
+position = Vector2(32, 32)
+new_tree = "res://world_loader/level_trees/game_trees/dungeon_one/dungeon_one_tree.tscn"
+init_pos = Vector2(3, 0)
+
+[node name="switch_area" type="Area2D" parent="switch_trigger"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="switch_shape" type="CollisionShape2D" parent="switch_trigger/switch_area"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_dg7ia")
+
+[node name="ColorRect" type="ColorRect" parent="switch_trigger"]
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="area_entered" from="switch_trigger/switch_area" to="switch_trigger" method="_on_switch_area_area_entered"]
 
 [editable path="load_info"]
+[editable path="switch_trigger"]

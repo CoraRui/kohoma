@@ -14,3 +14,15 @@ extends Node2D
 
 #bomb fish
 #bouncy hits
+
+@export var orb_sprite_ins : orb_sprite
+
+
+
+func _on_boss_init_area_area_entered(_area):
+	#eventually therell be some more substantial kind of intro to the boss battle thing.
+	#but right now, the battle just starts the second the player hits touches the area.
+	#how do i close the room?
+	orb_sprite_ins.init_battle()
+
+

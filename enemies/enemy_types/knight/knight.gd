@@ -60,7 +60,6 @@ var rvec : Vector2 = Vector2(0,0)
 
 #autoloads
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
-@onready var debug_hi : debug_helper = get_node("/root/debug_helper_auto")
 
 func _ready():
 	pass
@@ -94,7 +93,7 @@ func change_direction(d : DirClass.Dir):
 #KnightState.AWAKE
 func wake_up():
 	#changes the knight to the KnightState.AWAKE state
-	debug_hi.db_message("knight woke up", "enemies")
+	debug_helper.db_message("knight woke up", "enemies")
 	knight_state = KnightState.AWAKE
 	change_pursuit()
 	awake_timer.start()
@@ -159,7 +158,7 @@ func change_pursuit():
 
 #KnightState.REEL
 func reel():
-	debug_hi.db_message("knight began reeling", "enemies")
+	debug_helper.db_message("knight began reeling", "enemies")
 	knight_state = KnightState.REELING
 	reel_timer.start()
 	knight_anim.play("reeling")

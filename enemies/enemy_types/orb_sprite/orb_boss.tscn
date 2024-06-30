@@ -3,7 +3,24 @@
 [ext_resource type="Script" path="res://enemies/enemy_types/orb_sprite/orb_boss.gd" id="1_6ck3w"]
 [ext_resource type="PackedScene" uid="uid://sm77pxmrkael" path="res://enemies/enemy_types/orb_sprite/orb_sprite.tscn" id="1_pk1am"]
 
-[node name="orb_boss" type="Node2D"]
+[node name="orb_boss" type="Node2D" node_paths=PackedStringArray("orb_sprite_ins")]
 script = ExtResource("1_6ck3w")
+orb_sprite_ins = NodePath("orb_sprite")
 
-[node name="orb_sprite" parent="." instance=ExtResource("1_pk1am")]
+[node name="orb_sprite" parent="." node_paths=PackedStringArray("slide_point", "hop_point", "hop_left", "hop_right") instance=ExtResource("1_pk1am")]
+position = Vector2(88, 18)
+slide_point = NodePath("../slide_point")
+hop_point = NodePath("../hop_point")
+hop_left = NodePath("../hop_left")
+hop_right = NodePath("../hop_right")
+
+[node name="hop_left" type="Node2D" parent="."]
+position = Vector2(48, 23)
+
+[node name="hop_right" type="Node2D" parent="."]
+position = Vector2(128, 24)
+
+[node name="hop_point" type="Node2D" parent="."]
+
+[node name="slide_point" type="Node2D" parent="."]
+position = Vector2(0, -16)

@@ -17,7 +17,8 @@ static var tag_dict : Dictionary = {
 	"save/load" : false,
 	"lift" : true,
 	"direction" : false,
-	"sfx_player" : false
+	"sfx_player" : false,
+	"orb_boss" : true,
 }
 
 static func db_message(m : String, t : String):

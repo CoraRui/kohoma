@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://sm77pxmrkael"]
+[gd_scene load_steps=19 format=3 uid="uid://sm77pxmrkael"]
 
 [ext_resource type="Texture2D" uid="uid://b5js4rkc5lj60" path="res://enemies/enemy_types/orb_sprite/assets/orb_sprite_sheet.png" id="1_fg1il"]
 [ext_resource type="Script" path="res://enemies/enemy_types/orb_sprite/orb_sprite.gd" id="1_su0og"]
@@ -69,8 +69,22 @@ sf_pitch = 1.0
 
 [sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_grrtl"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02c4g"]
+size = Vector2(24, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4688a"]
+size = Vector2(24, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp1wn"]
+size = Vector2(4, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyd0n"]
+size = Vector2(4, 9)
+
 [node name="orb_sprite" type="Node2D"]
 script = ExtResource("1_su0og")
+charge_top = -16
+charge_bottom = 150
 
 [node name="orb_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r514o")
@@ -104,5 +118,47 @@ polygon = PackedVector2Array(0, -11, 9, -8, 14, 2, 11, 10, 0, 11, -11, 10, -14, 
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spike/Area2D2/CollisionPolygon2D"]
 shape = SubResource("ConcavePolygonShape2D_grrtl")
+
+[node name="wall_collision" type="Node2D" parent="."]
+
+[node name="top_area" type="Area2D" parent="wall_collision"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="top_shape" type="CollisionShape2D" parent="wall_collision/top_area"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_02c4g")
+
+[node name="bottom_area" type="Area2D" parent="wall_collision"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="bottom_shape" type="CollisionShape2D" parent="wall_collision/bottom_area"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_4688a")
+
+[node name="left_area" type="Area2D" parent="wall_collision"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="left_shape" type="CollisionShape2D" parent="wall_collision/left_area"]
+position = Vector2(-14, 4.5)
+shape = SubResource("RectangleShape2D_kp1wn")
+
+[node name="right_area" type="Area2D" parent="wall_collision"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="right_shape" type="CollisionShape2D" parent="wall_collision/right_area"]
+position = Vector2(14, 4.5)
+shape = SubResource("RectangleShape2D_wyd0n")
+
+[connection signal="hop_click" from="." to="." method="_on_hop_click"]
+[connection signal="slide_click" from="." to="." method="_on_slide_click"]
+[connection signal="area_entered" from="wall_collision/top_area" to="." method="_on_top_area_area_entered"]
+[connection signal="body_entered" from="wall_collision/top_area" to="." method="_on_top_area_body_entered"]
+[connection signal="area_entered" from="wall_collision/bottom_area" to="." method="_on_bottom_area_area_entered"]
+[connection signal="area_entered" from="wall_collision/left_area" to="." method="_on_left_area_area_entered"]
+[connection signal="area_entered" from="wall_collision/right_area" to="." method="_on_right_area_area_entered"]
 
 [editable path="spike"]

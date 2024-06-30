@@ -46,7 +46,6 @@ signal block_clicked					#fires when the block snaps into place
 #region autoloads
 #autoloads
 @onready var sfx_pi : sfx_player = get_node("/root/sfx_player_auto")
-@onready var debug_hi : debug_helper = get_node("/root/debug_helper_auto")
 
 #endregion
 
@@ -79,7 +78,7 @@ func _input(event):
 	if push_timer.is_stopped() && not player_touch:
 		return
 	if event.is_action_pressed(dir_input) && player_touch:
-		debug_hi.db_message(str(event.is_action_released(dir_input)) +  " " + str(player_touch), debug_name)
+		debug_helper.db_message(str(event.is_action_released(dir_input)) +  " " + str(player_touch), debug_name)
 		push_timer.start()
 	if event.is_action_released(dir_input) || not player_touch:
 		push_timer.stop()

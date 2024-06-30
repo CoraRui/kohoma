@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://dncp1h2ggc47w"]
+
+[ext_resource type="Script" path="res://world_loader/interactables/mechanisms/doors/open_close_door/shut_door.gd" id="1_w7085"]
+[ext_resource type="Texture2D" uid="uid://b36oabpq8a3dc" path="res://world_loader/tile_pallettes/green_dungeon.png" id="2_v2e2q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ukv1"]
+size = Vector2(48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7aeya"]
+atlas = ExtResource("2_v2e2q")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy50y"]
+atlas = ExtResource("2_v2e2q")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7qrgf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7aeya")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy50y")
+}],
+"loop": true,
+"name": &"closed_stupid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="shut_door" type="Node2D" node_paths=PackedStringArray("door_anim", "door_area")]
+script = ExtResource("1_w7085")
+door_anim = NodePath("door_anim")
+door_area = NodePath("door_area")
+
+[node name="door_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="door_shape" type="CollisionShape2D" parent="door_area"]
+position = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_1ukv1")
+disabled = true
+
+[node name="door_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7qrgf")
+animation = &"closed_stupid"
+autoplay = "open"
+centered = false

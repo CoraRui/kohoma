@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://srelmtycm4ct"]
 
 [ext_resource type="Texture2D" uid="uid://cuaxaqhrdnmgw" path="res://world_loader/tile_pallettes/lock_door.png" id="1_02eto"]
-[ext_resource type="Script" path="res://world_loader/interactables/mechanisms/doors/key_door.gd" id="1_q0mk6"]
+[ext_resource type="Script" path="res://world_loader/interactables/mechanisms/doors/key_door/key_door.gd" id="1_q0mk6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0m4gq"]
 size = Vector2(16, 5)
