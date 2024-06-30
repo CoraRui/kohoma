@@ -15,10 +15,10 @@ hop_left = NodePath("../hop_left")
 hop_right = NodePath("../hop_right")
 
 [node name="hop_left" type="Node2D" parent="."]
-position = Vector2(48, 23)
+position = Vector2(64, 23)
 
 [node name="hop_right" type="Node2D" parent="."]
-position = Vector2(128, 24)
+position = Vector2(112, 24)
 
 [node name="hop_point" type="Node2D" parent="."]
 

@@ -124,7 +124,14 @@ func charge_hop() -> void:
 	debug_helper.db_message("charge hop", "boss_slime")
 	
 	#generates random value hop_var away from current x position, clamped between the left/rightmost hop limits
+
+	
 	hop_point.global_position = Vector2(clampi(int(global_position.x) + randi_range(-1 * hop_var, hop_var), int(hop_left.global_position.x), int(hop_right.global_position.x)), int(global_position.y))
+	
+	if hop_point.global_position == global_position:
+		hop_point.global_position.x += 1
+	
+	print("hop position: ", hop_point.global_position, "global_position: ", global_position)
 	
 	move_state = MoveState.HOP
 	
@@ -141,6 +148,7 @@ func charge_slide() -> void:
 	#set charge speed
 	
 	slide_vel = charge_slide_vel
+	print(charge_slide_vel)
 	
 func stun() -> void:
 	pass
@@ -206,6 +214,30 @@ func _on_left_area_area_entered(_area):
 func _on_right_area_area_entered(_area):
 	pass # Replace with function body.
 
+func _on_top_area_body_entered(_body):
+	debug_helper.db_message("top area hit wall", "boss_slime")
+	match orb_state:
+		OrbState.CHARGE_PATTERN:
+			match move_state:
+				MoveState.SLIDE:
+					charge_hop()
+
+func _on_bottom_area_body_entered(_body):
+	debug_helper.db_message("bottom area hit wall", "slime_boss")
+	match orb_state:
+		OrbState.CHARGE_PATTERN:
+			match move_state:
+				MoveState.SLIDE:
+					charge_hop()
+
+func _on_left_area_body_entered(_body):
+	pass # Replace with function body.
+
+func _on_right_area_body_entered(_body):
+	pass # Replace with function body.
+
+
+
 #endregion
 
 #region primitive signals
@@ -225,5 +257,3 @@ func _on_slide_click():
 #endregion
 
 #connect body signals next. tilemaps are body dumbass
-func _on_top_area_body_entered(body):
-	pass # Replace with function body.
