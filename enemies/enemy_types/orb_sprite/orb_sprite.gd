@@ -55,6 +55,7 @@ enum MoveState { IDLE, SLIDE, HOP }
 #and directly up from the slimes current point.
 @export var charge_top : int		#marks the upper y value that the charge point should be set to
 @export var charge_bottom : int		#marks the lower y value 
+#change to array of Vector2. or int. probably int since its using move towards
 @export var charge_slide_vel : int = 2				#velocity of charge slide
 @export var charge_hop_vel : int = 2				#velocity of charge hop
 @export var charge_anim : String = "charge"		#name of animation
@@ -121,7 +122,7 @@ func charge_hop() -> void:
 	#very interesting. for now i can do a purely random range limited thing.
 	#so generate a random value between +- hop_var. then range limit that value to be within the limits of the stage.
 	
-	debug_helper.db_message("charge hop", "boss_slime")
+	debug_helper.db_message("charge hop", "orb_boss")
 	
 	#generates random value hop_var away from current x position, clamped between the left/rightmost hop limits
 
@@ -130,8 +131,6 @@ func charge_hop() -> void:
 	
 	if hop_point.global_position == global_position:
 		hop_point.global_position.x += 1
-	
-	print("hop position: ", hop_point.global_position, "global_position: ", global_position)
 	
 	move_state = MoveState.HOP
 	
@@ -186,14 +185,14 @@ func hop() -> void:
 	
 	
 	if global_position == hop_point.global_position:
-		debug_helper.db_message("hop clicked", "boss_slime")
+		debug_helper.db_message("hop clicked", "orb_boss")
 		hop_click.emit()
 
 #endregion
 
 #region wall_collision signals
 func _on_top_area_area_entered(_area):
-	debug_helper.db_message("top area hit wall", "boss_slime")
+	debug_helper.db_message("top area hit wall", "orb_boss")
 	match orb_state:
 		OrbState.CHARGE_PATTERN:
 			match move_state:
@@ -201,7 +200,7 @@ func _on_top_area_area_entered(_area):
 					charge_hop()
 					
 func _on_bottom_area_area_entered(_area):
-	debug_helper.db_message("bottom area hit wall", "slime_boss")
+	debug_helper.db_message("bottom area hit wall", "orb_boss")
 	match orb_state:
 		OrbState.CHARGE_PATTERN:
 			match move_state:
@@ -215,7 +214,7 @@ func _on_right_area_area_entered(_area):
 	pass # Replace with function body.
 
 func _on_top_area_body_entered(_body):
-	debug_helper.db_message("top area hit wall", "boss_slime")
+	debug_helper.db_message("top area hit wall", "orb_boss")
 	match orb_state:
 		OrbState.CHARGE_PATTERN:
 			match move_state:
@@ -223,7 +222,7 @@ func _on_top_area_body_entered(_body):
 					charge_hop()
 
 func _on_bottom_area_body_entered(_body):
-	debug_helper.db_message("bottom area hit wall", "slime_boss")
+	debug_helper.db_message("bottom area hit wall", "orb_boss")
 	match orb_state:
 		OrbState.CHARGE_PATTERN:
 			match move_state:

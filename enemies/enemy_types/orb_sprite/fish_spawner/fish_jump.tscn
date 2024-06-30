@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbiw4cl2iybah"]
+
+[ext_resource type="Script" path="res://enemies/enemy_types/orb_sprite/fish_spawner/fish_jump.gd" id="1_qwlr4"]
+[ext_resource type="PackedScene" uid="uid://blnrlo48um0t1" path="res://enemies/enemy_types/bomb_fish/bomb_fish.tscn" id="2_3d1m1"]
+
+[node name="fish_jump" type="Node2D" node_paths=PackedStringArray("spawn_timer")]
+script = ExtResource("1_qwlr4")
+spawn_timer = NodePath("spawn_timer")
+fish_ref = ExtResource("2_3d1m1")
+
+[node name="spawn_timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]

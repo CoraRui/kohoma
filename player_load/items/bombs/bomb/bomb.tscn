@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr4smdb6xpog0"]
+[gd_scene load_steps=15 format=3 uid="uid://dr4smdb6xpog0"]
 
 [ext_resource type="Script" path="res://player_load/items/bombs/bomb/bomb.gd" id="1_0l16p"]
 [ext_resource type="Texture2D" uid="uid://b5gto58e2b3j1" path="res://player_load/items/bombs/assets/bomb.png" id="1_xdran"]
@@ -6,12 +6,29 @@
 [ext_resource type="Texture2D" uid="uid://chr6dun7kvogg" path="res://player_load/items/bombs/assets/exp1.png" id="3_lyk1x"]
 [ext_resource type="Texture2D" uid="uid://cvy6vv3p2x52m" path="res://player_load/items/bombs/assets/exp2.png" id="4_g60or"]
 [ext_resource type="Texture2D" uid="uid://byqtfgldvlka0" path="res://player_load/items/bombs/assets/bomb3.png" id="5_fwekk"]
+[ext_resource type="Texture2D" uid="uid://i5fm5jki5p85" path="res://enemies/enemy_types/bomb_fish/assets/bomb_fish.png" id="7_8oukq"]
 
 [sub_resource type="Resource" id="Resource_2yvu4"]
 script = ExtResource("2_lyan3")
 sf_name = "boom_sf_one"
 sf_vol = -1.0
 sf_pitch = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x6ms"]
+atlas = ExtResource("7_8oukq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdiht"]
+atlas = ExtResource("7_8oukq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gv14"]
+atlas = ExtResource("7_8oukq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynhr2"]
+atlas = ExtResource("7_8oukq")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hlmjr"]
 animations = [{
@@ -28,6 +45,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_lyk1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g60or")
+}],
+"loop": true,
+"name": &"boom_fish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_fwekk")
 }, {
 "duration": 1.0,
@@ -39,11 +67,33 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4x6ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdiht")
+}],
+"loop": true,
+"name": &"flash_fish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_xdran")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gv14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynhr2")
+}],
+"loop": true,
+"name": &"idle_fish",
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oack0"]
@@ -61,9 +111,9 @@ boom_anim = NodePath("bomb_anim")
 
 [node name="bomb_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hlmjr")
-animation = &"boom"
+animation = &"flash_fish"
 autoplay = "idle"
-frame_progress = 0.403653
+frame_progress = 0.846761
 
 [node name="boom_area" type="Area2D" parent="."]
 collision_layer = 1024
@@ -76,7 +126,6 @@ disabled = true
 [node name="init_timer" type="Timer" parent="."]
 wait_time = 0.005
 one_shot = true
-autostart = true
 
 [node name="flash_timer" type="Timer" parent="."]
 wait_time = 1.68

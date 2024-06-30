@@ -11,11 +11,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6fg5"]
-size = Vector2(12, 8)
+size = Vector2(14, 16)
 
-[node name="pot" type="Node2D" node_paths=PackedStringArray("lift_point")]
+[node name="pot" type="Node2D" node_paths=PackedStringArray("lift_point", "hold_point")]
 script = ExtResource("1_241wl")
 lift_point = NodePath("lift_point")
+hold_point = NodePath("hold_point")
 
 [node name="pot_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0ls07")
@@ -39,3 +40,5 @@ position = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_w6fg5")
 
 [node name="lift_point" type="Node2D" parent="."]
+
+[node name="hold_point" type="Node2D" parent="."]

@@ -147,7 +147,7 @@ func dir_input(e : InputEvent) -> void:
 func move_pot() -> void:
 	if !pot_ins || lift_state != LiftState.HOLD:
 		return
-	pot_ins.pot_target.global_position = hold_point.global_position
+	pot_ins.pot_target.global_position = hold_point.global_position - (pot_ins.hold_point.global_position - pot_ins.pot_target.global_position)
 
 func turn(e : InputEvent):
 	#changes enumerator state on directional movement input while in idle state.

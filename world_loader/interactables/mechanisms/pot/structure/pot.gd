@@ -22,7 +22,7 @@ enum PullType {PULL, HEAVY_PULL, LIFT, HEAVY_LIFT, STATIC}
 
 @export var lift_point : Node2D		#spot the player will be moved to when lifting/grabbing the pot if applicable
 									#possibly only bind to an axis if its like a wall or something.
-
+@export var hold_point : Node2D		#spot used to hold the pot
 
 @export_group("sfx")
 #unique sfx for the pot. ill try to have a default set though.

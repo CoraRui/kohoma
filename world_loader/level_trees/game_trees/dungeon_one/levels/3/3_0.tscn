@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2mmawn2eltfe"]
+[gd_scene load_steps=8 format=3 uid="uid://c2mmawn2eltfe"]
 
 [ext_resource type="TileSet" uid="uid://bai32q7cymml7" path="res://world_loader/tile_pallettes/green_dungeon.tres" id="1_f3pe3"]
 [ext_resource type="PackedScene" uid="uid://bt2r7p32eu3y2" path="res://enemies/enemy_types/orb_sprite/orb_boss.tscn" id="2_uxfj4"]
 [ext_resource type="PackedScene" uid="uid://dud8ba8wmp68m" path="res://world_loader/level_trees/structure/resources/load_info/load_info.tscn" id="3_vlfk8"]
 [ext_resource type="Script" path="res://world_loader/level_trees/game_trees/dungeon_one/levels/3/boss_init_area.gd" id="4_clj6y"]
 [ext_resource type="PackedScene" uid="uid://dncp1h2ggc47w" path="res://world_loader/interactables/mechanisms/doors/open_close_door/shut_door.tscn" id="4_ohwva"]
+[ext_resource type="PackedScene" uid="uid://dbiw4cl2iybah" path="res://enemies/enemy_types/orb_sprite/fish_spawner/fish_jump.tscn" id="6_g51c6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64a80"]
 size = Vector2(49, 20)
@@ -39,6 +40,28 @@ door_closed_anim = "closed_stupid"
 
 [node name="door_shape" parent="shut_door/door_area" index="0"]
 position = Vector2(24, 8)
+
+[node name="fish_jump" parent="." node_paths=PackedStringArray("tl_node", "br_node") instance=ExtResource("6_g51c6")]
+position = Vector2(128, 16)
+tl_node = NodePath("tl")
+br_node = NodePath("br")
+
+[node name="tl" type="Node2D" parent="fish_jump"]
+position = Vector2(2, 2)
+
+[node name="br" type="Node2D" parent="fish_jump"]
+position = Vector2(19, 64)
+
+[node name="fish_jump2" parent="." node_paths=PackedStringArray("tl_node", "br_node") instance=ExtResource("6_g51c6")]
+position = Vector2(18, 18)
+tl_node = NodePath("tl")
+br_node = NodePath("br")
+
+[node name="tl" type="Node2D" parent="fish_jump2"]
+position = Vector2(-1, -3)
+
+[node name="br" type="Node2D" parent="fish_jump2"]
+position = Vector2(16, 62)
 
 [connection signal="area_entered" from="boss_init_area" to="orb_boss" method="_on_boss_init_area_area_entered"]
 [connection signal="area_entered" from="boss_init_area" to="boss_init_area" method="_on_area_entered"]

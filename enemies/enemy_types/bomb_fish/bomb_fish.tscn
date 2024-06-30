@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://blnrlo48um0t1"]
+
+[ext_resource type="Script" path="res://enemies/enemy_types/bomb_fish/bomb_fish.gd" id="1_j17je"]
+[ext_resource type="PackedScene" uid="uid://dr4smdb6xpog0" path="res://player_load/items/bombs/bomb/bomb.tscn" id="2_xm0pc"]
+[ext_resource type="PackedScene" uid="uid://biktt5wuq41on" path="res://world_loader/interactables/mechanisms/pot/structure/pot.tscn" id="3_cfgjm"]
+
+[node name="bomb_fish" type="Node2D"]
+script = ExtResource("1_j17je")
+
+[node name="bomb" parent="." instance=ExtResource("2_xm0pc")]
+position = Vector2(8, 7)
+auto_light = false
+exp_name = "boom_fish"
+flash_name = "flash_fish"
+idle_name = "idle_fish"
+
+[node name="pot" parent="." node_paths=PackedStringArray("pot_target") instance=ExtResource("3_cfgjm")]
+pull_type = 2
+pot_target = NodePath("..")
+
+[node name="pot_shape" parent="pot/pot_area" index="0"]
+position = Vector2(15, 13)
+
+[node name="lift_point" parent="pot" index="3"]
+position = Vector2(0, 7)
+
+[node name="hold_point" parent="pot" index="4"]
+position = Vector2(8, 7)
+
+[editable path="pot"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://nmnnhoqjulmn"]
+[gd_scene load_steps=14 format=3 uid="uid://nmnnhoqjulmn"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_0u3dl"]
 [ext_resource type="PackedScene" uid="uid://d2ij06gtg0fi7" path="res://world_loader/rooms/room trigger/room_trigger.tscn" id="2_n70v1"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://enemies/enemy_types/turtle/turtle.tscn" id="9_badj8"]
 [ext_resource type="PackedScene" uid="uid://b833j5de50v6g" path="res://world_loader/interactables/mechanisms/pot/pot types/actual_pot.tscn" id="10_ba2fd"]
 [ext_resource type="PackedScene" uid="uid://mdwtmm3pvout" path="res://world_loader/level_trees/structure/world_autoload/switch_trigger.tscn" id="12_8ypbp"]
+[ext_resource type="PackedScene" uid="uid://blnrlo48um0t1" path="res://enemies/enemy_types/bomb_fish/bomb_fish.tscn" id="12_dy44d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dg7ia"]
 size = Vector2(16, 16)
@@ -108,6 +109,9 @@ shape = SubResource("RectangleShape2D_dg7ia")
 offset_right = 16.0
 offset_bottom = 16.0
 color = Color(0, 0, 0, 1)
+
+[node name="bomb_fish" parent="." instance=ExtResource("12_dy44d")]
+position = Vector2(128, 56)
 
 [connection signal="area_entered" from="switch_trigger/switch_area" to="switch_trigger" method="_on_switch_area_area_entered"]
 
