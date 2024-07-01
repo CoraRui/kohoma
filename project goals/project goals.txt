@@ -68,7 +68,9 @@ was thinking about the pallete swap thing, but:
 	it seems like it would be a pain. itd probably be better to just make unique tilesets.
 	that'll be something I do later in development though. like as a finishing touch.
 
-
+would it be a good idea to have a basic drag and drop wall thing?
+like some object that has four walls and does basic wall checking using basic signals?
+I think I've done enough to know what that would be. so many enemies use such a similar kind of thing i could probably make it now.
 
 
 

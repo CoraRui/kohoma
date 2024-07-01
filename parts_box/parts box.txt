@@ -1,0 +1,9 @@
+little reproducible things ive made that work in lots of things.
+
+for instance, the four directional wall.
+
+there are a lot of enemies/objects that need a four directional wall.
+its easy enough to make it every time, but I might as well just make something.
+i always end up using signals to connect each wall to what should happen for a collision at that spot.
+the states are held within the object itself as to what to do with that info.
+sooo. gonna start making it.

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://biktt5wuq41on"]
+[gd_scene load_steps=5 format=3 uid="uid://biktt5wuq41on"]
 
 [ext_resource type="Script" path="res://world_loader/interactables/mechanisms/pot/structure/pot.gd" id="1_241wl"]
+[ext_resource type="PackedScene" uid="uid://smoy1rvjamdp" path="res://parts_box/collision/4dwall/4dwall.tscn" id="2_xslnp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0ls07"]
 animations = [{
@@ -17,6 +18,8 @@ size = Vector2(14, 16)
 script = ExtResource("1_241wl")
 lift_point = NodePath("lift_point")
 hold_point = NodePath("hold_point")
+throw_vel = 2
+fall_vel_arr = Array[int]([1, 1, 1, 1, 1, 0, 0, 0, 0, -1, 0, 0, -1, 0, -1, 0, -1, -1, -1, -1])
 
 [node name="pot_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0ls07")
@@ -42,3 +45,6 @@ shape = SubResource("RectangleShape2D_w6fg5")
 [node name="lift_point" type="Node2D" parent="."]
 
 [node name="hold_point" type="Node2D" parent="."]
+
+[node name="4dwall" parent="." instance=ExtResource("2_xslnp")]
+position = Vector2(-8, -8)

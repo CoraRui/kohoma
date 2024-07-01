@@ -195,7 +195,6 @@ func let_go() -> void:
 
 func try_pull(e : InputEvent) -> void:
 	debug_helper.db_message("tried to pull", "lift")
-	print("directions", DirClass.input_to_dir(e), grab_dir)
 	if DirClass.are_opposite(DirClass.input_to_dir(e), grab_dir):
 		pull()
 	
@@ -237,8 +236,9 @@ func try_throw() -> void:
 	throw()
 
 func throw() -> void:
+	debug_helper.db_message("threw pot", "lift")
 	#remove the pot_ins reference, and trigger the throw movement in the pot.
-	pot_ins.throw()
+	pot_ins.throw(grab_dir)
 	lift_state = LiftState.THROW
 	#timer for back to idle state
 	throw_timer.start()
@@ -258,7 +258,7 @@ func try_release() -> void:
 func release() -> void:
 	lift_state = LiftState.IDLE
 	release_signal.emit()
-	pot_ins.pot_target.global_position = drop_point.global_position
+	pot_ins.pot_target.global_position = drop_point.global_position - (pot_ins.hold_point.global_position - pot_ins.pot_target.global_position)
 	pot_ins = null
 
 func try_put_down() -> void:

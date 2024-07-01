@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://smoy1rvjamdp"]
+
+[ext_resource type="Script" path="res://parts_box/collision/4dwall/4dwall.gd" id="1_72lsh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgti0"]
+size = Vector2(16, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otrk2"]
+size = Vector2(16, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fr37x"]
+size = Vector2(2, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmqxx"]
+size = Vector2(2, 16)
+
+[node name="4dwall" type="Node2D" node_paths=PackedStringArray("area_arr")]
+script = ExtResource("1_72lsh")
+area_arr = [NodePath("top_area"), NodePath("bottom_area"), NodePath("left_area"), NodePath("right_area")]
+
+[node name="top_area" type="Area2D" parent="."]
+
+[node name="top_shape" type="CollisionShape2D" parent="top_area"]
+position = Vector2(8, -1)
+shape = SubResource("RectangleShape2D_pgti0")
+
+[node name="bottom_area" type="Area2D" parent="."]
+
+[node name="bottom_shape" type="CollisionShape2D" parent="bottom_area"]
+position = Vector2(8, 17)
+shape = SubResource("RectangleShape2D_otrk2")
+
+[node name="left_area" type="Area2D" parent="."]
+
+[node name="left_shape" type="CollisionShape2D" parent="left_area"]
+position = Vector2(-1, 8)
+shape = SubResource("RectangleShape2D_fr37x")
+
+[node name="right_area" type="Area2D" parent="."]
+
+[node name="right_shape" type="CollisionShape2D" parent="right_area"]
+position = Vector2(17, 8)
+shape = SubResource("RectangleShape2D_kmqxx")
+
+[connection signal="area_entered" from="top_area" to="." method="_on_top_area_area_entered"]
+[connection signal="area_exited" from="top_area" to="." method="_on_top_area_area_exited"]
+[connection signal="body_entered" from="top_area" to="." method="_on_top_area_body_entered"]
+[connection signal="body_exited" from="top_area" to="." method="_on_top_area_body_exited"]
+[connection signal="area_entered" from="bottom_area" to="." method="_on_bottom_area_area_entered"]
+[connection signal="area_exited" from="bottom_area" to="." method="_on_bottom_area_area_exited"]
+[connection signal="body_entered" from="bottom_area" to="." method="_on_bottom_area_body_entered"]
+[connection signal="body_exited" from="bottom_area" to="." method="_on_bottom_area_body_exited"]
+[connection signal="area_entered" from="left_area" to="." method="_on_left_area_area_entered"]
+[connection signal="area_exited" from="left_area" to="." method="_on_left_area_area_exited"]
+[connection signal="body_entered" from="left_area" to="." method="_on_left_area_body_entered"]
+[connection signal="body_exited" from="left_area" to="." method="_on_left_area_body_exited"]
+[connection signal="area_entered" from="right_area" to="." method="_on_right_area_area_entered"]
+[connection signal="area_exited" from="right_area" to="." method="_on_right_area_area_exited"]
+[connection signal="body_entered" from="right_area" to="." method="_on_right_area_body_entered"]
+[connection signal="body_exited" from="right_area" to="." method="_on_right_area_body_exited"]

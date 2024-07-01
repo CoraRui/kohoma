@@ -4,6 +4,9 @@ extends Node2D
 #four phases:
 #init, flash, boom, clear
 
+#do i want a wall? i dont even know that i want the bombs to be throwable.
+#so i dont think it needs it. its just the fish that needs it cause its thrown.
+#and pots in general. cause they have to be thrown
 
 @export var boom_sf : sf_link
 

@@ -7,8 +7,6 @@ enum Dir {UP = 0, DOWN = 1, LEFT = 2, RIGHT = 3, NONE = 4}
 
 #add a function for attributing a unit vector to a direction
 
-
-
 static func udlr_to_dir(i : int) -> Dir:
 	#converts 0,1,2,3 to up,down,left, or right. considering doing other integers cyclically. like 4=0=up and so on.
 	match i % 3:

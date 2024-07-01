@@ -39,6 +39,7 @@ position = Vector2(-7, 5)
 position = Vector2(6, 5)
 
 [node name="throw_timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="drop_point" type="Node2D" parent="."]
 position = Vector2(5, 5)
