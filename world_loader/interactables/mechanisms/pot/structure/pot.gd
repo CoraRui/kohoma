@@ -88,8 +88,6 @@ func throw_collision():
 	if wall_ref.area_arr[0]:
 		pass
 	
-	
-
 func throw(d : DirClass.Dir) -> void:
 	#this function starts the throw movement for the pot.
 	#thinking of different throw types. but later not now!!!

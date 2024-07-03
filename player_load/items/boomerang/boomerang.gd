@@ -4,6 +4,7 @@ class_name boomerang
 #the boomerang should travel in a straight line from where thrown, then return to the player
 #following a simple return movement pattern
 
+#TODO: protocol for more than one catch at a time
 #TODO: clear boomerang on level load
 #TODO: make hitting stuff actually doing stuff. that might not even mean doing anything in this script.
 #you might have to program all of the other scripts to do stuff manually. like each enemy, each thing that
@@ -31,10 +32,16 @@ var fly_state : FlyState = FlyState.THROW
 @export var hang_timer : Timer	#timer for hang
 @export var exp_timer : Timer	#timer that returns the boomerang if it doesn't return for some reason
 
+#signals
+signal caught_boomerang
+signal threw_boomerang
+
+
 #autoloads
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
 
 func _ready():
+	threw_boomerang.emit()
 	tvel = DirClass.get_uvec(player_li.player_ins.direction) * vel_mod
 	throw_timer.start()
 	
@@ -66,6 +73,7 @@ func return_move():
 
 func catch():
 	debug_helper.db_message("caught boomerang","items")
+	caught_boomerang.emit()
 	queue_free()
 
 func _on_throw_timer_timeout():
@@ -84,13 +92,3 @@ func _on_hang_timer_timeout():
 	
 func _on_exp_timer_timeout():
 	catch()
-
-func _on_catch_point_caught():
-	#triggered when the boomerang catches something. maybe trigger early return?
-	fly_state = FlyState.RETURN
-	rvel = global_position.direction_to(player_li.player_ins.global_position)
-	if rvel.x != 0:
-		rvel.x = rvel.x/abs(rvel.x)
-	if rvel.y != 0:
-		rvel.y = rvel.y/abs(rvel.y)
-	rvel *= vel_mod

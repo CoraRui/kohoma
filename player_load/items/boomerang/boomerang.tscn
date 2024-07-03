@@ -79,7 +79,7 @@ shape = SubResource("RectangleShape2D_v0jr3")
 [node name="catch_point" parent="." node_paths=PackedStringArray("catch_target") instance=ExtResource("3_gbkgd")]
 catch_target = NodePath(".")
 
+[connection signal="caught_boomerang" from="." to="catch_point" method="_on_boomerang_caught_boomerang"]
 [connection signal="timeout" from="hang_timer" to="." method="_on_hang_timer_timeout"]
 [connection signal="timeout" from="throw_timer" to="." method="_on_throw_timer_timeout"]
 [connection signal="timeout" from="exp_timer" to="." method="_on_exp_timer_timeout"]
-[connection signal="caught" from="catch_point" to="." method="_on_catch_point_caught"]

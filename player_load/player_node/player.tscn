@@ -272,7 +272,7 @@ sf_name = "none"
 sf_vol = -1.0
 sf_pitch = 1.0
 
-[node name="player" type="Node2D" node_paths=PackedStringArray("items_node", "movement_script", "sword_script", "anim_script", "health_script")]
+[node name="player" type="Node2D" node_paths=PackedStringArray("items_node", "movement_script", "sword_script", "anim_script", "health_script", "lift_script")]
 z_index = 15
 script = ExtResource("1_tearn")
 items_node = NodePath("items")
@@ -280,6 +280,7 @@ movement_script = NodePath("movement")
 sword_script = NodePath("sword")
 anim_script = NodePath("player_anim")
 health_script = NodePath("player_health")
+lift_script = NodePath("player_lift")
 
 [node name="movement" type="Node2D" parent="." node_paths=PackedStringArray("pos", "hit_area", "up_col", "down_col", "left_col", "right_col", "anim_controller", "hurt_timer")]
 visible = false

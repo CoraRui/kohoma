@@ -172,6 +172,9 @@ func try_grab() -> void:
 				grab(a.get_parent())
 
 func grab(p : pot) -> void:
+	#should have the player grab the passed pot
+	
+	#TODO: does this/should this work alone? how to make sure this doesn't hold two objects?
 	lift_state = LiftState.GRAB
 	grab_signal.emit()
 	pot_ins = p
@@ -228,6 +231,7 @@ func lift(p : pot) -> void:
 	lift_state = LiftState.HOLD
 	player_li.player_ins.set_movement(true)
 	player_li.player_ins.set_sword_active(false)
+	player_li.player_ins.set_items_active(false)
 
 func try_throw() -> void:
 	if !pot_ins:
@@ -248,6 +252,9 @@ func throw() -> void:
 	else:	sfx_pi.play_sound_link(throw_sf)
 	
 	pot_ins = null
+	
+	player_li.player_ins.set_items_active(true)
+
 
 func try_release() -> void:
 	if !pot_ins:
@@ -260,6 +267,7 @@ func release() -> void:
 	release_signal.emit()
 	pot_ins.pot_target.global_position = drop_point.global_position - (pot_ins.hold_point.global_position - pot_ins.pot_target.global_position)
 	pot_ins = null
+	player_li.player_ins.set_items_active(true)
 
 func try_put_down() -> void:
 	pass
@@ -274,5 +282,6 @@ func put_down() -> void:
 func _on_throw_timer_timeout():
 	lift_state = LiftState.IDLE
 	player_li.player_ins.anim_script.switch_anim_state(player_anim.AnimState.MOVE)
+	player_li.player_ins.set_sword_active(true)
 	
 #endregion

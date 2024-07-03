@@ -26,6 +26,14 @@ var catch_state : CatchState = CatchState.FREE
 
 @export var released_anim_name : String 		#animation to be played when object is released
 
+
+#on release events
+@export var use_pot : bool = false				#uses the pot reference to give the catchable to the player to hold on release if true
+@export var pot_ref : pot						#holds a pot script to give to the player
+
+#autoloads
+@onready var player_li : player_loader = get_node("/root/player_loader_auto")
+
 func _physics_process(_delta):
 	move_state_matrix()
 
@@ -53,15 +61,30 @@ func catch(a : Area2D) -> void:
 	for s in a.get_parent().get_children():
 		if s is catch_point:
 			catch_target = s.catch_target
+			s.caught.emit()
+			s.released.connect(release_signal)
 	
 	if !catch_target:
 		catch_target = a
 	
 	catch_state = CatchState.CAUGHT
 	
-	
 func release() -> void:
+	#take appropriate action for catchable object on release
 	catch_state = CatchState.RELEASED
+	
+	#give attached pot to player lift script
+	if use_pot && pot_ref:
+		player_li.player_ins.lift_script.grab(pot_ref)
+		player_li.player_ins.lift_script.lift(pot_ref)
+
+#signals
+func release_signal() -> void:
+	#this function is connected to the catch point's release signal. that signal will be triggered by the 
+	#boomerang when it it caught, or whatever other signal/function you'd like the catch objects release to be triggered by.
+	print("release signal")
+	released.emit()
+	release()
 
 func _on_catch_area_area_entered(area):
 	match catch_state:
@@ -70,6 +93,6 @@ func _on_catch_area_area_entered(area):
 		CatchState.RELEASED:
 			catch(area)
 
-
-
-
+func _on_bomb_clear_signal():
+	#from bombs clear signal. should release the bomb from player lift on execution.
+	player_li.player_ins.lift_script.try_release()

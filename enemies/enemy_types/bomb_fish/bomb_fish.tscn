@@ -8,8 +8,9 @@
 [node name="bomb_fish" type="Node2D"]
 script = ExtResource("1_j17je")
 
-[node name="bomb" parent="." instance=ExtResource("2_xm0pc")]
+[node name="bomb" parent="." node_paths=PackedStringArray("bomb_target") instance=ExtResource("2_xm0pc")]
 auto_light = false
+bomb_target = NodePath("..")
 exp_name = "boom_fish"
 flash_name = "flash_fish"
 idle_name = "idle_fish"
@@ -27,7 +28,12 @@ position = Vector2(15, 13)
 [node name="lift_point" parent="pot" index="3"]
 position = Vector2(0, 7)
 
-[node name="catch" parent="." node_paths=PackedStringArray("catch_node") instance=ExtResource("4_acf2h")]
+[node name="catch" parent="." node_paths=PackedStringArray("catch_node", "pot_ref") instance=ExtResource("4_acf2h")]
 catch_node = NodePath("..")
+use_pot = true
+pot_ref = NodePath("../pot")
+
+[connection signal="clear_signal" from="bomb" to="catch" method="_on_bomb_clear_signal"]
+[connection signal="released" from="catch" to="bomb" method="_on_catch_released"]
 
 [editable path="pot"]

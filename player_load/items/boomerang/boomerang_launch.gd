@@ -6,6 +6,7 @@ class_name boomerang_launcher
 #TODO: add directional throw points
 #TODO: one throw at a time
 
+
 enum Thrown {HELD, THROWING, FLYING, DISABLED}
 
 var thrown_state : Thrown = Thrown.HELD
