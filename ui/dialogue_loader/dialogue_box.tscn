@@ -48,9 +48,9 @@ offset_bottom = 156.0
 
 [node name="fill" type="ColorRect" parent="."]
 offset_left = 10.0
-offset_top = 121.0
+offset_top = 88.0
 offset_right = 168.0
-offset_bottom = 155.0
+offset_bottom = 122.0
 color = Color(0.121569, 0.121569, 0.121569, 1)
 
 [node name="n_label" type="Label" parent="."]
@@ -65,9 +65,9 @@ text = "name"
 
 [node name="m_label" type="Label" parent="."]
 offset_left = 18.0
-offset_top = 126.0
+offset_top = 93.0
 offset_right = 163.0
-offset_bottom = 153.0
+offset_bottom = 120.0
 theme_override_colors/font_color = Color(0.843137, 0.843137, 0.843137, 1)
 theme_override_fonts/font = SubResource("FontVariation_0864s")
 theme_override_font_sizes/font_size = 8
@@ -82,7 +82,7 @@ offset_right = 39.0
 offset_bottom = 149.0
 
 [node name="adv_arrow" type="AnimatedSprite2D" parent="."]
-position = Vector2(160, 150)
+position = Vector2(160, 117)
 sprite_frames = SubResource("SpriteFrames_4y8or")
 animation = &"off"
 autoplay = "off"

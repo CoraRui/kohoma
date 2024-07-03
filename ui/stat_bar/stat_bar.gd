@@ -37,6 +37,7 @@ func update_flav_text(mt : String, nt : String):
 	flav.update_text(mt, nt)
 
 func death_reset():
+	debug_helper.db_message("stat bar death reset ran, should it?", "stat_bar")
 	position = Vector2(0,0)
 	#should eventually get health from save file. or the player? no, save file.
 	update_health(save_fi.current_file.hp, save_fi.current_file.mhp)
@@ -63,6 +64,20 @@ func update_slot(i : items.ItemState, is_x : bool):
 			anim.play("NONE")
 		_:
 			print("update_slot in stat_bar is missing that item state")
+	
+func toggle_bar(b : bool) -> void:
+	#mainly making this for the game over stuff, but it could be more general purpose.
+	#its just to make the bar invisible and disable all of its functions temporarily.
+	#im likely going to add more to it.
+	if b:
+		#enable bar
+		set_visible(true)
+		
+	else:
+		#disable bar
+		set_visible(false)
+	
+	
 	
 	
 	

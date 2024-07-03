@@ -77,6 +77,8 @@ func end_shift():
 	pause_li.toggle_active(true)
 	
 func reset_camera():
+	#TODO: is this still necessary? i dont think so
+	debug_helper.db_message("used reset camera in camera_loader. why?", "camera")
 	main_camera.position = Vector2(88,64)
 	
 	

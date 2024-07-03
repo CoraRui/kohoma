@@ -74,7 +74,7 @@ up_option = NodePath("../file_three")
 down_option = NodePath("../file_two")
 
 [node name="file_slot" parent="simple_select/files/file_one" instance=ExtResource("9_kxmnt")]
-file_index = 0
+file_index = null
 text_color = Color(0.682353, 0.682353, 0.682353, 1)
 
 [node name="icon_point" type="Node2D" parent="simple_select/files/file_one"]

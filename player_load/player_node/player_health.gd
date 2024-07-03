@@ -25,16 +25,22 @@ var inv : bool = false
 @onready var stat_bi : stat_bar = get_node("/root/stat_bar_auto")
 @onready var save_fi : save_file = get_node("/root/save_file_auto")
 @onready var sfx_pi : sfx_player = get_node("/root/sfx_player_auto")
+@onready var player_li : player_loader = get_node("/root/player_loader_auto")
 #endregion
 
 func _ready():
 	hp = save_fi.current_file.hp
 	mhp = save_fi.current_file.mhp
 
+func _input(event):
+	if event.is_action_pressed("debug_one"):
+		damage(100, player_li.player_ins.global_position)
+
 func _physics_process(_delta):
 	i_frame()
 
 func damage(dp : int, pos : Vector2):
+	#damages player, pos is passed to determine the direction of knockback
 	if inv : 
 		return
 	hp -= dp

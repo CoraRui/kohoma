@@ -1,9 +1,12 @@
 extends Node
+class_name game_init
 
 #this script should prepare the game scene.
-
 #just load in the overworld's first level for now.
-
+#im going to move the functionality of the game init script tot the death trigger autoload.
+#the death trigger autoload is quite unfortunately named. but it makes more sense to be there.
+#i think its just going to be something like the "game loader"
+#
 
 @export_group("load_info")
 @export var test_lp : Vector2i = Vector2i(0, 0)		#position in level tree to load in
@@ -51,8 +54,11 @@ func load_world(fi : int):
 	player_li.load_player()
 	stat_bi.set_visible(true)
 	pause_li.toggle_active(true)
-	file_menu.queue_free()
 	
+	#TODO: remove this when separating file menu ui and game init functions
+	if file_menu:
+		file_menu.queue_free()
+
 func quit_game():
 	get_tree().quit()
 
@@ -61,7 +67,7 @@ func check_file(fi : int):
 		load_world(fi)
 	else:
 		create_file(fi)
-		
+
 func create_file(fi : int):
 	sim_sel_ins.switch_group(naming_group)
 	file_ci.fi = fi

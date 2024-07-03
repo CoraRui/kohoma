@@ -31,7 +31,7 @@ music_player_auto="*res://music_player/autoload/music_player.tscn"
 camera_loader_auto="*res://camera_loader/autoload/camera_loader.tscn"
 level_border_auto="*res://level_border/level_border.tscn"
 stat_bar_auto="*res://ui/stat_bar/stat_bar.tscn"
-death_trigger_auto="*res://boot/game_over/death_trigger.tscn"
+game_loader_auto="*res://boot/game_over/game_loader.tscn"
 sfx_player_auto="*res://sfx_player/autoload/sfx_player.tscn"
 dialogue_loader_auto="*res://ui/dialogue_loader/dialogue_loader.tscn"
 pause_loader_auto="*res://ui/pause_menu/autoloads/pause_loader.tscn"
@@ -188,6 +188,11 @@ row_nine={
 row_zero={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":48,"key_label":0,"unicode":48,"echo":false,"script":null)
+]
+}
+debug_one={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":49,"key_label":0,"unicode":49,"echo":false,"script":null)
 ]
 }
 

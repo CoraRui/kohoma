@@ -7,7 +7,8 @@ class_name dialogue_box
 #TODO: some sort of system for timed sound effects.
 #TODO: variable in dialogue for adjusting char sfx speed
 #TODO: scrolling dialogue??
-#TODO: top.bottom of the screen text box
+#TODO: top/bottom of the screen text box
+#TODO: add more options of how text is displayed to be changed by function. font? font color? backgrounds? shift to top/bottom? etc.
 
 
 #this script controls the dialogue boxes display functions

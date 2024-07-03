@@ -10,16 +10,21 @@ class_name debug_helper
 static var print_all : bool = false		
 
 static var tag_dict : Dictionary = {
-	"player" : false,
-	"items" : false,
+
+	"camera" : true,
+	"direction" : false,
 	"enemies" : false,
+	"game over" : true,
+	"items" : false,
+	"lift" : false,
 	"mechanisms" : false,
 	"music" : false,
-	"save/load" : false,
-	"lift" : false,
-	"direction" : false,
-	"sfx_player" : false,
 	"orb_boss" : false,
+	"player" : false,
+	"save/load" : false,
+	"sfx_player" : false,
+	"stat_bar" : false,
+
 }
 
 static func db_message(m : String, t : String):
