@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck3n6knfwdx0i"]
+
+[ext_resource type="Script" path="res://player_load/items/boomerang/catch/catch.gd" id="1_fp7bw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqbwo"]
+size = Vector2(10, 10)
+
+[node name="catch" type="Node2D" node_paths=PackedStringArray("catch_area")]
+script = ExtResource("1_fp7bw")
+catch_area = NodePath("catch_area")
+
+[node name="catch_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+
+[node name="catch_shape" type="CollisionShape2D" parent="catch_area"]
+position = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_qqbwo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 10.0
+offset_bottom = 10.0
+
+[connection signal="area_entered" from="catch_area" to="." method="_on_catch_area_area_entered"]

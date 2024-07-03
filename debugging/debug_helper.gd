@@ -11,6 +11,7 @@ static var print_all : bool = false
 
 static var tag_dict : Dictionary = {
 	"player" : false,
+	"items" : false,
 	"enemies" : false,
 	"mechanisms" : false,
 	"music player" : false,

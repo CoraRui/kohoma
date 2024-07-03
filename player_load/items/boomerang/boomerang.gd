@@ -9,12 +9,20 @@ class_name boomerang
 #you might have to program all of the other scripts to do stuff manually. like each enemy, each thing that
 #can recieve some sort of hit. like switches and stuff.
 
+#how do i have things be caught by the boomerang?
+#boomerang script looks for a certain node type or collider
+#new node type looks for boomerang and attaches itself to it.
+#i think using the boomerang to find a new type would be best
+#i can use that new type to connect with signals in that object to things that need to change
+#when the object is caught/released etc.
+
 
 enum FlyState {THROW, HANG, RETURN}
 
 var fly_state : FlyState = FlyState.THROW
 
 @export var tvel : Vector2 = Vector2(0,0)
+@export var vel_mod : int = 2
 @export var rvel : Vector2 = Vector2(0,0)
 
 @export var axis_tol : int = 3
@@ -27,14 +35,16 @@ var fly_state : FlyState = FlyState.THROW
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
 
 func _ready():
-	tvel = DirClass.get_uvec(player_li.player_ins.direction)
+	tvel = DirClass.get_uvec(player_li.player_ins.direction) * vel_mod
 	throw_timer.start()
 	
 func _process(_delta):
-	if fly_state == FlyState.THROW:
-		throw_move()
-	if fly_state == FlyState.RETURN:
-		return_move()
+	
+	match fly_state:
+		FlyState.THROW:
+			throw_move()
+		FlyState.RETURN:
+			return_move()
 		
 func throw_move():
 	position += tvel
@@ -44,18 +54,18 @@ func return_move():
 	if abs(global_position.x - player_li.player_ins.global_position.x) < axis_tol:
 		rvel.x = 0
 	else:
-		rvel.x = -1 * sign(global_position.x - player_li.player_ins.global_position.x)
+		rvel.x = -1 * sign(global_position.x - player_li.player_ins.global_position.x) * vel_mod
 		
 	if abs(global_position.y - player_li.player_ins.global_position.y) < axis_tol:
 		rvel.y = 0
 	else:
-		rvel.y = -1 * sign(global_position.y - player_li.player_ins.global_position.y)
+		rvel.y = -1 * sign(global_position.y - player_li.player_ins.global_position.y) * vel_mod
 		
 	if rvel == Vector2(0,0):
 		catch()
 
 func catch():
-	print("catch")
+	debug_helper.db_message("caught boomerang","items")
 	queue_free()
 
 func _on_throw_timer_timeout():
@@ -63,14 +73,24 @@ func _on_throw_timer_timeout():
 	hang_timer.start()
 
 func _on_hang_timer_timeout():
+	#TODO: make a separate function for this. probably along the lines of "init_return" and switch the catch point signal as well.
 	fly_state = FlyState.RETURN
 	rvel = global_position.direction_to(player_li.player_ins.global_position)
-	print(rvel)
 	if rvel.x != 0:
 		rvel.x = rvel.x/abs(rvel.x)
 	if rvel.y != 0:
 		rvel.y = rvel.y/abs(rvel.y)
-	print(rvel)
+	rvel *= vel_mod
 	
 func _on_exp_timer_timeout():
 	catch()
+
+func _on_catch_point_caught():
+	#triggered when the boomerang catches something. maybe trigger early return?
+	fly_state = FlyState.RETURN
+	rvel = global_position.direction_to(player_li.player_ins.global_position)
+	if rvel.x != 0:
+		rvel.x = rvel.x/abs(rvel.x)
+	if rvel.y != 0:
+		rvel.y = rvel.y/abs(rvel.y)
+	rvel *= vel_mod

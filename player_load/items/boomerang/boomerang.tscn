@@ -1,17 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://dax51qj8537fu"]
+[gd_scene load_steps=10 format=3 uid="uid://dax51qj8537fu"]
 
 [ext_resource type="Script" path="res://player_load/items/boomerang/boomerang.gd" id="1_xihq8"]
-[ext_resource type="Texture2D" uid="uid://ducan1lse00wf" path="res://player_load/items/boomerang/boomerang.png" id="2_mvkfg"]
+[ext_resource type="PackedScene" uid="uid://d76e3mymdegt" path="res://player_load/items/boomerang/catch/catch_point.tscn" id="3_gbkgd"]
+[ext_resource type="Texture2D" uid="uid://paft1dx3f5h2" path="res://player_load/items/boomerang/boomerang_anim.png" id="3_o4j2n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahs40"]
+atlas = ExtResource("3_o4j2n")
+region = Rect2(0, 0, 8, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqyqv"]
+atlas = ExtResource("3_o4j2n")
+region = Rect2(8, 0, 8, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5xq6"]
+atlas = ExtResource("3_o4j2n")
+region = Rect2(16, 0, 8, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlayj"]
+atlas = ExtResource("3_o4j2n")
+region = Rect2(24, 0, 8, 9)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pbkru"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mvkfg")
+"texture": SubResource("AtlasTexture_ahs40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqyqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5xq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlayj")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0jr3"]
@@ -25,6 +51,9 @@ exp_timer = NodePath("exp_timer")
 
 [node name="boomerang_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pbkru")
+autoplay = "default"
+frame = 2
+frame_progress = 0.992182
 
 [node name="hang_timer" type="Timer" parent="."]
 wait_time = 0.3
@@ -47,6 +76,10 @@ collision_mask = 0
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_v0jr3")
 
+[node name="catch_point" parent="." node_paths=PackedStringArray("catch_target") instance=ExtResource("3_gbkgd")]
+catch_target = NodePath(".")
+
 [connection signal="timeout" from="hang_timer" to="." method="_on_hang_timer_timeout"]
 [connection signal="timeout" from="throw_timer" to="." method="_on_throw_timer_timeout"]
 [connection signal="timeout" from="exp_timer" to="." method="_on_exp_timer_timeout"]
+[connection signal="caught" from="catch_point" to="." method="_on_catch_point_caught"]

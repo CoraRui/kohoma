@@ -22,6 +22,7 @@ enum PullType {PULL, HEAVY_PULL, LIFT, HEAVY_LIFT, STATIC}
 @export var lift_point : Node2D		#spot the player will be moved to when lifting/grabbing the pot if applicable
 									#possibly only bind to an axis if its like a wall or something.
 @export var hold_point : Node2D		#spot used to hold the pot
+@export var wall_ref : fourdwall
 @export_group("","")
 
 @export_group("sfx")
@@ -79,9 +80,15 @@ func collision_check() -> void:
 		MoveState.THROW:
 			pass
 
-func collision_4d():
-	#does basic collision in 4 directions
-	pass
+func throw_collision():
+	#collision for throw state. should just stop the velocity in the proper direction
+	#so just check for bodies in the top or bottom areas, then freeze the velocity in that direction.
+	#it might be weird if it collides with top cause theres the "fall" thing. but honestly i think just stopping
+	#it will look fine
+	if wall_ref.area_arr[0]:
+		pass
+	
+	
 
 func throw(d : DirClass.Dir) -> void:
 	#this function starts the throw movement for the pot.

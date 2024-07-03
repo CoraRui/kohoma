@@ -26,6 +26,7 @@ layer_0/tile_data = PackedInt32Array(524290, 1, 2, 458754, 1, 2, 393218, 1, 2, 3
 position = Vector2(89, 100)
 
 [node name="boss_init_area" type="Area2D" parent="."]
+position = Vector2(140, -34)
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("4_clj6y")

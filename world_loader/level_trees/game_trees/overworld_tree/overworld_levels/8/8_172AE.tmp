@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://nmnnhoqjulmn"]
+[gd_scene load_steps=14 format=3 uid="uid://nmnnhoqjulmn"]
 
 [ext_resource type="TileSet" uid="uid://bk46l8sdvet70" path="res://world_loader/tile_pallettes/overworld.tres" id="1_0u3dl"]
 [ext_resource type="PackedScene" uid="uid://d2ij06gtg0fi7" path="res://world_loader/rooms/room trigger/room_trigger.tscn" id="2_n70v1"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c6phkn4x5h0kc" path="res://enemies/enemy_types/chikkin/chikkin.tscn" id="6_wikl0"]
 [ext_resource type="PackedScene" uid="uid://jfxvdv88hlmx" path="res://music_player/triggers/music_trigger.tscn" id="7_b8bvh"]
 [ext_resource type="PackedScene" uid="uid://c7cjgfpor30c1" path="res://world_loader/interactables/mechanisms/grass/solid_grass/solid_grass.tscn" id="8_s4drw"]
+[ext_resource type="PackedScene" uid="uid://yuq3h7sfuerx" path="res://enemies/enemy_types/turtle/turtle.tscn" id="9_badj8"]
+[ext_resource type="PackedScene" uid="uid://b833j5de50v6g" path="res://world_loader/interactables/mechanisms/pot/pot types/actual_pot.tscn" id="10_ba2fd"]
 [ext_resource type="PackedScene" uid="uid://mdwtmm3pvout" path="res://world_loader/level_trees/structure/world_autoload/switch_trigger.tscn" id="12_8ypbp"]
 [ext_resource type="PackedScene" uid="uid://blnrlo48um0t1" path="res://enemies/enemy_types/bomb_fish/bomb_fish.tscn" id="12_dy44d"]
 
@@ -32,80 +34,4 @@ layer_0/tile_data = PackedInt32Array(196608, 393217, 7, 196609, 458753, 7, 19661
 position = Vector2(0, -48)
 tile_set = ExtResource("1_0u3dl")
 format = 2
-layer_0/tile_data = PackedInt32Array(262150, 327681, 1, 327686, 327681, 2, 262151, 262145, 268435457, 327685, 262145, 2, 262149, 262145, 1, 196613, 393217, 1, 196614, 458753, 1, 196615, 393217, 268435457, 327687, 262145, 268435458)
-
-[node name="door" type="TileMap" parent="."]
-position = Vector2(0, -48)
-tile_set = ExtResource("1_0u3dl")
-format = 2
-
-[node name="room_trigger" parent="." instance=ExtResource("2_n70v1")]
-position = Vector2(104, 32)
-room_ref = ExtResource("3_ytljt")
-room_track = "nothing"
-player_si = 1
-
-[node name="load_info" parent="." instance=ExtResource("4_url0w")]
-position = Vector2(0, -48)
-
-[node name="0" parent="load_info/spawn_points" index="0"]
-position = Vector2(104, 96)
-
-[node name="snfffff" parent="." instance=ExtResource("6_ty5ac")]
-position = Vector2(100, 73)
-
-[node name="chikkin2" parent="." instance=ExtResource("6_wikl0")]
-position = Vector2(40, 40)
-
-[node name="music_trigger" parent="." instance=ExtResource("7_b8bvh")]
-position = Vector2(0, -48)
-track_name = "town_one"
-use_delay = true
-
-[node name="north" type="Label" parent="."]
-visible = false
-offset_left = 12.0
-offset_top = 108.0
-offset_right = 150.0
-offset_bottom = 157.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "dungeon is north
- fucknuts"
-
-[node name="solid_grass" parent="." instance=ExtResource("8_s4drw")]
-position = Vector2(128, 16)
-
-[node name="solid_grass2" parent="." instance=ExtResource("8_s4drw")]
-position = Vector2(128, 32)
-
-[node name="solid_grass3" parent="." instance=ExtResource("8_s4drw")]
-position = Vector2(64, 16)
-
-[node name="solid_grass4" parent="." instance=ExtResource("8_s4drw")]
-position = Vector2(64, 32)
-
-[node name="switch_trigger" parent="." instance=ExtResource("12_8ypbp")]
-position = Vector2(48, 32)
-new_tree = "res://world_loader/level_trees/game_trees/dungeon_one/dungeon_one_tree.tscn"
-init_pos = Vector2(3, 0)
-
-[node name="switch_area" type="Area2D" parent="switch_trigger"]
-collision_layer = 0
-collision_mask = 16
-
-[node name="switch_shape" type="CollisionShape2D" parent="switch_trigger/switch_area"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_dg7ia")
-
-[node name="ColorRect" type="ColorRect" parent="switch_trigger"]
-offset_right = 16.0
-offset_bottom = 16.0
-color = Color(0, 0, 0, 1)
-
-[node name="bomb_fish" parent="." instance=ExtResource("12_dy44d")]
-position = Vector2(128, 56)
-
-[connection signal="area_entered" from="switch_trigger/switch_area" to="switch_trigger" method="_on_switch_area_area_entered"]
-
-[editable path="load_info"]
-[editable path="switch_trigger"]
+layer_0/tile_data = PackedInt32Array(262150, 327681, 1, 327686, 327681, 2, 262151, 262145, 268435457, 327685, 262145, 2, 262149, 262145, 1, 196613, 393217, 1, 196614, 458753, 1, 196615, 393217, 268435457, 327687, 262145, 26

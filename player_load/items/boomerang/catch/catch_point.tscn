@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d76e3mymdegt"]
+
+[ext_resource type="Script" path="res://player_load/items/boomerang/catch/catch_point.gd" id="1_ra20k"]
+
+[node name="catch_point" type="Node2D"]
+script = ExtResource("1_ra20k")

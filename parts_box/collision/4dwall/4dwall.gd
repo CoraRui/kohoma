@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name fourdwall
 
 #should hold 4 areas (udlr) and have signals related to them attached to this node.
 #how to i connect those? do I just connect the signals to this object, then have new signals here that fire when those signals fire?
@@ -44,10 +44,10 @@ func init_layers() -> void:
 	#iterate through layers and mask to set values of each area.
 	
 	#clear all of the layers
-	for i in 32:
+	for i in 31:
 		for j in 3:
-			area_arr[j].set_collision_layer_value(i,false)
-			area_arr[j].set_collision_mask_value(i,false)
+			area_arr[j].set_collision_layer_value(i + 1,false)
+			area_arr[j].set_collision_mask_value(i + 1,false)
 	
 	#copy layer and mask values to all areas
 	for l in collision_layers:
@@ -57,6 +57,10 @@ func init_layers() -> void:
 	for m in collision_mask:
 		for j in 3:
 			area_arr[j].set_collision_mask_value(m,true)
+
+#this next. make functions for checking walls
+func check_collider():
+	pass
 
 #region area signals
 

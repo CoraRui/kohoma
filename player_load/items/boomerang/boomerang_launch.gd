@@ -3,6 +3,7 @@ class_name boomerang_launcher
 
 #this script just instantiates the boomerang.
 
+#TODO: add directional throw points
 #TODO: one throw at a time
 
 enum Thrown {HELD, THROWING, FLYING, DISABLED}
@@ -17,4 +18,5 @@ func throw_boomerang():
 	var boom_ins : Node2D = boomerang_ref.instantiate()
 	get_tree().get_root().add_child(boom_ins)
 	boom_ins.global_position = player_i.player_ins.global_position
+	boom_ins.global_position.y -= 3
 	thrown_state = Thrown.THROWING

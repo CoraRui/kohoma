@@ -14,10 +14,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6fg5"]
 size = Vector2(14, 16)
 
-[node name="pot" type="Node2D" node_paths=PackedStringArray("lift_point", "hold_point")]
+[node name="pot" type="Node2D" node_paths=PackedStringArray("lift_point", "hold_point", "wall_ref")]
 script = ExtResource("1_241wl")
+pull_type = null
+pot_active = null
 lift_point = NodePath("lift_point")
 hold_point = NodePath("hold_point")
+wall_ref = NodePath("4dwall")
+use_grab_sf = null
+use_throw_sf = null
 throw_vel = 2
 fall_vel_arr = Array[int]([1, 1, 1, 1, 1, 0, 0, 0, 0, -1, 0, 0, -1, 0, -1, 0, -1, -1, -1, -1])
 
