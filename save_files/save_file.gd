@@ -18,7 +18,6 @@ class_name save_file
 
 @onready var debug_hi : debug_helper = get_node("/root/debug_helper_auto")
 
-
 #writes the current_file to the save_directory
 func record_file(fi : int):
 	var dir : DirAccess = DirAccess.open("user://")
@@ -35,7 +34,8 @@ func load_file(fi : int):
 		record_file(fi)
 		return
 	
-	current_file = ResourceLoader.load(save_dir[fi], "file_01")
+	current_file = ResourceLoader.load(save_dir[fi], "file_01")		#loads the file
+	file_index = fi													#notes the index of the currently loaded file
 
 #checks for the save file in the user directory
 func file_exists(fi : int) -> bool:

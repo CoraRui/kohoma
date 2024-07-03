@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="music_link" load_steps=2 format=3 uid="uid://ns13cit5omql"]
+
+[ext_resource type="Script" path="res://music_player/resources/music_link/music_link.gd" id="1_adopp"]
+
+[resource]
+script = ExtResource("1_adopp")
+vol = 0.0
+pitch = 0.0
+speed = 1.0

@@ -3,7 +3,7 @@ extends Node2D
 #TODO: tune timing of image and text changes
 #TODO: some sort of effect between changes, probably a fade.
 #TODO: any key to skip
-
+#TODO: relearn and fix
 
 #this script handles timing of the changing of the text for the intro
 #arrays of floats represent the length between each switch

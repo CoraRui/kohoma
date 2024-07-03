@@ -601,7 +601,7 @@ text = "Z"
 position = Vector2(-1, 2)
 
 [node name="finish" type="Node2D" parent="simple_select/file_naming" node_paths=PackedStringArray("icon_point", "target_group", "up_option")]
-position = Vector2(139, 155)
+position = Vector2(127, 110)
 script = ExtResource("7_sc3r0")
 icon_point = NodePath("icon_point")
 target_group = NodePath("../../files")
