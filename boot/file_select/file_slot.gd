@@ -17,7 +17,7 @@ class_name file_slot
 
 #region autoloads
 
-@onready var game_li : game_loader = get_node("")
+@onready var game_li : game_loader = get_node("/root/game_loader_auto")
 @onready var save_fi : save_file = get_node("/root/save_file_auto")
 
 #endregion
@@ -26,10 +26,6 @@ func _ready():
 	refresh_display()
 	name_label.add_theme_color_override("font_color", text_color)
 	money_label.add_theme_color_override("font_color", text_color)
-	
-	#connect the file buttons signal to the load game signal in the death trigger.
-	if option_ins:
-		option_ins.activated.connect(game_li.load_game())
 	
 func refresh_display():
 	if not FileAccess.file_exists(save_fi.save_dir[file_index]):

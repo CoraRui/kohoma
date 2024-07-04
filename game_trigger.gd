@@ -1,16 +1,33 @@
 extends Node2D
-
+class_name game_trigger
 
 #this node should contain paramters and functions for loading the game between different states.
 #meaning things like between title screen, to the file selection, to the main world, to the game over screen, etc.
+#so this is just the trigger. it just contains the variables to tell the game how to load, and calls the game loader.
 
+@export var to_free : Node2D 						#a node in this scene to free on load
 
+#region autoloads
 
-@export_group("main level load")
-#contains parameters for the level load of type "main level"
-#meaning the type of load that occurs from the file select.
-#so what things would i have to send to the game_loaders load game function?
-#and what parts should i take care of within this node?
-@export var to_free : Node2D 	#a node in this scene to free on load
+@onready var game_li : game_loader = get_node("/root/game_loader_auto")
 
+#endregion
 
+func load_main(fi : int):
+	#uses the file index from the ui signal to trigger the game_loader autoload.
+	#the game_loader will use that file to determine how to load the game.
+	game_li.load_game(fi)
+	
+	if to_free:
+		to_free.queue_free()
+
+#file select signals
+
+func _on_file_one_activated():
+	load_main(0)
+
+func _on_file_two_activated():
+	load_main(1)
+
+func _on_file_three_activated():
+	load_main(2)

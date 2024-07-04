@@ -40,7 +40,7 @@ extends Node2D
 
 @export_group("game over parameters")
 @export var game_over_mlink : music_link	#music to be played on game over phase
-@export var game_init_ins : game_init
+@export var game_trigger_ins : game_trigger
 @export_group("","")
 
 #region autoloads
@@ -76,7 +76,7 @@ func end_game_over():
 	#function to run once the game over scene is finished
 	debug_helper.db_message("ran end game over","game over")
 	player_li.unload_player()
-	game_init_ins.load_world(save_fi.file_index)
+	
 	
 	#curtain close and load delay, then load the world back in.
 	

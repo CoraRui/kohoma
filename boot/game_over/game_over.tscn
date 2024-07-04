@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://djfoef06jnovk"]
+[gd_scene load_steps=6 format=3 uid="uid://djfoef06jnovk"]
 
 [ext_resource type="Script" path="res://boot/game_over/game_over.gd" id="1_km33p"]
-[ext_resource type="Script" path="res://boot/scripts/game_init.gd" id="1_ppfqp"]
 [ext_resource type="Script" path="res://music_player/resources/music_link/music_link.gd" id="2_hua6a"]
 [ext_resource type="FontFile" uid="uid://dulip7p2tjbiu" path="res://ui/fonts/nintendo-nes-font.otf" id="2_prcmu"]
-[ext_resource type="PackedScene" uid="uid://brpxjjuw0ul07" path="res://world_loader/rooms/home/home.tscn" id="4_fu5qw"]
 
 [sub_resource type="Resource" id="Resource_bxuo5"]
 script = ExtResource("2_hua6a")
@@ -18,11 +16,13 @@ base_font = ExtResource("2_prcmu")
 spacing_glyph = -2
 spacing_space = -5
 
-[node name="game_over" type="Node2D" node_paths=PackedStringArray("sp_timer", "game_init_ins")]
+[node name="game_over" type="Node2D" node_paths=PackedStringArray("sp_timer")]
 script = ExtResource("1_km33p")
+sp_phase = null
 sp_timer = NodePath("stop_pause_timer")
+sp_length = null
+tr_length = null
 game_over_mlink = SubResource("Resource_bxuo5")
-game_init_ins = NodePath("game_init")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 176.0
@@ -46,12 +46,6 @@ offset_bottom = 112.0
 theme_override_fonts/font = SubResource("FontVariation_r1xgm")
 theme_override_font_sizes/font_size = 8
 text = "enter to continue"
-
-[node name="game_init" type="Node2D" parent="." node_paths=PackedStringArray("del")]
-script = ExtResource("1_ppfqp")
-test_lp = Vector2i(10, 10)
-del = NodePath("..")
-load_room = ExtResource("4_fu5qw")
 
 [node name="stop_pause_timer" type="Timer" parent="."]
 one_shot = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpmm25pqbbddg"]
+[gd_scene load_steps=5 format=3 uid="uid://dpmm25pqbbddg"]
 
 [ext_resource type="Script" path="res://save_files/save_file.gd" id="1_yt4hk"]
 [ext_resource type="Script" path="res://save_files/resources/file_01.gd" id="2_yimsi"]
@@ -18,8 +18,29 @@ event_dict = {
 "test_event": true
 }
 clean_file = true
+proto_flag = true
+fail_flag = false
+
+[sub_resource type="Resource" id="Resource_q002e"]
+script = ExtResource("2_yimsi")
+player_name = "failed_player"
+character_name = "flea"
+hp = 12
+mhp = 12
+keys = 0
+gold = 0
+x_item = 4
+y_item = 4
+kills = 0
+event_dict = {
+"test_event": true
+}
+clean_file = true
+proto_flag = true
+fail_flag = false
 
 [node name="save_file" type="Node2D"]
 script = ExtResource("1_yt4hk")
 current_file = SubResource("Resource_dlhso")
+fail_file = SubResource("Resource_q002e")
 save_dir = Array[String](["user://save/file_01.tres", "user://save/file_02.tres", "user://save/file_03.tres"])

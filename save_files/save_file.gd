@@ -6,9 +6,11 @@ class_name save_file
 #essentially I want a node I can place that will add certain values to the current_file.
 #then another trigger to record those changes.
 
-@export var current_file : file_01
+@export var current_file : file_01			#current referenced file
 
-@export var save_dir : Array[String]
+@export var fail_file : file_01				#file to be loaded if get_file is run without a loaded file
+
+@export var save_dir : Array[String]		
 
 @export var file_index : int = 0
 
@@ -26,8 +28,8 @@ func record_file(fi : int):
 	if ResourceSaver.save(current_file, save_dir[fi]) != OK:
 		debug_helper.db_message("save_file could't record the file", debug_name)
 
-#updates the current file with the one in the directory.
-func load_file(fi : int):
+func load_file(fi : int) -> void:
+	#updates the current file with the one in the directory. doesn't return the file. use get_current
 	if not FileAccess.file_exists(save_dir[fi]):
 		debug_helper.db_message("no save file at: " + save_dir[fi] + ", creating new file.", debug_name)
 		current_file = file_01.new()
@@ -37,9 +39,24 @@ func load_file(fi : int):
 	current_file = ResourceLoader.load(save_dir[fi], "file_01")		#loads the file
 	file_index = fi													#notes the index of the currently loaded file
 
-#checks for the save file in the user directory
 func file_exists(fi : int) -> bool:
+	#checks for the save file in the user directory
 	if FileAccess.file_exists(save_dir[fi]):
 		return true
 	else:
 		return false
+
+func get_file() -> file_01:
+	#gets the current file, returns the fail file if there isn't one loaded.
+	#use load_file first.
+	if current_file:
+		return current_file
+	else:
+		return fail_file
+	
+	
+	
+	
+	
+	
+	

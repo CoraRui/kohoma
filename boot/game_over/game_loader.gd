@@ -21,6 +21,8 @@ class_name game_loader
 
 @export var game_over_ref : PackedScene
 @export var game_over_mus : String
+	
+@export var home_ref : PackedScene			#reference to players house. probably wont stay like this.
 
 #region autoloads
 
@@ -39,21 +41,34 @@ func game_over():
 	var game_over_ins : Node2D = game_over_ref.instantiate()
 	get_tree().get_root().add_child.call_deferred(game_over_ins)
 
-func load_game(fi : int, l : PackedScene, lp : Vector2):
-	#this function loads the game as if it were loaded from the file select screen. which usually it literally will be.
-	#fi is the index of the file to be loaded.
-	#l is the packed scene of the room to be loaded, if there is one
-	#lp is the level position of the level to be loaded if there is one.
-	#only uses the world loader if theres no l
-	
-	if !l:
-		world_i.draw_level_at(lp)
-	else:
-		var new_room = l.instantiate()
-		get_tree().get_root().add_child(new_room)
-		new_room.global_position += Vector2(0,-32)
+func load_game(fi : int) -> void:
+	#so this functino will take the save file index, and load the game by judging the values in the save file.
+	#so i think this is where the game initial load logic is going to lie.
+	#theres probably going to be a great deal of different logic and save values.
+	#for now, i'll just have a prototype save flag that loads the world in a very normal and static way.
+	#that will probably be very similar to what its actually going to look like.
+	#but no special events.
 	save_fi.load_file(fi)
+	var loaded_file : file_01 = save_fi.get_file()
+	
+	if loaded_file.fail_flag:
+		debug_helper.db_message("fail_flag in file was true. something wrong with the file?","game_loader")
+		return
+	
+	if loaded_file.proto_flag:
+		#prototype flag, just load the world "normally"
+		var new_level : Node2D = home_ref.instantiate()
+		get_tree().get_root().add_child(new_level)
+	
+	
+	#stuff that doesn't really change
 	player_li.load_player()
 	stat_bi.set_visible(true)
 	pause_li.toggle_active(true)
-	
+
+
+
+
+
+
+

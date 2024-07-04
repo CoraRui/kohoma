@@ -21,11 +21,11 @@ var inv_flash_index : int = 0
 var inv : bool = false
 
 #region autoloads
-@onready var death_ti : death_trigger = get_node("/root/death_trigger_auto")
 @onready var stat_bi : stat_bar = get_node("/root/stat_bar_auto")
 @onready var save_fi : save_file = get_node("/root/save_file_auto")
 @onready var sfx_pi : sfx_player = get_node("/root/sfx_player_auto")
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
+@onready var game_li : game_loader = get_node("/root/game_loader_auto")
 #endregion
 
 func _ready():
@@ -46,7 +46,7 @@ func damage(dp : int, pos : Vector2):
 	hp -= dp
 	stat_bi.update_health(hp, mhp)
 	if hp <=0:
-		death_ti.game_over()
+		game_li.game_over()
 	else:
 		i_frames.start()
 		inv = true
