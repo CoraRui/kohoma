@@ -24,6 +24,7 @@ static var tag_dict : Dictionary = {
 	"save/load" : false,
 	"sfx_player" : false,
 	"stat_bar" : false,
+	"world_loader" : true,
 
 }
 

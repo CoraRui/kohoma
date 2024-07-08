@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ve6x2obpvcmd"
-path="res://.godot/imported/Sprite-0002.png-05a8825708ccc9e31b533d97fec0ba87.ctex"
+uid="uid://cmkmaxl57jvlo"
+path="res://.godot/imported/gem.png-9d1d93eb7393a7c6617eaeec73e566dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world_loader/interactables/drops/coin/Sprite-0002.png"
-dest_files=["res://.godot/imported/Sprite-0002.png-05a8825708ccc9e31b533d97fec0ba87.ctex"]
+source_file="res://world_loader/interactables/drops/coin/assets/gem.png"
+dest_files=["res://.godot/imported/gem.png-9d1d93eb7393a7c6617eaeec73e566dc.ctex"]
 
 [params]
 

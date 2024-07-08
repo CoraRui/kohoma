@@ -1,2 +1,3 @@
-its just called coin cause I thought it was going to be a coin at first
-its a gem. or a rupee. currency
+so "coin" is the base node
+coin 2 is the first iteration of it where i can specify animations/values to make it distinct.
+like green rupee, blue ruppee etc.

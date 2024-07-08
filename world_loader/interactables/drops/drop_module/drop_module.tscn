@@ -8,3 +8,7 @@
 script = ExtResource("1_1kwym")
 heart_drop = ExtResource("2_a662v")
 coin_drop = ExtResource("3_0jp2p")
+
+[node name="drop_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="drop_timer" to="." method="_on_drop_timer_timeout"]

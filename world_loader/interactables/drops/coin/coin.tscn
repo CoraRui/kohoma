@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cog5ygf7ssly"]
+[gd_scene load_steps=7 format=3 uid="uid://cog5ygf7ssly"]
 
 [ext_resource type="Script" path="res://world_loader/interactables/drops/coin/coin.gd" id="1_af3un"]
-[ext_resource type="Texture2D" uid="uid://cmkmaxl57jvlo" path="res://world_loader/interactables/drops/coin/gem.png" id="2_4mwl8"]
 [ext_resource type="Script" path="res://sfx_player/autoload/sf_link.gd" id="2_e5ama"]
+[ext_resource type="Texture2D" uid="uid://cmkmaxl57jvlo" path="res://world_loader/interactables/drops/coin/assets/gem.png" id="3_d3643"]
 
 [sub_resource type="Resource" id="Resource_mvbs0"]
 script = ExtResource("2_e5ama")
@@ -12,6 +12,27 @@ sf_pitch = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ae4dq"]
 size = Vector2(4, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xd54"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"five",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_d3643")
+}],
+"loop": true,
+"name": &"one",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"ten",
+"speed": 5.0
+}]
 
 [node name="coin" type="Node2D"]
 script = ExtResource("1_af3un")
@@ -25,8 +46,8 @@ collision_mask = 16
 [node name="coin_shape" type="CollisionShape2D" parent="coin_area"]
 shape = SubResource("RectangleShape2D_ae4dq")
 
-[node name="coin_sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_4mwl8")
-offset = Vector2(0.5, 0)
+[node name="coin_anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1xd54")
+animation = &"one"
 
 [connection signal="area_entered" from="coin_area" to="." method="_on_coin_area_area_entered"]

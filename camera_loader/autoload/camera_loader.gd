@@ -23,15 +23,22 @@ var shifting = false
 var player_shifting = false
 var player_point : Vector2
 
+#region signals
+
 signal camera_snapped
 
-#autoloads
+#endregion
+
+#region autoloads
+
 @onready var level_bi : level_border = get_node("/root/level_border_auto")
 @onready var world_i : world = get_node("/root/world_auto")
 @onready var stat_bi : stat_bar = get_node("/root/stat_bar_auto")
 @onready var player_li : player_loader = get_node("/root/player_loader_auto")
 @onready var pause_li : pause_loader = get_node("/root/pause_loader_auto")
 @onready var curtain_mi : curtain_module = get_node("/root/curtain_module_auto")
+
+#endregion
 
 func _physics_process(_delta):
 	move_camera()
@@ -75,10 +82,5 @@ func end_shift():
 	player_li.player_ins.set_movement(true)
 	player_li.player_ins.set_sword_active(true)
 	pause_li.toggle_active(true)
-	
-func reset_camera():
-	#TODO: is this still necessary? i dont think so
-	debug_helper.db_message("used reset camera in camera_loader. why?", "camera")
-	main_camera.position = Vector2(88,64)
 	
 	

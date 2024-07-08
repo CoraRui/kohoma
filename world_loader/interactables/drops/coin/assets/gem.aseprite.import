@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://der546y3h4fq0"
-path="res://.godot/imported/gem.aseprite-d17163efdf27817e2c0537fc71493838.ctex"
+path="res://.godot/imported/gem.aseprite-27324eaa6517daf8062c5e3a9d8c7bfa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world_loader/interactables/drops/coin/gem.aseprite"
-dest_files=["res://.godot/imported/gem.aseprite-d17163efdf27817e2c0537fc71493838.ctex"]
+source_file="res://world_loader/interactables/drops/coin/assets/gem.aseprite"
+dest_files=["res://.godot/imported/gem.aseprite-27324eaa6517daf8062c5e3a9d8c7bfa.ctex"]
 
 [params]
 

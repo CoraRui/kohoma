@@ -1,0 +1,12 @@
+i wanna clean up all my code and reorganize a lot of my code.
+idk how to keep track of when im finished with that.
+could just look throught everything by folder?
+
+once i have all of the folders listed as done here, ill be good.
+
+
+world_loader
+	interactables
+		drops
+
+

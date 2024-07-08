@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf4cxcgtv3l0c"]
+
+[ext_resource type="PackedScene" uid="uid://cog5ygf7ssly" path="res://world_loader/interactables/drops/coin/coin.tscn" id="1_nmtdk"]
+
+[node name="coin_2" type="Node2D"]
+
+[node name="coin" parent="." instance=ExtResource("1_nmtdk")]

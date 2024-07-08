@@ -29,11 +29,9 @@ var room_ins : Node2D
 #endregion
 
 func load_room():
-	camera_mi.reset_camera()
 	level_bi.reset_position()
 	level_bi.toggle_border(false)
 	world_i.unload_level()
-	world_i.reset_position()
 	room_ins = room_ref.instantiate()
 	get_tree().get_root().add_child.call_deferred(room_ins)
 	stat_bi.reset_position()
