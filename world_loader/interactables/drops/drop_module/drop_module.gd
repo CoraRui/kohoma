@@ -1,14 +1,9 @@
 extends Node2D
 
-#this script determines the probability of certain drop types, then drops that item.
-#takes into account certain information,for now just the hp value.
-#this is a weird project statement but im getting better at it.
-#ok. so i need to have all of these variable sources.
+#this node contains a couple different options for drops.
+#has a couple packedscenes whose probability to spawn on drop are defined in probability parameters
+#should be attached to certain enemies to have those enemies drop specific things.
 
-#some of them will be parameters in this node.
-#some of them will be automatically collected from autoloads and other in game sources, like the players current hp or whatever.
-#some of the parameters in this node might also control which information from other things will be taken into account.
-#frinstance a boolean that determines whether the thing is affected by player hp.
 #region drop_objects
 
 @export_group("drop_objects")
